@@ -1,0 +1,27 @@
+imports:
+    - { resource: cache_pool/cache.redis.yml }
+
+parameters:
+    #TODO: May move all this to .env file or Dockerfile
+    #WARNING: https://github.com/ezsystems/ezplatform-ee/blob/v2.5.9/app/config/default_parameters.yml#L106
+
+    # https://doc.ezplatform.com/en/2.5/guide/http_cache/#varnish-http-purge-type
+    #env(HTTPCACHE_PURGE_TYPE): http
+    purge_type: http
+    env(HTTPCACHE_PURGE_SERVER): http://varnish
+    #env(HTTPCACHE_VARNISH_INVALIDATE_TOKEN): docker
+
+    # https://doc.ezplatform.com/en/2.5/guide/persistence_cache/#redis
+    env(CACHE_POOL): cache.redis
+    env(CACHE_DSN): redis
+    # https://doc.ezplatform.com/en/2.5/guide/sessions/#handling-sessions-with-redis
+    #env(SESSION_HANDLER_ID): ~
+    ezplatform.session.handler_id: ~
+    env(SESSION_SAVE_PATH): tcp://redis:6379
+
+    env(DATABASE_HOST): mariadb
+    env(DATABASE_PASSWORD): root
+    env(DATABASE_VERSION): mariadb-MARIADB_VERSION
+
+    env(SEARCH_ENGINE): solr
+    env(SOLR_DSN): http://solr:8983/solr
