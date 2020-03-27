@@ -3,6 +3,7 @@ FROM debian:10
 MAINTAINER adrien.dupuis@ez.no
 
 ENV SYMFONY_ENV=dev
+ARG session_save_handler=memcached
 
 EXPOSE 80
 
@@ -24,7 +25,8 @@ RUN apt-get -qq update \
         php-curl \
         php-mbstring \
         php-zip \
-        php-redis \
+        php-memcached \
+        #php-redis \
         # GD
         libfreetype6-dev \
         libjpeg62-turbo-dev \
@@ -33,8 +35,12 @@ RUN apt-get -qq update \
 
 # PHP-FPM: UDS Directory & Log Creation
 RUN mkdir /run/php && touch /var/log/php7.3-fpm.log
-# PHP-FPM: Redis as session handler
-RUN echo "\n; Redis as session handler\nphp_value[session.save_handler] = redis\nphp_value[session.save_path] = \"tcp://redis:6379\"" >> /etc/php/7.3/fpm/pool.d/www.conf
+# PHP-FPM: Redis o memcached as session handler
+RUN if [ 'redis' == $session_save_handler ]; then \
+        echo "\n; Redis as session handler\nphp_value[session.save_handler] = redis\nphp_value[session.save_path] = \"tcp://redis:6379\"" >> /etc/php/7.3/fpm/pool.d/www.conf; \
+    elif [ 'memcached' == $session_save_handler ]; then \
+        echo "\n; Redis as session handler\nphp_value[session.save_handler] = memcached\nphp_value[session.save_path] = \"tcp://memcached:11211\"" >> /etc/php/7.3/fpm/pool.d/www.conf; \
+    fi;
 # Apache: FastCGI Module & PHP-FPM Configuration
 RUN a2enmod proxy_fcgi setenvif rewrite \
     && a2enconf php7.3-fpm

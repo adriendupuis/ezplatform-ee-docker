@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
 
 # Stop on error
-#set -e;
+set -e;
+
+# Persistence Cache and Session Handler
+# redis, memcached, filesystem
+CACHE_AND_SESSION_HANDLER=memcached
 
 # eZ Platform logs removal
 rm -f var/logs/*.log;
 
 # Docker Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
-docker-compose up --build --detach varnish apache redis mariadb;
+docker-compose up --build --detach varnish mariadb $CACHE_HANDLER;
+docker-compose build --build-arg session_save_handler=$CACHE_HANDLER apache;
 
 # MariaDB: Server Wait & Version Fetch
 GET_MARIADB_VERSION_CMD="docker-compose exec mariadb mysql -proot -BNe 'SELECT VERSION();' | cut -d '-' -f 1 | head -n 1;";
