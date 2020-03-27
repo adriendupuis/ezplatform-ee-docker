@@ -106,5 +106,5 @@ TODO
 * Maybe:
   - Build Solr at the same time than other containers and uncomment that apache depends on solr
   - Use more docker-compose.yml `volumes` and less Dockerfile `COPY`
-  - The builder could have some options like: `./docker-compose.bash --cache-pool=memcached --sessions-in-cache-pool --search-engine=legacy;`
+  - The builder could have some options like: `./docker-compose.bash --cache-pool=memcached --sessions-in-cache-pool --search-engine=legacy --en=dev --xdebug;`
   - Just use `docker-compose up --build` and remove `docker-compose.bash`
