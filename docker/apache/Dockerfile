@@ -29,7 +29,16 @@ RUN apt-get -qq update \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng-dev \
-        php-gd
+        php-gd \
+        # PECL
+        php-dev \
+        php-pear
+
+# PHP: Xdebug
+RUN pecl install xdebug \
+    && echo "zend_extension=$(find /usr/lib/php/ -name xdebug.so)" > /etc/php/7.3/mods-available/xdebug.ini \
+    && ln -s /etc/php/7.3/mods-available/xdebug.ini /etc/php/7.3/cli/conf.d/00-xdebug.ini \
+    && ln -s /etc/php/7.3/mods-available/xdebug.ini /etc/php/7.3/fpm/conf.d/00-xdebug.ini
 
 # PHP-FPM: UDS Directory & Log Creation
 RUN mkdir /run/php && touch /var/log/php7.3-fpm.log
