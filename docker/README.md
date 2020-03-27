@@ -53,6 +53,7 @@ Quick Start
   - Get Apache modules: `docker-compose exec apache apache2ctl -M;`
   - Follow Apache error.log: `docker-compose exec apache tail -f /var/log/apache2/error.log;`
   - Get PHP version: `docker-compose exec apache php -v;`
+  - Get PHP modules: `docker-compose exec apache php -m;`
   - Follow PHP-FPM log: `docker-compose exec apache tail -f /var/log/php7.3-fpm.log;`
   - Follow eZ Platform log: `docker-compose exec apache tail -f var/logs/dev.log;`
   - Get Composer version: `docker-compose exec apache composer --version;`
@@ -100,7 +101,6 @@ Quick Start
 TODO
 ----
 
-* Add [Xdebug](http://xdebug.org)
 * Switch from 120.0.0.1 to localhost in README.md to be more consistent with vhost.conf `ServerName`
 * Ensure compatibility with other unixoides than Mac OS X. For example, `sed -i ''` is specific to Mac OS X and a solution could be https://formulae.brew.sh/formula/gnu-sed
 * Maybe:
