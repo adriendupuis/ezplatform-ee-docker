@@ -38,13 +38,15 @@ RUN echo "\n; Redis as session handler\nphp_value[session.save_handler] = redis\
 # Apache: FastCGI Module & PHP-FPM Configuration
 RUN a2enmod proxy_fcgi setenvif rewrite \
     && a2enconf php7.3-fpm
+
 # Apache: Virtual Host Modules
 RUN a2enmod rewrite setenvif
 # Apache: Global ServerName (avoid AH00558)
-RUN sed -i -e '1 i\ServerName ezplatform' /etc/apache2/apache2.conf
+RUN sed -i -e '1 i\ServerName apache' /etc/apache2/apache2.conf
 # Apache: Virtual Host Setting
 COPY vhost.conf /etc/apache2/sites-available/
 RUN a2ensite vhost && a2dissite 000-default.conf
+
 # Apache: Cron
 COPY crontab /tmp/crontab
 RUN crontab -u www-data /tmp/crontab
