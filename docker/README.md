@@ -42,7 +42,6 @@ URLs and Command Lines
 * Build with Redis as cache and session handler: `./docker-compose.bash --cache-and-session-handler=redis`
 * Build with Memcached as cache and session handler: `./docker-compose.bash --cache-and-session-handler=memcached`
 
-
 ### Usefull URLs
 * eZ Home page through Varnish: http://127.0.0.1:8080/
 * eZ Admin through Varnish: http://127.0.0.1:8080/admin
