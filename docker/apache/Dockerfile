@@ -31,7 +31,16 @@ RUN apt-get -qq update \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng-dev \
-        php-gd
+        php-gd \
+        # PECL
+        php-dev \
+        php-pear
+
+# PHP: Xdebug
+RUN pecl install xdebug \
+    && echo "zend_extension=$(find /usr/lib/php/ -name xdebug.so)" > /etc/php/7.3/mods-available/xdebug.ini \
+    && ln -s /etc/php/7.3/mods-available/xdebug.ini /etc/php/7.3/cli/conf.d/00-xdebug.ini \
+    && ln -s /etc/php/7.3/mods-available/xdebug.ini /etc/php/7.3/fpm/conf.d/00-xdebug.ini
 
 # PHP-FPM: UDS Directory & Log Creation
 RUN mkdir /run/php && touch /var/log/php7.3-fpm.log
@@ -44,13 +53,15 @@ RUN if [ 'redis' == $session_save_handler ]; then \
 # Apache: FastCGI Module & PHP-FPM Configuration
 RUN a2enmod proxy_fcgi setenvif rewrite \
     && a2enconf php7.3-fpm
+
 # Apache: Virtual Host Modules
 RUN a2enmod rewrite setenvif
 # Apache: Global ServerName (avoid AH00558)
-RUN sed -i -e '1 i\ServerName ezplatform' /etc/apache2/apache2.conf
+RUN sed -i -e '1 i\ServerName apache' /etc/apache2/apache2.conf
 # Apache: Virtual Host Setting
 COPY vhost.conf /etc/apache2/sites-available/
 RUN a2ensite vhost && a2dissite 000-default.conf
+
 # Apache: Cron
 COPY crontab /tmp/crontab
 RUN crontab -u www-data /tmp/crontab
