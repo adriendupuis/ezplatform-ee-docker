@@ -30,7 +30,6 @@ Quick Start
 About
 -----
 
-### Philosophy
 * Follow [eZ Platform 2.5 Requirements](https://doc.ezplatform.com/en/2.5/getting_started/requirements/) as much as possible.
 * Add as less configuration as possible to [original distribution](https://github.com/ezsystems/ezplatform-ee/tree/v2.5.9).
 
