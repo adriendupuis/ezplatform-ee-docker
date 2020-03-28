@@ -1,6 +1,5 @@
 imports:
-    #- { resource: cache_pool/cache.redis.yml }
-    - { resource: cache_pool/cache.memcached.yml }
+    - { resource: cache_pool/cache.CACHE_AND_SESSION_HOST.yml }
 
 parameters:
     #TODO: May move all this to .env file or Dockerfile
@@ -12,19 +11,12 @@ parameters:
     env(HTTPCACHE_PURGE_SERVER): http://varnish
     #env(HTTPCACHE_VARNISH_INVALIDATE_TOKEN): docker
 
-    # https://doc.ezplatform.com/en/2.5/guide/persistence_cache/#redis
-    #env(CACHE_POOL): cache.redis
-    #env(CACHE_DSN): redis
-    # https://doc.ezplatform.com/en/2.5/guide/sessions/#handling-sessions-with-redis
-    #ezplatform.session.handler_id: ~
-    #env(SESSION_SAVE_PATH): tcp://redis:6379
-
-    # https://doc.ezplatform.com/en/2.5/guide/persistence_cache/#memcached
-    env(CACHE_POOL): cache.memcached
-    env(CACHE_DSN): memcached
-    # https://doc.ezplatform.com/en/2.5/guide/sessions/#handling-sessions-with-memcached
+    # https://doc.ezplatform.com/en/2.5/guide/persistence_cache/
+    env(CACHE_POOL): cache.CACHE_AND_SESSION_HOST
+    env(CACHE_DSN): CACHE_AND_SESSION_HOST
+    # https://doc.ezplatform.com/en/2.5/guide/sessions/
     ezplatform.session.handler_id: ~
-    env(SESSION_SAVE_PATH): tcp://memcached:11211
+    env(SESSION_SAVE_PATH): tcp://CACHE_AND_SESSION_HOST:CACHE_AND_SESSION_PORT
 
     env(DATABASE_HOST): mariadb
     env(DATABASE_PASSWORD): root

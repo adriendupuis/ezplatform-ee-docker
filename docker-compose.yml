@@ -15,7 +15,7 @@ services:
     build: ./docker/apache
     depends_on:
       #- redis
-      - memcached
+      #- memcached
       - mariadb
       #- solr
     ports:
@@ -23,8 +23,8 @@ services:
     volumes:
       - .:/var/www/ez
 
-  #redis:
-  #  image: redis:3.2
+  redis:
+    image: redis:3.2
   memcached:
     image: memcached
 

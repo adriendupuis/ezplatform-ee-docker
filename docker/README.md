@@ -14,8 +14,9 @@ Use a Docker containers cluster to have a typical architecture for eZ Platform i
 * Reverse Proxy Cache Server:
   - Varnish 2.4
   - Varnish Modules 0.15
-* [Persistence Cache](https://doc.ezplatform.com/en/2.5/guide/persistence_cache/#redis) Server:
+* Optional [Persistence Cache](https://doc.ezplatform.com/en/2.5/guide/persistence_cache/) and Session Handling Servers:
   - Redis 3.2
+  - Memcached
 * DataBase Server:
   - MariaDB 10.1
 * Search Engine:
@@ -27,12 +28,20 @@ Quick Start
 * Run `./docker-compose.bash;` (you may need your eZ Platform Enterprise Edition credentials)
 * Access to http://127.0.0.1:8080/
 
-[WIP] About
+About
 -----
 
-### Philosophy
 * Follow [eZ Platform 2.5 Requirements](https://doc.ezplatform.com/en/2.5/getting_started/requirements/) as much as possible.
 * Add as less configuration as possible to [original distribution](https://github.com/ezsystems/ezplatform-ee/tree/v2.5.9).
+
+URLs and Command Lines
+----------------------
+
+### Builder
+
+* Build with Redis as cache and session handler: `./docker-compose.bash --cache-and-session-handler=redis`
+* Build with Memcached as cache and session handler: `./docker-compose.bash --cache-and-session-handler=memcached`
+
 
 ### Usefull URLs
 * eZ Home page through Varnish: http://127.0.0.1:8080/
