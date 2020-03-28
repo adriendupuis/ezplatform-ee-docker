@@ -2,10 +2,10 @@ FROM debian:10
 # Debian "Buster" 10 comes w/ PHP 7.3
 MAINTAINER adrien.dupuis@ez.no
 
-ENV SYMFONY_ENV=dev
+ARG symfony_env=dev
+ENV SYMFONY_ENV=$symfony_env
 
-EXPOSE 80
-
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -qq update \
     && apt-get -qq install -y \
         cron \
@@ -71,11 +71,12 @@ RUN npm install -g yarn
 RUN chown www-data:www-data /var/www/
 
 WORKDIR /var/www/ez
+EXPOSE 80
 
 # Cron, Apache, PHP-FPM & Logs
 #TODO: Should be an array
 CMD service cron restart && /usr/sbin/apache2ctl restart && /etc/init.d/php7.3-fpm restart \
-    # Send several logs following to output for `docker(-compose) logs` command
+    # Send several log followings to output for `docker(-compose) logs` command
     && tail \
         -F /var/log/apache2/error.log \
         -F /var/log/apache2/access.log \
