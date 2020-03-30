@@ -100,6 +100,8 @@ URLs and Command Lines
   - Delete all keys: `docker-compose exec redis redis-cli FLUSHALL;`
   - Open Redis CLI: `docker-compose exec redis redis-cli;`
   - Open a shell into container: `docker-compose exec redis bash;`
+* Memcached
+  - Get stats: `expect -c 'spawn docker-compose exec apache bash; send "telnet memcached 11211\r"; send "stats\r"; expect { puts $expect_out(0,string); }; send "quit\r"; send "exit\r";';`
 * TODO: Solr
   - Get Solr version: `docker-compose exec solr bin/solr version;`
   - Follow Solr logs: `docker-compose logs --follow solr;`
@@ -111,6 +113,7 @@ TODO
 
 * Switch from 120.0.0.1 to localhost in README.md to be more consistent with vhost.conf `ServerName`
 * Ensure compatibility with other unixoides than Mac OS X. For example, `sed -i ''` is specific to Mac OS X and a solution could be https://formulae.brew.sh/formula/gnu-sed
+* Find a simpler way to monitor Memcached server. Starting w/ installing telnet command directly into memcached container.
 * Maybe:
   - Build Solr at the same time than other containers and uncomment that apache depends on solr
   - Use more docker-compose.yml `volumes` and less Dockerfile `COPY`

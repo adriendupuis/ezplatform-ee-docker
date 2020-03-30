@@ -11,6 +11,7 @@ RUN apt-get -qq update \
     && apt-get -qq install -y \
         cron \
         curl \
+        telnet \
         git \
         zip unzip \
         # Apache
