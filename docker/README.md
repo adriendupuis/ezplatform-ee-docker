@@ -70,7 +70,9 @@ URLs and Command Lines
     - See eZ Symfony Tools info: `docker-compose exec apache composer show ezsystems/symfony-tools;`
     - See eZ HTTP Cache bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-http-cache;`
     - See eZ Solr SE bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-solr-search-engine;`
-  - Clear eZ caches: `docker-compose exec --user www-data apache sh -c "php bin/console cache:clear; php bin/console cache:pool:clear cache.redis;";` 
+  - Clear eZ caches: `docker-compose exec --user www-data apache sh -c "php bin/console cache:clear;";` 
+  - Clear eZ caches when using Redis: `docker-compose exec --user www-data apache sh -c "php bin/console cache:clear; php bin/console cache:pool:clear cache.redis;";` 
+  - Clear eZ caches when using Memcached: `docker-compose exec --user www-data apache sh -c "php bin/console cache:clear; php bin/console cache:pool:clear cache.memcached;";` 
   - Open a shell into container as root: `docker-compose exec apache bash;`
   - Open a shell into container as www-data: `docker-compose exec --user www-data apache bash;`
 * Varnish
