@@ -71,8 +71,8 @@ URLs and Command Lines
     - See eZ HTTP Cache bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-http-cache;`
     - See eZ Solr SE bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-solr-search-engine;`
   - Clear eZ caches: `docker-compose exec --user www-data apache sh -c "php bin/console cache:clear;";` 
-  - Clear eZ caches when using Redis: `docker-compose exec --user www-data apache sh -c "php bin/console cache:clear; php bin/console cache:pool:clear cache.redis;";` 
-  - Clear eZ caches when using Memcached: `docker-compose exec --user www-data apache sh -c "php bin/console cache:clear; php bin/console cache:pool:clear cache.memcached;";` 
+    - Clear eZ caches when using Redis: `docker-compose exec --user www-data apache sh -c "php bin/console cache:clear; php bin/console cache:pool:clear cache.redis;";` 
+    - Clear eZ caches when using Memcached: `docker-compose exec --user www-data apache sh -c "php bin/console cache:clear; php bin/console cache:pool:clear cache.memcached;";` 
   - Open a shell into container as root: `docker-compose exec apache bash;`
   - Open a shell into container as www-data: `docker-compose exec --user www-data apache bash;`
 * Varnish
@@ -103,7 +103,8 @@ URLs and Command Lines
   - Open Redis CLI: `docker-compose exec redis redis-cli;`
   - Open a shell into container: `docker-compose exec redis bash;`
 * Memcached
-  - Get stats: `expect -c 'spawn docker-compose exec apache bash; send "telnet memcached 11211\r"; send "stats\r"; expect "END" { puts $expect_out(0,string); }; send "quit\r"; send "exit\r";';`
+  - Get stats: `expect -c 'spawn docker-compose exec apache bash; send "telnet memcached 11211\r"; send "stats\r"; expect "END"; send "quit\r"; send "exit\r";';`
+  - Delete all keys:  `expect -c 'spawn docker-compose exec apache bash; send "telnet memcached 11211\r"; send "flush_all\r"; expect "OK"; send "quit\r"; send "exit\r";';`
 * TODO: Solr
   - Get Solr version: `docker-compose exec solr bin/solr version;`
   - Follow Solr logs: `docker-compose logs --follow solr;`
