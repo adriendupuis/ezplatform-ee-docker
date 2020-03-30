@@ -101,7 +101,7 @@ URLs and Command Lines
   - Open Redis CLI: `docker-compose exec redis redis-cli;`
   - Open a shell into container: `docker-compose exec redis bash;`
 * Memcached
-  - Get stats: `expect -c 'spawn docker-compose exec apache bash; send "telnet memcached 11211\r"; send "stats\r"; expect { puts $expect_out(0,string); }; send "quit\r"; send "exit\r";';`
+  - Get stats: `expect -c 'spawn docker-compose exec apache bash; send "telnet memcached 11211\r"; send "stats\r"; expect "END" { puts $expect_out(0,string); }; send "quit\r"; send "exit\r";';`
 * TODO: Solr
   - Get Solr version: `docker-compose exec solr bin/solr version;`
   - Follow Solr logs: `docker-compose logs --follow solr;`
