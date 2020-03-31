@@ -1,5 +1,7 @@
 FROM varnish:6.0
-MAINTAINER adrien.dupuis@ez.no
+
+LABEL maintainer="adrien.dupuis@ez.no"
+LABEL description="Varnish 6.0 with Varnish Modules for eZ Platform usage"
 
 #ENV HTTPCACHE_VARNISH_INVALIDATE_TOKEN=docker
 

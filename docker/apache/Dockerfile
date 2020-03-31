@@ -1,6 +1,7 @@
 FROM debian:10
-# Debian "Buster" 10 comes w/ PHP 7.3
-MAINTAINER adrien.dupuis@ez.no
+
+LABEL maintainer="adrien.dupuis@ez.no"
+LABEL description="Debian “Buster” 10 with Apache 2, Cron, PHP-FPM (7.3 by default, Redis as session handler, Xdebug), Composer and Yarn for eZ Platform usage"
 
 ARG symfony_env=dev
 ENV SYMFONY_ENV=$symfony_env

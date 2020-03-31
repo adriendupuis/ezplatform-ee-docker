@@ -1,5 +1,7 @@
 FROM solr:6.6
-MAINTAINER adrien.dupuis@ez.no
+
+LABEL maintainer="adrien.dupuis@ez.no"
+LABEL description="Solr 6.6 with eZ Platform's schema"
 
 RUN cp -r /opt/solr/server/solr/configsets/basic_configs /opt/solr/server/solr/configsets/ezplatform \
     && sed -i '/<updateRequestProcessorChain name="add-unknown-fields-to-the-schema">/,/<\/updateRequestProcessorChain>/d' /opt/solr/server/solr/configsets/ezplatform/conf/solrconfig.xml \
