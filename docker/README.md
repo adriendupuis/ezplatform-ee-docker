@@ -25,7 +25,7 @@ Quick Start
 -----------
 
 * Run `./docker-compose.bash;` (you may need your eZ Platform Enterprise Edition credentials)
-* Access to http://127.0.0.1:8080/
+* Access to http://localhost:8080/
 
 About
 -----
@@ -37,13 +37,13 @@ URLs and Command Lines
 ----------------------
 
 ### Usefull URLs
-* eZ Home page through Varnish: http://127.0.0.1:8080/
-* eZ Admin through Varnish: http://127.0.0.1:8080/admin
+* eZ Home page through Varnish: http://localhost:8080/
+* eZ Admin through Varnish: http://localhost:8080/admin
   - Username: *admin*
   - Password: *publish*
   * [Admin / System Info](http://localhost:8080/admin/systeminfo)
 * Change port from 8080 to 8000 to access directly to Apache avoiding Varnish
-* Solr Admin: http://127.0.0.1:8983/solr/#/collection1
+* Solr Admin: http://localhost:8983/solr/#/collection1
 
 ### Usefull Commands
 * Docker Containers Cluster
@@ -84,8 +84,8 @@ URLs and Command Lines
     - Get the ban list: `docker-compose exec varnish varnishadm ban.list;`
   - Open a shell into container: `docker-compose exec varnish bash;`
 * Apache → Varnish
-  - Purge an URL: `docker-compose exec --user www-data apache curl -X PURGE -H 'Host: 127.0.0.1:8080' http://varnish/the/url/to/purge;`
-  - Soft purge a content by ID: `docker-compose exec --user www-data apache curl -X PURGE -H 'Host: 127.0.0.1:8080' -H 'key: cCONTENTID' http://varnish;`
+  - Purge an URL: `docker-compose exec --user www-data apache curl -X PURGE -H 'Host: localhost:8080' http://varnish/the/url/to/purge;`
+  - Soft purge a content by ID: `docker-compose exec --user www-data apache curl -X PURGE -H 'Host: localhost:8080' -H 'key: cCONTENTID' http://varnish;`
     - (x)key prefixes:
       - `c`: ***c***ontent id
       - `l`: ***l***ocation id
@@ -109,7 +109,7 @@ URLs and Command Lines
 TODO
 ----
 
-* Switch from 120.0.0.1 to localhost in README.md to be more consistent with vhost.conf `ServerName`
+* Add [DFS](https://doc.ezplatform.com/en/master/guide/clustering/#dfs-io-handler)
 * Ensure compatibility with other unixoides than Mac OS X. For example, `sed -i ''` is specific to Mac OS X and a solution could be https://formulae.brew.sh/formula/gnu-sed
 * Maybe:
   - Build Solr at the same time than other containers and uncomment that apache depends on solr
