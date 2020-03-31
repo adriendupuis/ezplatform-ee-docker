@@ -87,11 +87,11 @@ URLs and Command Lines
   - Purge an URL: `docker-compose exec --user www-data apache curl -X PURGE -H 'Host: 127.0.0.1:8080' http://varnish/the/url/to/purge;`
   - Soft purge a content by ID: `docker-compose exec --user www-data apache curl -X PURGE -H 'Host: 127.0.0.1:8080' -H 'key: cCONTENTID' http://varnish;`
     - (x)key prefixes:
-      - `c`: **c**ontent id
-      - `l`: **l**ocation id
-      - `p`: (**p**ath) ancestor location id
-      - `pl`: **p**arent **l**ocation id
-      - `ct`: **c**ontent **t**ype id 
+      - `c`: ***c***ontent id
+      - `l`: ***l***ocation id
+      - `p`: (***p***ath) ancestor location id
+      - `pl`: ***p***arent ***l***ocation id
+      - `ct`: ***c***ontent ***t***ype id 
 * Redis
   - Get server info: `docker-compose exec redis redis-cli INFO Server;`
   - Get all info: `docker-compose exec redis redis-cli INFO;`
