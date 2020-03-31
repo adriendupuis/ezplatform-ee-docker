@@ -50,6 +50,7 @@ RUN if [[ 'redis' == $session_save_handler ]]; then \
         echo "\n; Redis as session handler\nphp_value[session.save_handler] = redis\nphp_value[session.save_path] = \"tcp://redis:6379\"" >> /etc/php/7.3/fpm/pool.d/www.conf; \
     elif [[ 'memcached' == $session_save_handler ]]; then \
         echo "\n; Memcached as session handler\nphp_value[session.save_handler] = memcached\nphp_value[session.save_path] = \"memcached1:11211,memcached2:11211\"" >> /etc/php/7.3/fpm/pool.d/www.conf; \
+        echo "php_value[memcached.sess_number_of_replicas] = 1\nphp_value[memcached.sess_lock_retries] = 10\nphp_value[memcached.sess_lock_expire] = 900" >> /etc/php/7.3/fpm/pool.d/www.conf \
     fi;
 # Apache: FastCGI Module & PHP-FPM Configuration
 RUN a2enmod proxy_fcgi setenvif rewrite \
