@@ -4,7 +4,7 @@ Docker Container Cluster
 Introduction
 ------------
 
-Use a Docker containers cluster to have a typical architecture for eZ Platform including the following elements.
+Use a Docker containers cluster to have a [typical architecture for eZ Platform](https://doc.ezplatform.com/en/2.5/guide/clustering/) including the following elements.
 * HTTP Server:
   - Debian 10
   - Apache 2.4
@@ -14,7 +14,7 @@ Use a Docker containers cluster to have a typical architecture for eZ Platform i
 * Reverse Proxy Cache Server:
   - Varnish 2.4
   - Varnish Modules 0.15
-* [Persistence Cache](https://doc.ezplatform.com/en/2.5/guide/persistence_cache/) and Session Handling Servers:
+* [Persistence Cache](https://doc.ezplatform.com/en/2.5/guide/persistence_cache/) and [Session Handling](https://doc.ezplatform.com/en/2.5/guide/sessions/) Servers:
   - Redis 3.2
 * DataBase Server:
   - MariaDB 10.1
@@ -50,14 +50,20 @@ URLs and Command Lines
   - Get containers status: `docker-compose ps --all;`
   - Follow several logs from the cluster: `docker-compose logs -f;`
   - Follow containers stats: `docker stats;`
-* Apache/PHP/eZ:
+* Apache & Cron
+  - Check Apache status: `docker-compose exec apache service apache2 status;`
   - Get Apache version: `docker-compose exec apache apache2ctl -v;`
   - Get Apache modules: `docker-compose exec apache apache2ctl -M;`
   - Follow Apache error.log: `docker-compose exec apache tail -f /var/log/apache2/error.log;`
+  - Check Cron status: `docker-compose exec apache service cron status;`
+  - Get Crontab content: `docker-compose exec apache crontab -u www-data -l;`
+* PHP & PHP-FPM
   - Get PHP version: `docker-compose exec apache php -v;`
   - Get PHP modules: `docker-compose exec apache php -m;`
+  - Check PHP-FPM status: `docker-compose exec apache service php7.3-fpm status;`
   - Follow PHP-FPM log: `docker-compose exec apache tail -f /var/log/php7.3-fpm.log;`
   - Follow eZ Platform log: `docker-compose exec apache tail -f var/logs/dev.log;`
+* eZ Platform
   - Get Composer version: `docker-compose exec apache composer --version;`
   - See a bundle info: `docker-compose exec apache composer show vendor-name/bundle-name;`
     - See eZ Kernel bundle info: `docker-compose exec apache composer show ezsystems/ezpublish-kernel;`
@@ -81,11 +87,11 @@ URLs and Command Lines
   - Purge an URL: `docker-compose exec --user www-data apache curl -X PURGE -H 'Host: 127.0.0.1:8080' http://varnish/the/url/to/purge;`
   - Soft purge a content by ID: `docker-compose exec --user www-data apache curl -X PURGE -H 'Host: 127.0.0.1:8080' -H 'key: cCONTENTID' http://varnish;`
     - (x)key prefixes:
-      - `c`ontent id
-      - `l`ocation id
-      - `p`: (path) ancestor location id
-      - `pl`: parent location id
-      - `ct`: content type id 
+      - `c`: **c**ontent id
+      - `l`: **l**ocation id
+      - `p`: (**p**ath) ancestor location id
+      - `pl`: **p**arent **l**ocation id
+      - `ct`: **c**ontent **t**ype id 
 * Redis
   - Get server info: `docker-compose exec redis redis-cli INFO Server;`
   - Get all info: `docker-compose exec redis redis-cli INFO;`
