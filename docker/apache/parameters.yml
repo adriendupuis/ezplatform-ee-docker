@@ -1,5 +1,5 @@
 imports:
-    - { resource: cache_pool/cache.CACHE_AND_SESSION_HOST.yml }
+    - { resource: cache_pool/cache.multiple.memcached.yml }
 
 parameters:
     #TODO: May move all this to .env file or Dockerfile
@@ -11,12 +11,10 @@ parameters:
     env(HTTPCACHE_PURGE_SERVER): http://varnish
     #env(HTTPCACHE_VARNISH_INVALIDATE_TOKEN): docker
 
-    # https://doc.ezplatform.com/en/2.5/guide/persistence_cache/
-    env(CACHE_POOL): cache.CACHE_AND_SESSION_HOST
-    env(CACHE_DSN): CACHE_AND_SESSION_HOST
-    # https://doc.ezplatform.com/en/2.5/guide/sessions/
+    env(CACHE_POOL): cache.multiple.memcached
+    env(CACHE_DSN): memcached://memcached1:11211?weight=67,memcached://memcached2:11211?weight=33
     ezplatform.session.handler_id: ~
-    env(SESSION_SAVE_PATH): tcp://CACHE_AND_SESSION_HOST:CACHE_AND_SESSION_PORT
+    env(SESSION_SAVE_PATH): memcached1:11211,memcached2:11211
 
     env(DATABASE_HOST): mariadb
     env(DATABASE_PASSWORD): root

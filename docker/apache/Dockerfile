@@ -3,7 +3,7 @@ FROM debian:10
 MAINTAINER adrien.dupuis@ez.no
 
 ARG symfony_env=dev
-ARG session_save_handler=tagaware.filesystem
+ARG session_save_handler=memcached
 ENV SYMFONY_ENV=$symfony_env
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -49,7 +49,7 @@ RUN mkdir /run/php && touch /var/log/php7.3-fpm.log
 RUN if [[ 'redis' == $session_save_handler ]]; then \
         echo "\n; Redis as session handler\nphp_value[session.save_handler] = redis\nphp_value[session.save_path] = \"tcp://redis:6379\"" >> /etc/php/7.3/fpm/pool.d/www.conf; \
     elif [[ 'memcached' == $session_save_handler ]]; then \
-        echo "\n; Memcached as session handler\nphp_value[session.save_handler] = memcached\nphp_value[session.save_path] = \"memcached:11211\"" >> /etc/php/7.3/fpm/pool.d/www.conf; \
+        echo "\n; Memcached as session handler\nphp_value[session.save_handler] = memcached\nphp_value[session.save_path] = \"memcached1:11211,memcached2:11211\"" >> /etc/php/7.3/fpm/pool.d/www.conf; \
     fi;
 # Apache: FastCGI Module & PHP-FPM Configuration
 RUN a2enmod proxy_fcgi setenvif rewrite \

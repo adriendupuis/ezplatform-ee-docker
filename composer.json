@@ -19,6 +19,7 @@
     },
     "autoload": {
         "psr-4": {
+            "MultipleMemcachedBundle\\": "src/MultipleMemcachedBundle/",
             "AppBundle\\": "src/AppBundle/"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]

@@ -1,0 +1,14 @@
+services:
+    cache.multiple.memcached:
+        parent: cache.adapter.memcached
+        tags:
+            - name: cache.pool
+              clearer: cache.app_clearer
+              provider: cache.multiple_memcached_provider
+              namespace: '%cache_namespace%'
+
+    cache.multiple_memcached_provider:
+        class: \Memcached
+        factory: ['MultipleMemcachedBundle\Component\Cache\Adapter\MultipleMemcachedAdapter', 'createConnection']
+        arguments:
+            - '%cache_dsn%'
