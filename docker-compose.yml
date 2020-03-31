@@ -1,0 +1,42 @@
+version: '3'
+
+# https://doc.ezplatform.com/en/2.5/getting_started/requirements/
+
+services:
+
+  varnish:
+    build: ./docker/varnish
+    depends_on:
+      - apache
+    ports:
+      - 8080:80
+
+  apache:
+    build: ./docker/apache
+    depends_on:
+      - redis
+      - mariadb
+      #- solr
+    ports:
+      - 8000:80
+    volumes:
+      - .:/var/www/ez
+
+  redis:
+    image: redis:3.2
+
+  mariadb:
+    image: mariadb:10.1
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  solr:
+    build:
+      context: .
+      dockerfile: ./docker/solr/Dockerfile
+    command:
+      - solr-precreate
+      - collection1
+      - /opt/solr/server/solr/configsets/ezplatform
+    ports:
+      - 8983:8983
