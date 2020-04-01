@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# Stop on error
+# Stop on Error
 #set -e;
 
-# eZ Platform logs removal
+# eZ Platform Logs Removal
 rm -f var/logs/*.log;
 
 # Docker Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
@@ -40,7 +40,7 @@ docker-compose exec --user www-data apache composer install --no-interaction;
 docker-compose up --build --detach solr;
 
 # Apache: eZ Platform Install (needs Solr)
-docker-compose exec --user www-data apache rm -rf web/var/*;
+docker-compose exec --user www-data apache rm -rf web/var/*; # Clean web/var/ as the DB was reset.
 docker-compose exec --user www-data apache composer ezplatform-install;
 
 # Logs Follow-up
