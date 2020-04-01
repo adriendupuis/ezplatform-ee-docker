@@ -5,6 +5,7 @@ LABEL description="Debian “Buster” 10 with Apache 2, Cron, PHP-FPM (7.3 by d
 
 ARG symfony_env=dev
 ENV SYMFONY_ENV=$symfony_env
+ENV APP_ENV=$symfony_env
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -qq update \

@@ -20,8 +20,8 @@ done;
 echo "MariaDB version: $MARIADB_VERSION";
 
 # Apache: Symfony parameters.yml
-cp docker/apache/parameters.yml app/config/parameters.yml;
-sed -i '' -e "s/MARIADB_VERSION/$MARIADB_VERSION/" app/config/parameters.yml;
+cp docker/apache/parameters.yaml config/parameters.yaml;
+sed -i '' -e "s/MARIADB_VERSION/$MARIADB_VERSION/" config/parameters.yaml;
 
 # Apache: Composer Authentication
 if [ ! -f auth.json ]; then
@@ -34,8 +34,10 @@ fi;
 docker-compose exec --user www-data apache composer config --global process-timeout 0;
 
 # Apache: Composer Install
+docker-compose exec --user www-data apache touch .env;
 docker-compose exec --user www-data apache composer install --no-interaction;
-
+docker-compose exec --user www-data apache rm -f .env;
+exit 6;
 # Solr: Docker Container Build (needs vendor/ezsystems/ezplatform-solr-search-engine/)
 docker-compose up --build --detach solr;
 

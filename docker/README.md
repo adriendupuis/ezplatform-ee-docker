@@ -109,6 +109,7 @@ URLs and Command Lines
 TODO
 ----
 
+* **[Use .env instead of parameters.yaml](https://symfony.com/doc/current/best_practices.html#use-environment-variables-for-infrastructure-configuration)**
 * Add [DFS](https://doc.ezplatform.com/en/master/guide/clustering/#dfs-io-handler)
 * Ensure compatibility with other unixoides than Mac OS X. For example, `sed -i ''` is specific to Mac OS X and a solution could be https://formulae.brew.sh/formula/gnu-sed
 * Maybe:
