@@ -102,7 +102,7 @@ URLs and Command Lines
   - Open a shell into container: `docker-compose exec redis bash;`
 * MariaDB
   - Get MariaDB version: `docker-compose exec mariadb mysql --password=root --batch --skip-column-names --execute="SELECT VERSION();";`
-    - Get detailed verson: `docker-compose exec mariadb mysqladmin --password=root version;`
+    - Get detailed version: `docker-compose exec mariadb mysqladmin --password=root version;`
   - Open command-line client: `docker-compose exec mariadb mysql -proot ezplatform;`
   - Ping MariaDB server: `docker-compose exec mariadb mysqladmin -proot ping;`
   - Get MariaDB status: `docker-compose exec mariadb mysqladmin -proot status;`
