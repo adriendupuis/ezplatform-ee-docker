@@ -3,8 +3,8 @@
 # Stop on error
 #set -e;
 
-# eZ Platform logs removal
-rm -f var/logs/*.log;
+# eZ Platform cache and logs removal
+rm -rf var/cache/dev/ var/logs/*.log;
 
 # Docker Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
 docker-compose up --build --detach varnish apache redis mariadb;
@@ -19,9 +19,8 @@ while [ -n "`echo $MARIADB_VERSION | grep 'ERROR';`" ]; do
 done;
 echo "MariaDB version: $MARIADB_VERSION";
 
-# Apache: Symfony parameters.yml
-cp docker/apache/parameters.yaml config/parameters.yaml;
-sed -i '' -e "s/MARIADB_VERSION/$MARIADB_VERSION/" config/parameters.yaml;
+# Apache: Doctrine Configuration
+sed -i '' -e "s/server_version: .*$/server_version: mariadb-$MARIADB_VERSION/" config/packages/doctrine.yaml;
 
 # Apache: Composer Authentication
 if [ ! -f auth.json ]; then
@@ -34,10 +33,8 @@ fi;
 docker-compose exec --user www-data apache composer config --global process-timeout 0;
 
 # Apache: Composer Install
-docker-compose exec --user www-data apache touch .env;
 docker-compose exec --user www-data apache composer install --no-interaction;
-docker-compose exec --user www-data apache rm -f .env;
-exit 6;
+
 # Solr: Docker Container Build (needs vendor/ezsystems/ezplatform-solr-search-engine/)
 docker-compose up --build --detach solr;
 
