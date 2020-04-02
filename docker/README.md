@@ -100,10 +100,13 @@ URLs and Command Lines
   - Delete all keys: `docker-compose exec redis redis-cli FLUSHALL;`
   - Open Redis CLI: `docker-compose exec redis redis-cli;`
   - Open a shell into container: `docker-compose exec redis bash;`
-* TODO: Solr
+* MariaDB
+  - Get MariaDB version: `docker-compose exec mariadb mysql --password=root --batch --skip-column-names --execute="SELECT VERSION();";`
+  - Open command-line client: `docker-compose exec mariadb mysql -proot;`
+* Solr
   - Get Solr version: `docker-compose exec solr bin/solr version;`
   - Follow Solr logs: `docker-compose logs --follow solr;`
-* TODO: Apache/eZ → Solr
+* Apache/eZ → Solr
   - (Re)Index: `docker-compose exec --user www-data apache php bin/console ezplatform:reindex;`
 
 TODO
