@@ -66,7 +66,7 @@ URLs and Command Lines
 * eZ Platform
   - Get Composer version: `docker-compose exec apache composer --version;`
   - See a bundle info: `docker-compose exec apache composer show vendor-name/bundle-name;`
-    - See eZ Kernel bundle info: `docker-compose exec apache composer show ezsystems/ezpublish-kernel;`
+    - See eZ Kernel bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-kernel;`
     - See eZ Symfony Tools info: `docker-compose exec apache composer show ezsystems/symfony-tools;`
     - See eZ HTTP Cache bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-http-cache;`
     - See eZ Solr SE bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-solr-search-engine;`
