@@ -23,10 +23,10 @@ services:
       - .:/var/www/ez
 
   redis:
-    image: redis:3.2
+    image: redis
 
   mariadb:
-    image: mariadb:10.1
+    image: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: root
 
