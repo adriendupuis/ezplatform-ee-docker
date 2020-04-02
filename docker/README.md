@@ -102,9 +102,15 @@ URLs and Command Lines
   - Open a shell into container: `docker-compose exec redis bash;`
 * MariaDB
   - Get MariaDB version: `docker-compose exec mariadb mysql --password=root --batch --skip-column-names --execute="SELECT VERSION();";`
-  - Open command-line client: `docker-compose exec mariadb mysql -proot;`
+    - Get detailed verson: `docker-compose exec mariadb mysqladmin --password=root version;`
+  - Open command-line client: `docker-compose exec mariadb mysql -proot ezplatform;`
+  - Ping MariaDB server: `docker-compose exec mariadb mysqladmin -proot ping;`
+  - Get MariaDB status: `docker-compose exec mariadb mysqladmin -proot status;`
+    - Get extended status: `docker-compose exec mariadb mysqladmin -proot extended-status;`
+  - Show process list: `docker-compose exec mariadb mysqladmin --password=root processlist --verbose;`
 * Solr
   - Get Solr version: `docker-compose exec solr bin/solr version;`
+  - Get Solr status: `docker-compose exec solr bin/solr status;`
   - Follow Solr logs: `docker-compose logs --follow solr;`
 * Apache/eZ → Solr
   - (Re)Index: `docker-compose exec --user www-data apache php bin/console ezplatform:reindex;`
