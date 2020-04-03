@@ -39,7 +39,7 @@ docker-compose exec --user www-data apache composer install --no-interaction;
 docker-compose up --build --detach solr;
 
 # Apache: eZ Platform Install (needs Solr)
-docker-compose exec --user www-data apache rm -rf web/var/*; # Clean web/var/ as the DB was reset.
+docker-compose exec --user www-data apache rm -rf public/var/*; # Clean public/var/*/storage/ as the DB is reset.
 docker-compose exec --user www-data apache composer ezplatform-install;
 
 # Logs Follow-up
