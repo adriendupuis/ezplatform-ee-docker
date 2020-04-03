@@ -10,14 +10,14 @@ Use a Docker containers cluster to have a [typical architecture for eZ Platform]
   - Apache 2.4
   - PHP 7.3
   - [PHP FastCGI Process Manager](https://www.php.net/manual/install.fpm.php) (PHP-FPM) with [Unix domain socket](https://en.wikipedia.org/wiki/Unix_domain_socket) (UDS)
-  - [eZ Platform Enterprise Edition](https://ez.no/Products/eZ-Platform-Enterprise-Edition) 2.5
+  - [eZ Platform Enterprise Edition](https://ez.no/Products/eZ-Platform-Enterprise-Edition) 3.0
 * Reverse Proxy Cache Server:
-  - Varnish 2.4
+  - Varnish 6.0
   - Varnish Modules 0.15
 * [Persistence Cache](https://doc.ezplatform.com/en/2.5/guide/persistence_cache/) and [Session Handling](https://doc.ezplatform.com/en/2.5/guide/sessions/) Servers:
   - Redis 3.2
 * DataBase Server:
-  - MariaDB 10.1
+  - MariaDB 10.4
 * Search Engine:
   - Solr 6.6
 
@@ -30,7 +30,7 @@ Quick Start
 About
 -----
 
-* Follow [eZ Platform 2.5 Requirements](https://doc.ezplatform.com/en/2.5/getting_started/requirements/) as much as possible.
+* Follow [eZ Platform 3.0 Requirements](https://doc.ezplatform.com/en/3.0/getting_started/requirements/) as much as possible.
 * Add as less configuration as possible to [original distribution](https://github.com/ezsystems/ezplatform-ee/tree/v2.5.9).
 
 URLs and Command Lines
@@ -118,7 +118,7 @@ URLs and Command Lines
 TODO
 ----
 
-* Add [DFS](https://doc.ezplatform.com/en/master/guide/clustering/#dfs-io-handler)
+* Add [DFS](https://doc.ezplatform.com/en/3.0/guide/clustering/#dfs-io-handler)
 * Ensure compatibility with other unixoides than Mac OS X. For example, `sed -i ''` is specific to Mac OS X and a solution could be https://formulae.brew.sh/formula/gnu-sed
 * Maybe:
   - Build Solr at the same time than other containers and uncomment that apache depends on solr
