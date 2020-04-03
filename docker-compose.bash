@@ -3,8 +3,8 @@
 # Stop on Error
 #set -e;
 
-# eZ Platform Logs Removal
-rm -f var/logs/*.log;
+# eZ Platform Cache and Logs Removal
+rm -rf var/cache/dev/ var/logs/*.log;
 
 # Docker Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
 docker-compose up --build --detach varnish apache redis mariadb;
