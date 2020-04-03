@@ -12,7 +12,7 @@ Use a Docker containers cluster to have a [typical architecture for eZ Platform]
   - [PHP FastCGI Process Manager](https://www.php.net/manual/install.fpm.php) (PHP-FPM) with [Unix domain socket](https://en.wikipedia.org/wiki/Unix_domain_socket) (UDS)
   - [eZ Platform Enterprise Edition](https://ez.no/Products/eZ-Platform-Enterprise-Edition) 2.5
 * Reverse Proxy Cache Server:
-  - Varnish 2.4
+  - Varnish 6.0
   - Varnish Modules 0.15
 * [Persistence Cache](https://doc.ezplatform.com/en/2.5/guide/persistence_cache/) and [Session Handling](https://doc.ezplatform.com/en/2.5/guide/sessions/) Servers:
   - Redis 3.2
