@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-# Stop on Error
+# Debug: Stop on Error
 #set -e;
+# Debug: Display Command Line
+#set -x;
 
 # Git: Untracked Files Removal
 #git clean -df;
