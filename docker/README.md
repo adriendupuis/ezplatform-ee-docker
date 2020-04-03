@@ -63,7 +63,7 @@ URLs and Command Lines
   - Check PHP-FPM status: `docker-compose exec apache service php7.3-fpm status;`
   - Follow PHP-FPM log: `docker-compose exec apache tail -f /var/log/php7.3-fpm.log;`
   - Follow eZ Platform log: `docker-compose exec apache tail -f var/logs/dev.log;`
-* eZ Platform
+* Symfony & eZ Platform
   - Get Composer version: `docker-compose exec apache composer --version;`
   - See a bundle info: `docker-compose exec apache composer show vendor-name/bundle-name;`
     - See eZ Kernel bundle info: `docker-compose exec apache composer show ezsystems/ezpublish-kernel;`
