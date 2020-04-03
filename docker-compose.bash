@@ -3,10 +3,13 @@
 # Stop on Error
 #set -e;
 
-# eZ Platform Cache and Logs Removal
+# Git: Untracked Files Removal
+#git clean -df;
+
+# eZ Platform: Cache and Logs Removal
 rm -rf var/cache/dev/ var/logs/*.log;
 
-# Docker Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
+# Docker: Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
 docker-compose up --build --detach varnish apache redis mariadb;
 
 # MariaDB: Server Wait & Version Fetch
