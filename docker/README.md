@@ -119,6 +119,7 @@ TODO
 ----
 
 * Add [DFS](https://doc.ezplatform.com/en/3.0/guide/clustering/#dfs-io-handler)
+* Facilitate switch between eZ Platform EE v2.5 and eZ Platform v3.0
 * Ensure compatibility with other unixoides than Mac OS X. For example, `sed -i ''` is specific to Mac OS X and a solution could be https://formulae.brew.sh/formula/gnu-sed
 * Maybe:
   - Build Solr at the same time than other containers and uncomment that apache depends on solr
