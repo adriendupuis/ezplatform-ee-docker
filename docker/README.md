@@ -19,7 +19,7 @@ Use a Docker containers cluster to have a [typical architecture for eZ Platform]
 * DataBase Server:
   - MariaDB 10.4
 * Search Engine:
-  - Solr 6.6
+  - Solr 7.7
 
 Quick Start
 -----------
