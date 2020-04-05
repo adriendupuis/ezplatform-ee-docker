@@ -65,6 +65,7 @@ class AppKernel extends Kernel
             new EzSystems\EzPlatformEnterpriseEditionInstallerBundle\EzPlatformEnterpriseEditionInstallerBundle(),
             new EzSystems\EzPlatformWorkflowBundle\EzPlatformWorkflowBundle(),
             // Application
+            new MultipleMemcachedBundle\MultipleMemcachedBundle(),
             new AppBundle\AppBundle(),
         ];
 

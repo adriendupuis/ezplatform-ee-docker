@@ -4,7 +4,7 @@
 set -e;
 
 # Persistence Cache and Session Handler
-CACHE_AND_SESSION_HANDLER=tagaware.filesystem
+CACHE_AND_SESSION_HANDLER=memcached
 
 while (( "$#" )); do
   case "$1" in
@@ -56,8 +56,8 @@ if [[ 'redis' == "$CACHE_AND_SESSION_HANDLER" ]]; then
   sed -i '' -e "s/CACHE_AND_SESSION_PORT/6379/" app/config/parameters.yml;
   UNUSED_CONTAINER_LIST="memcached";
 elif [[ 'memcached' == "$CACHE_AND_SESSION_HANDLER" ]]; then
-  sed -i '' -e "s/CACHE_AND_SESSION_HOST/memcached/" app/config/parameters.yml;
-  sed -i '' -e "s/CACHE_AND_SESSION_PORT/11211/" app/config/parameters.yml;
+#  sed -i '' -e "s/CACHE_AND_SESSION_HOST/memcached/" app/config/parameters.yml;
+#  sed -i '' -e "s/CACHE_AND_SESSION_PORT/11211/" app/config/parameters.yml;
   UNUSED_CONTAINER_LIST="redis";
 else # tagaware.filesystem
     sed -i '' -e "s/imports://" app/config/parameters.yml;
