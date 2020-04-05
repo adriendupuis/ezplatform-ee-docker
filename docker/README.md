@@ -6,9 +6,9 @@ Introduction
 
 Use a Docker containers cluster to have a [typical architecture for eZ Platform](https://doc.ezplatform.com/en/2.5/guide/clustering/) including the following elements.
 * HTTP Server:
-  - Debian 10
+  - Debian “Buster” 10
   - Apache 2.4
-  - PHP 7.3
+  - PHP 7.3 ([by default](https://packages.debian.org/buster/php/php))
   - [PHP FastCGI Process Manager](https://www.php.net/manual/install.fpm.php) (PHP-FPM) with [Unix domain socket](https://en.wikipedia.org/wiki/Unix_domain_socket) (UDS)
   - [eZ Platform Enterprise Edition](https://ez.no/Products/eZ-Platform-Enterprise-Edition) 2.5
 * Reverse Proxy Cache Server:
