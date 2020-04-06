@@ -4,7 +4,7 @@ Docker Container Cluster
 Introduction
 ------------
 
-Use a Docker containers cluster to have a [typical architecture for eZ Platform](https://doc.ezplatform.com/en/2.5/guide/clustering/) including the following elements.
+Use a Docker containers cluster to have a [typical architecture for eZ Platform](https://doc.ezplatform.com/en/3.0/guide/clustering/) including the following elements.
 * HTTP Server:
   - Debian 10
   - Apache 2.4
@@ -14,7 +14,7 @@ Use a Docker containers cluster to have a [typical architecture for eZ Platform]
 * Reverse Proxy Cache Server:
   - Varnish 6.0
   - Varnish Modules 0.15
-* [Persistence Cache](https://doc.ezplatform.com/en/2.5/guide/persistence_cache/) and [Session Handling](https://doc.ezplatform.com/en/2.5/guide/sessions/) Servers:
+* [Persistence Cache](https://doc.ezplatform.com/en/3.0/guide/persistence_cache/) and [Session Handling](https://doc.ezplatform.com/en/3.0/guide/sessions/) Servers:
   - Redis 3.2
 * DataBase Server:
   - MariaDB 10.4
