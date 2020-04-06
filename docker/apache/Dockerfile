@@ -42,7 +42,7 @@ RUN pecl install xdebug \
     && ln -s /etc/php/7.3/mods-available/xdebug.ini /etc/php/7.3/cli/conf.d/00-xdebug.ini \
     && ln -s /etc/php/7.3/mods-available/xdebug.ini /etc/php/7.3/fpm/conf.d/00-xdebug.ini
 
-# PHP-FPM: Config
+# PHP-FPM: Configuration
 RUN sed -i "s/max_execution_time = 30/max_execution_time = 120/" /etc/php/7.3/fpm/php.ini
 RUN sed -i "s/pm.max_children = 5/pm.max_children = 20/" /etc/php/7.3/fpm/pool.d/www.conf
 # PHP-FPM: UDS Directory & Log Creation
