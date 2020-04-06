@@ -50,8 +50,7 @@ RUN mkdir /run/php && touch /var/log/php7.3-fpm.log
 # PHP-FPM: Redis as session handler
 RUN echo "\n; Redis as session handler\nphp_value[session.save_handler] = redis\nphp_value[session.save_path] = \"tcp://redis:6379\"" >> /etc/php/7.3/fpm/pool.d/www.conf
 # Apache: FastCGI Module & PHP-FPM Configuration
-RUN a2enmod proxy_fcgi setenvif rewrite \
-    && a2enconf php7.3-fpm
+RUN a2enmod proxy_fcgi && a2enconf php7.3-fpm
 
 # Apache: Virtual Host Modules
 RUN a2enmod rewrite setenvif
