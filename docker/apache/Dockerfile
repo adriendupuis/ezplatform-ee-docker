@@ -1,7 +1,7 @@
 FROM debian:10
 
 LABEL maintainer="adrien.dupuis@ez.no"
-LABEL description="Debian “Buster” 10 with Apache 2, Cron, PHP-FPM (7.3 by default, Redis as session handler, Xdebug), Composer and Yarn for eZ Platform usage"
+LABEL description="Debian “Buster” 10 with Apache 2.4, Cron, PHP-FPM (PHP 7.3, Redis as session handler, Xdebug), Composer and Yarn for eZ Platform usage"
 
 ARG symfony_env=dev
 ENV SYMFONY_ENV=$symfony_env
@@ -43,7 +43,7 @@ RUN pecl install xdebug \
     && ln -s /etc/php/7.3/mods-available/xdebug.ini /etc/php/7.3/cli/conf.d/00-xdebug.ini \
     && ln -s /etc/php/7.3/mods-available/xdebug.ini /etc/php/7.3/fpm/conf.d/00-xdebug.ini
 
-# PHP-FPM: Config
+# PHP-FPM: Configuration
 RUN sed -i "s/max_execution_time = 30/max_execution_time = 120/" /etc/php/7.3/fpm/php.ini
 RUN sed -i "s/pm.max_children = 5/pm.max_children = 20/" /etc/php/7.3/fpm/pool.d/www.conf
 # PHP-FPM: UDS Directory & Log Creation
