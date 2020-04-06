@@ -51,8 +51,7 @@ RUN mkdir /run/php && touch /var/log/php7.3-fpm.log
 # PHP-FPM: Redis as session handler
 RUN echo "\n; Redis as session handler\nphp_value[session.save_handler] = redis\nphp_value[session.save_path] = \"tcp://redis:6379\"" >> /etc/php/7.3/fpm/pool.d/www.conf
 # Apache: FastCGI Module & PHP-FPM Configuration
-RUN a2enmod proxy_fcgi setenvif rewrite \
-    && a2enconf php7.3-fpm
+RUN a2enmod proxy_fcgi && a2enconf php7.3-fpm
 
 # Apache: Virtual Host Modules
 RUN a2enmod rewrite setenvif
@@ -85,7 +84,7 @@ CMD service cron restart && /usr/sbin/apache2ctl restart && /etc/init.d/php7.3-f
     # Send several log followings to output for `docker(-compose) logs` command
     && tail \
         -F /var/log/apache2/error.log \
-        -F /var/log/apache2/access.log \
+        -F /var/log/apache2/other_vhosts_access.log \
         -F /var/log/php7.3-fpm.log \
         -F /var/www/ez/var/logs/dev.log \
     ;

@@ -6,9 +6,9 @@ Introduction
 
 Use a Docker containers cluster to have a [typical architecture for eZ Platform](https://doc.ezplatform.com/en/3.0/guide/clustering/) including the following elements.
 * HTTP Server:
-  - Debian 10
+  - Debian “Buster” 10
   - Apache 2.4
-  - PHP 7.3
+  - PHP 7.3 ([by default](https://packages.debian.org/buster/php/php))
   - [PHP FastCGI Process Manager](https://www.php.net/manual/install.fpm.php) (PHP-FPM) with [Unix domain socket](https://en.wikipedia.org/wiki/Unix_domain_socket) (UDS)
   - [eZ Platform Enterprise Edition](https://ez.no/Products/eZ-Platform-Enterprise-Edition) 3.0
 * Reverse Proxy Cache Server:
@@ -65,6 +65,8 @@ URLs and Command Lines
   - Follow eZ Platform log: `docker-compose exec apache tail -f var/logs/dev.log;`
 * Symfony & eZ Platform
   - Get Composer version: `docker-compose exec apache composer --version;`
+  - Get Yarn version: `docker-compose exec apache yarn --version;`
+  - Get Symfony version: `docker-compose exec apache php bin/console --version;`
   - See a bundle info: `docker-compose exec apache composer show vendor-name/bundle-name;`
     - See eZ Kernel bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-kernel;`
     - See eZ Symfony Tools info: `docker-compose exec apache composer show ezsystems/symfony-tools;`
