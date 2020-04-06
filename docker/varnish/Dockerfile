@@ -17,6 +17,6 @@ RUN apt-get update && apt-get install -y make pkg-config varnish-dev wget \
     && rm -r varnish-modules-${VMODS_VERSION}.tar.gz varnish-modules-${VMODS_VERSION}
 
 # VCL
-RUN wget --no-verbose https://raw.githubusercontent.com/ezsystems/ezplatform-http-cache/1.0/docs/varnish/vcl/varnish5.vcl --output-document=default.vcl
+RUN wget --no-verbose https://raw.githubusercontent.com/ezsystems/ezplatform-http-cache/v2.0.0/docs/varnish/vcl/varnish5.vcl --output-document=default.vcl
 COPY parameters.vcl parameters.vcl
 RUN sed -i 's/X-Forwarded-Port = "80"/X-Forwarded-Port = "8080"/' default.vcl
