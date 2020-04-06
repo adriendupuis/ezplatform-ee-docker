@@ -65,6 +65,8 @@ URLs and Command Lines
   - Follow eZ Platform log: `docker-compose exec apache tail -f var/logs/dev.log;`
 * Symfony & eZ Platform
   - Get Composer version: `docker-compose exec apache composer --version;`
+  - Get Yarn version: `docker-compose exec apache yarn --version;`
+  - Get Symfony version: `docker-compose exec apache php bin/console --version;`
   - See a bundle info: `docker-compose exec apache composer show vendor-name/bundle-name;`
     - See eZ Kernel bundle info: `docker-compose exec apache composer show ezsystems/ezpublish-kernel;`
     - See eZ Symfony Tools info: `docker-compose exec apache composer show ezsystems/symfony-tools;`
