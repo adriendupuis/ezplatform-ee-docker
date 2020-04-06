@@ -84,7 +84,7 @@ CMD service cron restart && /usr/sbin/apache2ctl restart && /etc/init.d/php7.3-f
     # Send several log followings to output for `docker(-compose) logs` command
     && tail \
         -F /var/log/apache2/error.log \
-        -F /var/log/apache2/access.log \
+        -F /var/log/apache2/other_vhosts_access.log \
         -F /var/log/php7.3-fpm.log \
         -F /var/www/ez/var/logs/dev.log \
     ;
