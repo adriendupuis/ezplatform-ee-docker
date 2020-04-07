@@ -40,6 +40,7 @@ fi;
 docker-compose exec --user www-data apache composer config --global process-timeout 0;
 
 # Apache: Composer Install
+docker-compose exec apache find bin/ -type l -exec unlink {} \; ; # Remove bin/ symlinks
 docker-compose exec --user www-data apache composer install --no-interaction;
 
 # Solr: Docker Container Build (needs vendor/ezsystems/ezplatform-solr-search-engine/)
