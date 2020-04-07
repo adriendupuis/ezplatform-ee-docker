@@ -51,9 +51,10 @@ URLs and Command Lines
   - Follow several logs from the cluster: `docker-compose logs -f;`
   - Follow containers stats: `docker stats;`
 * Apache & Cron
-  - Check Apache status: `docker-compose exec apache service apache2 status;`
+  - Get OS release: `docker-compose exec apache cat /etc/os-release;`
   - Get Apache version: `docker-compose exec apache apache2ctl -v;`
   - Get Apache modules: `docker-compose exec apache apache2ctl -M;`
+  - Check Apache status: `docker-compose exec apache service apache2 status;`
   - Follow Apache error.log: `docker-compose exec apache tail -f /var/log/apache2/error.log;`
   - Check Cron status: `docker-compose exec apache service cron status;`
   - Get Crontab content: `docker-compose exec apache crontab -u www-data -l;`
@@ -76,6 +77,7 @@ URLs and Command Lines
   - Open a shell into container as root: `docker-compose exec apache bash;`
   - Open a shell into container as www-data: `docker-compose exec --user www-data apache bash;`
 * Varnish
+  - Get OS release: `docker-compose exec varnish cat /etc/os-release;`
   - Get Varnish version: `docker-compose exec varnish varnishd -V;`
   - Follow [Varnish logs](https://varnish-cache.org/docs/6.0/reference/varnishlog.html): `docker-compose exec varnish varnishlog;`
     - Follow requests for an URL: `docker-compose exec varnish varnishlog -q 'ReqURL eq "/the/url/to/follow"';`
@@ -95,6 +97,7 @@ URLs and Command Lines
       - `pl`: ***p***arent ***l***ocation id
       - `ct`: ***c***ontent ***t***ype id 
 * Redis
+  - Get OS release: `docker-compose exec redis cat /etc/os-release;`
   - Get server info: `docker-compose exec redis redis-cli INFO Server;`
   - Get all info: `docker-compose exec redis redis-cli INFO;`
   - Follow stats: `docker-compose exec redis redis-cli --stat;`
@@ -103,6 +106,7 @@ URLs and Command Lines
   - Open Redis CLI: `docker-compose exec redis redis-cli;`
   - Open a shell into container: `docker-compose exec redis bash;`
 * MariaDB
+  - Get OS release: `docker-compose exec mariadb cat /etc/os-release;`
   - Get MariaDB version: `docker-compose exec mariadb mysql --password=root --batch --skip-column-names --execute="SELECT VERSION();";`
     - Get detailed version: `docker-compose exec mariadb mysqladmin --password=root version;`
   - Open command-line client: `docker-compose exec mariadb mysql -proot ezplatform;`
@@ -111,6 +115,7 @@ URLs and Command Lines
     - Get extended status: `docker-compose exec mariadb mysqladmin -proot extended-status;`
   - Show process list: `docker-compose exec mariadb mysqladmin --password=root processlist --verbose;`
 * Solr
+  - Get Solr release: `docker-compose exec solr cat /etc/os-release;`
   - Get Solr version: `docker-compose exec solr bin/solr version;`
   - Get Solr status: `docker-compose exec solr bin/solr status;`
   - Follow Solr logs: `docker-compose logs --follow solr;`
