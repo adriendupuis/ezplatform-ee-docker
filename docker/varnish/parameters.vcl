@@ -7,7 +7,7 @@
 backend ezplatform {
     .host = "apache";
     .port = "80";
-    .first_byte_timeout = "369s";
+    .first_byte_timeout = 369s;
 }
 
 // ACL for invalidators IP
