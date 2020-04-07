@@ -42,7 +42,9 @@ docker-compose exec --user www-data apache composer config --global process-time
 docker-compose exec --user www-data apache composer install --no-interaction;
 
 # Solr: Docker Container Build (needs vendor/ezsystems/ezplatform-solr-search-engine/)
+cp -r ./vendor/ezsystems/ezplatform-solr-search-engine/lib/Resources/config/solr ./docker/solr/conf;
 docker-compose up --build --detach solr;
+rm -rf ./docker/solr/conf;
 
 # Apache: eZ Platform Install (needs Solr)
 docker-compose exec --user www-data apache rm -rf public/var/*; # Clean public/var/*/storage/ as the DB is reset.

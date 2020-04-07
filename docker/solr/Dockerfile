@@ -9,4 +9,4 @@ RUN cp -r /opt/solr/server/solr/configsets/_default /opt/solr/server/solr/config
     && rm /opt/solr/server/solr/configsets/ezplatform/conf/managed-schema
 
 # This means that `composer install` must have been executed earlier
-COPY --chown=solr:solr vendor/ezsystems/ezplatform-solr-search-engine/lib/Resources/config/solr /opt/solr/server/solr/configsets/ezplatform/conf
+COPY --chown=solr:solr conf /opt/solr/server/solr/configsets/ezplatform/conf

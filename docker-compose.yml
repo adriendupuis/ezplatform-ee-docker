@@ -31,9 +31,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
 
   solr:
-    build:
-      context: .
-      dockerfile: ./docker/solr/Dockerfile
+    build: ./docker/solr
     command:
       - solr-precreate
       - collection1
