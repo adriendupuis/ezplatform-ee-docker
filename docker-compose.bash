@@ -39,7 +39,7 @@ fi;
 docker-compose exec --user www-data apache composer config --global process-timeout 0;
 
 # Apache: Composer Install
-docker-compose exec apache find bin/ -type l -exec unlink {} \; ; # Remove bin/ symlinks
+find bin/ -type l -exec unlink {} \; ; # Remove bin/ symlinks
 rm -f var/encore/*config*.js; # Remove Webpack Encore generated config files
 docker-compose exec --user www-data apache composer install --no-interaction;
 
