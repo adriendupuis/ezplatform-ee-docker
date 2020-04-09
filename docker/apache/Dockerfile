@@ -92,5 +92,7 @@ CMD service cron restart && /usr/sbin/apache2ctl restart && /etc/init.d/php7.3-f
         -F /var/log/apache2/error.log \
         -F /var/log/apache2/other_vhosts_access.log \
         -F /var/log/php7.3-fpm.log \
+        -F /var/log/php7.3-fpm.www.error.log \
+        -F /var/log/php7.3-fpm.www.access.log \
         -F /var/www/ez/var/logs/dev.log \
     ;
