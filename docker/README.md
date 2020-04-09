@@ -83,14 +83,17 @@ URLs and Command Lines
     - Follow requests for an URL: `docker-compose exec varnish varnishlog -q 'ReqURL eq "/the/url/to/follow"';`
     - Follow PURGE requests: `docker-compose exec varnish varnishlog -q 'ReqMethod eq PURGE';`
   - Follow [Varnish cache statistics](https://varnish-cache.org/docs/6.0/reference/varnishstat.html): `docker-compose exec varnish varnishstat;`
+  - Restart Varnish (remove all cache): `docker-compose restart varnish;`
   - [Bans](https://varnish-cache.org/docs/trunk/users-guide/purging.html#bans)
-    - Ban an URL: `docker-compose exec varnish varnishadm ban req.url '~' '/the/url/to/ban';`
+    - Ban an URL: `docker-compose exec varnish varnishadm ban req.url '==' '/the/url/to/ban';`
+    - Ban built CSS and JS: `docker-compose exec varnish varnishadm ban req.url '~' '^/assets/.*\\.(cs|j)s$';`
     - Get the ban list: `docker-compose exec varnish varnishadm ban.list;`
   - Open a shell into container: `docker-compose exec varnish bash;`
 * Apache → Varnish
+  - See [`render_esi` `esi:include` tags](https://symfony.com/doc/3.4/http_cache/esi.html): `curl --silent --header "Surrogate-Capability: abc=ESI/1.0" http://localhost:8000/the/url/to/test | grep esi:include;`
   - Purge an URL: `docker-compose exec --user www-data apache curl -X PURGE -H 'Host: localhost:8080' http://varnish/the/url/to/purge;`
-  - Soft purge a content by ID: `docker-compose exec --user www-data apache curl -X PURGE -H 'Host: localhost:8080' -H 'key: cCONTENTID' http://varnish;`
-    - (x)key prefixes:
+  - Soft purge content(s) by ID: `docker-compose exec --user www-data apache curl -X PURGE -H 'Host: localhost:8080' -H 'key: <TYPE><ID>' http://varnish;`
+    - (x)key types:
       - `c`: ***c***ontent id
       - `l`: ***l***ocation id
       - `p`: (***p***ath) ancestor location id

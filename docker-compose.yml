@@ -20,7 +20,7 @@ services:
     ports:
       - 8000:80
     volumes:
-      - .:/var/www/ez
+      - .:/var/www/ez:cached
 
   redis:
     image: redis:3.2
