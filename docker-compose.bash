@@ -40,6 +40,7 @@ docker-compose exec --user www-data apache composer config --global process-time
 
 # Apache: Composer Install
 docker-compose exec apache find bin/ -type l -exec unlink {} \; ; # Remove bin/ symlinks
+rm -f var/encore/*config*.js; # Remove Webpack Encore generated config files
 docker-compose exec --user www-data apache composer install --no-interaction;
 
 # Solr: Docker Container Build (needs vendor/ezsystems/ezplatform-solr-search-engine/)
@@ -50,6 +51,7 @@ rm -rf ./docker/solr/conf;
 # Apache: eZ Platform Install (needs Solr)
 docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;";
 docker-compose exec --user www-data apache rm -rf public/var/*; # Clean public/var/*/storage/ as the DB is reset.
+docker-compose exec redis redis-cli FLUSHALL;
 docker-compose exec --user www-data apache composer ezplatform-install;
 
 # Logs Follow-up
