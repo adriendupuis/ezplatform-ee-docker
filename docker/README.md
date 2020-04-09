@@ -91,7 +91,7 @@ URLs and Command Lines
   - Open a shell into container: `docker-compose exec varnish bash;`
 * Apache → Varnish
   - See [`render_esi` `esi:include` tags](https://symfony.com/doc/3.4/http_cache/esi.html): `curl --silent --header "Surrogate-Capability: abc=ESI/1.0" http://localhost:8000/the/url/to/test | grep esi:include;`
-  - Purge an URL: `docker-compose exec --user www-data apache curl -X PURGE -H 'Host: localhost:8080' http://varnish/the/url/to/purge;`
+  - Purge an URL: `docker-compose exec --user www-data apache curl --request PURGE --header 'Host: localhost:8080' http://varnish/the/url/to/purge;`
   - Soft purge content(s) by ID: `docker-compose exec --user www-data apache curl -X PURGE -H 'Host: localhost:8080' -H 'key: <TYPE><ID>' http://varnish;`
     - (x)key types:
       - `c`: ***c***ontent id
