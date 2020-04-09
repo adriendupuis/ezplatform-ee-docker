@@ -44,7 +44,10 @@ RUN pecl install xdebug \
 
 # PHP-FPM: Configuration
 RUN sed -i "s/max_execution_time = 30/max_execution_time = 120/" /etc/php/7.3/fpm/php.ini
-RUN sed -i "s/pm.max_children = 5/pm.max_children = 20/" /etc/php/7.3/fpm/pool.d/www.conf
+RUN sed -i "s/pm.max_children = 5/pm.max_children = 20/" /etc/php/7.3/fpm/pool.d/www.conf \
+    && sed -i "s/;php_admin_value[error_log] = .*/php_admin_value[error_log] = \/var\/log\/php7.3-fpm.\$pool.error.log/" /etc/php/7.3/fpm/pool.d/www.conf \
+    && sed -i "s/;access\.log = .*/access.log = \/var\/log\/php7.3-fpm.\$pool.access.log/" /etc/php/7.3/fpm/pool.d/www.conf \
+    && sed -i "s/;access\./access./" /etc/php/7.3/fpm/pool.d/www.conf
 # PHP-FPM: UDS Directory & Log Creation
 RUN mkdir /run/php && touch /var/log/php7.3-fpm.log
 # PHP-FPM: Redis as session handler
