@@ -52,6 +52,10 @@ RUN echo "\n; Redis as session handler\nphp_value[session.save_handler] = redis\
 # Apache: FastCGI Module & PHP-FPM Configuration
 RUN a2enmod proxy_fcgi && a2enconf php7.3-fpm
 
+# Apache: Logs Conf
+COPY logs.conf /etc/apache2/conf-available/
+RUN a2enconf logs
+
 # Apache: Virtual Host Modules
 RUN a2enmod rewrite setenvif
 # Apache: Global ServerName (avoid AH00558)
