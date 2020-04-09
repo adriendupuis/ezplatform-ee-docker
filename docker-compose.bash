@@ -49,6 +49,7 @@ docker-compose up --build --detach solr;
 # Apache: eZ Platform Install (needs Solr)
 docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;";
 docker-compose exec --user www-data apache rm -rf web/var/*; # Clean web/var/*/storage/ as the DB is reset.
+docker-compose exec redis redis-cli FLUSHALL;
 docker-compose exec --user www-data apache composer ezplatform-install;
 
 # Logs Follow-up
