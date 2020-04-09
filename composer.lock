@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "997d703ef596d8a55bd4ccd020cfcb25",
+    "content-hash": "c4068dceee149061e0899f1d83240900",
     "packages": [
         {
             "name": "babdev/pagerfanta-bundle",
@@ -1444,26 +1444,27 @@
         },
         {
             "name": "ezsystems/date-based-publisher",
-            "version": "v4.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ezsystems/date-based-publisher.git",
-                "reference": "d1bb7d6f209ad2d3e0cf89bbd6f00f11d04a1df1"
+                "reference": "b1a02fed7a4b8068fdc7e81d46f695085486fcda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://updates.ez.no/ttl/dist/ezsystems/date-based-publisher/ezsystems-date-based-publisher-d1bb7d6f209ad2d3e0cf89bbd6f00f11d04a1df1-zip-eda6ef.zip",
-                "reference": "d1bb7d6f209ad2d3e0cf89bbd6f00f11d04a1df1"
+                "url": "https://api.github.com/repos/ezsystems/date-based-publisher/zipball/b1a02fed7a4b8068fdc7e81d46f695085486fcda",
+                "reference": "b1a02fed7a4b8068fdc7e81d46f695085486fcda",
+                "shasum": ""
             },
             "require": {
-                "ezsystems/ezplatform-admin-ui": "^2.0",
-                "ezsystems/ezplatform-calendar": "^1.0",
-                "ezsystems/ezplatform-content-forms": "^1.0",
-                "ezsystems/ezplatform-cron": "^3.0",
-                "ezsystems/ezplatform-kernel": "^1.0",
-                "ezsystems/ezplatform-page-builder": "^2.0",
-                "ezsystems/ezplatform-rest": "^1.0",
-                "ezsystems/ezplatform-workflow": "^2.0",
+                "ezsystems/ezplatform-admin-ui": "^2.0@dev",
+                "ezsystems/ezplatform-calendar": "^1.0@dev",
+                "ezsystems/ezplatform-content-forms": "^1.0@dev",
+                "ezsystems/ezplatform-cron": "^3.0@dev",
+                "ezsystems/ezplatform-kernel": "^1.0@dev",
+                "ezsystems/ezplatform-page-builder": "^2.0@dev",
+                "ezsystems/ezplatform-rest": "^1.0@dev",
+                "ezsystems/ezplatform-workflow": "^2.0@dev",
                 "knplabs/knp-menu": "^3.1",
                 "php": "^7.3",
                 "symfony/asset": "^5.0",
@@ -1480,14 +1481,14 @@
                 "symfony/yaml": "^5.0"
             },
             "require-dev": {
-                "ezsystems/doctrine-dbal-schema": "^1.0",
-                "ezsystems/ez-support-tools": "^2.0",
+                "ezsystems/doctrine-dbal-schema": "^1.0@dev",
+                "ezsystems/ez-support-tools": "^2.0@dev",
                 "ezsystems/ezplatform-code-style": "^0.1.0",
-                "ezsystems/ezplatform-design-engine": "^3.0",
-                "ezsystems/ezplatform-http-cache": "^2.0",
-                "ezsystems/ezplatform-page-fieldtype": "^2.0",
-                "ezsystems/ezplatform-richtext": "^2.0",
-                "ezsystems/ezplatform-user": "^2.0",
+                "ezsystems/ezplatform-design-engine": "^3.0@dev",
+                "ezsystems/ezplatform-http-cache": "^2.0@dev",
+                "ezsystems/ezplatform-page-fieldtype": "^2.0@dev",
+                "ezsystems/ezplatform-richtext": "^2.0@dev",
+                "ezsystems/ezplatform-user": "^2.0@dev",
                 "friendsofphp/php-cs-fixer": "^2.16.0"
             },
             "type": "ezstudio-bundle",
@@ -1520,10 +1521,10 @@
             ],
             "description": "Date-based Publisher bundle",
             "support": {
-                "source": "https://github.com/ezsystems/date-based-publisher/tree/v4.0.0",
+                "source": "https://github.com/ezsystems/date-based-publisher/tree/master",
                 "issues": "https://github.com/ezsystems/date-based-publisher/issues"
             },
-            "time": "2020-04-02T15:58:31+00:00"
+            "time": "2020-04-08T10:11:27+00:00"
         },
         {
             "name": "ezsystems/diff",
@@ -16924,6 +16925,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "ezsystems/date-based-publisher": 20,
         "friends-of-behat/symfony-extension": 10
     },
     "prefer-stable": false,
