@@ -1,5 +1,6 @@
 imports:
     - { resource: cache_pool/cache.redis.yml }
+    - { resource: views.yml }
 
 parameters:
     #TODO: May move all this to .env file or Dockerfile
