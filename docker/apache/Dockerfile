@@ -44,13 +44,20 @@ RUN pecl install xdebug \
 
 # PHP-FPM: Configuration
 RUN sed -i "s/max_execution_time = 30/max_execution_time = 120/" /etc/php/7.3/fpm/php.ini
-RUN sed -i "s/pm.max_children = 5/pm.max_children = 20/" /etc/php/7.3/fpm/pool.d/www.conf
+RUN sed -i "s/pm.max_children = 5/pm.max_children = 20/" /etc/php/7.3/fpm/pool.d/www.conf \
+    && sed -i "s/;php_admin_value[error_log] = .*/php_admin_value[error_log] = \/var\/log\/php7.3-fpm.\$pool.error.log/" /etc/php/7.3/fpm/pool.d/www.conf \
+    && sed -i "s/;access\.log = .*/access.log = \/var\/log\/php7.3-fpm.\$pool.access.log/" /etc/php/7.3/fpm/pool.d/www.conf \
+    && sed -i "s/;access\./access./" /etc/php/7.3/fpm/pool.d/www.conf
 # PHP-FPM: UDS Directory & Log Creation
 RUN mkdir /run/php && touch /var/log/php7.3-fpm.log
 # PHP-FPM: Redis as session handler
 RUN echo "\n; Redis as session handler\nphp_value[session.save_handler] = redis\nphp_value[session.save_path] = \"tcp://redis:6379\"" >> /etc/php/7.3/fpm/pool.d/www.conf
 # Apache: FastCGI Module & PHP-FPM Configuration
 RUN a2enmod proxy_fcgi && a2enconf php7.3-fpm
+
+# Apache: Logs Conf
+COPY logs.conf /etc/apache2/conf-available/
+RUN a2enconf logs
 
 # Apache: Virtual Host Modules
 RUN a2enmod rewrite setenvif
@@ -85,5 +92,7 @@ CMD service cron restart && /usr/sbin/apache2ctl restart && /etc/init.d/php7.3-f
         -F /var/log/apache2/error.log \
         -F /var/log/apache2/other_vhosts_access.log \
         -F /var/log/php7.3-fpm.log \
+        -F /var/log/php7.3-fpm.www.error.log \
+        -F /var/log/php7.3-fpm.www.access.log \
         -F /var/www/ez/var/logs/dev.log \
     ;
