@@ -6,7 +6,7 @@
 #set -x;
 
 # Git: Untracked Files Removal
-#git clean -df;
+git clean -df; # Help to switch between eZ Platform v2 and v3
 
 # eZ Platform: Cache and Logs Removal
 rm -rf var/cache/dev/ var/logs/*.log;
