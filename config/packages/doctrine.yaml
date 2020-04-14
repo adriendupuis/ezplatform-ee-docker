@@ -18,7 +18,7 @@ doctrine:
                     charset: '%database_charset%'
                     collate: '%database_collation%'
                 url: '%env(resolve:DATABASE_URL)%'
-                server_version: mariadb-10.4.12
+                server_version: mariadb-MARIADB_VERSION
 
             # This connection is dedicated for SiteFactory to avoid known issues, should be the same as default
             site_factory:
@@ -29,7 +29,7 @@ doctrine:
                     charset: '%database_charset%'
                     collate: '%database_collation%'
                 url: '%env(resolve:DATABASE_URL)%'
-                server_version: mariadb-10.4.12
+                server_version: mariadb-MARIADB_VERSION
 
 
     orm:
