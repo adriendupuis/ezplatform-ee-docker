@@ -6,7 +6,16 @@
 #set -x;
 
 # Git: Untracked Files Removal
-git clean -df; # Help to switch between eZ Platform v2 and v3
+#git clean -df;
+
+# Post-Version-Switch Cleaning
+EZ_VERSION="$(git describe --tags | cut -d '-' -f 1;)";
+echo "eZ Platform $EZ_VERSION";
+if [[ "$EZ_VERSION"  =~ '3.0' ]]; then
+  rm -rf app/ web/ var/logs/;
+elif [[ "$EZ_VERSION"  =~ '2.5' ]]; then
+  rm -rf .env config/ public/ var/log/;
+fi;
 
 # eZ Platform: Cache and Logs Removal
 rm -rf var/cache/dev/ var/logs/*.log;
