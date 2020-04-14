@@ -51,7 +51,7 @@ RUN sed -i "s/pm.max_children = 5/pm.max_children = 20/" /etc/php/7.3/fpm/pool.d
     && sed -i "s/;access\.log = .*/access.log = \/var\/log\/php7.3-fpm.\$pool.access.log/" /etc/php/7.3/fpm/pool.d/www.conf \
     && sed -i "s/;access\./access./" /etc/php/7.3/fpm/pool.d/www.conf
 # PHP-FPM: UDS Directory & Log Creation
-RUN mkdir /run/php && touch /var/log/php7.3-fpm.log
+RUN mkdir /run/php && touch /var/log/php7.3-fpm.log && touch /var/log/php7.3-fpm.www.error.log
 # PHP-FPM: Redis as session handler
 RUN echo "\n; Redis as session handler\nphp_value[session.save_handler] = redis\nphp_value[session.save_path] = \"tcp://redis:6379\"" >> /etc/php/7.3/fpm/pool.d/www.conf
 # Apache: FastCGI Module & PHP-FPM Configuration

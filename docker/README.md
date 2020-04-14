@@ -46,6 +46,10 @@ URLs and Command Lines
 * Solr Admin: http://localhost:8983/solr/#/collection1
 
 ### Usefull Commands
+* Docker
+  - Get Docker version: `docker --version;`
+  - Get Docker Compose version: `docker-compose --version;`
+  - Remove everything about containers: `docker rm --force --volumes $(docker ps --all --quiet) && docker system prune --force --all;`
 * Docker Containers Cluster
   - Get containers status: `docker-compose ps --all;`
   - Follow several logs from the cluster: `docker-compose logs -f;`
@@ -118,7 +122,7 @@ URLs and Command Lines
     - Get extended status: `docker-compose exec mariadb mysqladmin -proot extended-status;`
   - Show process list: `docker-compose exec mariadb mysqladmin --password=root processlist --verbose;`
 * Solr
-  - Get Solr release: `docker-compose exec solr cat /etc/os-release;`
+  - Get OS release: `docker-compose exec solr cat /etc/os-release;`
   - Get Solr version: `docker-compose exec solr bin/solr version;`
   - Get Solr status: `docker-compose exec solr bin/solr status;`
   - Follow Solr logs: `docker-compose logs --follow solr;`
