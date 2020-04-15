@@ -8,4 +8,4 @@ ez_platform_site_factory:
         2nd_purpose_group:
             siteaccess_group: site_factory_2nd_purpose_group
             name: Second Purpose
-            thumbnail: /bundles/ezplatformadminui/img/default-profile-picture.png
+            thumbnail: /bundles/ezplatformadminuiassets/vendors/leaflet/dist/images/layers-2x.png
