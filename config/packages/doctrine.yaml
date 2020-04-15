@@ -18,6 +18,7 @@ doctrine:
                     charset: '%database_charset%'
                     collate: '%database_collation%'
                 url: '%env(resolve:DATABASE_URL)%'
+                server_version: '%env(resolve:DATABASE_VERSION)%'
 
             # This connection is dedicated for SiteFactory to avoid known issues, should be the same as default
             site_factory:
@@ -28,6 +29,7 @@ doctrine:
                     charset: '%database_charset%'
                     collate: '%database_collation%'
                 url: '%env(resolve:DATABASE_URL)%'
+                server_version: '%env(resolve:DATABASE_VERSION)%'
 
 
     orm:
