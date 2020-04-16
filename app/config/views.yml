@@ -1,0 +1,9 @@
+ezpublish:
+    system:
+        site:
+            content_view:
+                full:
+                    default:
+                        controller: AppBundle\Controller\TestController::xKeyAction
+                        template: default/content/full.html.twig
+                        match: true
