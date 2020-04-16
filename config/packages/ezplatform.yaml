@@ -56,11 +56,14 @@ ezplatform:
         list: [site]
         groups:
             site_group: [site]
+            site_factory_1st_purpose_group: []
+            site_factory_2nd_purpose_group: []
         default_siteaccess: site
         match:
             URIElement: 1
+            HostElement: 1
             # Uncomment if you've enabled SiteFactory
-            # '@EzSystems\EzPlatformSiteFactory\SiteAccessMatcher': ~
+            '@EzSystems\EzPlatformSiteFactory\SiteAccessMatcher': ~
 
     # System settings, read in following order: `default`, <siteaccess-group>, <siteacces>, and `global`
     # TIP: For multisite installations organize shared config into SiteAccess groups,
@@ -85,6 +88,11 @@ ezplatform:
         site:
             languages: [eng-GB]
 
+        site_factory_1st_purpose_group:
+            design: site_factory_1st_purpose_design
+        site_factory_2nd_purpose_group:
+            design: site_factory_2nd_purpose_design
+
         admin_group:
             # System languages. Note that by default, content, content types, and other data are in eng-GB locale,
             # so removing eng-GB from this list may lead to errors or content not being shown, unless you change
@@ -103,6 +111,11 @@ ezplatform:
     url_alias:
         slug_converter:
             transformation: 'urlalias_lowercase'
+
+ezdesign:
+    design_list:
+        site_factory_1st_purpose_design: [1st_purpose_design]
+        site_factory_2nd_purpose_design: [2nd_purpose_design]
 
 framework:
     translator: { fallback: '%locale_fallback%' }
