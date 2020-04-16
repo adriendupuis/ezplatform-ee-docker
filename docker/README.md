@@ -125,6 +125,9 @@ URLs and Command Lines
     - Get extended status: `docker-compose exec mariadb mysqladmin -proot extended-status;`
   - Show process list: `docker-compose exec mariadb mysqladmin --password=root processlist --verbose;`
   - Get last content modification date: `docker-compose exec mariadb mysql -proot ezplatform -e "SELECT FROM_UNIXTIME(modified) AS modified FROM ezcontentobject ORDER BY modified DESC LIMIT 1;";`
+* eZ Platform DB
+  - Get last content modification date: `docker-compose exec mariadb mysql -proot ezplatform -e "SELECT FROM_UNIXTIME(modified) AS modified FROM ezcontentobject ORDER BY modified DESC LIMIT 1;";`
+  - Get Site Factory public access list: `docker-compose exec mariadb mysql -proot ezplatform -e "SELECT spa.site_id, spa.public_access_identifier, spa.site_matcher_host, s.name FROM ezsite_public_access AS spa JOIN ezsite AS s ON spa.site_id = s.id;";`
 * Solr
   - Get OS release: `docker-compose exec solr cat /etc/os-release;`
   - Get Solr version: `docker-compose exec solr bin/solr version;`
