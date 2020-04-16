@@ -54,6 +54,8 @@ URLs and Command Lines
   - Get containers status: `docker-compose ps --all;`
   - Follow several logs from the cluster: `docker-compose logs -f;`
   - Follow containers stats: `docker stats;`
+  - Restart every containers: `docker-compose restart;`
+  - Stop every containers: `docker-compose stop;`
 * Apache & Cron
   - Get OS release: `docker-compose exec apache cat /etc/os-release;`
   - Get Apache version: `docker-compose exec apache apache2ctl -v;`
