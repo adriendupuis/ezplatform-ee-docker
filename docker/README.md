@@ -54,6 +54,8 @@ URLs and Command Lines
   - Get containers status: `docker-compose ps --all;`
   - Follow several logs from the cluster: `docker-compose logs -f;`
   - Follow containers stats: `docker stats;`
+  - Restart every containers: `docker-compose restart;`
+  - Stop every containers: `docker-compose stop;`
 * Apache & Cron
   - Get OS release: `docker-compose exec apache cat /etc/os-release;`
   - Get Apache version: `docker-compose exec apache apache2ctl -v;`
@@ -69,6 +71,7 @@ URLs and Command Lines
   - Follow PHP-FPM log: `docker-compose exec apache tail -f /var/log/php7.3-fpm.log;`
   - Follow eZ Platform log: `docker-compose exec apache tail -f var/logs/dev.log;`
 * Symfony & eZ Platform
+  - Get Git version: `docker-compose exec apache git --version;`
   - Get Composer version: `docker-compose exec apache composer --version;`
   - Get Yarn version: `docker-compose exec apache yarn --version;`
   - Get Symfony version: `docker-compose exec apache php bin/console --version;`
@@ -97,7 +100,7 @@ URLs and Command Lines
   - See [`render_esi` `esi:include` tags](https://symfony.com/doc/5.0/http_cache/esi.html): `curl --silent --header "Surrogate-Capability: abc=ESI/1.0" http://localhost:8000/the/url/to/test | grep esi:include;`
   - Purge an URL: `docker-compose exec --user www-data apache curl --request PURGE --header 'Host: localhost:8080' http://varnish/the/url/to/purge;`
   - Soft purge content object(s) by ID: `docker-compose exec --user www-data apache curl -X PURGEKEYS -H 'Host: localhost:8080' -H 'xkey-softpurge: <TYPE><ID>' http://varnish;`
-    - xkey types:
+    - [xkey types](https://github.com/ezsystems/ezplatform-http-cache/blob/v2.0.0/docs/using_tags.md#tags-in-use-in-this-bundle):
       - `c`: ***c***ontent id
       - `l`: ***l***ocation id
       - `p`: (***p***ath) ancestor location id
@@ -121,6 +124,7 @@ URLs and Command Lines
   - Get MariaDB status: `docker-compose exec mariadb mysqladmin -proot status;`
     - Get extended status: `docker-compose exec mariadb mysqladmin -proot extended-status;`
   - Show process list: `docker-compose exec mariadb mysqladmin --password=root processlist --verbose;`
+  - Get last content modification date: `docker-compose exec mariadb mysql -proot ezplatform -e "SELECT FROM_UNIXTIME(modified) AS modified FROM ezcontentobject ORDER BY modified DESC LIMIT 1;";`
 * Solr
   - Get OS release: `docker-compose exec solr cat /etc/os-release;`
   - Get Solr version: `docker-compose exec solr bin/solr version;`
