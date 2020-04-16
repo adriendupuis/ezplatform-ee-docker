@@ -71,6 +71,7 @@ URLs and Command Lines
   - Follow PHP-FPM log: `docker-compose exec apache tail -f /var/log/php7.3-fpm.log;`
   - Follow eZ Platform log: `docker-compose exec apache tail -f var/logs/dev.log;`
 * Symfony & eZ Platform
+  - Get Git version: `docker-compose exec apache git --version;`
   - Get Composer version: `docker-compose exec apache composer --version;`
   - Get Yarn version: `docker-compose exec apache yarn --version;`
   - Get Symfony version: `docker-compose exec apache php bin/console --version;`
