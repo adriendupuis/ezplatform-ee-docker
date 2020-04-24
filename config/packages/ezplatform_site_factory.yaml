@@ -1,11 +1,11 @@
 ez_platform_site_factory:
     enabled: true
     templates:
-        1st_purpose_group:
+        1st_purpose_site_template:
             siteaccess_group: site_factory_1st_purpose_group
             name: First Purpose
             thumbnail: /bundles/ezplatformadminui/img/default-profile-picture.png
-        2nd_purpose_group:
+        2nd_purpose_site_template:
             siteaccess_group: site_factory_2nd_purpose_group
             name: Second Purpose
             thumbnail: /bundles/ezplatformadminuiassets/vendors/leaflet/dist/images/layers-2x.png
