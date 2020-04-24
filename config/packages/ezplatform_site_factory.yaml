@@ -1,6 +1,10 @@
 ez_platform_site_factory:
     enabled: true
     templates:
+        site_template:
+            siteaccess_group: site_group
+            name: Example Site
+            thumbnail: https://placekitten.com/160/95
         1st_purpose_site_template:
             siteaccess_group: site_factory_1st_purpose_group
             name: First Purpose
