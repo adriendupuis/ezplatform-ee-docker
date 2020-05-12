@@ -26,14 +26,12 @@ services:
     image: redis:3.2
 
   mariadb:
-    image: mariadb:10.1
+    image: mariadb:10.4
     environment:
       MYSQL_ROOT_PASSWORD: root
 
   solr:
-    build:
-      context: .
-      dockerfile: ./docker/solr/Dockerfile
+    build: ./docker/solr
     command:
       - solr-precreate
       - collection1
