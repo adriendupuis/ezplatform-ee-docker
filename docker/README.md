@@ -4,22 +4,22 @@ Docker Container Cluster
 Introduction
 ------------
 
-Use a Docker containers cluster to have a [typical architecture for eZ Platform](https://doc.ezplatform.com/en/2.5/guide/clustering/) including the following elements.
+Use a Docker containers cluster to have a [typical architecture for eZ Platform](https://doc.ezplatform.com/en/3.0/guide/clustering/) including the following elements.
 * HTTP Server:
   - Debian “Buster” 10
   - Apache 2.4
   - PHP 7.3 ([by default](https://packages.debian.org/buster/php/php))
   - [PHP FastCGI Process Manager](https://www.php.net/manual/install.fpm.php) (PHP-FPM) with [Unix domain socket](https://en.wikipedia.org/wiki/Unix_domain_socket) (UDS)
-  - [eZ Platform Enterprise Edition](https://ez.no/Products/eZ-Platform-Enterprise-Edition) 2.5
+  - [eZ Platform Enterprise Edition](https://ez.no/Products/eZ-Platform-Enterprise-Edition) 3.0
 * Reverse Proxy Cache Server:
   - Varnish 6.0
   - Varnish Modules 0.15
-* [Persistence Cache](https://doc.ezplatform.com/en/2.5/guide/persistence_cache/) and [Session Handling](https://doc.ezplatform.com/en/2.5/guide/sessions/) Servers:
+* [Persistence Cache](https://doc.ezplatform.com/en/3.0/guide/persistence_cache/) and [Session Handling](https://doc.ezplatform.com/en/3.0/guide/sessions/) Servers:
   - Redis 3.2
 * DataBase Server:
-  - MariaDB 10.1
+  - MariaDB 10.4
 * Search Engine:
-  - Solr 6.6
+  - Solr 7.7
 
 Quick Start
 -----------
@@ -30,7 +30,7 @@ Quick Start
 About
 -----
 
-* Follow [eZ Platform 2.5 Requirements](https://doc.ezplatform.com/en/2.5/getting_started/requirements/) as much as possible.
+* Follow [eZ Platform 3.0 Requirements](https://doc.ezplatform.com/en/3.0/getting_started/requirements/) as much as possible.
 * Add as less configuration as possible to [original distribution](https://github.com/ezsystems/ezplatform-ee/tree/v2.5.9).
 
 URLs and Command Lines
@@ -76,7 +76,7 @@ URLs and Command Lines
   - Get Yarn version: `docker-compose exec apache yarn --version;`
   - Get Symfony version: `docker-compose exec apache php bin/console --version;`
   - See a bundle info: `docker-compose exec apache composer show vendor-name/bundle-name;`
-    - See eZ Kernel bundle info: `docker-compose exec apache composer show ezsystems/ezpublish-kernel;`
+    - See eZ Kernel bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-kernel;`
     - See eZ Symfony Tools info: `docker-compose exec apache composer show ezsystems/symfony-tools;`
     - See eZ HTTP Cache bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-http-cache;`
     - See eZ Solr SE bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-solr-search-engine;`
@@ -97,10 +97,10 @@ URLs and Command Lines
     - Get the ban list: `docker-compose exec varnish varnishadm ban.list;`
   - Open a shell into container: `docker-compose exec varnish bash;`
 * Apache → Varnish
-  - See [`render_esi` `esi:include` tags](https://symfony.com/doc/3.4/http_cache/esi.html): `curl --silent --header "Surrogate-Capability: abc=ESI/1.0" http://localhost:8000/the/url/to/test | grep esi:include;`
+  - See [`render_esi` `esi:include` tags](https://symfony.com/doc/5.0/http_cache/esi.html): `curl --silent --header "Surrogate-Capability: abc=ESI/1.0" http://localhost:8000/the/url/to/test | grep esi:include;`
   - Purge an URL: `docker-compose exec --user www-data apache curl --request PURGE --header 'Host: localhost:8080' http://varnish/the/url/to/purge;`
-  - Soft purge content(s) by ID: `docker-compose exec --user www-data apache curl -X PURGE -H 'Host: localhost:8080' -H 'key: <TYPE><ID>' http://varnish;`
-    - [(x)key types](https://github.com/ezsystems/ezplatform-http-cache/blob/v1.0.0/docs/using_tags.md#tags-in-use-in-this-bundle):
+  - Soft purge content object(s) by ID: `docker-compose exec --user www-data apache curl -X PURGEKEYS -H 'Host: localhost:8080' -H 'xkey-softpurge: <TYPE><ID>' http://varnish;`
+    - [xkey types](https://github.com/ezsystems/ezplatform-http-cache/blob/v2.0.0/docs/using_tags.md#tags-in-use-in-this-bundle):
       - `c`: ***c***ontent id
       - `l`: ***l***ocation id
       - `p`: (***p***ath) ancestor location id
@@ -136,7 +136,9 @@ URLs and Command Lines
 TODO
 ----
 
-* Add [DFS](https://doc.ezplatform.com/en/master/guide/clustering/#dfs-io-handler)
+* v3: Avoid doctrine.yaml's server_version change without commit it
+* Add [DFS](https://doc.ezplatform.com/en/3.0/guide/clustering/#dfs-io-handler)
+* Facilitate switch between eZ Platform EE v2.5 and eZ Platform v3.0
 * Ensure compatibility with other unixoides than Mac OS X. For example, `sed -i ''` is specific to Mac OS X and a solution could be https://formulae.brew.sh/formula/gnu-sed
 * Maybe:
   - Build Solr at the same time than other containers and uncomment that apache depends on solr
