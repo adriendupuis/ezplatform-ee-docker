@@ -7,10 +7,11 @@ LABEL description="Varnish 6.0 with Varnish Modules for eZ Platform usage"
 
 # Varnish Modules — https://github.com/varnish/varnish-modules/blob/0.16.0/README.rst#installation
 ARG VMODS_VERSION=0.16.0
-RUN apt-get update && apt-get install -y make pkg-config varnish-dev wget \
-    && wget --quiet https://download.varnish-software.com/varnish-modules/varnish-modules-${VMODS_VERSION}.tar.gz \
+RUN apt-get update && apt-get install -y autotools-dev automake libtool m4 make pkg-config varnish-dev wget \
+    && wget --quiet https://github.com/varnish/varnish-modules/archive/${VMODS_VERSION}.tar.gz -O varnish-modules-${VMODS_VERSION}.tar.gz \
     && tar -xzf varnish-modules-${VMODS_VERSION}.tar.gz \
     && cd varnish-modules-${VMODS_VERSION} \
+    && ./bootstrap \
     && ./configure \
     && make && make install \
     && cd .. \
