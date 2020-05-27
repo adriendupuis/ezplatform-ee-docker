@@ -55,6 +55,7 @@ URLs and Command Lines
   - Follow several logs from the cluster: `docker-compose logs -f;`
   - Follow containers stats: `docker stats;`
   - Restart all containers: `docker-compose restart;`
+  - List containers internal processes: `docker-compose top;`
   - Stop all containers: `docker-compose stop;`
 * Apache & Cron
   - Get OS release: `docker-compose exec apache cat /etc/os-release;`
