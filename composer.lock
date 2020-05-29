@@ -4,8 +4,38 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a9dea85648c1a84876d1b6c30fffda3",
+    "content-hash": "2fef33a77f96046dfc0dcce1551af1a9",
     "packages": [
+        {
+            "name": "adriendupuis/ezplatform-admin",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adriendupuis/ezplatform-admin.git",
+                "reference": "7ef041f5c5e53d7f2214efb7a4fcbcfc0edcbda9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/7ef041f5c5e53d7f2214efb7a4fcbcfc0edcbda9",
+                "reference": "7ef041f5c5e53d7f2214efb7a4fcbcfc0edcbda9",
+                "shasum": ""
+            },
+            "require": {
+                "ezsystems/ezplatform-admin-ui": "~2.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AdrienDupuis\\EzPlatformAdminBundle\\": "src/bundle/"
+                }
+            },
+            "description": "eZ Platform Administration Tools",
+            "support": {
+                "source": "https://github.com/adriendupuis/ezplatform-admin/tree/develop",
+                "issues": "https://github.com/adriendupuis/ezplatform-admin/issues"
+            },
+            "time": "2020-05-29T14:08:30+00:00"
+        },
         {
             "name": "babdev/pagerfanta-bundle",
             "version": "v2.2.1",
@@ -17045,7 +17075,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "adriendupuis/ezplatform-admin": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
