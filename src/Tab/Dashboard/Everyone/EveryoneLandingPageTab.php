@@ -1,16 +1,16 @@
 <?php
-// https://doc.ezplatform.com/en/latest/tutorials/extending_admin_ui/1_creating_a_dashboard_tab/
+// https://doc.ezplatform.com/en/3.0/tutorials/extending_admin_ui/1_creating_a_dashboard_tab/
 
 namespace App\Tab\Dashboard\Everyone;
 
 use eZ\Publish\API\Repository\SearchService;
-use eZ\Publish\Core\Pagination\Pagerfanta\ContentSearchAdapter;
-use EzSystems\EzPlatformAdminUi\Tab\AbstractTab;
-use EzSystems\EzPlatformAdminUi\Tab\OrderedTabInterface;
-use EzSystems\EzPlatformAdminUi\Tab\Dashboard\PagerContentToDataMapper;
+use eZ\Publish\API\Repository\Values\Content\LocationQuery;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause;
-use eZ\Publish\API\Repository\Values\Content\LocationQuery;
+use eZ\Publish\Core\Pagination\Pagerfanta\ContentSearchAdapter;
+use EzSystems\EzPlatformAdminUi\Tab\AbstractTab;
+use EzSystems\EzPlatformAdminUi\Tab\Dashboard\PagerContentToDataMapper;
+use EzSystems\EzPlatformAdminUi\Tab\OrderedTabInterface;
 use Pagerfanta\Pagerfanta;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Twig\Environment;

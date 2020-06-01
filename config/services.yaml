@@ -27,7 +27,7 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
-    # https://doc.ezplatform.com/en/latest/tutorials/extending_admin_ui/1_creating_a_dashboard_tab/
+    # https://doc.ezplatform.com/en/3.0/tutorials/extending_admin_ui/1_creating_a_dashboard_tab/
     App\Tab\Dashboard\Everyone\EveryoneLandingPageTab:
         autowire: true
         autoconfigure: true
