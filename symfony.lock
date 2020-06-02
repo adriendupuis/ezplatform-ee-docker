@@ -126,6 +126,9 @@
     "erusev/parsedown": {
         "version": "1.7.4"
     },
+    "ezplatform-i18n/ezplatform-i18n-fr_fr": {
+        "version": "v3.0.0"
+    },
     "ezsystems/allure-behat": {
         "version": "v3.1.2"
     },

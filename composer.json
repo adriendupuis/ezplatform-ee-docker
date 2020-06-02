@@ -22,6 +22,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "adriendupuis/ezplatform-admin": "dev-develop",
+        "ezplatform-i18n/ezplatform-i18n-fr_fr": "^3.0",
         "ezsystems/date-based-publisher": "~4.0.2",
         "ezsystems/doctrine-dbal-schema": "~1.0.0",
         "ezsystems/ez-support-tools": "~2.0.0",
