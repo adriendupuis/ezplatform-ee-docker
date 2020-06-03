@@ -1,0 +1,4 @@
+ezsystems.custompage.menu:
+    path: /custom/page
+    defaults:
+        _controller: 'EzSystemsCustomizeAdminUIBundle:CustomPage:menu'

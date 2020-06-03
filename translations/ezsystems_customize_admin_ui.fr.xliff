@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="fr" datatype="plaintext" original="">
+        <body>
+            <trans-unit id="customized_menu_item">
+                <source>Customized menu item</source>
+                <target>Élément personnalisé</target>
+            </trans-unit>
+            <trans-unit id="customized_menu_item_listener">
+                <source>Customized menu item (L)</source>
+                <target>Élément personnalisé (É)</target>
+            </trans-unit>
+            <trans-unit id="customized_menu_item_subscriber">
+                <source>Customized menu item (S)</source>
+                <target>Élément personnalisé (A)</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
