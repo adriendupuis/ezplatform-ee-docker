@@ -4,27 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "16d5ce9743f027b8a02bf13353487636",
+    "content-hash": "0b08dbc9e784ca639bba4f2855eddf7c",
     "packages": [
         {
             "name": "adriendupuis/ezplatform-admin",
-            "version": "dev-develop",
+            "version": "dev-feature/stats",
             "source": {
                 "type": "git",
                 "url": "https://github.com/adriendupuis/ezplatform-admin.git",
-                "reference": "9bbcccc25ebdfbf186baf150ac66b1dc83f24b3f"
+                "reference": "b3d466cd447e52f0f705bc8752ff4c88399728fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/9bbcccc25ebdfbf186baf150ac66b1dc83f24b3f",
-                "reference": "9bbcccc25ebdfbf186baf150ac66b1dc83f24b3f",
+                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/b3d466cd447e52f0f705bc8752ff4c88399728fc",
+                "reference": "b3d466cd447e52f0f705bc8752ff4c88399728fc",
                 "shasum": ""
             },
             "require": {
                 "ezsystems/ezplatform-admin-ui": "~2.0.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16"
             },
             "type": "library",
             "autoload": {
@@ -34,10 +31,10 @@
             },
             "description": "eZ Platform Administration Tools",
             "support": {
-                "source": "https://github.com/adriendupuis/ezplatform-admin/tree/develop",
+                "source": "https://github.com/adriendupuis/ezplatform-admin/tree/feature/stats",
                 "issues": "https://github.com/adriendupuis/ezplatform-admin/issues"
             },
-            "time": "2020-05-30T11:24:55+00:00"
+            "time": "2020-06-03T14:55:26+00:00"
         },
         {
             "name": "babdev/pagerfanta-bundle",

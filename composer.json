@@ -21,7 +21,7 @@
         "php": "^7.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "adriendupuis/ezplatform-admin": "dev-develop",
+        "adriendupuis/ezplatform-admin": "dev-feature/stats",
         "ezplatform-i18n/ezplatform-i18n-fr_fr": "^3.0",
         "ezsystems/date-based-publisher": "~4.0.2",
         "ezsystems/doctrine-dbal-schema": "~1.0.0",
