@@ -57,13 +57,13 @@
         ]
     },
     "doctrine/cache": {
-        "version": "1.10.0"
+        "version": "1.10.1"
     },
     "doctrine/collections": {
-        "version": "1.6.4"
+        "version": "1.6.5"
     },
     "doctrine/common": {
-        "version": "2.12.0"
+        "version": "2.13.1"
     },
     "doctrine/dbal": {
         "version": "2.10.2"
@@ -100,25 +100,28 @@
         "version": "1.1.0"
     },
     "doctrine/inflector": {
-        "version": "1.3.1"
+        "version": "1.4.2"
     },
     "doctrine/instantiator": {
         "version": "1.3.0"
     },
     "doctrine/lexer": {
-        "version": "1.2.0"
+        "version": "1.2.1"
     },
     "doctrine/migrations": {
         "version": "2.2.1"
     },
     "doctrine/orm": {
-        "version": "v2.7.2"
+        "version": "v2.7.3"
     },
     "doctrine/persistence": {
         "version": "1.3.7"
     },
     "doctrine/reflection": {
         "version": "1.2.1"
+    },
+    "doctrine/sql-formatter": {
+        "version": "1.0.1"
     },
     "egulias/email-validator": {
         "version": "2.1.17"
@@ -136,7 +139,7 @@
         "version": "v1.1.1"
     },
     "ezsystems/behatbundle": {
-        "version": "v8.0.2"
+        "version": "v8.0.3"
     },
     "ezsystems/date-based-publisher": {
         "version": "v4.0.2"
@@ -151,7 +154,7 @@
         "version": "v2.0.0"
     },
     "ezsystems/ezplatform-admin-ui": {
-        "version": "v2.0.2"
+        "version": "v2.0.3"
     },
     "ezsystems/ezplatform-admin-ui-assets": {
         "version": "v5.0.0"
@@ -163,10 +166,10 @@
         "version": "v1.0.2"
     },
     "ezsystems/ezplatform-core": {
-        "version": "v2.0.2"
+        "version": "v2.0.4"
     },
     "ezsystems/ezplatform-cron": {
-        "version": "v3.0.0"
+        "version": "v3.0.1"
     },
     "ezsystems/ezplatform-design-engine": {
         "version": "v3.0.0"
@@ -175,7 +178,7 @@
         "version": "v3.0.1"
     },
     "ezsystems/ezplatform-form-builder": {
-        "version": "v2.0.2"
+        "version": "v2.0.3"
     },
     "ezsystems/ezplatform-graphql": {
         "version": "v2.0.1"
@@ -187,13 +190,13 @@
         "version": "v2.0.0"
     },
     "ezsystems/ezplatform-kernel": {
-        "version": "v1.0.2"
+        "version": "v1.0.3"
     },
     "ezsystems/ezplatform-matrix-fieldtype": {
         "version": "v2.0.0"
     },
     "ezsystems/ezplatform-page-builder": {
-        "version": "v2.0.2"
+        "version": "v2.0.3"
     },
     "ezsystems/ezplatform-page-fieldtype": {
         "version": "v2.0.2"
@@ -205,25 +208,25 @@
         "version": "v1.0.0"
     },
     "ezsystems/ezplatform-richtext": {
-        "version": "v2.0.3"
+        "version": "v2.0.4"
     },
     "ezsystems/ezplatform-site-factory": {
-        "version": "v1.0.2"
+        "version": "v1.0.3"
     },
     "ezsystems/ezplatform-solr-search-engine": {
-        "version": "v3.0.0"
+        "version": "v3.0.1"
     },
     "ezsystems/ezplatform-standard-design": {
         "version": "v0.3.0"
     },
     "ezsystems/ezplatform-user": {
-        "version": "v2.0.1"
+        "version": "v2.0.2"
     },
     "ezsystems/ezplatform-version-comparison": {
         "version": "v1.0.0"
     },
     "ezsystems/ezplatform-workflow": {
-        "version": "v2.0.1"
+        "version": "v2.0.2"
     },
     "ezsystems/fastest": {
         "version": "v1.7.2"
@@ -256,7 +259,7 @@
         ]
     },
     "friendsofsymfony/http-cache": {
-        "version": "2.9.0"
+        "version": "2.9.2"
     },
     "friendsofsymfony/http-cache-bundle": {
         "version": "2.8.0"
@@ -280,10 +283,10 @@
         "version": "v1.1.8"
     },
     "gregwar/captcha-bundle": {
-        "version": "v2.1.2"
+        "version": "v2.1.3"
     },
     "guzzlehttp/guzzle": {
-        "version": "6.5.3"
+        "version": "6.5.4"
     },
     "guzzlehttp/promises": {
         "version": "v1.3.1"
@@ -295,7 +298,7 @@
         "version": "3.3.0"
     },
     "hautelook/templated-uri-router": {
-        "version": "3.2.0"
+        "version": "3.3.0"
     },
     "hoa/compiler": {
         "version": "3.17.08.08"
@@ -342,14 +345,11 @@
     "instaclick/php-webdriver": {
         "version": "1.4.7"
     },
-    "jdorn/sql-formatter": {
-        "version": "v1.2.17"
-    },
     "jms/metadata": {
         "version": "2.1.0"
     },
     "jms/serializer": {
-        "version": "3.6.0"
+        "version": "3.7.0"
     },
     "jms/translation-bundle": {
         "version": "1.5.4"
@@ -361,10 +361,10 @@
         "version": "v3.0.0"
     },
     "lcobucci/jwt": {
-        "version": "3.3.1"
+        "version": "3.3.2"
     },
     "league/flysystem": {
-        "version": "1.0.67"
+        "version": "1.0.69"
     },
     "lexik/jwt-authentication-bundle": {
         "version": "2.5",
@@ -395,7 +395,7 @@
         "version": "v1.10.3"
     },
     "monolog/monolog": {
-        "version": "2.0.2"
+        "version": "2.1.0"
     },
     "myclabs/deep-copy": {
         "version": "1.9.5"
@@ -657,7 +657,7 @@
         "version": "v5.0.8"
     },
     "symfony/cache-contracts": {
-        "version": "v2.0.1"
+        "version": "v2.1.2"
     },
     "symfony/config": {
         "version": "v5.0.8"
@@ -712,7 +712,7 @@
         "version": "v5.0.8"
     },
     "symfony/event-dispatcher-contracts": {
-        "version": "v2.0.1"
+        "version": "v2.1.2"
     },
     "symfony/expression-language": {
         "version": "v5.0.8"
@@ -762,7 +762,7 @@
         "version": "v5.0.8"
     },
     "symfony/http-client-contracts": {
-        "version": "v2.0.1"
+        "version": "v2.1.2"
     },
     "symfony/http-foundation": {
         "version": "v5.0.8"
@@ -830,25 +830,25 @@
         ]
     },
     "symfony/polyfill-intl-grapheme": {
-        "version": "v1.15.0"
+        "version": "v1.17.0"
     },
     "symfony/polyfill-intl-icu": {
-        "version": "v1.15.0"
+        "version": "v1.17.0"
     },
     "symfony/polyfill-intl-idn": {
-        "version": "v1.15.0"
+        "version": "v1.17.0"
     },
     "symfony/polyfill-intl-normalizer": {
-        "version": "v1.15.0"
+        "version": "v1.17.0"
     },
     "symfony/polyfill-mbstring": {
-        "version": "v1.15.0"
+        "version": "v1.17.0"
     },
     "symfony/polyfill-php72": {
-        "version": "v1.15.0"
+        "version": "v1.17.0"
     },
     "symfony/polyfill-php73": {
-        "version": "v1.15.0"
+        "version": "v1.17.0"
     },
     "symfony/process": {
         "version": "v5.0.8"
@@ -910,7 +910,7 @@
         "version": "v1.0.3"
     },
     "symfony/service-contracts": {
-        "version": "v2.0.1"
+        "version": "v2.1.2"
     },
     "symfony/stopwatch": {
         "version": "v5.0.8"
@@ -955,7 +955,7 @@
         ]
     },
     "symfony/translation-contracts": {
-        "version": "v2.0.1"
+        "version": "v2.1.2"
     },
     "symfony/twig-bridge": {
         "version": "v5.0.8"
