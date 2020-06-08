@@ -4,7 +4,7 @@ use EzSystems\EzPlatformAdminUi\Menu\Event\ConfigureMenuEvent;
 use EzSystems\EzPlatformAdminUi\Menu\MainMenuBuilder;
 use Knp\Menu\MenuItem;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-class ConfigureMenuListener implements EventSubscriberInterface
+class ConfigureMenuListener
 {
     const CUSTOM__MENU__ITEM_L = 'custom__menu__item_l';
 
@@ -23,10 +23,5 @@ class ConfigureMenuListener implements EventSubscriberInterface
                 ],
             ]
         );
-    }
-
-    public static function getSubscribedEvents(): array
-    {
-        return [ConfigureMenuEvent::MAIN_MENU => ['onMenuConfigure', 0]];
     }
 }
