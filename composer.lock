@@ -4,8 +4,38 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa8f6b0d0975df10d4fc990b42f094c2",
+    "content-hash": "3210717c6283e63c03c5d42086a2787e",
     "packages": [
+        {
+            "name": "adriendupuis/ezplatform-admin",
+            "version": "dev-feature/stats",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adriendupuis/ezplatform-admin.git",
+                "reference": "87ec21e48c78b1bd4c3b0eb06810e40bdf927155"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/87ec21e48c78b1bd4c3b0eb06810e40bdf927155",
+                "reference": "87ec21e48c78b1bd4c3b0eb06810e40bdf927155",
+                "shasum": ""
+            },
+            "require": {
+                "ezsystems/ezplatform-admin-ui": "~2.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AdrienDupuis\\EzPlatformAdminBundle\\": "src/bundle/"
+                }
+            },
+            "description": "eZ Platform Administration Tools",
+            "support": {
+                "source": "https://github.com/adriendupuis/ezplatform-admin/tree/feature/stats",
+                "issues": "https://github.com/adriendupuis/ezplatform-admin/issues"
+            },
+            "time": "2020-06-09T15:00:37+00:00"
+        },
         {
             "name": "babdev/pagerfanta-bundle",
             "version": "v2.2.1",
@@ -1614,6 +1644,36 @@
                 "parser"
             ],
             "time": "2019-12-30T22:54:17+00:00"
+        },
+        {
+            "name": "ezplatform-i18n/ezplatform-i18n-fr_fr",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezplatform-i18n/ezplatform-i18n-fr_FR.git",
+                "reference": "9d578a647fe2c898bd43e060b40a31a622c8620c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezplatform-i18n/ezplatform-i18n-fr_FR/zipball/9d578a647fe2c898bd43e060b40a31a622c8620c",
+                "reference": "9d578a647fe2c898bd43e060b40a31a622c8620c",
+                "shasum": ""
+            },
+            "require": {
+                "ezsystems/ezpublish-kernel": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "description": "eZ Platform fr_FR translations",
+            "time": "2020-04-02T16:27:56+00:00"
         },
         {
             "name": "ezsystems/date-based-publisher",
@@ -6593,6 +6653,7 @@
                 "paginator",
                 "paging"
             ],
+            "abandoned": "babdev/pagerfanta",
             "time": "2019-07-17T20:56:16+00:00"
         },
         {
@@ -17243,7 +17304,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "adriendupuis/ezplatform-admin": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
