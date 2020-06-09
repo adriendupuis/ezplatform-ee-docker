@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/adriendupuis/ezplatform-admin.git",
-                "reference": "b3d466cd447e52f0f705bc8752ff4c88399728fc"
+                "reference": "87ec21e48c78b1bd4c3b0eb06810e40bdf927155"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/b3d466cd447e52f0f705bc8752ff4c88399728fc",
-                "reference": "b3d466cd447e52f0f705bc8752ff4c88399728fc",
+                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/87ec21e48c78b1bd4c3b0eb06810e40bdf927155",
+                "reference": "87ec21e48c78b1bd4c3b0eb06810e40bdf927155",
                 "shasum": ""
             },
             "require": {
@@ -34,7 +34,7 @@
                 "source": "https://github.com/adriendupuis/ezplatform-admin/tree/feature/stats",
                 "issues": "https://github.com/adriendupuis/ezplatform-admin/issues"
             },
-            "time": "2020-06-03T14:55:26+00:00"
+            "time": "2020-06-09T15:00:37+00:00"
         },
         {
             "name": "babdev/pagerfanta-bundle",
@@ -6539,6 +6539,7 @@
                 "paginator",
                 "paging"
             ],
+            "abandoned": "babdev/pagerfanta",
             "time": "2019-07-17T20:56:16+00:00"
         },
         {
