@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa8f6b0d0975df10d4fc990b42f094c2",
+    "content-hash": "c897c862c194e42606a6559156b7bff1",
     "packages": [
         {
             "name": "adriendupuis/ezplatform-admin",
@@ -34,7 +34,7 @@
                 "source": "https://github.com/adriendupuis/ezplatform-admin/tree/feature/stats",
                 "issues": "https://github.com/adriendupuis/ezplatform-admin/issues"
             },
-            "time": "2020-06-09T15:00:37+00:00"
+            "time": "2020-06-12T14:34:52+00:00"
         },
         {
             "name": "babdev/pagerfanta-bundle",
