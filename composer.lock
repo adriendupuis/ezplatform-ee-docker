@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/adriendupuis/ezplatform-admin.git",
-                "reference": "87ec21e48c78b1bd4c3b0eb06810e40bdf927155"
+                "reference": "35fb3f6b30595693d92eb09fd4abcb701fe9f290"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/87ec21e48c78b1bd4c3b0eb06810e40bdf927155",
-                "reference": "87ec21e48c78b1bd4c3b0eb06810e40bdf927155",
+                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/35fb3f6b30595693d92eb09fd4abcb701fe9f290",
+                "reference": "35fb3f6b30595693d92eb09fd4abcb701fe9f290",
                 "shasum": ""
             },
             "require": {
