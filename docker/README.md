@@ -125,7 +125,7 @@ URLs and Command Lines
   - Get MariaDB status: `docker-compose exec mariadb mysqladmin -proot status;`
     - Get extended status: `docker-compose exec mariadb mysqladmin -proot extended-status;`
   - Show process list: `docker-compose exec mariadb mysqladmin --password=root processlist --verbose;`
-  - Get last content modification date: `docker-compose exec mariadb mysql -proot ezplatform -e "SELECT FROM_UNIXTIME(modified) AS modified FROM ezcontentobject ORDER BY modified DESC LIMIT 1;";`
+  - Get last content modification date: `docker-compose exec mariadb mysql -proot ezplatform -e "SELECT FROM_UNIXTIME(GREATEST(ezcontentobject.modified, IFNULL(ezcontentobject_trash.trashed, 0))) AS modified FROM ezcontentobject LEFT JOIN ezcontentobject_trash ON ezcontentobject.id = ezcontentobject_trash.contentobject_id ORDER BY modified DESC LIMIT 1;";`
 * Solr
   - Get OS release: `docker-compose exec solr cat /etc/os-release;`
   - Get Solr version: `docker-compose exec solr bin/solr version;`
