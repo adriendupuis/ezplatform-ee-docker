@@ -14,9 +14,6 @@
         { "type": "composer", "url": "https://updates.ez.no/ttl" },
         { "type": "vcs", "url": "https://github.com/adriendupuis/ezplatform-admin.git" }
     ],
-    "platform": {
-        "php": "7.3.14"
-    },
     "require": {
         "php": "^7.3",
         "ext-ctype": "*",
@@ -151,6 +148,9 @@
         ]
     },
     "config": {
+        "platform": {
+            "php": "7.3.14"
+        },
         "preferred-install": {
             "ezsystems/*": "dist"
         },
