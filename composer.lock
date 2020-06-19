@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c897c862c194e42606a6559156b7bff1",
+    "content-hash": "cb4b939f5ad4bd2b53d5c4852f0223dd",
     "packages": [
         {
             "name": "adriendupuis/ezplatform-admin",
-            "version": "dev-feature/stats",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/adriendupuis/ezplatform-admin.git",
-                "reference": "35fb3f6b30595693d92eb09fd4abcb701fe9f290"
+                "reference": "7f307fa9dae41b3f338c94dac726c5f1f3a4826e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/35fb3f6b30595693d92eb09fd4abcb701fe9f290",
-                "reference": "35fb3f6b30595693d92eb09fd4abcb701fe9f290",
+                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/7f307fa9dae41b3f338c94dac726c5f1f3a4826e",
+                "reference": "7f307fa9dae41b3f338c94dac726c5f1f3a4826e",
                 "shasum": ""
             },
             "require": {
@@ -31,10 +31,10 @@
             },
             "description": "eZ Platform Administration Tools",
             "support": {
-                "source": "https://github.com/adriendupuis/ezplatform-admin/tree/feature/stats",
+                "source": "https://github.com/adriendupuis/ezplatform-admin/tree/develop",
                 "issues": "https://github.com/adriendupuis/ezplatform-admin/issues"
             },
-            "time": "2020-06-12T14:34:52+00:00"
+            "time": "2020-06-19T09:04:51+00:00"
         },
         {
             "name": "babdev/pagerfanta-bundle",
@@ -2482,10 +2482,6 @@
                 "TTL-2.0"
             ],
             "description": "eZ Platform Form Builder",
-            "support": {
-                "source": "https://github.com/ezsystems/ezplatform-form-builder/tree/v2.0.4",
-                "issues": "https://github.com/ezsystems/ezplatform-form-builder/issues"
-            },
             "time": "2020-06-12T18:38:42+00:00"
         },
         {
@@ -2942,10 +2938,6 @@
                 "TTL-2.0"
             ],
             "description": "eZ Platform Page Builder",
-            "support": {
-                "source": "https://github.com/ezsystems/ezplatform-page-builder/tree/v2.0.4",
-                "issues": "https://github.com/ezsystems/ezplatform-page-builder/issues"
-            },
             "time": "2020-06-12T19:07:58+00:00"
         },
         {
@@ -3308,10 +3300,6 @@
                 "TTL-2.0"
             ],
             "description": "eZ Platform Site Factory bundle",
-            "support": {
-                "source": "https://github.com/ezsystems/ezplatform-site-factory/tree/v1.0.4",
-                "issues": "https://github.com/ezsystems/ezplatform-site-factory/issues"
-            },
             "time": "2020-06-12T19:23:19+00:00"
         },
         {
@@ -3631,9 +3619,6 @@
                 }
             ],
             "description": "Workflow bundle for eZ Platform Enterprise Edition",
-            "support": {
-                "source": "https://github.com/ezsystems/ezplatform-workflow/tree/v2.0.3"
-            },
             "time": "2020-06-12T19:20:04+00:00"
         },
         {
@@ -17464,5 +17449,8 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
+    "platform-overrides": {
+        "php": "7.3"
+    },
     "plugin-api-version": "1.1.0"
 }
