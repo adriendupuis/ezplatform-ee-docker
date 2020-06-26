@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/adriendupuis/ezplatform-admin.git",
-                "reference": "7f307fa9dae41b3f338c94dac726c5f1f3a4826e"
+                "reference": "f9d7f0f683be58c716ed267a0a412f91e09af2d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/7f307fa9dae41b3f338c94dac726c5f1f3a4826e",
-                "reference": "7f307fa9dae41b3f338c94dac726c5f1f3a4826e",
+                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/f9d7f0f683be58c716ed267a0a412f91e09af2d8",
+                "reference": "f9d7f0f683be58c716ed267a0a412f91e09af2d8",
                 "shasum": ""
             },
             "require": {
@@ -34,7 +34,7 @@
                 "source": "https://github.com/adriendupuis/ezplatform-admin/tree/develop",
                 "issues": "https://github.com/adriendupuis/ezplatform-admin/issues"
             },
-            "time": "2020-06-19T09:04:51+00:00"
+            "time": "2020-06-22T17:05:05+00:00"
         },
         {
             "name": "babdev/pagerfanta-bundle",
