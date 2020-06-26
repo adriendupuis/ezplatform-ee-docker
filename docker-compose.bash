@@ -12,6 +12,9 @@ git clean -df; # Help to switch between eZ Platform v2 and v3
 rm -rf var/cache/dev/ var/log/*.log;
 touch var/log/dev.log;
 
+# Docker: Switch .env files
+cp -f .env.local .env;
+
 # Docker: Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
 docker-compose up --build --detach varnish apache redis mariadb;
 
@@ -53,6 +56,9 @@ docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;
 docker-compose exec --user www-data apache rm -rf public/var/*; # Clean public/var/*/storage/ as the DB is reset.
 docker-compose exec redis redis-cli FLUSHALL;
 docker-compose exec --user www-data apache composer ezplatform-install;
+
+# Docker: Reset .env files
+git checkout -- .env;
 
 # Logs Follow-up
 #docker-compose logs --follow;
