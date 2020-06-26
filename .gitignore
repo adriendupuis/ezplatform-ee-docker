@@ -76,7 +76,7 @@ auth.json
 ide-twig.json
 
 ###> symfony/framework-bundle ###
-#/.env.local
+/.env.local
 /.env.local.php
 /.env.*.local
 /public/bundles/
