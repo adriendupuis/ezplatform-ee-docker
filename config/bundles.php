@@ -57,10 +57,13 @@ return [
     EzSystems\EzPlatformGraphQL\EzSystemsEzPlatformGraphQLBundle::class => ['all' => true],
     EzSystems\EzPlatformQueryFieldType\Symfony\EzSystemsEzPlatformQueryFieldTypeBundle::class => ['all' => true],
     EzSystems\EzPlatformVersionComparisonBundle\EzPlatformVersionComparisonBundle::class => ['all' => true],
+    Ibexa\Platform\Bundle\Search\IbexaPlatformSearchBundle::class => ['all' => true],
     Overblog\GraphQLBundle\OverblogGraphQLBundle::class => ['all' => true],
     Overblog\GraphiQLBundle\OverblogGraphiQLBundle::class => ['dev' => true],
     Twig\Extra\TwigExtraBundle\TwigExtraBundle::class => ['all' => true],
     BabDev\PagerfantaBundle\BabDevPagerfantaBundle::class => ['all' => true],
     FriendsOfBehat\SymfonyExtension\Bundle\FriendsOfBehatSymfonyExtensionBundle::class => ['test' => true, 'behat' => true],
     Hautelook\TemplatedUriBundle\HautelookTemplatedUriBundle::class => ['all' => true],
+    Ibexa\Platform\Bundle\ElasticSearchEngine\PlatformElasticSearchEngineBundle::class => ['all' => true],
+    Ibexa\Platform\Bundle\Permissions\PlatformPermissionsBundle::class => ['all' => true],
 ];
