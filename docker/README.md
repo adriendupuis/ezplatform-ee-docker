@@ -114,6 +114,7 @@ URLs and Command Lines
   - Follow stats: `docker-compose exec redis redis-cli --stat;`
   - Monitor request: `docker-compose exec redis redis-cli MONITOR;`
   - Delete all keys: `docker-compose exec redis redis-cli FLUSHALL;`
+  - PHP session count: `docker-compose exec redis redis-cli KEYS PHPREDIS_SESSION:* | wc -l | tr -d ' ';`
   - Open Redis CLI: `docker-compose exec redis redis-cli;`
   - Open a shell into container: `docker-compose exec redis bash;`
 * MariaDB
