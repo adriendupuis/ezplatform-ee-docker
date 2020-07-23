@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "5c66be9a600da89a19c20fc9b6a94681",
+  "content-hash": "26ec8ec11d15afba870227085525732f",
   "packages": [
     {
       "name": "babdev/pagerfanta-bundle",
@@ -2082,16 +2082,16 @@
     },
     {
       "name": "ezsystems/ezplatform-admin-ui",
-      "version": "v2.1.0",
+      "version": "v2.1.1",
       "source": {
         "type": "git",
         "url": "https://github.com/ezsystems/ezplatform-admin-ui.git",
-        "reference": "48fae3b1e8a077feed350a44acfa372efb580f4f"
+        "reference": "5409fc8fd6fd5bc2e84c21d476bbd6a1e5759853"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/ezsystems/ezplatform-admin-ui/zipball/48fae3b1e8a077feed350a44acfa372efb580f4f",
-        "reference": "48fae3b1e8a077feed350a44acfa372efb580f4f",
+        "url": "https://api.github.com/repos/ezsystems/ezplatform-admin-ui/zipball/5409fc8fd6fd5bc2e84c21d476bbd6a1e5759853",
+        "reference": "5409fc8fd6fd5bc2e84c21d476bbd6a1e5759853",
         "shasum": ""
       },
       "require": {
@@ -2099,7 +2099,7 @@
         "ezsystems/ez-support-tools": "^2.0",
         "ezsystems/ezplatform-content-forms": "^1.0",
         "ezsystems/ezplatform-design-engine": "^3.0",
-        "ezsystems/ezplatform-kernel": "^1.0",
+        "ezsystems/ezplatform-kernel": "~1.1.0",
         "ezsystems/ezplatform-rest": "^1.0",
         "ezsystems/ezplatform-richtext": "^2.0",
         "ezsystems/ezplatform-search": "^1.0",
@@ -2139,7 +2139,7 @@
       },
       "type": "project",
       "extra": {
-        "_ezplatform_branch_for_behat_tests": "master",
+        "_ezplatform_branch_for_behat_tests": "3.1",
         "branch-alias": {
           "dev-tmp_ci_branch": "2.1.x-dev",
           "dev-master": "2.1.x-dev"
@@ -2156,7 +2156,7 @@
         "GPL-2.0-only"
       ],
       "description": "eZ Platform Admin v2",
-      "time": "2020-07-15T10:34:22+00:00"
+      "time": "2020-07-23T08:02:33+00:00"
     },
     {
       "name": "ezsystems/ezplatform-admin-ui-assets",
@@ -2328,16 +2328,16 @@
     },
     {
       "name": "ezsystems/ezplatform-core",
-      "version": "v2.1.0",
+      "version": "v2.1.1",
       "source": {
         "type": "git",
         "url": "https://github.com/ezsystems/ezplatform-core.git",
-        "reference": "8bed86dd2e3a075cc01d1551c4b86265a949da4d"
+        "reference": "df4ea94a64ae9fa233ef8d90e17ef12c821372d3"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/ezsystems/ezplatform-core/zipball/8bed86dd2e3a075cc01d1551c4b86265a949da4d",
-        "reference": "8bed86dd2e3a075cc01d1551c4b86265a949da4d",
+        "url": "https://api.github.com/repos/ezsystems/ezplatform-core/zipball/df4ea94a64ae9fa233ef8d90e17ef12c821372d3",
+        "reference": "df4ea94a64ae9fa233ef8d90e17ef12c821372d3",
         "shasum": ""
       },
       "require": {
@@ -2375,7 +2375,7 @@
         }
       ],
       "description": "eZ Platform core bundles container",
-      "time": "2020-06-14T18:29:27+00:00"
+      "time": "2020-07-16T23:05:12+00:00"
     },
     {
       "name": "ezsystems/ezplatform-cron",
@@ -2904,16 +2904,16 @@
     },
     {
       "name": "ezsystems/ezplatform-kernel",
-      "version": "v1.1.0",
+      "version": "v1.1.1",
       "source": {
         "type": "git",
         "url": "https://github.com/ezsystems/ezplatform-kernel.git",
-        "reference": "77f90d8db4d067da9e00ba3cc678c1eb8ba722a8"
+        "reference": "0371850209090f64ed612f1648bce6b50d4c3307"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/ezsystems/ezplatform-kernel/zipball/77f90d8db4d067da9e00ba3cc678c1eb8ba722a8",
-        "reference": "77f90d8db4d067da9e00ba3cc678c1eb8ba722a8",
+        "url": "https://api.github.com/repos/ezsystems/ezplatform-kernel/zipball/0371850209090f64ed612f1648bce6b50d4c3307",
+        "reference": "0371850209090f64ed612f1648bce6b50d4c3307",
         "shasum": ""
       },
       "require": {
@@ -2989,7 +2989,7 @@
       "extra": {
         "_ci_branch-comment_": "Keep ci branch up-to-date with master or branch if on stable. ci is never on github but convention used for ci behat testing!",
         "_ezplatform_branch_for_behat_tests_comment_": "ezplatform branch to use to run Behat tests",
-        "_ezplatform_branch_for_behat_tests": "master",
+        "_ezplatform_branch_for_behat_tests": "3.1",
         "branch-alias": {
           "dev-master": "1.1.x-dev",
           "dev-tmp_ci_branch": "1.1.x-dev"
@@ -3011,7 +3011,7 @@
       ],
       "description": "Kernel used by ezsystems/ezplatform and derivatives. Provides the Content Repository, its APIs, and the application's Symfony framework integration.",
       "homepage": "https://ezplatform.com",
-      "time": "2020-07-15T10:37:40+00:00"
+      "time": "2020-07-23T08:07:20+00:00"
     },
     {
       "name": "ezsystems/ezplatform-matrix-fieldtype",
@@ -3081,22 +3081,22 @@
     },
     {
       "name": "ezsystems/ezplatform-page-builder",
-      "version": "v2.1.0",
+      "version": "v2.1.1",
       "source": {
         "type": "git",
         "url": "git@github.com:ezsystems/ezplatform-page-builder.git",
-        "reference": "9f84b8b7ee89e6559abbae1193046acc787ccc68"
+        "reference": "fe5a82dc9d3ee43e1e788ed388bda1c8f6ebddec"
       },
       "dist": {
         "type": "zip",
-        "url": "https://updates.ez.no/ttl/dist/ezsystems/ezplatform-page-builder/ezsystems-ezplatform-page-builder-9f84b8b7ee89e6559abbae1193046acc787ccc68-zip-0115eb.zip",
-        "reference": "9f84b8b7ee89e6559abbae1193046acc787ccc68"
+        "url": "https://updates.ez.no/ttl/dist/ezsystems/ezplatform-page-builder/ezsystems-ezplatform-page-builder-fe5a82dc9d3ee43e1e788ed388bda1c8f6ebddec-zip-5ad4b3.zip",
+        "reference": "fe5a82dc9d3ee43e1e788ed388bda1c8f6ebddec"
       },
       "require": {
         "ext-intl": "*",
         "ezsystems/ezplatform-admin-ui": "^2.0",
         "ezsystems/ezplatform-content-forms": "^1.0",
-        "ezsystems/ezplatform-kernel": "^1.0",
+        "ezsystems/ezplatform-kernel": "~1.1.0",
         "ezsystems/ezplatform-page-fieldtype": "^2.0",
         "jms/serializer": "^3.5",
         "lexik/jwt-authentication-bundle": "^2.6",
@@ -3136,7 +3136,7 @@
       },
       "type": "ezplatform-bundle",
       "extra": {
-        "_ezplatform_branch_for_behat_tests": "master",
+        "_ezplatform_branch_for_behat_tests": "3.1",
         "branch-alias": {
           "dev-master": "2.1.x-dev",
           "dev-tmp_ci_branch": "2.1.x-dev"
@@ -3158,30 +3158,30 @@
       ],
       "description": "eZ Platform Page Builder",
       "support": {
-        "source": "https://github.com/ezsystems/ezplatform-page-builder/tree/v2.1.0",
+        "source": "https://github.com/ezsystems/ezplatform-page-builder/tree/v2.1.1",
         "issues": "https://github.com/ezsystems/ezplatform-page-builder/issues"
       },
-      "time": "2020-07-15T12:28:41+00:00"
+      "time": "2020-07-23T08:10:19+00:00"
     },
     {
       "name": "ezsystems/ezplatform-page-fieldtype",
-      "version": "v2.1.0",
+      "version": "v2.1.1",
       "source": {
         "type": "git",
         "url": "git@github.com:ezsystems/ezplatform-page-fieldtype.git",
-        "reference": "db9491c7c1d74d2ca1eaef2f6195827c4e918f2d"
+        "reference": "183453d3712f12e31318bd3327860bc57d3052d4"
       },
       "dist": {
         "type": "zip",
-        "url": "https://updates.ez.no/ttl/dist/ezsystems/ezplatform-page-fieldtype/ezsystems-ezplatform-page-fieldtype-db9491c7c1d74d2ca1eaef2f6195827c4e918f2d-zip-ca69eb.zip",
-        "reference": "db9491c7c1d74d2ca1eaef2f6195827c4e918f2d"
+        "url": "https://updates.ez.no/ttl/dist/ezsystems/ezplatform-page-fieldtype/ezsystems-ezplatform-page-fieldtype-183453d3712f12e31318bd3327860bc57d3052d4-zip-11d653.zip",
+        "reference": "183453d3712f12e31318bd3327860bc57d3052d4"
       },
       "require": {
         "doctrine/dbal": "^2.10",
         "ext-dom": "*",
         "ezsystems/ezplatform-content-forms": "^1.0",
         "ezsystems/ezplatform-http-cache": "^2.0",
-        "ezsystems/ezplatform-kernel": "^1.0",
+        "ezsystems/ezplatform-kernel": "~1.1.0",
         "ezsystems/ezplatform-richtext": "^2.0",
         "jms/serializer": "^3.5",
         "nicmart/tree": "^0.2",
@@ -3213,7 +3213,7 @@
       },
       "type": "ezplatform-bundle",
       "extra": {
-        "_ezplatform_branch_for_behat_tests": "master",
+        "_ezplatform_branch_for_behat_tests": "3.1",
         "branch-alias": {
           "dev-master": "2.1.x-dev",
           "dev-tmp_ci_branch": "2.1.x-dev"
@@ -3241,10 +3241,10 @@
       ],
       "description": "eZ Platform Page FieldType",
       "support": {
-        "source": "https://github.com/ezsystems/ezplatform-page-fieldtype/tree/v2.1.0",
+        "source": "https://github.com/ezsystems/ezplatform-page-fieldtype/tree/v2.1.1",
         "issues": "https://github.com/ezsystems/ezplatform-page-fieldtype/issues"
       },
-      "time": "2020-07-15T12:29:44+00:00"
+      "time": "2020-07-23T08:11:51+00:00"
     },
     {
       "name": "ezsystems/ezplatform-permissions",
@@ -3530,20 +3530,20 @@
     },
     {
       "name": "ezsystems/ezplatform-search",
-      "version": "v1.0.0",
+      "version": "v1.0.1",
       "source": {
         "type": "git",
         "url": "https://github.com/ezsystems/ezplatform-search.git",
-        "reference": "5d599bcd85d7dbb05c8eb1ed1a337783a55df7a4"
+        "reference": "134d01f2d42c0496a03ecfaf3aacb5dd4ac8f1aa"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/ezsystems/ezplatform-search/zipball/5d599bcd85d7dbb05c8eb1ed1a337783a55df7a4",
-        "reference": "5d599bcd85d7dbb05c8eb1ed1a337783a55df7a4",
+        "url": "https://api.github.com/repos/ezsystems/ezplatform-search/zipball/134d01f2d42c0496a03ecfaf3aacb5dd4ac8f1aa",
+        "reference": "134d01f2d42c0496a03ecfaf3aacb5dd4ac8f1aa",
         "shasum": ""
       },
       "require": {
-        "ezsystems/ezplatform-kernel": "^1.0",
+        "ezsystems/ezplatform-kernel": "~1.1.0",
         "pagerfanta/pagerfanta": "^2.1",
         "php": "^7.3",
         "symfony/config": "^5.0",
@@ -3575,7 +3575,7 @@
         "GPL-2.0-only"
       ],
       "description": "Platform Search bundle",
-      "time": "2020-07-15T10:43:31+00:00"
+      "time": "2020-07-23T08:08:46+00:00"
     },
     {
       "name": "ezsystems/ezplatform-site-factory",
@@ -5439,16 +5439,16 @@
     },
     {
       "name": "monolog/monolog",
-      "version": "2.1.0",
+      "version": "2.1.1",
       "source": {
         "type": "git",
         "url": "https://github.com/Seldaek/monolog.git",
-        "reference": "38914429aac460e8e4616c8cb486ecb40ec90bb1"
+        "reference": "f9eee5cec93dfb313a38b6b288741e84e53f02d5"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/Seldaek/monolog/zipball/38914429aac460e8e4616c8cb486ecb40ec90bb1",
-        "reference": "38914429aac460e8e4616c8cb486ecb40ec90bb1",
+        "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f9eee5cec93dfb313a38b6b288741e84e53f02d5",
+        "reference": "f9eee5cec93dfb313a38b6b288741e84e53f02d5",
         "shasum": ""
       },
       "require": {
@@ -5526,7 +5526,7 @@
           "type": "tidelift"
         }
       ],
-      "time": "2020-05-22T08:12:19+00:00"
+      "time": "2020-07-23T08:41:23+00:00"
     },
     {
       "name": "namshi/jose",
@@ -5593,16 +5593,16 @@
     },
     {
       "name": "nelmio/cors-bundle",
-      "version": "2.0.1",
+      "version": "2.1.0",
       "source": {
         "type": "git",
         "url": "https://github.com/nelmio/NelmioCorsBundle.git",
-        "reference": "9683e6d30d000ef998919261329d825de7c53499"
+        "reference": "be4d5824caebc86da9e224e935e02e1201b3ea54"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/nelmio/NelmioCorsBundle/zipball/9683e6d30d000ef998919261329d825de7c53499",
-        "reference": "9683e6d30d000ef998919261329d825de7c53499",
+        "url": "https://api.github.com/repos/nelmio/NelmioCorsBundle/zipball/be4d5824caebc86da9e224e935e02e1201b3ea54",
+        "reference": "be4d5824caebc86da9e224e935e02e1201b3ea54",
         "shasum": ""
       },
       "require": {
@@ -5646,7 +5646,7 @@
         "cors",
         "crossdomain"
       ],
-      "time": "2019-11-15T08:54:08+00:00"
+      "time": "2020-07-22T11:44:28+00:00"
     },
     {
       "name": "netgen/query-translator",
@@ -6165,16 +6165,16 @@
     },
     {
       "name": "php-http/client-common",
-      "version": "2.2.1",
+      "version": "2.3.0",
       "source": {
         "type": "git",
         "url": "https://github.com/php-http/client-common.git",
-        "reference": "d70de2f7bf575ef19350b8aab504857943ab2922"
+        "reference": "e37e46c610c87519753135fb893111798c69076a"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/php-http/client-common/zipball/d70de2f7bf575ef19350b8aab504857943ab2922",
-        "reference": "d70de2f7bf575ef19350b8aab504857943ab2922",
+        "url": "https://api.github.com/repos/php-http/client-common/zipball/e37e46c610c87519753135fb893111798c69076a",
+        "reference": "e37e46c610c87519753135fb893111798c69076a",
         "shasum": ""
       },
       "require": {
@@ -6206,7 +6206,7 @@
       "type": "library",
       "extra": {
         "branch-alias": {
-          "dev-master": "2.2.x-dev"
+          "dev-master": "2.3.x-dev"
         }
       },
       "autoload": {
@@ -6232,7 +6232,7 @@
         "http",
         "httplug"
       ],
-      "time": "2020-07-13T15:38:36+00:00"
+      "time": "2020-07-21T10:04:13+00:00"
     },
     {
       "name": "php-http/curl-client",
@@ -6711,28 +6711,27 @@
     },
     {
       "name": "phpdocumentor/reflection-docblock",
-      "version": "5.1.0",
+      "version": "5.2.0",
       "source": {
         "type": "git",
         "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-        "reference": "cd72d394ca794d3466a3b2fc09d5a6c1dc86b47e"
+        "reference": "3170448f5769fe19f456173d833734e0ff1b84df"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/cd72d394ca794d3466a3b2fc09d5a6c1dc86b47e",
-        "reference": "cd72d394ca794d3466a3b2fc09d5a6c1dc86b47e",
+        "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/3170448f5769fe19f456173d833734e0ff1b84df",
+        "reference": "3170448f5769fe19f456173d833734e0ff1b84df",
         "shasum": ""
       },
       "require": {
-        "ext-filter": "^7.1",
-        "php": "^7.2",
-        "phpdocumentor/reflection-common": "^2.0",
-        "phpdocumentor/type-resolver": "^1.0",
-        "webmozart/assert": "^1"
+        "ext-filter": "*",
+        "php": "^7.2 || ^8.0",
+        "phpdocumentor/reflection-common": "^2.2",
+        "phpdocumentor/type-resolver": "^1.3",
+        "webmozart/assert": "^1.9.1"
       },
       "require-dev": {
-        "doctrine/instantiator": "^1",
-        "mockery/mockery": "^1"
+        "mockery/mockery": "~1.3.2"
       },
       "type": "library",
       "extra": {
@@ -6760,7 +6759,7 @@
         }
       ],
       "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-      "time": "2020-02-22T12:28:44+00:00"
+      "time": "2020-07-20T20:05:34+00:00"
     },
     {
       "name": "phpdocumentor/type-resolver",
@@ -14791,23 +14790,23 @@
     },
     {
       "name": "ezsystems/behatbundle",
-      "version": "v8.1.0",
+      "version": "v8.1.1",
       "source": {
         "type": "git",
         "url": "https://github.com/ezsystems/BehatBundle.git",
-        "reference": "8f44d29d8bbb8105dcda3cc3beabf226695aeee9"
+        "reference": "22b417a40d071409624300e150da203d5d629381"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/ezsystems/BehatBundle/zipball/8f44d29d8bbb8105dcda3cc3beabf226695aeee9",
-        "reference": "8f44d29d8bbb8105dcda3cc3beabf226695aeee9",
+        "url": "https://api.github.com/repos/ezsystems/BehatBundle/zipball/22b417a40d071409624300e150da203d5d629381",
+        "reference": "22b417a40d071409624300e150da203d5d629381",
         "shasum": ""
       },
       "require": {
         "behat/behat": "^3.6",
         "behat/mink-selenium2-driver": "^1.4",
         "ext-json": "*",
-        "ezsystems/ezplatform-kernel": "^1.0",
+        "ezsystems/ezplatform-kernel": "~1.1.0",
         "friends-of-behat/mink": "^1.8",
         "friends-of-behat/mink-extension": "^2.4",
         "friends-of-behat/symfony-extension": "^2.1",
@@ -14835,7 +14834,7 @@
       ],
       "type": "library",
       "extra": {
-        "_ezplatform_branch_for_behat_tests": "master",
+        "_ezplatform_branch_for_behat_tests": "3.1",
         "branch-alias": {
           "dev-master": "8.1.x-dev",
           "dev-tmp_ci_branch": "8.1.x-dev"
@@ -14858,7 +14857,7 @@
         }
       ],
       "description": "Behat bundle for help testing eZ Bundles and projects",
-      "time": "2020-07-15T10:44:34+00:00"
+      "time": "2020-07-23T07:54:15+00:00"
     },
     {
       "name": "fabpot/goutte",
