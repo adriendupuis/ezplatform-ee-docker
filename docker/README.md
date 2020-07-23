@@ -4,17 +4,17 @@ Docker Container Cluster
 Introduction
 ------------
 
-Use a Docker containers cluster to have a [typical architecture for eZ Platform](https://doc.ezplatform.com/en/3.0/guide/clustering/) including the following elements.
+Use a Docker containers cluster to have a [typical architecture for eZ Platform](https://doc.ezplatform.com/en/3.1/guide/clustering/) including the following elements.
 * HTTP Server:
   - Debian “Buster” 10
   - Apache 2.4
   - PHP 7.3 ([by default](https://packages.debian.org/buster/php/php))
   - [PHP FastCGI Process Manager](https://www.php.net/manual/install.fpm.php) (PHP-FPM) with [Unix domain socket](https://en.wikipedia.org/wiki/Unix_domain_socket) (UDS)
-  - [eZ Platform Enterprise Edition](https://ez.no/Products/eZ-Platform-Enterprise-Edition) 3.0
+  - [eZ Platform Enterprise Edition](https://ez.no/Products/eZ-Platform-Enterprise-Edition) 3.1
 * Reverse Proxy Cache Server:
   - Varnish 6.0
   - Varnish Modules 0.15
-* [Persistence Cache](https://doc.ezplatform.com/en/3.0/guide/persistence_cache/) and [Session Handling](https://doc.ezplatform.com/en/3.0/guide/sessions/) Servers:
+* [Persistence Cache](https://doc.ezplatform.com/en/3.1/guide/persistence_cache/) and [Session Handling](https://doc.ezplatform.com/en/3.1/guide/sessions/) Servers:
   - Redis 3.2
 * DataBase Server:
   - MariaDB 10.4
@@ -30,7 +30,7 @@ Quick Start
 About
 -----
 
-* Follow [eZ Platform 3.0 Requirements](https://doc.ezplatform.com/en/3.0/getting_started/requirements/) as much as possible.
+* Follow [eZ Platform 3.1 Requirements](https://doc.ezplatform.com/en/3.1/getting_started/requirements/) as much as possible.
 * Add as less configuration as possible to [original distribution](https://github.com/ezsystems/ezplatform-ee/tree/v2.5.9).
 
 URLs and Command Lines
@@ -139,8 +139,8 @@ TODO
 ----
 
 * v3: Avoid doctrine.yaml's server_version change without commit it
-* Add [DFS](https://doc.ezplatform.com/en/3.0/guide/clustering/#dfs-io-handler)
-* Facilitate switch between eZ Platform EE v2.5 and eZ Platform v3.0
+* Add [DFS](https://doc.ezplatform.com/en/3.1/guide/clustering/#dfs-io-handler)
+* Facilitate switch between eZ Platform EE v2.5 and eZ Platform v3.x
 * Ensure compatibility with other unixoides than Mac OS X. For example, `sed -i ''` is specific to Mac OS X and a solution could be https://formulae.brew.sh/formula/gnu-sed
 * Maybe:
   - Build Solr at the same time than other containers and uncomment that apache depends on solr
