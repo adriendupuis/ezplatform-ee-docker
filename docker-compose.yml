@@ -23,7 +23,7 @@ services:
       - .:/var/www/ez:cached
 
   redis:
-    image: redis:3.2
+    image: redis:5.0
 
   mariadb:
     image: mariadb:10.4
