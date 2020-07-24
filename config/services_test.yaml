@@ -5,3 +5,7 @@ services:
 
     App\Tests\Behat\:
         resource: '../tests/Behat/*'
+
+    test_alias.ezpublish.siteaccess_service:
+        alias: 'ezpublish.siteaccess_service'
+        public: true
