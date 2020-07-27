@@ -1,0 +1,4 @@
+parameters:
+    ezsettings.default.unit_test: 'default value'
+    ezsettings.site.unit_test: 'site value'
+    ezsettings.admin_group.unit_test: 'admin value'
