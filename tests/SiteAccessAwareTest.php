@@ -28,6 +28,9 @@ class SiteAccessAwareTest extends KernelTestCase
         //$wantedSiteAccess = 'site';
         $wantedSiteAccess = 'admin';
 
+        // Contrary to 2.5: The "ezpublish.siteaccess" service is private, you cannot replace it.
+        //self::$kernel->getContainer()->set('ezpublish.siteaccess', new SiteAccess($wantedSiteAccess, 'phpunit'));
+
         $this->siteAccessService->setSiteAccess($this->siteAccessService->get($wantedSiteAccess));
         self::assertEquals($wantedSiteAccess, $this->siteAccessService->getCurrent()->name);
 
