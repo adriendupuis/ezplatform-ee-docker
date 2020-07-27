@@ -2,19 +2,30 @@
 
 namespace App\Tests;
 
+use eZ\Bundle\EzPublishCoreBundle\DependencyInjection\Configuration\ConfigResolver;
+use eZ\Publish\Core\MVC\Symfony\SiteAccess;
 use eZ\Publish\Core\Repository\SiteAccessAware\Repository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class SiteAccessAwareTest extends KernelTestCase
 {
+    /** @var ConfigResolver */
+    private $configResolver;
+
     public function setup(): void
     {
         self::bootKernel();
+        $this->configResolver = self::$kernel->getContainer()->get('ezpublish.config.resolver');
     }
 
     public function testSiteAccess()
     {
-        var_dump(self::$kernel->getContainer()->get('ezpublish.siteaccess')); // Weird “uninitialized” siteaccess named “default” instead of named after the default siteaccess “site”
+        //$wantedSiteAccess = 'site';
+        $wantedSiteAccess = 'admin';
+
+        self::$kernel->getContainer()->set('ezpublish.siteaccess', new SiteAccess($wantedSiteAccess, 'phpunit'));
+
+        self::assertEquals("$wantedSiteAccess value", $this->configResolver->getParameter('unit_test'));
 
         /** @var Repository $repository */
         $repository = self::$kernel->getContainer()->get('ezpublish.api.repository');
