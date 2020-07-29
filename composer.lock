@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/adriendupuis/ezplatform-admin.git",
-                "reference": "450a6f8f40d7c726311022080bb35a92308b0508"
+                "reference": "c6624314b7a122c06a0b3e912897c1f0402583af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/450a6f8f40d7c726311022080bb35a92308b0508",
-                "reference": "450a6f8f40d7c726311022080bb35a92308b0508",
+                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/c6624314b7a122c06a0b3e912897c1f0402583af",
+                "reference": "c6624314b7a122c06a0b3e912897c1f0402583af",
                 "shasum": ""
             },
             "require": {
@@ -30,23 +30,24 @@
                 }
             },
             "description": "eZ Platform Administration Tools",
+            "homepage": "https://github.com/adriendupuis/ezplatform-admin",
             "support": {
                 "source": "https://github.com/adriendupuis/ezplatform-admin/tree/develop",
                 "issues": "https://github.com/adriendupuis/ezplatform-admin/issues"
             },
-            "time": "2020-07-20T20:16:57+00:00"
+            "time": "2020-07-29T07:12:07+00:00"
         },
         {
             "name": "babdev/pagerfanta-bundle",
             "version": "v2.4.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/BabDev/BabDevPagerfantaBundle.git",
+                "url": "https://github.com/BabDev/PagerfantaBundle.git",
                 "reference": "602f4847b27d72364b49b31d15dfc02a59aaece8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BabDev/BabDevPagerfantaBundle/zipball/602f4847b27d72364b49b31d15dfc02a59aaece8",
+                "url": "https://api.github.com/repos/BabDev/PagerfantaBundle/zipball/602f4847b27d72364b49b31d15dfc02a59aaece8",
                 "reference": "602f4847b27d72364b49b31d15dfc02a59aaece8",
                 "shasum": ""
             },
