@@ -13,7 +13,7 @@ rm -rf var/cache/dev/ var/log/*.log;
 touch var/log/dev.log;
 
 # Docker: Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
-docker-compose --env-file=.env.local up --build --detach varnish apache redis mariadb;
+docker-compose --env-file=.env.local up --build --detach varnish apache redis mariadb elasticsearch;
 
 # MariaDB: Server Wait & Version Fetch
 GET_MARIADB_VERSION_CMD="docker-compose --env-file=.env.local exec mariadb mysql -proot -BNe 'SELECT VERSION();' | cut -d '-' -f 1 | head -n 1;";
@@ -47,6 +47,9 @@ docker-compose --env-file=.env.local exec --user www-data apache composer instal
 cp -r ./vendor/ezsystems/ezplatform-solr-search-engine/lib/Resources/config/solr ./docker/solr/conf;
 docker-compose --env-file=.env.local up --build --detach solr;
 rm -rf ./docker/solr/conf;
+
+# Elasticsearch: Put index template
+docker-compose exec apache bin/console ezplatform:elasticsearch:put-index-template;
 
 # Apache: eZ Platform Install (needs Solr)
 docker-compose --env-file=.env.local exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;";
