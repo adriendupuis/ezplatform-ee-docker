@@ -24,6 +24,7 @@ services:
 
   redis:
     image: redis:5.0
+    #TODO: change maxmemory_policy to volatile-lru — https://doc.ezplatform.com/en/latest/guide/persistence_cache/
 
   mariadb:
     image: mariadb:10.4
