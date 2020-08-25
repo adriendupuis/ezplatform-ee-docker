@@ -75,13 +75,13 @@ URLs and Command Lines
   - Get Git version: `docker-compose exec apache git --version;`
   - Get Composer version: `docker-compose exec apache composer --version;`
   - Get Yarn version: `docker-compose exec apache yarn --version;`
-  - Get Symfony version: `docker-compose exec apache php bin/console --version;`
+  - Get Symfony version: `docker-compose exec apache bin/console --version;`
   - See a bundle info: `docker-compose exec apache composer show vendor-name/bundle-name;`
     - See eZ Kernel bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-kernel;`
     - See eZ Symfony Tools info: `docker-compose exec apache composer show ezsystems/symfony-tools;`
     - See eZ HTTP Cache bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-http-cache;`
     - See eZ Solr SE bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-solr-search-engine;`
-  - Clear eZ caches: `docker-compose exec --user www-data apache sh -c "php bin/console cache:clear; php bin/console cache:pool:clear cache.redis;";` 
+  - Clear eZ caches: `docker-compose exec --user www-data apache sh -c "bin/console cache:clear; bin/console cache:pool:clear cache.redis;";` 
   - Open a shell into container as root: `docker-compose exec apache bash;`
   - Open a shell into container as www-data: `docker-compose exec --user www-data apache bash;`
 * Varnish
@@ -106,7 +106,9 @@ URLs and Command Lines
       - `l`: ***l***ocation id
       - `p`: (***p***ath) ancestor location id
       - `pl`: ***p***arent ***l***ocation id
-      - `ct`: ***c***ontent ***t***ype id 
+      - `ct`: ***c***ontent ***t***ype id
+* Symfony → Varnish
+  - TODO: `bin/console fos:httpcache:invalidate:tag --siteaccess=admin l2;`
 * Redis
   - Get OS release: `docker-compose exec redis cat /etc/os-release;`
   - Get server info: `docker-compose exec redis redis-cli INFO Server;`
@@ -133,7 +135,7 @@ URLs and Command Lines
   - Get Solr status: `docker-compose exec solr bin/solr status;`
   - Follow Solr logs: `docker-compose logs --follow solr;`
 * Apache/eZ → Solr
-  - (Re)Index: `docker-compose exec --user www-data apache php bin/console ezplatform:reindex;`
+  - (Re)Index: `docker-compose exec --user www-data apache bin/console ezplatform:reindex;`
 
 TODO
 ----
