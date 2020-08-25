@@ -1,6 +1,6 @@
 version: '3'
 
-# https://doc.ezplatform.com/en/2.5/getting_started/requirements/
+# https://doc.ezplatform.com/en/3.1/getting_started/requirements/
 
 services:
 
