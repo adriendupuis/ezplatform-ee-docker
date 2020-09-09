@@ -68,4 +68,5 @@ return [
     Ibexa\Platform\Bundle\Permissions\PlatformPermissionsBundle::class => ['all' => true],
     // Personal Bundles
     AdrienDupuis\EzPlatformAdminBundle\AdrienDupuisEzPlatformAdminBundle::class => ['all' => true],
+    AdrienDupuis\EzPlatformStandardBundle\AdrienDupuisEzPlatformStandardBundle::class => ['all' => true],
 ];

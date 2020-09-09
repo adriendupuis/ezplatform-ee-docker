@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c54925009c1378aff56e3c07a833c91c",
+    "content-hash": "feb3bf9813c3b1e5d405a8d55eb63fb2",
     "packages": [
         {
             "name": "adriendupuis/ezplatform-admin",
@@ -36,6 +36,29 @@
                 "issues": "https://github.com/adriendupuis/ezplatform-admin/issues"
             },
             "time": "2020-07-29T07:12:07+00:00"
+        },
+        {
+            "name": "adriendupuis/ezplatform-standard",
+            "version": "dev-feature/typed_matrix",
+            "dist": {
+                "type": "path",
+                "url": "vendor/adriendupuis/ezplatform-standard",
+                "reference": "cc8171f3607eeb69c96390be45f12d9241837130"
+            },
+            "require": {
+                "ext-json": "*",
+                "ezsystems/ezplatform-kernel": "^1.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AdrienDupuis\\EzPlatformStandardBundle\\": "src/bundle/"
+                }
+            },
+            "description": "eZ Platform Standard Features",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "babdev/pagerfanta-bundle",
@@ -17365,7 +17388,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "adriendupuis/ezplatform-admin": 20
+        "adriendupuis/ezplatform-admin": 20,
+        "adriendupuis/ezplatform-standard": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
