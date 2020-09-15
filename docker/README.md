@@ -146,6 +146,7 @@ TODO
 * Ensure compatibility with other unixoides than Mac OS X. For example, `sed -i ''` is specific to Mac OS X and a solution could be https://formulae.brew.sh/formula/gnu-sed
 * Maybe:
   - Build Solr at the same time than other containers and uncomment that apache depends on solr
+  - Facilitate keeping Varnish's VCL up-to-date  
   - Use more docker-compose.yml `volumes` and less Dockerfile `COPY`
   - The builder could have some options like: `./docker-compose.bash --cache-pool=memcached --sessions-in-cache-pool --search-engine=legacy --en=dev --xdebug;`
   - Just use `docker-compose up --build` and remove `docker-compose.bash`
