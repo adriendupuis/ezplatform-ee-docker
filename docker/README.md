@@ -123,12 +123,13 @@ URLs and Command Lines
   - Get OS release: `docker-compose exec mariadb cat /etc/os-release;`
   - Get MariaDB version: `docker-compose exec mariadb mysql --password=root --batch --skip-column-names --execute="SELECT VERSION();";`
     - Get detailed version: `docker-compose exec mariadb mysqladmin --password=root version;`
-  - Open command-line client: `docker-compose exec mariadb mysql -proot ezplatform;`
+  - Open command-line client: `docker-compose exec mariadb mysql -proot --default-character-set=utf8mb4 ezplatform;`
   - Ping MariaDB server: `docker-compose exec mariadb mysqladmin -proot ping;`
   - Get MariaDB status: `docker-compose exec mariadb mysqladmin -proot status;`
     - Get extended status: `docker-compose exec mariadb mysqladmin -proot extended-status;`
   - Show process list: `docker-compose exec mariadb mysqladmin --password=root processlist --verbose;`
   - Get last content modification date: `docker-compose exec mariadb mysql -proot ezplatform -e "SELECT FROM_UNIXTIME(modified) AS modified FROM ezcontentobject ORDER BY modified DESC LIMIT 1;";`
+  - Get language list: `docker-compose exec mariadb mysql -proot --default-character-set=utf8mb4 ezplatform -e "SELECT * FROM ezcontent_language;";`
 * Solr
   - Get OS release: `docker-compose exec solr cat /etc/os-release;`
   - Get Solr version: `docker-compose exec solr bin/solr version;`
@@ -140,7 +141,7 @@ URLs and Command Lines
 TODO
 ----
 
-* v3: Avoid doctrine.yaml's server_version change without commit it
+* v3: Avoid .env's `DATABASE_VERSION` change without commit it
 * Add [DFS](https://doc.ezplatform.com/en/3.1/guide/clustering/#dfs-io-handler)
 * Facilitate switch between eZ Platform EE v2.5 and eZ Platform v3.x
 * Ensure compatibility with other unixoides than Mac OS X. For example, `sed -i ''` is specific to Mac OS X and a solution could be https://formulae.brew.sh/formula/gnu-sed
