@@ -11,6 +11,7 @@ git clean -df; # Help to switch between eZ Platform v2 and v3
 # eZ Platform: Cache and Logs Removal
 rm -rf var/cache/dev/ var/logs/*.log;
 touch var/logs/dev.log;
+chown www-data -r var/cache/;
 
 # Docker: Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
 docker-compose up --build --detach varnish apache redis mariadb;
