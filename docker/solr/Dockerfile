@@ -1,6 +1,6 @@
 FROM solr:6.6
 
-LABEL maintainer="adrien.dupuis@ez.no"
+LABEL maintainer="adrien.dupuis@ibexa.co"
 LABEL description="Solr 6.6 with eZ Platform's schema"
 
 RUN cp -r /opt/solr/server/solr/configsets/basic_configs /opt/solr/server/solr/configsets/ezplatform \
