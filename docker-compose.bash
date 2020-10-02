@@ -8,13 +8,13 @@
 # Git: Untracked Files Removal
 git clean -df; # Help to switch between eZ Platform v2 and v3
 
+# Docker: Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
+docker-compose up --build --detach varnish apache redis mariadb;
+
 # eZ Platform: Cache and Logs Removal
 rm -rf var/cache/dev/ var/logs/*.log;
 touch var/logs/dev.log;
-chown www-data -r var/cache/;
-
-# Docker: Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
-docker-compose up --build --detach varnish apache redis mariadb;
+docker-compose exec apache chown www-data -R var/cache/;
 
 # MariaDB: Server Wait & Version Fetch
 GET_MARIADB_VERSION_CMD="docker-compose exec mariadb mysql -proot -BNe 'SELECT VERSION();' | cut -d '-' -f 1 | head -n 1;";
@@ -42,7 +42,9 @@ docker-compose exec --user www-data apache composer config --global process-time
 
 # Apache: Composer Install
 find bin/ -type l -exec unlink {} \; ; # Remove bin/ symlinks
-docker-compose exec --user www-data apache composer install --no-interaction;
+while [[ -z `grep "auto-generated during the composer install" app/config/parameters.yml` ]]; do
+  docker-compose exec --user www-data apache composer install --no-interaction;
+done;
 
 # Solr: Docker Container Build (needs vendor/ezsystems/ezplatform-solr-search-engine/)
 docker-compose up --build --detach solr;
