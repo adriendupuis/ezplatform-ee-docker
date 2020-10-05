@@ -81,7 +81,7 @@ URLs and Command Lines
     - See eZ Symfony Tools info: `docker-compose exec apache composer show ezsystems/symfony-tools;`
     - See eZ HTTP Cache bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-http-cache;`
     - See eZ Solr SE bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-solr-search-engine;`
-  - Clear eZ caches: `docker-compose exec --user www-data apache sh -c "bin/console cache:clear; bin/console cache:pool:clear cache.redis;";` 
+  - Clear eZ caches: `docker-compose exec --user www-data apache sh -c "bin/console cache:clear; bin/console cache:pool:clear;";` 
   - Open a shell into container as root: `docker-compose exec apache bash;`
   - Open a shell into container as www-data: `docker-compose exec --user www-data apache bash;`
 * Varnish
@@ -89,7 +89,7 @@ URLs and Command Lines
   - Get Varnish version: `docker-compose exec varnish varnishd -V;`
   - Follow [Varnish logs](https://varnish-cache.org/docs/6.0/reference/varnishlog.html): `docker-compose exec varnish varnishlog;`
     - Follow requests for an URL: `docker-compose exec varnish varnishlog -q 'ReqURL eq "/the/url/to/follow"';`
-    - Follow PURGE requests: `docker-compose exec varnish varnishlog -q 'ReqMethod eq PURGE';`
+    - Follow PURGE and PURGEKEYS requests: `docker-compose exec varnish varnishlog -q 'ReqMethod ~ PURGE.*';`
   - Follow [Varnish cache statistics](https://varnish-cache.org/docs/6.0/reference/varnishstat.html): `docker-compose exec varnish varnishstat;`
   - Restart Varnish (remove all cache): `docker-compose restart varnish;`
   - [Bans](https://varnish-cache.org/docs/trunk/users-guide/purging.html#bans)
@@ -100,7 +100,9 @@ URLs and Command Lines
 * Apache → Varnish
   - See [`render_esi` `esi:include` tags](https://symfony.com/doc/5.0/http_cache/esi.html): `curl --silent --header "Surrogate-Capability: abc=ESI/1.0" http://localhost:8000/the/url/to/test | grep esi:include;`
   - Purge an URL: `docker-compose exec --user www-data apache curl --request PURGE --header 'Host: localhost:8080' http://varnish/the/url/to/purge;`
-  - Soft purge content object(s) by ID: `docker-compose exec --user www-data apache curl -X PURGEKEYS -H 'Host: localhost:8080' -H 'xkey-softpurge: <TYPE><ID>' http://varnish;`
+  - Soft purge content object(s) by ID:
+    - `docker-compose exec apache bin/console fos:httpcache:invalidate:tag <TYPE><ID>;`
+    - `docker-compose exec apache curl -X PURGEKEYS -H 'Host: localhost:8080' -H 'xkey-softpurge: <TYPE><ID>' http://varnish;`
     - [xkey types](https://github.com/ezsystems/ezplatform-http-cache/blob/v2.0.0/docs/using_tags.md#tags-in-use-in-this-bundle):
       - `c`: ***c***ontent id
       - `l`: ***l***ocation id
@@ -116,6 +118,7 @@ URLs and Command Lines
   - Follow stats: `docker-compose exec redis redis-cli --stat;`
   - Monitor request: `docker-compose exec redis redis-cli MONITOR;`
   - Delete all keys: `docker-compose exec redis redis-cli FLUSHALL;`
+  - Clear Redis caches: `docker-compose exec --user www-data apache bin/console cache:pool:clear cache.redis;` 
   - PHP session count: `docker-compose exec redis redis-cli KEYS PHPREDIS_SESSION:* | wc -l | tr -d ' ';`
   - Open Redis CLI: `docker-compose exec redis redis-cli;`
   - Open a shell into container: `docker-compose exec redis bash;`
