@@ -8,12 +8,14 @@
 # Git: Untracked Files Removal
 git clean -df; # Help to switch between eZ Platform v2 and v3
 
-# eZ Platform: Cache and Logs Removal
-rm -rf var/cache/dev/ var/log/*.log;
-touch var/log/dev.log;
-
 # Docker: Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
 docker-compose up --build --detach varnish apache redis mariadb;
+
+# eZ Platform: Cache and Logs Removal
+rm -rf var/cache/dev/ var/logs/*.log;
+mkdir -p var/cache/dev; touch var/logs/dev.log;
+docker-compose exec apache chown www-data -R var/cache/;
+docker-compose exec apache chmod g+w -R var/cache/;
 
 # MariaDB: Server Wait & Version Fetch
 GET_MARIADB_VERSION_CMD="docker-compose exec mariadb mysql -proot -BNe 'SELECT VERSION();' | cut -d '-' -f 1 | head -n 1;";
