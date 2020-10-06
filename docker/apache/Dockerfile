@@ -17,6 +17,9 @@ RUN apt-get -qq update \
         zip unzip \
         # Apache
         apache2 \
+        # Solr
+        default-jre \
+        wget \
         # PHP
         php \
         php-cli \

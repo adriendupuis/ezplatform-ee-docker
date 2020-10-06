@@ -32,6 +32,9 @@
     "cron/cron": {
         "version": "1.4.2"
     },
+    "defuse/php-encryption": {
+        "version": "v2.2.1"
+    },
     "dmore/behat-chrome-extension": {
         "version": "1.3.0"
     },
@@ -57,7 +60,7 @@
         "version": "1.6.7"
     },
     "doctrine/common": {
-        "version": "3.0.2"
+        "version": "2.13.3"
     },
     "doctrine/dbal": {
         "version": "2.11.1"
@@ -109,7 +112,7 @@
         "version": "v2.7.3"
     },
     "doctrine/persistence": {
-        "version": "2.0.0"
+        "version": "1.3.8"
     },
     "doctrine/reflection": {
         "version": "1.2.1"
@@ -123,8 +126,24 @@
     "elasticsearch/elasticsearch": {
         "version": "v7.9.0"
     },
+    "enqueue/dsn": {
+        "version": "0.10.4"
+    },
     "erusev/parsedown": {
         "version": "1.7.4"
+    },
+    "excelwebzone/recaptcha-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "fd4da7bc71749db65bc83abf5d164bfa9c839cf4"
+        },
+        "files": [
+            "config/packages/dev/ewz_recaptcha.yaml",
+            "config/packages/ewz_recaptcha.yaml"
+        ]
     },
     "ezimuel/guzzlestreams": {
         "version": "3.0.1"
@@ -138,11 +157,17 @@
     "ezsystems/allure-php-api": {
         "version": "v3.1.2"
     },
+    "ezsystems/apache-tika-bundle": {
+        "version": "v2.0.0"
+    },
     "ezsystems/behat-screenshot-image-driver-cloudinary": {
         "version": "v1.1.1"
     },
     "ezsystems/behatbundle": {
         "version": "v8.1.3"
+    },
+    "ezsystems/comment-bundle": {
+        "version": "v3.1.0"
     },
     "ezsystems/date-based-publisher": {
         "version": "v4.1.0"
@@ -155,6 +180,33 @@
     },
     "ezsystems/ez-support-tools": {
         "version": "v2.1.3"
+    },
+    "ezsystems/ezcommerce-admin-ui": {
+        "version": "v1.0.2"
+    },
+    "ezsystems/ezcommerce-base-design": {
+        "version": "v3.1.0"
+    },
+    "ezsystems/ezcommerce-erp-admin": {
+        "version": "v3.1.1"
+    },
+    "ezsystems/ezcommerce-fieldtypes": {
+        "version": "v1.0.2"
+    },
+    "ezsystems/ezcommerce-order-history": {
+        "version": "v3.1.0"
+    },
+    "ezsystems/ezcommerce-page-builder": {
+        "version": "v1.0.1"
+    },
+    "ezsystems/ezcommerce-price-engine": {
+        "version": "v3.1.2"
+    },
+    "ezsystems/ezcommerce-shop": {
+        "version": "v3.1.3"
+    },
+    "ezsystems/ezmigrationbundle": {
+        "version": "v1.0.5"
     },
     "ezsystems/ezplatform-admin-ui": {
         "version": "v2.1.3"
@@ -240,6 +292,15 @@
     "ezsystems/ezplatform-workflow": {
         "version": "v2.1.2"
     },
+    "ezsystems/job-queue-bundle": {
+        "version": "3.0.0"
+    },
+    "ezsystems/payment-core-bundle": {
+        "version": "2.0.3"
+    },
+    "ezsystems/stash-bundle": {
+        "version": "v0.8.0"
+    },
     "fabpot/goutte": {
         "version": "v3.3.0"
     },
@@ -285,8 +346,32 @@
             "config/routes/fos_js_routing.yaml"
         ]
     },
+    "friendsofsymfony/rest-bundle": {
+        "version": "2.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.2",
+            "ref": "cad41ef93d6150067ae2bb3c7fd729492dff6f0a"
+        },
+        "files": [
+            "config/packages/fos_rest.yaml"
+        ]
+    },
     "fzaninotto/faker": {
         "version": "v1.9.1"
+    },
+    "google/recaptcha": {
+        "version": "1.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.1",
+            "ref": "d087df3e087f50da3955f2def05079380da5894b"
+        },
+        "files": [
+            "config/packages/google_recaptcha.yaml"
+        ]
     },
     "gregwar/captcha": {
         "version": "v1.1.8"
@@ -320,6 +405,20 @@
     },
     "jms/serializer": {
         "version": "3.9.0"
+    },
+    "jms/serializer-bundle": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "384cec52df45f3bfd46a09930d6960a58872b268"
+        },
+        "files": [
+            "config/packages/dev/jms_serializer.yaml",
+            "config/packages/jms_serializer.yaml",
+            "config/packages/prod/jms_serializer.yaml"
+        ]
     },
     "jms/translation-bundle": {
         "version": "1.5.4"
@@ -370,8 +469,14 @@
     "mck89/peast": {
         "version": "v1.10.4"
     },
+    "mhujer/breadcrumbs-bundle": {
+        "version": "1.5.2"
+    },
     "monolog/monolog": {
         "version": "2.1.1"
+    },
+    "mtdowling/jmespath.php": {
+        "version": "2.6.0"
     },
     "myclabs/deep-copy": {
         "version": "1.10.1"
@@ -391,6 +496,18 @@
             "config/packages/nelmio_cors.yaml"
         ]
     },
+    "nelmio/solarium-bundle": {
+        "version": "2.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.4",
+            "ref": "dd8a4574b91d26fb70f10efe395c6d4e655bdf71"
+        },
+        "files": [
+            "config/packages/nelmio_solarium.yaml"
+        ]
+    },
     "netgen/query-translator": {
         "version": "1.0.2"
     },
@@ -405,6 +522,9 @@
     },
     "ondram/ci-detector": {
         "version": "2.1.0"
+    },
+    "onesky/api-library-php5": {
+        "version": "v1.0.5"
     },
     "oneup/flysystem-bundle": {
         "version": "3.0",
@@ -488,6 +608,9 @@
     },
     "phpdocumentor/type-resolver": {
         "version": "1.4.0"
+    },
+    "phpoption/phpoption": {
+        "version": "1.7.5"
     },
     "phpspec/prophecy": {
         "version": "1.12.1"
@@ -619,6 +742,12 @@
         "files": [
             "config/packages/security_checker.yaml"
         ]
+    },
+    "silversolutions/xsd-to-php": {
+        "version": "v3.6.0"
+    },
+    "solarium/solarium": {
+        "version": "5.2.0"
     },
     "soundasleep/html2text": {
         "version": "1.1.0"
@@ -1029,6 +1158,9 @@
     "symfony/yaml": {
         "version": "v5.1.6"
     },
+    "tedivm/stash": {
+        "version": "v0.15.2"
+    },
     "textalk/websocket": {
         "version": "1.4.0"
     },
@@ -1050,6 +1182,9 @@
     "twig/twig": {
         "version": "v3.0.5"
     },
+    "vaites/php-apache-tika": {
+        "version": "v0.9.3"
+    },
     "webmozart/assert": {
         "version": "1.9.1"
     },
@@ -1070,6 +1205,9 @@
     },
     "willdurand/jsonp-callback-validator": {
         "version": "v1.1.0"
+    },
+    "willdurand/negotiation": {
+        "version": "v2.3.1"
     },
     "zendframework/zend-code": {
         "version": "3.4.1"

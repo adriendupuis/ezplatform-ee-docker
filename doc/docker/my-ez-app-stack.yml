@@ -42,6 +42,7 @@ services:
      - PUBLIC_SERVER_URI
      - FASTLY_SERVICE_ID
      - FASTLY_KEY
+     - SISO_SEARCH_SOLR_HOST
     volumes:
      - vardir:/var/www/public/var
     networks:

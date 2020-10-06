@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "754808350bcf3f0619a17be7647eb6cb",
+    "content-hash": "382d28876552018613ec242adf5830fc",
     "packages": [
         {
             "name": "babdev/pagerfanta-bundle",
@@ -176,6 +176,69 @@
             ],
             "description": "Cronjobs",
             "time": "2019-11-23T12:08:49+00:00"
+        },
+        {
+            "name": "defuse/php-encryption",
+            "version": "v2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/defuse/php-encryption.git",
+                "reference": "0f407c43b953d571421e0020ba92082ed5fb7620"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/defuse/php-encryption/zipball/0f407c43b953d571421e0020ba92082ed5fb7620",
+                "reference": "0f407c43b953d571421e0020ba92082ed5fb7620",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "paragonie/random_compat": ">= 2",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "nikic/php-parser": "^2.0|^3.0|^4.0",
+                "phpunit/phpunit": "^4|^5"
+            },
+            "bin": [
+                "bin/generate-defuse-key"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Defuse\\Crypto\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Hornby",
+                    "email": "taylor@defuse.ca",
+                    "homepage": "https://defuse.ca/"
+                },
+                {
+                    "name": "Scott Arciszewski",
+                    "email": "info@paragonie.com",
+                    "homepage": "https://paragonie.com"
+                }
+            ],
+            "description": "Secure PHP Encryption Library",
+            "keywords": [
+                "aes",
+                "authenticated encryption",
+                "cipher",
+                "crypto",
+                "cryptography",
+                "encrypt",
+                "encryption",
+                "openssl",
+                "security",
+                "symmetric key cryptography"
+            ],
+            "time": "2018-07-24T23:27:56+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -410,20 +473,27 @@
         },
         {
             "name": "doctrine/common",
-            "version": "3.0.2",
+            "version": "2.13.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "a3c6479858989e242a2465972b4f7a8642baf0d4"
+                "reference": "f3812c026e557892c34ef37f6ab808a6b567da7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/a3c6479858989e242a2465972b4f7a8642baf0d4",
-                "reference": "a3c6479858989e242a2465972b4f7a8642baf0d4",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/f3812c026e557892c34ef37f6ab808a6b567da7f",
+                "reference": "f3812c026e557892c34ef37f6ab808a6b567da7f",
                 "shasum": ""
             },
             "require": {
-                "doctrine/persistence": "^2.0",
+                "doctrine/annotations": "^1.0",
+                "doctrine/cache": "^1.0",
+                "doctrine/collections": "^1.0",
+                "doctrine/event-manager": "^1.0",
+                "doctrine/inflector": "^1.0",
+                "doctrine/lexer": "^1.0",
+                "doctrine/persistence": "^1.3.3",
+                "doctrine/reflection": "^1.0",
                 "php": "^7.1 || ^8.0"
             },
             "require-dev": {
@@ -437,7 +507,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0.x-dev"
+                    "dev-master": "2.11.x-dev"
                 }
             },
             "autoload": {
@@ -496,7 +566,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-06-05T16:59:53+00:00"
+            "time": "2020-06-05T16:46:05+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -1327,16 +1397,16 @@
         },
         {
             "name": "doctrine/persistence",
-            "version": "2.0.0",
+            "version": "1.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "1dee036f22cd5dc0bc12132f1d1c38415907be55"
+                "reference": "7a6eac9fb6f61bba91328f15aa7547f4806ca288"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/1dee036f22cd5dc0bc12132f1d1c38415907be55",
-                "reference": "1dee036f22cd5dc0bc12132f1d1c38415907be55",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/7a6eac9fb6f61bba91328f15aa7547f4806ca288",
+                "reference": "7a6eac9fb6f61bba91328f15aa7547f4806ca288",
                 "shasum": ""
             },
             "require": {
@@ -1345,7 +1415,7 @@
                 "doctrine/collections": "^1.0",
                 "doctrine/event-manager": "^1.0",
                 "doctrine/reflection": "^1.2",
-                "php": "^7.1"
+                "php": "^7.1 || ^8.0"
             },
             "conflict": {
                 "doctrine/common": "<2.10@dev"
@@ -1353,13 +1423,13 @@
             "require-dev": {
                 "doctrine/coding-standard": "^6.0",
                 "phpstan/phpstan": "^0.11",
-                "phpunit/phpunit": "^7.0",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
                 "vimeo/psalm": "^3.11"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -1421,7 +1491,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-12T19:32:44+00:00"
+            "time": "2020-06-20T12:56:16+00:00"
         },
         {
             "name": "doctrine/reflection",
@@ -1676,6 +1746,52 @@
             "time": "2020-08-18T13:44:18+00:00"
         },
         {
+            "name": "enqueue/dsn",
+            "version": "0.10.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-enqueue/dsn.git",
+                "reference": "5c4150eebecafedc00f3c8e9ce84f5ae66abed1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-enqueue/dsn/zipball/5c4150eebecafedc00f3c8e9ce84f5ae66abed1a",
+                "reference": "5c4150eebecafedc00f3c8e9ce84f5ae66abed1a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~7.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.10.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Enqueue\\Dsn\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Parse DSN",
+            "homepage": "https://enqueue.forma-pro.com/",
+            "keywords": [
+                "dsn",
+                "parse"
+            ],
+            "time": "2020-07-30T18:38:01+00:00"
+        },
+        {
             "name": "erusev/parsedown",
             "version": "1.7.4",
             "source": {
@@ -1720,6 +1836,62 @@
                 "parser"
             ],
             "time": "2019-12-30T22:54:17+00:00"
+        },
+        {
+            "name": "excelwebzone/recaptcha-bundle",
+            "version": "v1.5.21",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/excelwebzone/EWZRecaptchaBundle.git",
+                "reference": "730702dce87f999e35c433472f22593347984271"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/excelwebzone/EWZRecaptchaBundle/zipball/730702dce87f999e35c433472f22593347984271",
+                "reference": "730702dce87f999e35c433472f22593347984271",
+                "shasum": ""
+            },
+            "require": {
+                "google/recaptcha": "^1.1",
+                "php": ">=5.6 || ^7.0",
+                "symfony/form": "^2.8 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/framework-bundle": "^2.8 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/security-bundle": "^2.8 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/validator": "^2.8 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/yaml": "^2.8 || ^3.0 || ^4.0 || ^5.0",
+                "twig/twig": "^1.40 || ^2.9 || ^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5 || ^6 || ^7"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "symfony": {
+                    "allow-contrib": "true"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "EWZ\\Bundle\\RecaptchaBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael H. Arieli",
+                    "email": "excelwebzone@gmail.com",
+                    "homepage": "http://excelwebzone.com/"
+                }
+            ],
+            "description": "This bundle provides easy reCAPTCHA form field integration",
+            "homepage": "https://github.com/excelwebzone/EWZRecaptchaBundle",
+            "keywords": [
+                "recaptcha"
+            ],
+            "time": "2020-08-21T15:14:59+00:00"
         },
         {
             "name": "ezimuel/guzzlestreams",
@@ -1823,6 +1995,172 @@
             "time": "2020-02-14T23:51:21+00:00"
         },
         {
+            "name": "ezsystems/apache-tika-bundle",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezsystems/ApacheTikaBundle.git",
+                "reference": "1c565d06aebec835ad8708b3a2319cca16abaa13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezsystems/ApacheTikaBundle/zipball/1c565d06aebec835ad8708b3a2319cca16abaa13",
+                "reference": "1c565d06aebec835ad8708b3a2319cca16abaa13",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3",
+                "symfony/framework-bundle": "^5.0",
+                "symfony/http-kernel": "^5.0",
+                "vaites/php-apache-tika": "~0.9"
+            },
+            "replace": {
+                "jolicode/apache-tika-bundle": "self.version"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "v2.16.3",
+                "phpunit/phpunit": "~6.5",
+                "symfony/yaml": "^5.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Joli\\ApacheTikaBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "welcomattic",
+                    "email": "mathieu.santostefano@gmail.com"
+                }
+            ],
+            "description": "Symfony Bundle for https://github.com/vaites/php-apache-tika",
+            "homepage": "https://github.com/jolicode/ApacheTikaBundle",
+            "keywords": [
+                "OCR",
+                "apache",
+                "bundle",
+                "doc",
+                "documents",
+                "docx",
+                "odt",
+                "office",
+                "pdf",
+                "ppt",
+                "pptx",
+                "symfony",
+                "tika"
+            ],
+            "time": "2020-06-22T13:45:39+00:00"
+        },
+        {
+            "name": "ezsystems/comment-bundle",
+            "version": "v3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezsystems/FOSCommentBundle.git",
+                "reference": "6480e3281e2ef9a16d531b9374a0095af233e9ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezsystems/FOSCommentBundle/zipball/6480e3281e2ef9a16d531b9374a0095af233e9ab",
+                "reference": "6480e3281e2ef9a16d531b9374a0095af233e9ab",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/annotations": "~1.0",
+                "friendsofsymfony/rest-bundle": "^3.0",
+                "jms/serializer-bundle": "~2.0|~3.0",
+                "php": "^7.2",
+                "phpoption/phpoption": "~1.1",
+                "symfony/asset": "~3.4|^4.3|^5.0",
+                "symfony/dependency-injection": "~3.4|^4.3|^5.0",
+                "symfony/form": "~3.4|^4.3|^5.0",
+                "symfony/framework-bundle": "~3.4|^4.3|^5.0",
+                "symfony/routing": "~3.4|^4.3|^5.0",
+                "symfony/security-bundle": "~3.4|^4.3|^5.0",
+                "symfony/twig-bridge": "~3.4|^4.3|^5.0",
+                "symfony/twig-bundle": "~3.4|^4.3|^5.0",
+                "symfony/validator": "~3.4|^4.3|^5.0",
+                "symfony/yaml": "~3.4|^4.3|^5.0",
+                "twig/twig": "~2.0|~3.0"
+            },
+            "replace": {
+                "friendsofsymfony/comment-bundle": "self.version"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "~1.6",
+                "doctrine/orm": "~2.3",
+                "friendsofphp/php-cs-fixer": "^2.2",
+                "friendsofsymfony/user-bundle": "~2.0",
+                "ornicar/akismet-bundle": "dev-master",
+                "phpunit/phpunit": "^6.5",
+                "symfony/browser-kit": "~3.4|^4.3|^5.0",
+                "symfony/css-selector": "~3.4|^4.3|^5.0",
+                "symfony/dom-crawler": "~3.4|^4.3|^5.0",
+                "symfony/expression-language": "~3.4|^4.3|^5.0",
+                "symfony/phpunit-bridge": "~3.4|^4.3|^5.0"
+            },
+            "suggest": {
+                "friendsofsymfony/user-bundle": "Allows for user integration.",
+                "ornicar/akismet-bundle": "Integrate Akismet for spam detection.",
+                "symfony/acl-bundle": "Integrates the ACL Security component.",
+                "symfony/assetic-bundle": "Integrates Assetic into Symfony."
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FOS\\CommentBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Nagel",
+                    "email": "tim@nagel.com.au"
+                },
+                {
+                    "name": "Alexander Mols",
+                    "email": "iam.asm89@gmail.com"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSCommentBundle/contributors"
+                }
+            ],
+            "description": "This Bundle provides threaded comment functionality for Symfony applications",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "comment",
+                "forum",
+                "threads"
+            ],
+            "time": "2020-06-22T13:50:23+00:00"
+        },
+        {
             "name": "ezsystems/date-based-publisher",
             "version": "v4.1.0",
             "source": {
@@ -1900,6 +2238,10 @@
                 }
             ],
             "description": "Date-based Publisher bundle",
+            "support": {
+                "source": "https://github.com/ezsystems/date-based-publisher/tree/v4.1.0",
+                "issues": "https://github.com/ezsystems/date-based-publisher/issues"
+            },
             "time": "2020-07-15T12:22:16+00:00"
         },
         {
@@ -2070,6 +2412,630 @@
             ],
             "description": "Providing information about the system eZ Platform/Enterprise/Commerce is running on, and eZ install itself",
             "time": "2020-10-01T09:36:43+00:00"
+        },
+        {
+            "name": "ezsystems/ezcommerce-admin-ui",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezcommerce-admin-ui.git",
+                "reference": "3bb387166fafb739ab93de0a6d5db8ae35820b69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ez.no/ttl_com/dist/ezsystems/ezcommerce-admin-ui/ezsystems-ezcommerce-admin-ui-3bb387166fafb739ab93de0a6d5db8ae35820b69-zip-9d5e65.zip",
+                "reference": "3bb387166fafb739ab93de0a6d5db8ae35820b69"
+            },
+            "require": {
+                "ezsystems/ezplatform-admin-ui": "^2.1",
+                "jms/translation-bundle": "^1.5",
+                "knplabs/knp-menu": "^3.1",
+                "php": "^7.3",
+                "symfony/config": "^5.0",
+                "symfony/dependency-injection": "^5.0",
+                "symfony/http-kernel": "^5.0",
+                "symfony/translation-contracts": "^2.1",
+                "symfony/yaml": "^5.0"
+            },
+            "require-dev": {
+                "ezsystems/ezplatform-code-style": "^0.1.0",
+                "phpunit/phpunit": "^8.2"
+            },
+            "type": "ezplatform-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ibexa\\Platform\\Bundle\\Commerce\\AdminUi\\": "src/bundle/",
+                    "Ibexa\\Platform\\Commerce\\AdminUi\\": "src/lib/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Ibexa\\Platform\\Tests\\Bundle\\Commerce\\AdminUi\\": "tests/bundle/",
+                    "Ibexa\\Platform\\Tests\\Commerce\\AdminUi\\": "tests/lib/"
+                }
+            },
+            "scripts": {
+                "fix-cs": [
+                    "php-cs-fixer fix -v --show-progress=estimating"
+                ],
+                "check-cs": [
+                    "php-cs-fixer fix --dry-run -v --show-progress=estimating"
+                ],
+                "unit-tests": [
+                    "phpunit -c phpunit.xml.dist"
+                ]
+            },
+            "license": [
+                "TTL-2.0"
+            ],
+            "keywords": [
+                "commerce",
+                "ezcommerce",
+                "ezplatform"
+            ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezcommerce-admin-ui/tree/v1.0.2",
+                "issues": "https://github.com/ezsystems/ezcommerce-admin-ui/issues"
+            },
+            "time": "2020-09-07T12:09:11+00:00"
+        },
+        {
+            "name": "ezsystems/ezcommerce-base-design",
+            "version": "v3.1.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezcommerce-base-design.git",
+                "reference": "6826949988ff3d1f2353e36076fef5d56eac67f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ez.no/ttl_com/dist/ezsystems/ezcommerce-base-design/ezsystems-ezcommerce-base-design-6826949988ff3d1f2353e36076fef5d56eac67f1-zip-7e0c04.zip",
+                "reference": "6826949988ff3d1f2353e36076fef5d56eac67f1"
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Siso\\Bundle\\ContentPluginBundle\\": ""
+                }
+            },
+            "authors": [
+                {
+                    "name": "Ibexa AS",
+                    "homepage": "https://www.ibexa.co/"
+                }
+            ],
+            "description": "Plugin for content",
+            "homepage": "https://www.ibexa.co/",
+            "keywords": [
+                "content",
+                "plugin"
+            ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezcommerce-base-design/tree/master",
+                "issues": "https://github.com/ezsystems/ezcommerce-base-design/issues"
+            },
+            "time": "2020-07-07T08:37:04+00:00"
+        },
+        {
+            "name": "ezsystems/ezcommerce-erp-admin",
+            "version": "v3.1.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezcommerce-erp-admin.git",
+                "reference": "4f18bf5d47293b757d5b7ad32136a83f00b66537"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ez.no/ttl_com/dist/ezsystems/ezcommerce-erp-admin/ezsystems-ezcommerce-erp-admin-4f18bf5d47293b757d5b7ad32136a83f00b66537-zip-ae5ace.zip",
+                "reference": "4f18bf5d47293b757d5b7ad32136a83f00b66537"
+            },
+            "require": {
+                "enqueue/dsn": "^0.10",
+                "ezsystems/ezcommerce-shop": "^3.1",
+                "ezsystems/ezplatform-http-cache": "^2.1",
+                "ezsystems/ezplatform-kernel": "~1.1.0",
+                "ezsystems/job-queue-bundle": "^3.0",
+                "php": ">=7.3",
+                "symfony/config": "^5.1",
+                "symfony/console": "^5.1",
+                "symfony/dependency-injection": "^5.1",
+                "symfony/filesystem": "^5.1",
+                "symfony/framework-bundle": "^5.1",
+                "symfony/http-kernel": "^5.1",
+                "symfony/process": "^5.1",
+                "symfony/yaml": "^5.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Siso\\AdminErpPluginBundle\\": ""
+                }
+            },
+            "authors": [
+                {
+                    "name": "Ibexa AS",
+                    "homepage": "https://www.ibexa.co/"
+                }
+            ],
+            "description": "AdminErp plugin",
+            "homepage": "https://www.ibexa.co/",
+            "keywords": [
+                "admin",
+                "erp",
+                "plugin"
+            ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezcommerce-erp-admin/tree/v3.1.1",
+                "issues": "https://github.com/ezsystems/ezcommerce-erp-admin/issues"
+            },
+            "time": "2020-10-01T09:12:25+00:00"
+        },
+        {
+            "name": "ezsystems/ezcommerce-fieldtypes",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezcommerce-fieldtypes.git",
+                "reference": "3cca94b7b112ba0cac45aa6a9957132c0874bdb1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ez.no/ttl_com/dist/ezsystems/ezcommerce-fieldtypes/ezsystems-ezcommerce-fieldtypes-3cca94b7b112ba0cac45aa6a9957132c0874bdb1-zip-e220ae.zip",
+                "reference": "3cca94b7b112ba0cac45aa6a9957132c0874bdb1"
+            },
+            "require": {
+                "doctrine/dbal": "^2.10",
+                "ext-json": "*",
+                "ext-pdo": "*",
+                "ezsystems/ezplatform-admin-ui": "^2.0",
+                "ezsystems/ezplatform-content-forms": "^1.0",
+                "ezsystems/ezplatform-kernel": "~1.1.0",
+                "php": "^7.3",
+                "symfony/config": "^5.0",
+                "symfony/console": "^5.0",
+                "symfony/dependency-injection": "^5.0",
+                "symfony/form": "^5.0",
+                "symfony/http-kernel": "^5.0",
+                "symfony/options-resolver": "^5.0",
+                "symfony/yaml": "^5.0"
+            },
+            "require-dev": {
+                "ezsystems/ezplatform-code-style": "^0.1.0",
+                "phpunit/phpunit": "^8.2"
+            },
+            "type": "ezplatform-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ibexa\\Platform\\Bundle\\Commerce\\FieldTypes\\": "src/bundle/",
+                    "Ibexa\\Platform\\Commerce\\FieldTypes\\": "src/lib/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Ibexa\\Platform\\Tests\\Bundle\\Commerce\\FieldTypes\\": "tests/bundle/",
+                    "Ibexa\\Platform\\Tests\\Commerce\\FieldTypes\\": "tests/lib/"
+                }
+            },
+            "scripts": {
+                "fix-cs": [
+                    "php-cs-fixer fix -v --show-progress=estimating"
+                ],
+                "check-cs": [
+                    "php-cs-fixer fix --dry-run -v --show-progress=estimating"
+                ],
+                "unit-tests": [
+                    "phpunit -c phpunit.xml.dist"
+                ]
+            },
+            "license": [
+                "TTL-2.0"
+            ],
+            "keywords": [
+                "commerce",
+                "ezcommerce",
+                "ezplatform"
+            ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezcommerce-fieldtypes/tree/v1.0.2",
+                "issues": "https://github.com/ezsystems/ezcommerce-fieldtypes/issues"
+            },
+            "time": "2020-09-07T12:10:24+00:00"
+        },
+        {
+            "name": "ezsystems/ezcommerce-order-history",
+            "version": "v3.1.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezcommerce-order-history.git",
+                "reference": "308dffa2bce1fbae957aef0c37a29c42038046b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ez.no/ttl_com/dist/ezsystems/ezcommerce-order-history/ezsystems-ezcommerce-order-history-308dffa2bce1fbae957aef0c37a29c42038046b8-zip-58c3e5.zip",
+                "reference": "308dffa2bce1fbae957aef0c37a29c42038046b8"
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Siso\\Bundle\\OrderHistoryBundle\\": "src/Siso/Bundle/OrderHistoryBundle/"
+                }
+            },
+            "license": [
+                "BUL"
+            ],
+            "authors": [
+                {
+                    "name": "Ibexa AS",
+                    "homepage": "https://www.ibexa.co/"
+                }
+            ],
+            "description": "eZ Order History add-on",
+            "keywords": [
+                "order history"
+            ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezcommerce-order-history/tree/master",
+                "issues": "https://github.com/ezsystems/ezcommerce-order-history/issues"
+            },
+            "time": "2020-07-07T10:51:44+00:00"
+        },
+        {
+            "name": "ezsystems/ezcommerce-page-builder",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezcommerce-page-builder.git",
+                "reference": "0abeedf227df75471b349bf62e4a0573113b713b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ez.no/ttl_com/dist/ezsystems/ezcommerce-page-builder/ezsystems-ezcommerce-page-builder-0abeedf227df75471b349bf62e4a0573113b713b-zip-29098f.zip",
+                "reference": "0abeedf227df75471b349bf62e4a0573113b713b"
+            },
+            "require": {
+                "ezsystems/ezplatform-admin-ui": "^2.1",
+                "ezsystems/ezplatform-page-builder": "^2.1",
+                "php": "^7.3",
+                "symfony/config": "^5.0",
+                "symfony/dependency-injection": "^5.0",
+                "symfony/http-kernel": "^5.0",
+                "symfony/yaml": "^5.0"
+            },
+            "require-dev": {
+                "ezsystems/ezplatform-code-style": "^0.1.0",
+                "phpunit/phpunit": "^8.2"
+            },
+            "type": "ezplatform-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ibexa\\Platform\\Bundle\\Commerce\\PageBuilder\\": "src/bundle/",
+                    "Ibexa\\Platform\\Commerce\\PageBuilder\\": "src/lib/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Ibexa\\Platform\\Tests\\Bundle\\Commerce\\PageBuilder\\": "tests/bundle/",
+                    "Ibexa\\Platform\\Tests\\Commerce\\PageBuilder\\": "tests/lib/"
+                }
+            },
+            "scripts": {
+                "fix-cs": [
+                    "php-cs-fixer fix -v --show-progress=estimating"
+                ],
+                "check-cs": [
+                    "php-cs-fixer fix --dry-run -v --show-progress=estimating"
+                ],
+                "unit-tests": [
+                    "phpunit -c phpunit.xml.dist"
+                ]
+            },
+            "license": [
+                "TTL-2.0"
+            ],
+            "keywords": [
+                "commerce",
+                "ezcommerce",
+                "ezplatform"
+            ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezcommerce-page-builder/tree/v1.0.1",
+                "issues": "https://github.com/ezsystems/ezcommerce-page-builder/issues"
+            },
+            "time": "2020-07-23T07:58:01+00:00"
+        },
+        {
+            "name": "ezsystems/ezcommerce-price-engine",
+            "version": "v3.1.2",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezcommerce-price-engine.git",
+                "reference": "6bea87e9903fa90896a0bf636dbd92a928f5b25e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ez.no/ttl_com/dist/ezsystems/ezcommerce-price-engine/ezsystems-ezcommerce-price-engine-6bea87e9903fa90896a0bf636dbd92a928f5b25e-zip-a66162.zip",
+                "reference": "6bea87e9903fa90896a0bf636dbd92a928f5b25e"
+            },
+            "require": {
+                "php": ">=5.4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Siso\\ShopPriceEnginePluginBundle\\": ""
+                }
+            },
+            "authors": [
+                {
+                    "name": "Ibexa AS",
+                    "homepage": "https://www.ibexa.co/"
+                }
+            ],
+            "description": "Price Engine for Local Shop Prices",
+            "homepage": "https://www.ibexa.co/",
+            "keywords": [
+                "price engine"
+            ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezcommerce-price-engine/tree/3.1",
+                "issues": "https://github.com/ezsystems/ezcommerce-price-engine/issues"
+            },
+            "time": "2020-09-21T06:51:17+00:00"
+        },
+        {
+            "name": "ezsystems/ezcommerce-shop",
+            "version": "v3.1.3",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezcommerce-shop.git",
+                "reference": "b1cccdc5406e2d3e2aaf9ded4e5d4b057a957735"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ez.no/ttl_com/dist/ezsystems/ezcommerce-shop/ezsystems-ezcommerce-shop-b1cccdc5406e2d3e2aaf9ded4e5d4b057a957735-zip-59f219.zip",
+                "reference": "b1cccdc5406e2d3e2aaf9ded4e5d4b057a957735"
+            },
+            "require": {
+                "babdev/pagerfanta-bundle": "^2.2",
+                "doctrine/orm": "~2.4",
+                "excelwebzone/recaptcha-bundle": "^1.5",
+                "ext-ctype": "*",
+                "ext-curl": "*",
+                "ext-dom": "*",
+                "ext-fileinfo": "*",
+                "ext-filter": "*",
+                "ext-iconv": "*",
+                "ext-intl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-pdo": "*",
+                "ext-xsl": "*",
+                "ezsystems/apache-tika-bundle": "^2.0",
+                "ezsystems/comment-bundle": "^3.1",
+                "ezsystems/ezplatform-admin-ui": "^2.0",
+                "ezsystems/ezplatform-content-forms": "^1.0",
+                "ezsystems/ezplatform-kernel": "~1.1.0",
+                "ezsystems/ezplatform-matrix-fieldtype": "^2.0",
+                "ezsystems/ezplatform-rest": "^1.0-dev",
+                "ezsystems/ezplatform-solr-search-engine": "^3.1",
+                "friendsofsymfony/rest-bundle": "^3.0",
+                "mhujer/breadcrumbs-bundle": "^1.5",
+                "nelmio/solarium-bundle": "^4.0",
+                "onesky/api-library-php5": "^1.0",
+                "php": "^7.3",
+                "silversolutions/xsd-to-php": "^3.6",
+                "solarium/solarium": "5.2.0",
+                "symfony/config": "^5.0",
+                "symfony/console": "^5.0",
+                "symfony/dependency-injection": "^5.0",
+                "symfony/event-dispatcher": "^5.0",
+                "symfony/event-dispatcher-contracts": "^2.0",
+                "symfony/expression-language": "^5.0",
+                "symfony/filesystem": "^5.0",
+                "symfony/finder": "^5.0",
+                "symfony/form": "^5.0",
+                "symfony/framework-bundle": "^5.0",
+                "symfony/http-foundation": "^5.0",
+                "symfony/http-kernel": "^5.0",
+                "symfony/intl": "^5.0",
+                "symfony/mime": "^5.0",
+                "symfony/options-resolver": "^5.0",
+                "symfony/process": "^5.0",
+                "symfony/routing": "^5.0",
+                "symfony/security-core": "^5.0",
+                "symfony/security-csrf": "^5.0",
+                "symfony/security-http": "^5.0",
+                "symfony/serializer": "^5.0",
+                "symfony/templating": "^5.0",
+                "symfony/validator": "^5.0",
+                "symfony/yaml": "^5.0",
+                "twig/twig": "^3.0"
+            },
+            "conflict": {
+                "symfony/symfony": "2.3.9"
+            },
+            "require-dev": {
+                "ezsystems/ezplatform-code-style": "^0.1.0",
+                "friendsofphp/php-cs-fixer": "^2.16.0",
+                "phpunit/phpunit": "^8.2"
+            },
+            "suggest": {
+                "akeneo/api-php-client": "This is needed for product import from Akeneo."
+            },
+            "type": "library",
+            "extra": {
+                "_ezplatform_branch_for_behat_tests": "3.1",
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev",
+                    "dev-tmp_ci_branch": "3.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "com\\mikebevz\\xsd2php\\": "../../../vendor/silversolutions/xsd-to-php/src/",
+                    "Silversolutions\\Utilities\\": "src/Silversolutions/Utilities/",
+                    "oasis\\names\\specification\\ubl\\": "src/names/specification/ubl/",
+                    "un\\unece\\uncefact\\": "src/un/unece/uncefact/",
+                    "Silversolutions\\Bundle\\EshopBundle\\": "src/Silversolutions/Bundle/EshopBundle/",
+                    "Silversolutions\\Bundle\\ToolsBundle\\": "src/Silversolutions/Bundle/ToolsBundle/",
+                    "Silversolutions\\Bundle\\TranslationBundle\\": "src/Silversolutions/Bundle/TranslationBundle/",
+                    "Siso\\Bundle\\CheckoutBundle\\": "src/Siso/Bundle/CheckoutBundle/",
+                    "Siso\\Bundle\\EzStudioBundle\\": "src/Siso/Bundle/EzStudioBundle/",
+                    "Siso\\Bundle\\QuickOrderBundle\\": "src/Siso/Bundle/QuickOrderBundle/",
+                    "Siso\\Bundle\\BasketBundle\\": "src/Siso/Bundle/BasketBundle/",
+                    "Siso\\Bundle\\ToolsBundle\\": "src/Siso/Bundle/ToolsBundle/",
+                    "Siso\\Bundle\\TestToolsBundle\\": "src/Siso/Bundle/TestToolsBundle/",
+                    "Siso\\Bundle\\PaymentBundle\\": "src/Siso/Bundle/PaymentBundle/",
+                    "Siso\\Bundle\\PriceBundle\\": "src/Siso/Bundle/PriceBundle/",
+                    "Siso\\Bundle\\ComparisonBundle\\": "src/Siso/Bundle/ComparisonBundle/",
+                    "Siso\\Bundle\\SearchBundle\\": "src/Siso/Bundle/SearchBundle/",
+                    "Siso\\Bundle\\VoucherBundle\\": "src/Siso/Bundle/VoucherBundle/",
+                    "Siso\\Bundle\\OneSkyBundle\\": "src/Siso/Bundle/OneSkyBundle/",
+                    "Siso\\Bundle\\NewsletterBundle\\": "src/Siso/Bundle/NewsletterBundle/",
+                    "Siso\\Bundle\\SpecificationsTypeBundle\\": "src/Siso/Bundle/SpecificationsTypeBundle/",
+                    "Siso\\Bundle\\LocalOrderManagementBundle\\": "src/Siso/Bundle/LocalOrderManagementBundle/",
+                    "Siso\\Bundle\\InstallerBundle\\": "src/Siso/Bundle/InstallerBundle/"
+                }
+            },
+            "scripts": {
+                "fix-cs": [
+                    "@php ./vendor/bin/php-cs-fixer fix -v --show-progress=estimating"
+                ]
+            },
+            "license": [
+                "BUL"
+            ],
+            "authors": [
+                {
+                    "name": "Ibexa AS",
+                    "homepage": "https://www.ibexa.co/"
+                }
+            ],
+            "description": "eShop Core",
+            "homepage": "https://www.ibexa.co/",
+            "keywords": [
+                "shop"
+            ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezcommerce-shop/tree/v3.1.3",
+                "issues": "https://github.com/ezsystems/ezcommerce-shop/issues"
+            },
+            "time": "2020-10-01T09:14:23+00:00"
+        },
+        {
+            "name": "ezsystems/ezmigrationbundle",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezsystems/ezmigrationbundle.git",
+                "reference": "bcba1e9fa812a08aa152568a7c8d36efee9a9b61"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezsystems/ezmigrationbundle/zipball/bcba1e9fa812a08aa152568a7c8d36efee9a9b61",
+                "reference": "bcba1e9fa812a08aa152568a7c8d36efee9a9b61",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "ezsystems/doctrine-dbal-schema": "^1.0",
+                "ezsystems/ezplatform-kernel": "^1.0",
+                "mtdowling/jmespath.php": "2.*",
+                "nikic/php-parser": "^4.2.2",
+                "php": "^7.3",
+                "symfony/process": "*",
+                "symfony/swiftmailer-bundle": "*",
+                "symfony/validator": "*",
+                "symfony/var-dumper": "*"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "^2.0",
+                "phpunit/phpunit": "^7.5",
+                "roave/security-advisories": "dev-disablechecks as dev-master"
+            },
+            "suggest": {
+                "php-http/httplug-bundle": "Required for usage of HTTP/CALL migration steps"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kaliop\\eZMigrationBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gaetano Giunta",
+                    "email": "ggiunta@kaliop.com",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Daniel Clements",
+                    "email": "dclements@kaliop.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Peter Halasz",
+                    "email": "peter.halasz@kaliop.co.uk",
+                    "role": "Original author"
+                }
+            ],
+            "description": "Kaliop eZ-Migration Bundle",
+            "keywords": [
+                "database",
+                "ezpublish",
+                "migrations"
+            ],
+            "time": "2020-10-01T09:16:01+00:00"
         },
         {
             "name": "ezsystems/ezplatform-admin-ui",
@@ -2249,6 +3215,10 @@
                 "TTL-2.0"
             ],
             "description": "eZ Platform Calendar",
+            "support": {
+                "source": "https://github.com/ezsystems/ezplatform-calendar/tree/v1.1.0",
+                "issues": "https://github.com/ezsystems/ezplatform-calendar/issues"
+            },
             "time": "2020-07-15T12:23:21+00:00"
         },
         {
@@ -2604,6 +3574,10 @@
             "keywords": [
                 "ezplatform"
             ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezplatform-elastic-search-engine/tree/v1.0.2",
+                "issues": "https://github.com/ezsystems/ezplatform-elastic-search-engine/issues"
+            },
             "time": "2020-10-01T09:21:32+00:00"
         },
         {
@@ -2680,6 +3654,10 @@
                 "TTL-2.0"
             ],
             "description": "eZ Platform Form Builder",
+            "support": {
+                "source": "https://github.com/ezsystems/ezplatform-form-builder/tree/v2.1.1",
+                "issues": "https://github.com/ezsystems/ezplatform-form-builder/issues"
+            },
             "time": "2020-10-01T09:24:07+00:00"
         },
         {
@@ -2876,6 +3854,10 @@
                 }
             ],
             "description": "Fastly HTTP cache handling for eZ Platform.",
+            "support": {
+                "source": "https://github.com/ezsystems/ezplatform-http-cache-fastly/tree/v2.0.0",
+                "issues": "https://github.com/ezsystems/ezplatform-http-cache-fastly/issues"
+            },
             "time": "2020-04-02T16:03:41+00:00"
         },
         {
@@ -3134,6 +4116,10 @@
                 "TTL-2.0"
             ],
             "description": "eZ Platform Page Builder",
+            "support": {
+                "source": "https://github.com/ezsystems/ezplatform-page-builder/tree/v2.1.3",
+                "issues": "https://github.com/ezsystems/ezplatform-page-builder/issues"
+            },
             "time": "2020-10-01T09:27:57+00:00"
         },
         {
@@ -3213,6 +4199,10 @@
                 }
             ],
             "description": "eZ Platform Page FieldType",
+            "support": {
+                "source": "https://github.com/ezsystems/ezplatform-page-fieldtype/tree/v2.1.3",
+                "issues": "https://github.com/ezsystems/ezplatform-page-fieldtype/issues"
+            },
             "time": "2020-10-01T09:28:58+00:00"
         },
         {
@@ -3284,6 +4274,10 @@
             "keywords": [
                 "ezplatform"
             ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezplatform-permissions/tree/v1.0.0",
+                "issues": "https://github.com/ezsystems/ezplatform-permissions/issues"
+            },
             "time": "2020-07-15T13:05:45+00:00"
         },
         {
@@ -3615,6 +4609,10 @@
                 "TTL-2.0"
             ],
             "description": "eZ Platform Site Factory bundle",
+            "support": {
+                "source": "https://github.com/ezsystems/ezplatform-site-factory/tree/v1.1.2",
+                "issues": "https://github.com/ezsystems/ezplatform-site-factory/issues"
+            },
             "time": "2020-10-01T09:30:47+00:00"
         },
         {
@@ -3852,6 +4850,10 @@
                 "TTL-2.0"
             ],
             "description": "eZ Platform Version Comparison bundle",
+            "support": {
+                "source": "https://github.com/ezsystems/ezplatform-version-comparison/tree/v1.1.0",
+                "issues": "https://github.com/ezsystems/ezplatform-version-comparison/issues"
+            },
             "time": "2020-07-15T12:31:38+00:00"
         },
         {
@@ -3935,7 +4937,237 @@
                 }
             ],
             "description": "Workflow bundle for eZ Platform Enterprise Edition",
+            "support": {
+                "source": "https://github.com/ezsystems/ezplatform-workflow/tree/v2.1.2"
+            },
             "time": "2020-09-15T11:26:03+00:00"
+        },
+        {
+            "name": "ezsystems/job-queue-bundle",
+            "version": "3.0.0",
+            "target-dir": "JMS/JobQueueBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezsystems/JMSJobQueueBundle.git",
+                "reference": "a43c936fd11e288b4e57d6ed5bc719d959de773d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezsystems/JMSJobQueueBundle/zipball/a43c936fd11e288b4e57d6ed5bc719d959de773d",
+                "reference": "a43c936fd11e288b4e57d6ed5bc719d959de773d",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "^2.3",
+                "php": "^7.1",
+                "symfony/error-handler": "^5.0",
+                "symfony/framework-bundle": "^5.0",
+                "symfony/process": "^5.0"
+            },
+            "replace": {
+                "jms/job-queue-bundle": "self.version"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "*",
+                "doctrine/doctrine-fixtures-bundle": "*",
+                "doctrine/orm": "*",
+                "phpunit/phpunit": "^6.0",
+                "sensio/framework-extra-bundle": "*",
+                "symfony/browser-kit": "*",
+                "symfony/class-loader": "*",
+                "symfony/css-selector": "*",
+                "symfony/finder": "*",
+                "symfony/form": "*",
+                "symfony/intl": "*",
+                "symfony/twig-bundle": "*",
+                "symfony/validator": "*",
+                "symfony/yaml": "*"
+            },
+            "suggest": {
+                "sensio/framework-extra-bundle": "Required when using the webinterface.",
+                "symfony/twig-bundle": "Required when using the webinterface."
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "JMS\\JobQueueBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Allows to run and schedule Symfony console commands as background jobs.",
+            "homepage": "http://jmsyst.com/bundles/JMSJobQueueBundle",
+            "keywords": [
+                "background",
+                "cron",
+                "job",
+                "queue",
+                "scheduled"
+            ],
+            "time": "2020-06-22T14:38:17+00:00"
+        },
+        {
+            "name": "ezsystems/payment-core-bundle",
+            "version": "2.0.3",
+            "target-dir": "JMS/Payment/CoreBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezsystems/JMSPaymentCoreBundle.git",
+                "reference": "57818c38fa0d436e165959db5ffb5ba9faa06ec0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezsystems/JMSPaymentCoreBundle/zipball/57818c38fa0d436e165959db5ffb5ba9faa06ec0",
+                "reference": "57818c38fa0d436e165959db5ffb5ba9faa06ec0",
+                "shasum": ""
+            },
+            "require": {
+                "defuse/php-encryption": "~2.0",
+                "doctrine/common": "~2.3",
+                "doctrine/dbal": "~2.3",
+                "doctrine/orm": "~2.3",
+                "php": ">=7.3",
+                "symfony/browser-kit": "^5.0",
+                "symfony/config": "^5.0",
+                "symfony/dependency-injection": "^5.0",
+                "symfony/event-dispatcher-contracts": "^2.1",
+                "symfony/form": "^5.0",
+                "symfony/http-foundation": "^5.0",
+                "symfony/http-kernel": "^5.0",
+                "symfony/options-resolver": "^5.0",
+                "symfony/validator": "^5.0"
+            },
+            "replace": {
+                "jms/payment-core-bundle": "self.version"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "^2.1",
+                "matthiasnoback/symfony-config-test": "^4.2",
+                "phpunit/phpunit": "^7.0",
+                "sensio/framework-extra-bundle": "^5.5",
+                "symfony/doctrine-bridge": "^5.0",
+                "symfony/dom-crawler": "^5.0",
+                "symfony/framework-bundle": "^5.0",
+                "symfony/phpunit-bridge": "^5.0",
+                "symfony/routing": "^5.0",
+                "symfony/templating": "^5.0",
+                "symfony/twig-bridge": "^5.0",
+                "symfony/twig-bundle": "^5.0",
+                "twig/twig": "~1.0|~2.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "JMS\\Payment\\CoreBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                },
+                {
+                    "name": "Paulo Rodrigues Pinto",
+                    "email": "regularjack@gmail.com"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/schmittjoh/JMSPaymentCoreBundle/contributors"
+                }
+            ],
+            "description": "A unified API for processing payments with Symfony",
+            "homepage": "http://jmspaymentcorebundle.readthedocs.io",
+            "keywords": [
+                "payment"
+            ],
+            "time": "2020-06-23T09:56:30+00:00"
+        },
+        {
+            "name": "ezsystems/stash-bundle",
+            "version": "v0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezsystems/TedivmStashBundle.git",
+                "reference": "729d1bfc1a01780f721bb9fb60fb974b88a2bc6f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezsystems/TedivmStashBundle/zipball/729d1bfc1a01780f721bb9fb60fb974b88a2bc6f",
+                "reference": "729d1bfc1a01780f721bb9fb60fb974b88a2bc6f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3",
+                "symfony/config": "^5.0",
+                "symfony/dependency-injection": "^5.0",
+                "symfony/http-kernel": "^5.0",
+                "tedivm/stash": "^0.15"
+            },
+            "replace": {
+                "tedivm/stash-bundle": "self.version"
+            },
+            "require-dev": {
+                "doctrine/cache": "^1.6",
+                "friendsofphp/php-cs-fixer": "^2",
+                "php-coveralls/php-coveralls": "^2",
+                "phpunit/phpunit": "^6.5",
+                "symfony/phpunit-bridge": "*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Tedivm\\StashBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Hall-Bachner",
+                    "email": "jhallbachner@gmail.com"
+                },
+                {
+                    "name": "Robert Hafner",
+                    "email": "tedivm@tedivm.com"
+                }
+            ],
+            "description": "Incorporates the Stash caching library into Symfony.",
+            "homepage": "http://github.com/tedious/TedivmStashBundle",
+            "keywords": [
+                "apc",
+                "cache",
+                "caching",
+                "memcached",
+                "redis",
+                "sessions",
+                "stash",
+                "symfony"
+            ],
+            "time": "2020-06-22T13:08:39+00:00"
         },
         {
             "name": "friendsofsymfony/http-cache",
@@ -4171,6 +5403,154 @@
                 "routing"
             ],
             "time": "2020-05-20T09:38:45+00:00"
+        },
+        {
+            "name": "friendsofsymfony/rest-bundle",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSRestBundle.git",
+                "reference": "d578bd8dc7940532bcf1016d530c3375692be28d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/d578bd8dc7940532bcf1016d530c3375692be28d",
+                "reference": "d578bd8dc7940532bcf1016d530c3375692be28d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0",
+                "psr/log": "^1.0",
+                "symfony/config": "^4.4|^5.0",
+                "symfony/dependency-injection": "^4.4|^5.0",
+                "symfony/event-dispatcher": "^4.4|^5.0",
+                "symfony/framework-bundle": "^4.4.1|^5.0",
+                "symfony/http-foundation": "^4.4|^5.0",
+                "symfony/http-kernel": "^4.4|^5.0",
+                "symfony/security-core": "^3.4|^4.3|^5.0",
+                "willdurand/jsonp-callback-validator": "^1.0",
+                "willdurand/negotiation": "^2.0"
+            },
+            "conflict": {
+                "doctrine/inflector": "1.4.0",
+                "jms/serializer": "<1.13.0",
+                "jms/serializer-bundle": "<2.4.3|3.0.0",
+                "sensio/framework-extra-bundle": "<5.2.3",
+                "symfony/error-handler": "<4.4.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "jms/serializer": "^1.13|^2.0|^3.0",
+                "jms/serializer-bundle": "^2.4.3|^3.0.1",
+                "phpoption/phpoption": "^1.1",
+                "psr/http-message": "^1.0",
+                "sensio/framework-extra-bundle": "^5.2.3",
+                "symfony/asset": "^4.4|^5.0",
+                "symfony/browser-kit": "^4.4|^5.0",
+                "symfony/css-selector": "^4.4|^5.0",
+                "symfony/expression-language": "^4.4|^5.0",
+                "symfony/form": "^4.4|^5.0",
+                "symfony/mime": "^4.4|^5.0",
+                "symfony/phpunit-bridge": "^4.1.8|^5.0",
+                "symfony/security-bundle": "^4.4|^5.0",
+                "symfony/serializer": "^4.4|^5.0",
+                "symfony/twig-bundle": "^4.4|^5.0",
+                "symfony/validator": "^4.4|^5.0",
+                "symfony/web-profiler-bundle": "^4.4|^5.0",
+                "symfony/yaml": "^4.4|^5.0"
+            },
+            "suggest": {
+                "jms/serializer-bundle": "Add support for advanced serialization capabilities, recommended, requires ^2.0|^3.0",
+                "sensio/framework-extra-bundle": "Add support for the request body converter and the view response listener, requires ^3.0",
+                "symfony/serializer": "Add support for basic serialization capabilities and xml decoding, requires ^2.7|^3.0",
+                "symfony/validator": "Add support for validation capabilities in the ParamFetcher, requires ^2.7|^3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FOS\\RestBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "Resources/",
+                    "Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lukas Kahwe Smith",
+                    "email": "smith@pooteeweet.org"
+                },
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSRestBundle/contributors"
+                }
+            ],
+            "description": "This Bundle provides various tools to rapidly develop RESTful API's with Symfony",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "rest"
+            ],
+            "time": "2020-09-10T06:52:17+00:00"
+        },
+        {
+            "name": "google/recaptcha",
+            "version": "1.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/google/recaptcha.git",
+                "reference": "614f25a9038be4f3f2da7cbfd778dc5b357d2419"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/google/recaptcha/zipball/614f25a9038be4f3f2da7cbfd778dc5b357d2419",
+                "reference": "614f25a9038be4f3f2da7cbfd778dc5b357d2419",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.2.20|^2.15",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^4.8.36|^5.7.27|^6.59|^7.5.11"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ReCaptcha\\": "src/ReCaptcha"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Client library for reCAPTCHA, a free service that protects websites from spam and abuse.",
+            "homepage": "https://www.google.com/recaptcha/",
+            "keywords": [
+                "Abuse",
+                "captcha",
+                "recaptcha",
+                "spam"
+            ],
+            "time": "2020-03-31T17:50:54+00:00"
         },
         {
             "name": "gregwar/captcha",
@@ -4790,6 +6170,86 @@
                 }
             ],
             "time": "2020-08-26T07:23:26+00:00"
+        },
+        {
+            "name": "jms/serializer-bundle",
+            "version": "3.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/JMSSerializerBundle.git",
+                "reference": "0ee8b75bfc484a342aa0471e3c6d9ad96fb430cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/0ee8b75bfc484a342aa0471e3c6d9ad96fb430cf",
+                "reference": "0ee8b75bfc484a342aa0471e3c6d9ad96fb430cf",
+                "shasum": ""
+            },
+            "require": {
+                "jms/metadata": "^2.3",
+                "jms/serializer": "^3.0",
+                "php": "^7.2",
+                "symfony/dependency-injection": "^3.3 || ^4.0 || ^5.0",
+                "symfony/framework-bundle": "^3.0 || ^4.0 || ^5.0"
+            },
+            "require-dev": {
+                "doctrine/orm": "^2.4",
+                "phpunit/phpunit": "^6.0|^7.0",
+                "symfony/expression-language": "^3.0 || ^4.0 || ^5.0",
+                "symfony/finder": "^3.0 || ^4.0 || ^5.0",
+                "symfony/form": "^3.0 || ^4.0 || ^5.0",
+                "symfony/stopwatch": "^3.0 || ^4.0 || ^5.0",
+                "symfony/twig-bundle": "*",
+                "symfony/validator": "^3.0 || ^4.0 || ^5.0",
+                "symfony/yaml": "^3.0 || ^4.0 || ^5.0"
+            },
+            "suggest": {
+                "jms/di-extra-bundle": "Required to get lazy loading (de)serialization visitors, ^1.3",
+                "symfony/finder": "Required for cache warmup, supported versions ^3.0|^4.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JMS\\SerializerBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                },
+                {
+                    "name": "Asmir Mustafic",
+                    "email": "goetas@gmail.com"
+                }
+            ],
+            "description": "Allows you to easily serialize, and deserialize data of any complexity",
+            "homepage": "http://jmsyst.com/bundles/JMSSerializerBundle",
+            "keywords": [
+                "deserialization",
+                "json",
+                "serialization",
+                "xml"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/goetas",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-06-28T11:26:21+00:00"
         },
         {
             "name": "jms/translation-bundle",
@@ -5449,6 +6909,62 @@
             "time": "2020-06-21T17:16:08+00:00"
         },
         {
+            "name": "mhujer/breadcrumbs-bundle",
+            "version": "1.5.2",
+            "target-dir": "WhiteOctober/BreadcrumbsBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mhujer/BreadcrumbsBundle.git",
+                "reference": "1365d166ea8606069483a2ce9b38aa04d001a79d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mhujer/BreadcrumbsBundle/zipball/1365d166ea8606069483a2ce9b38aa04d001a79d",
+                "reference": "1365d166ea8606069483a2ce9b38aa04d001a79d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.2",
+                "symfony/framework-bundle": "^4.3|^5.0",
+                "symfony/templating": "^4.3|^5.0",
+                "symfony/translation-contracts": "^1.1|^2.0",
+                "symfony/twig-bridge": "^4.3.1|^5.0",
+                "symfony/twig-bundle": "^4.3|^5.0",
+                "twig/twig": "^1.38.1|^2.7.1|^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.3",
+                "symfony/browser-kit": "^4.3|^5.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "WhiteOctober\\BreadcrumbsBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rich Sage",
+                    "email": "rich.sage@gmail.com"
+                },
+                {
+                    "name": "Martin Hujer",
+                    "email": "mail@martinhujer.cz"
+                }
+            ],
+            "description": "Breadcrumbs bundle for Symfony",
+            "homepage": "https://github.com/mhujer/BreadcrumbsBundle",
+            "keywords": [
+                "breadcrumbs",
+                "symfony"
+            ],
+            "time": "2019-11-23T22:34:24+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "2.1.1",
             "source": {
@@ -5538,6 +7054,63 @@
                 }
             ],
             "time": "2020-07-23T08:41:23+00:00"
+        },
+        {
+            "name": "mtdowling/jmespath.php",
+            "version": "2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jmespath/jmespath.php.git",
+                "reference": "42dae2cbd13154083ca6d70099692fef8ca84bfb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/42dae2cbd13154083ca6d70099692fef8ca84bfb",
+                "reference": "42dae2cbd13154083ca6d70099692fef8ca84bfb",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4 || ^7.0 || ^8.0",
+                "symfony/polyfill-mbstring": "^1.17"
+            },
+            "require-dev": {
+                "composer/xdebug-handler": "^1.4",
+                "phpunit/phpunit": "^4.8.36 || ^7.5.15"
+            },
+            "bin": [
+                "bin/jp.php"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JmesPath\\": "src/"
+                },
+                "files": [
+                    "src/JmesPath.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Declaratively specify how to extract elements from a JSON document",
+            "keywords": [
+                "json",
+                "jsonpath"
+            ],
+            "time": "2020-07-31T21:01:56+00:00"
         },
         {
             "name": "namshi/jose",
@@ -5658,6 +7231,52 @@
                 "crossdomain"
             ],
             "time": "2020-07-22T11:44:28+00:00"
+        },
+        {
+            "name": "nelmio/solarium-bundle",
+            "version": "v4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nelmio/NelmioSolariumBundle.git",
+                "reference": "8f1f4de573d96146ae19b7f07320bace5ec20033"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nelmio/NelmioSolariumBundle/zipball/8f1f4de573d96146ae19b7f07320bace5ec20033",
+                "reference": "8f1f4de573d96146ae19b7f07320bace5ec20033",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2",
+                "solarium/solarium": "^5.0",
+                "symfony/framework-bundle": "^3.4 || ^4.2 || ^5.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^5.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Nelmio\\SolariumBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://github.com/nelmio/NelmioSolariumBundle/contributors"
+                }
+            ],
+            "description": "Integration with solarium solr client.",
+            "keywords": [
+                "search",
+                "solarium",
+                "solr"
+            ],
+            "time": "2020-05-08T14:31:50+00:00"
         },
         {
             "name": "netgen/query-translator",
@@ -5924,6 +7543,41 @@
                 "service proxies"
             ],
             "time": "2019-08-10T08:37:15+00:00"
+        },
+        {
+            "name": "onesky/api-library-php5",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/onesky/api-library-php5.git",
+                "reference": "0b2907a4c62def5fc7590af467d8ec7574494b5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/onesky/api-library-php5/zipball/0b2907a4c62def5fc7590af467d8ec7574494b5a",
+                "reference": "0b2907a4c62def5fc7590af467d8ec7574494b5a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Onesky\\Api\\": "src/Onesky/Api/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP interface for OneSky Platform API",
+            "homepage": "https://github.com/onesky/api-library-php5",
+            "time": "2015-06-09T02:00:31+00:00"
         },
         {
             "name": "oneup/flysystem-bundle",
@@ -6836,6 +8490,71 @@
             "time": "2020-09-17T18:55:26+00:00"
         },
         {
+            "name": "phpoption/phpoption",
+            "version": "1.7.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/php-option.git",
+                "reference": "994ecccd8f3283ecf5ac33254543eb0ac946d525"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/994ecccd8f3283ecf5ac33254543eb0ac946d525",
+                "reference": "994ecccd8f3283ecf5ac33254543eb0ac946d525",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4.1",
+                "phpunit/phpunit": "^4.8.35 || ^5.7.27 || ^6.5.6 || ^7.0 || ^8.0 || ^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpOption\\": "src/PhpOption/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                }
+            ],
+            "description": "Option Type for PHP",
+            "keywords": [
+                "language",
+                "option",
+                "php",
+                "type"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpoption/phpoption",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-07-20T17:29:33+00:00"
+        },
+        {
             "name": "platformsh/config-reader",
             "version": "2.3.1",
             "source": {
@@ -7667,6 +9386,110 @@
             "time": "2019-11-01T13:20:14+00:00"
         },
         {
+            "name": "silversolutions/xsd-to-php",
+            "version": "v3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silversolutions/XSD-to-PHP.git",
+                "reference": "f0a884f9ac7315b1d0f2a6cf9c066dfb84fa0dde"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silversolutions/XSD-to-PHP/zipball/f0a884f9ac7315b1d0f2a6cf9c066dfb84fa0dde",
+                "reference": "f0a884f9ac7315b1d0f2a6cf9c066dfb84fa0dde",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "com\\mikebevz\\xsd2php": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "silver.solutions GmbH",
+                    "homepage": "http://www.silversolutions.de/"
+                },
+                {
+                    "name": "Mike Bevz",
+                    "email": "myb@mikebevz.com"
+                }
+            ],
+            "description": "DESC moyarada/XSD-to-PHP DESC",
+            "homepage": "http://www.silversolutions.de/Produkte",
+            "keywords": [
+                "shop"
+            ],
+            "time": "2018-10-29T15:59:31+00:00"
+        },
+        {
+            "name": "solarium/solarium",
+            "version": "5.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/solariumphp/solarium.git",
+                "reference": "9208b615cb2ed6f306be6e696431b6b71e4d42db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/solariumphp/solarium/zipball/9208b615cb2ed6f306be6e696431b6b71e4d42db",
+                "reference": "9208b615cb2ed6f306be6e696431b6b71e4d42db",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.1.3",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0",
+                "symfony/event-dispatcher": "^4.3 || ^5.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "guzzlehttp/guzzle": "^3.8 || ^6.2",
+                "nyholm/psr7": "^1.2",
+                "php-coveralls/php-coveralls": "^2.1",
+                "php-http/guzzle6-adapter": "^2.0",
+                "phpunit/phpunit": "^8.0",
+                "squizlabs/php_codesniffer": "^3.4",
+                "symfony/phpunit-bridge": "^5.0",
+                "zendframework/zend-http": "^2.8"
+            },
+            "suggest": {
+                "minimalcode/search": "Query builder compatible with Solarium, allows simplified solr-query handling"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Solarium\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "See GitHub contributors",
+                    "homepage": "https://github.com/basdenooijer/solarium/contributors"
+                }
+            ],
+            "description": "PHP Solr client",
+            "homepage": "http://www.solarium-project.org",
+            "keywords": [
+                "php",
+                "search",
+                "solr"
+            ],
+            "time": "2020-04-03T22:16:30+00:00"
+        },
+        {
             "name": "soundasleep/html2text",
             "version": "1.1.0",
             "source": {
@@ -7891,6 +9714,79 @@
                 }
             ],
             "description": "Symfony Asset Component",
+            "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-09-02T16:23:27+00:00"
+        },
+        {
+            "name": "symfony/browser-kit",
+            "version": "v5.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/browser-kit.git",
+                "reference": "7abd647882030b69b8b75f9400554474b78c65c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/7abd647882030b69b8b75f9400554474b78c65c2",
+                "reference": "7abd647882030b69b8b75f9400554474b78c65c2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/dom-crawler": "^4.4|^5.0"
+            },
+            "require-dev": {
+                "symfony/css-selector": "^4.4|^5.0",
+                "symfony/http-client": "^4.4|^5.0",
+                "symfony/mime": "^4.4|^5.0",
+                "symfony/process": "^4.4|^5.0"
+            },
+            "suggest": {
+                "symfony/process": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\BrowserKit\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony BrowserKit Component",
             "homepage": "https://symfony.com",
             "funding": [
                 {
@@ -8517,6 +10413,82 @@
                 }
             ],
             "time": "2020-09-13T05:01:27+00:00"
+        },
+        {
+            "name": "symfony/dom-crawler",
+            "version": "v5.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dom-crawler.git",
+                "reference": "6d6885e167aad0af4128b392f22d8f2a33dd88ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/6d6885e167aad0af4128b392f22d8f2a33dd88ec",
+                "reference": "6d6885e167aad0af4128b392f22d8f2a33dd88ec",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php80": "^1.15"
+            },
+            "conflict": {
+                "masterminds/html5": "<2.6"
+            },
+            "require-dev": {
+                "masterminds/html5": "^2.6",
+                "symfony/css-selector": "^4.4|^5.0"
+            },
+            "suggest": {
+                "symfony/css-selector": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\DomCrawler\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DomCrawler Component",
+            "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-09-02T16:23:27+00:00"
         },
         {
             "name": "symfony/dotenv",
@@ -13130,6 +15102,66 @@
             "time": "2020-09-27T03:44:28+00:00"
         },
         {
+            "name": "tedivm/stash",
+            "version": "v0.15.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tedious/Stash.git",
+                "reference": "7a6a74106c49b1bdc3a10a725b03c509dc773dbb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tedious/Stash/zipball/7a6a74106c49b1bdc3a10a725b03c509dc773dbb",
+                "reference": "7a6a74106c49b1bdc3a10a725b03c509dc773dbb",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "psr/cache": "~1.0"
+            },
+            "provide": {
+                "psr/cache-implementation": "1.0.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.8",
+                "phpunit/phpunit": "^6",
+                "satooshi/php-coveralls": "1.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stash\\": "src/Stash/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Hafner",
+                    "email": "tedivm@tedivm.com"
+                },
+                {
+                    "name": "Josh Hall-Bachner",
+                    "email": "charlequin@gmail.com"
+                }
+            ],
+            "description": "The place to keep your cache.",
+            "homepage": "http://github.com/tedious/Stash",
+            "keywords": [
+                "apc",
+                "cache",
+                "caching",
+                "memcached",
+                "psr-6",
+                "psr6",
+                "redis",
+                "sessions"
+            ],
+            "time": "2019-03-09T21:04:14+00:00"
+        },
+        {
             "name": "toflar/psr6-symfony-http-cache-store",
             "version": "2.3.1",
             "source": {
@@ -13469,6 +15501,59 @@
             "time": "2020-08-05T15:13:19+00:00"
         },
         {
+            "name": "vaites/php-apache-tika",
+            "version": "v0.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vaites/php-apache-tika.git",
+                "reference": "d8574afe3219a7883c0196ed1636c9cdb7dbaefa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vaites/php-apache-tika/zipball/d8574afe3219a7883c0196ed1636c9cdb7dbaefa",
+                "reference": "d8574afe3219a7883c0196ed1636c9cdb7dbaefa",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Vaites\\ApacheTika\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Martínez",
+                    "email": "contacto@davidmartinez.net"
+                }
+            ],
+            "description": "Apache Tika bindings for PHP: extracts text from documents and images (with OCR), metadata and more...",
+            "keywords": [
+                "OCR",
+                "apache",
+                "doc",
+                "documents",
+                "docx",
+                "odt",
+                "office",
+                "pdf",
+                "ppt",
+                "pptx",
+                "tika"
+            ],
+            "time": "2020-07-26T01:14:36+00:00"
+        },
+        {
             "name": "webmozart/assert",
             "version": "1.9.1",
             "source": {
@@ -13677,6 +15762,58 @@
             ],
             "description": "JSONP callback validator.",
             "time": "2014-01-20T22:35:06+00:00"
+        },
+        {
+            "name": "willdurand/negotiation",
+            "version": "v2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/willdurand/Negotiation.git",
+                "reference": "03436ededa67c6e83b9b12defac15384cb399dc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/willdurand/Negotiation/zipball/03436ededa67c6e83b9b12defac15384cb399dc9",
+                "reference": "03436ededa67c6e83b9b12defac15384cb399dc9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Negotiation\\": "src/Negotiation"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "will+git@drnd.me"
+                }
+            ],
+            "description": "Content Negotiation tools for PHP provided as a standalone library.",
+            "homepage": "http://williamdurand.fr/Negotiation/",
+            "keywords": [
+                "accept",
+                "content",
+                "format",
+                "header",
+                "negotiation"
+            ],
+            "time": "2017-05-14T17:21:12+00:00"
         },
         {
             "name": "zendframework/zend-code",
@@ -16519,79 +18656,6 @@
             "time": "2016-10-03T07:35:21+00:00"
         },
         {
-            "name": "symfony/browser-kit",
-            "version": "v5.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/browser-kit.git",
-                "reference": "7abd647882030b69b8b75f9400554474b78c65c2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/7abd647882030b69b8b75f9400554474b78c65c2",
-                "reference": "7abd647882030b69b8b75f9400554474b78c65c2",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "symfony/dom-crawler": "^4.4|^5.0"
-            },
-            "require-dev": {
-                "symfony/css-selector": "^4.4|^5.0",
-                "symfony/http-client": "^4.4|^5.0",
-                "symfony/mime": "^4.4|^5.0",
-                "symfony/process": "^4.4|^5.0"
-            },
-            "suggest": {
-                "symfony/process": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\BrowserKit\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony BrowserKit Component",
-            "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-09-02T16:23:27+00:00"
-        },
-        {
             "name": "symfony/css-selector",
             "version": "v5.1.6",
             "source": {
@@ -16780,82 +18844,6 @@
                 }
             ],
             "time": "2020-04-07T10:08:51+00:00"
-        },
-        {
-            "name": "symfony/dom-crawler",
-            "version": "v5.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "6d6885e167aad0af4128b392f22d8f2a33dd88ec"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/6d6885e167aad0af4128b392f22d8f2a33dd88ec",
-                "reference": "6d6885e167aad0af4128b392f22d8f2a33dd88ec",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "symfony/polyfill-ctype": "~1.8",
-                "symfony/polyfill-mbstring": "~1.0",
-                "symfony/polyfill-php80": "^1.15"
-            },
-            "conflict": {
-                "masterminds/html5": "<2.6"
-            },
-            "require-dev": {
-                "masterminds/html5": "^2.6",
-                "symfony/css-selector": "^4.4|^5.0"
-            },
-            "suggest": {
-                "symfony/css-selector": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\DomCrawler\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony DomCrawler Component",
-            "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-09-02T16:23:27+00:00"
         },
         {
             "name": "symfony/maker-bundle",

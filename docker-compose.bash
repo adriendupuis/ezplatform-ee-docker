@@ -6,7 +6,7 @@
 #set -x;
 
 # Git: Untracked Files Removal
-git clean -df; # Help to switch between eZ Platform v2 and v3
+#git clean -df; # Help to switch between eZ Platform v2 and v3
 
 # Docker: Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
 docker-compose up --build --detach varnish apache redis mariadb;
@@ -45,16 +45,15 @@ find bin/ -type l -exec unlink {} \; ; # Remove bin/ symlinks
 rm -f var/encore/*config*.js; # Remove Webpack Encore generated config files
 docker-compose exec --user www-data apache composer install --no-interaction;
 
-# Solr: Docker Container Build (needs vendor/ezsystems/ezplatform-solr-search-engine/)
-cp -r ./vendor/ezsystems/ezplatform-solr-search-engine/lib/Resources/config/solr ./docker/solr/conf;
-docker-compose up --build --detach solr;
-rm -rf ./docker/solr/conf;
+# Solr for eZ Commerce
+docker-compose exec --user www-data apache bash install-solr.sh 8983;
+rm solr-7.7.3.tgz;
 
 # Apache: eZ Platform Install (needs Solr)
 docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;";
 docker-compose exec --user www-data apache rm -rf public/var/*; # Clean public/var/*/storage/ as the DB is reset.
 docker-compose exec redis redis-cli FLUSHALL;
-docker-compose exec --user www-data apache composer ezplatform-install;
+docker-compose exec --user www-data apache composer ezcommerce-install;
 
 # Logs Follow-up
 #docker-compose logs --follow;
