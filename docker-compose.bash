@@ -37,9 +37,6 @@ if [ ! -f auth.json ]; then
   docker-compose exec --user www-data apache composer config http-basic.updates.ez.no ${INSTALLATION_KEY} ${TOKEN_PASSWORD};
 fi;
 
-# Apache: Composer Scripts' Timeout
-docker-compose exec --user www-data apache composer config --global process-timeout 0;
-
 # Apache: Composer Install
 find bin/ -type l -exec unlink {} \; ; # Remove bin/ symlinks
 rm -f var/encore/*config*.js; # Remove Webpack Encore generated config files
