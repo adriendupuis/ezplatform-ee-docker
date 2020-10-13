@@ -19,6 +19,7 @@ services:
       #- solr
     ports:
       - 8000:80
+      - 8983:8983
     volumes:
       - .:/var/www/ez:cached
 
@@ -30,11 +31,11 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
 
-  solr:
-    build: ./docker/solr
-    command:
-      - solr-precreate
-      - collection1
-      - /opt/solr/server/solr/configsets/ezplatform
-    ports:
-      - 8983:8983
+#  solr:
+#    build: ./docker/solr
+#    command:
+#      - solr-precreate
+#      - collection1
+#      - /opt/solr/server/solr/configsets/ezplatform
+#    ports:
+#      - 8983:8983

@@ -88,6 +88,7 @@ RUN chown www-data:www-data /var/www/
 
 WORKDIR /var/www/ez
 EXPOSE 80
+EXPOSE 8983
 
 # Cron, Apache, PHP-FPM & Logs
 #TODO: Should be an array
