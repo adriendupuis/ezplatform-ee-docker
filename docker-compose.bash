@@ -44,7 +44,6 @@ docker-compose exec --user www-data apache composer install --no-interaction;
 
 # Solr for eZ Commerce
 docker-compose exec --user www-data apache bash install-solr.sh 8983;
-rm solr-7.7.3.tgz;
 
 # Apache: eZ Platform Install (needs Solr)
 docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;";
