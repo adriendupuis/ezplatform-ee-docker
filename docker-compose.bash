@@ -51,6 +51,10 @@ docker-compose up --build --detach solr;
 docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;";
 docker-compose exec --user www-data apache rm -rf web/var/*; # Clean web/var/*/storage/ as the DB is reset.
 docker-compose exec redis redis-cli FLUSHALL;
+if [[ -z `grep "auto-generated during the composer install" app/config/parameters.yml` ]]; then
+  echo "parameters.yml wasn't auto-generated and could miss some complements from parameters.yml.dist. Redo a composer install…";
+  docker-compose exec --user www-data apache composer install --no-interaction;
+fi;
 docker-compose exec --user www-data apache composer ezplatform-install;
 
 # Logs Follow-up
