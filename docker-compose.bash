@@ -42,9 +42,7 @@ docker-compose exec --user www-data apache composer config --global process-time
 
 # Apache: Composer Install
 find bin/ -type l -exec unlink {} \; ; # Remove bin/ symlinks
-while [[ -z `grep "auto-generated during the composer install" app/config/parameters.yml` ]]; do
-  docker-compose exec --user www-data apache composer install --no-interaction;
-done;
+docker-compose exec --user www-data apache composer install --no-interaction;
 
 # Solr: Docker Container Build (needs vendor/ezsystems/ezplatform-solr-search-engine/)
 docker-compose up --build --detach solr;
