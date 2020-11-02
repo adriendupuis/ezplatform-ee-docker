@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "de056ad5cb3e945b0f5472e1d4ccd1f6",
+    "content-hash": "9bb19e1c11eec2e5ca021de3ee1cbe22",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1185,16 +1185,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.19",
+            "version": "2.1.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "840d5603eb84cc81a6a0382adac3293e57c1c64c"
+                "reference": "68e418ec08fbfc6f58f6fd2eea70ca8efc8cc7d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/840d5603eb84cc81a6a0382adac3293e57c1c64c",
-                "reference": "840d5603eb84cc81a6a0382adac3293e57c1c64c",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/68e418ec08fbfc6f58f6fd2eea70ca8efc8cc7d5",
+                "reference": "68e418ec08fbfc6f58f6fd2eea70ca8efc8cc7d5",
                 "shasum": ""
             },
             "require": {
@@ -1239,7 +1239,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2020-08-08T21:28:19+00:00"
+            "time": "2020-09-26T15:48:38+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -1457,16 +1457,16 @@
         },
         {
             "name": "ezsystems/ezplatform-admin-ui",
-            "version": "v1.5.13",
+            "version": "v1.5.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezplatform-admin-ui.git",
-                "reference": "1d237b04137762a4bb1cd63cfdb4f2f76be479a2"
+                "reference": "4131caf68cff574f484ae7867a7fc004a5b8dbaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-admin-ui/zipball/1d237b04137762a4bb1cd63cfdb4f2f76be479a2",
-                "reference": "1d237b04137762a4bb1cd63cfdb4f2f76be479a2",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-admin-ui/zipball/4131caf68cff574f484ae7867a7fc004a5b8dbaa",
+                "reference": "4131caf68cff574f484ae7867a7fc004a5b8dbaa",
                 "shasum": ""
             },
             "require": {
@@ -1511,7 +1511,7 @@
                 "GPL-2.0-only"
             ],
             "description": "eZ Platform Admin v2",
-            "time": "2020-09-04T09:33:33+00:00"
+            "time": "2020-09-30T19:13:15+00:00"
         },
         {
             "name": "ezsystems/ezplatform-admin-ui-assets",
@@ -1641,16 +1641,16 @@
         },
         {
             "name": "ezsystems/ezplatform-cron",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezplatform-cron.git",
-                "reference": "5e888aeea044c888a42ae95e4cfa3daf152db921"
+                "reference": "fea9a5226cca8b8205975fcb7cd286639538de71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-cron/zipball/5e888aeea044c888a42ae95e4cfa3daf152db921",
-                "reference": "5e888aeea044c888a42ae95e4cfa3daf152db921",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-cron/zipball/fea9a5226cca8b8205975fcb7cd286639538de71",
+                "reference": "fea9a5226cca8b8205975fcb7cd286639538de71",
                 "shasum": ""
             },
             "require": {
@@ -1688,7 +1688,7 @@
             ],
             "description": "Simple cron bundle for eZ Platform",
             "homepage": "https://github.com/ezsystems/ezplatform-cron",
-            "time": "2020-05-05T19:12:52+00:00"
+            "time": "2020-09-29T11:52:35+00:00"
         },
         {
             "name": "ezsystems/ezplatform-design-engine",
@@ -1789,16 +1789,16 @@
         },
         {
             "name": "ezsystems/ezplatform-form-builder",
-            "version": "v1.2.9",
+            "version": "v1.2.10",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ezsystems/ezplatform-form-builder.git",
-                "reference": "0a7f96b9ee691559929ff45dc64ccac5e185efaf"
+                "reference": "8d72309d0de35151c4862c686e92d4696a768620"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://updates.ez.no/ttl/dist/ezsystems/ezplatform-form-builder/ezsystems-ezplatform-form-builder-0a7f96b9ee691559929ff45dc64ccac5e185efaf-zip-6d836c.zip",
-                "reference": "0a7f96b9ee691559929ff45dc64ccac5e185efaf",
+                "url": "https://updates.ez.no/ttl/dist/ezsystems/ezplatform-form-builder/ezsystems-ezplatform-form-builder-8d72309d0de35151c4862c686e92d4696a768620-zip-1507b9.zip",
+                "reference": "8d72309d0de35151c4862c686e92d4696a768620",
                 "shasum": null
             },
             "require": {
@@ -1839,23 +1839,23 @@
             ],
             "description": "eZ Platform Form Builder",
             "support": {
-                "source": "https://github.com/ezsystems/ezplatform-form-builder/tree/v1.2.9",
+                "source": "https://github.com/ezsystems/ezplatform-form-builder/tree/v1.2.10",
                 "issues": "https://github.com/ezsystems/ezplatform-form-builder/issues"
             },
-            "time": "2020-07-13T12:14:10+00:00"
+            "time": "2020-09-30T19:23:26+00:00"
         },
         {
             "name": "ezsystems/ezplatform-graphql",
-            "version": "v1.0.7",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezplatform-graphql.git",
-                "reference": "0ed81d86e86424b1e59276f48f7d6b6c0d5a1615"
+                "reference": "48246892286751d0b09a22eefd059ba71b690f8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-graphql/zipball/0ed81d86e86424b1e59276f48f7d6b6c0d5a1615",
-                "reference": "0ed81d86e86424b1e59276f48f7d6b6c0d5a1615",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-graphql/zipball/48246892286751d0b09a22eefd059ba71b690f8e",
+                "reference": "48246892286751d0b09a22eefd059ba71b690f8e",
                 "shasum": ""
             },
             "require": {
@@ -1897,24 +1897,24 @@
                 }
             ],
             "description": "GraphQL server for the eZ Platform Open Source CMS Repository.",
-            "time": "2020-04-24T09:09:49+00:00"
+            "time": "2020-09-11T13:56:50+00:00"
         },
         {
             "name": "ezsystems/ezplatform-http-cache",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezplatform-http-cache.git",
-                "reference": "0d9b6b70ad60c7188e6c181e5ab57a3addd9a6c4"
+                "reference": "eed99d86df291625d3ada099fcc50276aa8e7c59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-http-cache/zipball/0d9b6b70ad60c7188e6c181e5ab57a3addd9a6c4",
-                "reference": "0d9b6b70ad60c7188e6c181e5ab57a3addd9a6c4",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-http-cache/zipball/eed99d86df291625d3ada099fcc50276aa8e7c59",
+                "reference": "eed99d86df291625d3ada099fcc50276aa8e7c59",
                 "shasum": ""
             },
             "require": {
-                "ezsystems/ezpublish-kernel": "^7.5@dev",
+                "ezsystems/ezpublish-kernel": "^7.5",
                 "friendsofsymfony/http-cache": "^1.4.5",
                 "friendsofsymfony/http-cache-bundle": "^1.3.16",
                 "symfony/symfony": "^3.4.37"
@@ -1925,7 +1925,8 @@
                 "matthiasnoback/symfony-dependency-injection-test": "^2.3.1",
                 "memio/spec-gen": "^0.9.0",
                 "phpspec/phpspec": "^5.1.2",
-                "phpunit/phpunit": "^6.5.14 || ^7.5.20"
+                "phpunit/phpunit": "^6.5.14 || ^7.5.20",
+                "symfony/phpunit-bridge": "^5.1"
             },
             "type": "ezplatform-bundle",
             "extra": {
@@ -1953,7 +1954,7 @@
                 }
             ],
             "description": "HTTP cache handling for eZ Platform.",
-            "time": "2020-07-02T14:49:51+00:00"
+            "time": "2020-09-30T19:24:55+00:00"
         },
         {
             "name": "ezsystems/ezplatform-http-cache-fastly",
@@ -2013,16 +2014,16 @@
         },
         {
             "name": "ezsystems/ezplatform-matrix-fieldtype",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezplatform-matrix-fieldtype.git",
-                "reference": "c43540f58fd14191cec70549ef9ee255511f11cd"
+                "reference": "bc7880d29bddffd3bb916ffa91d87a34694332b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-matrix-fieldtype/zipball/c43540f58fd14191cec70549ef9ee255511f11cd",
-                "reference": "c43540f58fd14191cec70549ef9ee255511f11cd",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-matrix-fieldtype/zipball/bc7880d29bddffd3bb916ffa91d87a34694332b9",
+                "reference": "bc7880d29bddffd3bb916ffa91d87a34694332b9",
                 "shasum": ""
             },
             "require": {
@@ -2059,20 +2060,20 @@
                 }
             ],
             "description": "Repository dedicated to Matrix Field Type for eZ Platform",
-            "time": "2020-09-04T09:59:03+00:00"
+            "time": "2020-09-30T19:15:28+00:00"
         },
         {
             "name": "ezsystems/ezplatform-page-builder",
-            "version": "v1.3.13",
+            "version": "v1.3.14",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ezsystems/ezplatform-page-builder.git",
-                "reference": "7307aebe79435445dd0f9c3e2985359b68f1b8c6"
+                "reference": "fcd2cf21471b3f0950a3a6439133e30eb2a65149"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://updates.ez.no/ttl/dist/ezsystems/ezplatform-page-builder/ezsystems-ezplatform-page-builder-7307aebe79435445dd0f9c3e2985359b68f1b8c6-zip-2a3e8a.zip",
-                "reference": "7307aebe79435445dd0f9c3e2985359b68f1b8c6",
+                "url": "https://updates.ez.no/ttl/dist/ezsystems/ezplatform-page-builder/ezsystems-ezplatform-page-builder-fcd2cf21471b3f0950a3a6439133e30eb2a65149-zip-2ee497.zip",
+                "reference": "fcd2cf21471b3f0950a3a6439133e30eb2a65149",
                 "shasum": null
             },
             "require": {
@@ -2115,23 +2116,23 @@
             ],
             "description": "eZ Platform Page Builder",
             "support": {
-                "source": "https://github.com/ezsystems/ezplatform-page-builder/tree/v1.3.13",
+                "source": "https://github.com/ezsystems/ezplatform-page-builder/tree/v1.3.14",
                 "issues": "https://github.com/ezsystems/ezplatform-page-builder/issues"
             },
-            "time": "2020-09-04T09:39:06+00:00"
+            "time": "2020-09-30T19:21:21+00:00"
         },
         {
             "name": "ezsystems/ezplatform-page-fieldtype",
-            "version": "v1.3.9",
+            "version": "v1.3.10",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ezsystems/ezplatform-page-fieldtype.git",
-                "reference": "cfbc29bf6d6822736aa24aee4f605f83649d7201"
+                "reference": "81024aada2e64dab478100062ad0af8947a3e1d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://updates.ez.no/ttl/dist/ezsystems/ezplatform-page-fieldtype/ezsystems-ezplatform-page-fieldtype-cfbc29bf6d6822736aa24aee4f605f83649d7201-zip-8c36ba.zip",
-                "reference": "cfbc29bf6d6822736aa24aee4f605f83649d7201",
+                "url": "https://updates.ez.no/ttl/dist/ezsystems/ezplatform-page-fieldtype/ezsystems-ezplatform-page-fieldtype-81024aada2e64dab478100062ad0af8947a3e1d9-zip-302952.zip",
+                "reference": "81024aada2e64dab478100062ad0af8947a3e1d9",
                 "shasum": null
             },
             "require": {
@@ -2184,23 +2185,23 @@
             ],
             "description": "eZ Platform Page FieldType",
             "support": {
-                "source": "https://github.com/ezsystems/ezplatform-page-fieldtype/tree/v1.3.9",
+                "source": "https://github.com/ezsystems/ezplatform-page-fieldtype/tree/v1.3.10",
                 "issues": "https://github.com/ezsystems/ezplatform-page-fieldtype/issues"
             },
-            "time": "2020-09-04T09:40:39+00:00"
+            "time": "2020-09-30T19:19:27+00:00"
         },
         {
             "name": "ezsystems/ezplatform-richtext",
-            "version": "v1.1.8",
+            "version": "v1.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezplatform-richtext.git",
-                "reference": "ae8649feda9b7c92c6d04129c294904776e54855"
+                "reference": "ea7f0ab696b6f24eb155642ce6a7567c6359d34a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezsystems/ezplatform-richtext/zipball/ae8649feda9b7c92c6d04129c294904776e54855",
-                "reference": "ae8649feda9b7c92c6d04129c294904776e54855",
+                "url": "https://api.github.com/repos/ezsystems/ezplatform-richtext/zipball/ea7f0ab696b6f24eb155642ce6a7567c6359d34a",
+                "reference": "ea7f0ab696b6f24eb155642ce6a7567c6359d34a",
                 "shasum": ""
             },
             "require": {
@@ -2239,7 +2240,7 @@
             ],
             "description": "eZ Platform RichText Extension, including the RichText FieldType.",
             "homepage": "https://ezplatform.com",
-            "time": "2020-09-04T09:52:39+00:00"
+            "time": "2020-09-30T19:29:08+00:00"
         },
         {
             "name": "ezsystems/ezplatform-solr-search-engine",
@@ -2384,16 +2385,16 @@
         },
         {
             "name": "ezsystems/ezplatform-workflow",
-            "version": "v1.1.9",
+            "version": "v1.1.10",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ezsystems/ezplatform-workflow.git",
-                "reference": "d74911ca78cb3907f736270fe75026e53691765c"
+                "reference": "0fb5cf5df029ebc0503a8536a00a07ce6d7c47f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://updates.ez.no/ttl/dist/ezsystems/ezplatform-workflow/ezsystems-ezplatform-workflow-d74911ca78cb3907f736270fe75026e53691765c-zip-ad12c4.zip",
-                "reference": "d74911ca78cb3907f736270fe75026e53691765c",
+                "url": "https://updates.ez.no/ttl/dist/ezsystems/ezplatform-workflow/ezsystems-ezplatform-workflow-0fb5cf5df029ebc0503a8536a00a07ce6d7c47f1-zip-504ed7.zip",
+                "reference": "0fb5cf5df029ebc0503a8536a00a07ce6d7c47f1",
                 "shasum": null
             },
             "require": {
@@ -2445,22 +2446,22 @@
             ],
             "description": "Workflow bundle for eZ Platform Enterprise Edition",
             "support": {
-                "source": "https://github.com/ezsystems/ezplatform-workflow/tree/v1.1.9"
+                "source": "https://github.com/ezsystems/ezplatform-workflow/tree/v1.1.10"
             },
-            "time": "2020-09-04T09:55:31+00:00"
+            "time": "2020-09-15T11:17:10+00:00"
         },
         {
             "name": "ezsystems/ezpublish-kernel",
-            "version": "v7.5.11",
+            "version": "v7.5.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezsystems/ezpublish-kernel.git",
-                "reference": "f2b872f207030d4570f3d7fb07f6c9b5ece6075a"
+                "reference": "96613c2f155ab38569b3a63cc5585614d545a6e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://updates.ez.no/ttl/dist/ezsystems/ezpublish-kernel/ezsystems-ezpublish-kernel-f2b872f207030d4570f3d7fb07f6c9b5ece6075a-zip-40ae37.zip",
-                "reference": "f2b872f207030d4570f3d7fb07f6c9b5ece6075a",
+                "url": "https://updates.ez.no/ttl/dist/ezsystems/ezpublish-kernel/ezsystems-ezpublish-kernel-96613c2f155ab38569b3a63cc5585614d545a6e1-zip-dbe0b4.zip",
+                "reference": "96613c2f155ab38569b3a63cc5585614d545a6e1",
                 "shasum": null
             },
             "require": {
@@ -2559,9 +2560,9 @@
             "description": "Kernel used by ezsystems/ezplatform and derivatives. Provides the Content Repository, its APIs, and the application's Symfony framework integration.",
             "homepage": "https://ezplatform.com",
             "support": {
-                "source": "https://github.com/ezsystems/ezpublish-kernel/tree/v7.5.11"
+                "source": "https://github.com/ezsystems/ezpublish-kernel/tree/v7.5.12"
             },
-            "time": "2020-09-04T09:35:02+00:00"
+            "time": "2020-09-30T19:14:24+00:00"
         },
         {
             "name": "ezsystems/flex-workflow",
@@ -4676,16 +4677,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.9.1",
+            "version": "v4.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "88e519766fc58bd46b8265561fb79b54e2e00b28"
+                "reference": "658f1be311a230e0907f5dfe0213742aff0596de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/88e519766fc58bd46b8265561fb79b54e2e00b28",
-                "reference": "88e519766fc58bd46b8265561fb79b54e2e00b28",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/658f1be311a230e0907f5dfe0213742aff0596de",
+                "reference": "658f1be311a230e0907f5dfe0213742aff0596de",
                 "shasum": ""
             },
             "require": {
@@ -4724,24 +4725,24 @@
                 "parser",
                 "php"
             ],
-            "time": "2020-08-30T16:15:20+00:00"
+            "time": "2020-09-26T10:30:38+00:00"
         },
         {
             "name": "nyholm/psr7",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nyholm/psr7.git",
-                "reference": "c17f4f73985f62054a331cbc4ffdf9868c4ef256"
+                "reference": "21b71a31eab5c0c2caf967b9c0fd97020254ed75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nyholm/psr7/zipball/c17f4f73985f62054a331cbc4ffdf9868c4ef256",
-                "reference": "c17f4f73985f62054a331cbc4ffdf9868c4ef256",
+                "url": "https://api.github.com/repos/Nyholm/psr7/zipball/21b71a31eab5c0c2caf967b9c0fd97020254ed75",
+                "reference": "21b71a31eab5c0c2caf967b9c0fd97020254ed75",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1",
+                "php": ">=7.1",
                 "php-http/message-factory": "^1.0",
                 "psr/http-factory": "^1.0",
                 "psr/http-message": "^1.0"
@@ -4787,7 +4788,7 @@
                 "psr-17",
                 "psr-7"
             ],
-            "time": "2020-05-23T11:29:07+00:00"
+            "time": "2020-06-13T15:59:10+00:00"
         },
         {
             "name": "ocramius/package-versions",
@@ -5941,16 +5942,16 @@
         },
         {
             "name": "scssphp/scssphp",
-            "version": "1.2",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scssphp/scssphp.git",
-                "reference": "ce970268a912dabbfaa0eff65dbc5e4a2a6cb757"
+                "reference": "a05ea68160b7286ebbfd6e5fd7ae9e1a946ad6e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scssphp/scssphp/zipball/ce970268a912dabbfaa0eff65dbc5e4a2a6cb757",
-                "reference": "ce970268a912dabbfaa0eff65dbc5e4a2a6cb757",
+                "url": "https://api.github.com/repos/scssphp/scssphp/zipball/a05ea68160b7286ebbfd6e5fd7ae9e1a946ad6e1",
+                "reference": "a05ea68160b7286ebbfd6e5fd7ae9e1a946ad6e1",
                 "shasum": ""
             },
             "require": {
@@ -5999,7 +6000,7 @@
                 "scss",
                 "stylesheet"
             ],
-            "time": "2020-08-26T20:47:29+00:00"
+            "time": "2020-09-07T21:15:42+00:00"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -6367,16 +6368,16 @@
         },
         {
             "name": "symfony/mime",
-            "version": "v4.4.13",
+            "version": "v4.4.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "50ad671306d3d3ffb888d95b4fb1859496831e3a"
+                "reference": "42df2507eb8e6cd9795f51c99dd52bab543a918f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/50ad671306d3d3ffb888d95b4fb1859496831e3a",
-                "reference": "50ad671306d3d3ffb888d95b4fb1859496831e3a",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/42df2507eb8e6cd9795f51c99dd52bab543a918f",
+                "reference": "42df2507eb8e6cd9795f51c99dd52bab543a918f",
                 "shasum": ""
             },
             "require": {
@@ -6425,7 +6426,7 @@
                 "mime",
                 "mime-type"
             ],
-            "time": "2020-08-17T09:56:45+00:00"
+            "time": "2020-09-02T16:08:58+00:00"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -7305,16 +7306,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.4.44",
+            "version": "v3.4.45",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "d7f1e2c7603cfa200c8e745c24dd3be4c2178b03"
+                "reference": "acaf962168168e4a5cd4b0a6d349dfc11fcc774d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/d7f1e2c7603cfa200c8e745c24dd3be4c2178b03",
-                "reference": "d7f1e2c7603cfa200c8e745c24dd3be4c2178b03",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/acaf962168168e4a5cd4b0a6d349dfc11fcc774d",
+                "reference": "acaf962168168e4a5cd4b0a6d349dfc11fcc774d",
                 "shasum": ""
             },
             "require": {
@@ -7457,7 +7458,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2020-08-31T05:54:22+00:00"
+            "time": "2020-09-27T03:47:15+00:00"
         },
         {
             "name": "symfony/thanks",
@@ -8858,16 +8859,16 @@
         },
         {
             "name": "cloudinary/cloudinary_php",
-            "version": "1.17.0",
+            "version": "1.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cloudinary/cloudinary_php.git",
-                "reference": "9a8f8d7c9306c391901c072656d357f6d2c02e8b"
+                "reference": "0f24e862b40d7fa1fdb2429e77d711c68e77be71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/9a8f8d7c9306c391901c072656d357f6d2c02e8b",
-                "reference": "9a8f8d7c9306c391901c072656d357f6d2c02e8b",
+                "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/0f24e862b40d7fa1fdb2429e77d711c68e77be71",
+                "reference": "0f24e862b40d7fa1fdb2429e77d711c68e77be71",
                 "shasum": ""
             },
             "require": {
@@ -8907,7 +8908,7 @@
                 "image management",
                 "sdk"
             ],
-            "time": "2020-06-07T15:36:06+00:00"
+            "time": "2020-09-07T12:16:45+00:00"
         },
         {
             "name": "ezsystems/allure-behat",
@@ -9327,23 +9328,23 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "v1.3.1",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
+                "reference": "60d379c243457e073cff02bc323a2a86cb355631"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
-                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/60d379c243457e073cff02bc323a2a86cb355631",
+                "reference": "60d379c243457e073cff02bc323a2a86cb355631",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.0"
+                "php": ">=5.5"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.0"
+                "symfony/phpunit-bridge": "^4.4 || ^5.1"
             },
             "type": "library",
             "extra": {
@@ -9374,20 +9375,20 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2016-12-20T10:07:11+00:00"
+            "time": "2020-09-30T07:37:28+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.6.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "239400de7a173fe9901b9ac7c06497751f00727a"
+                "reference": "53330f47520498c0ae1f61f7e2c90f55690c06a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/239400de7a173fe9901b9ac7c06497751f00727a",
-                "reference": "239400de7a173fe9901b9ac7c06497751f00727a",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/53330f47520498c0ae1f61f7e2c90f55690c06a3",
+                "reference": "53330f47520498c0ae1f61f7e2c90f55690c06a3",
                 "shasum": ""
             },
             "require": {
@@ -9400,15 +9401,15 @@
             },
             "require-dev": {
                 "ext-zlib": "*",
-                "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.8"
+                "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.8 || ^9.3.10"
             },
             "suggest": {
-                "zendframework/zend-httphandlerrunner": "Emit PSR-7 responses"
+                "laminas/laminas-httphandlerrunner": "Emit PSR-7 responses"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6-dev"
+                    "dev-master": "1.7-dev"
                 }
             },
             "autoload": {
@@ -9445,7 +9446,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2019-07-01T23:21:34+00:00"
+            "time": "2020-09-30T07:37:11+00:00"
         },
         {
             "name": "instaclick/php-webdriver",
@@ -11095,16 +11096,16 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v3.4.44",
+            "version": "v3.4.45",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "03f831108f7cea087be83cc6dd07d3419542a5ba"
+                "reference": "260a244e5bddadd61889ae5201d01a8234c4f076"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/03f831108f7cea087be83cc6dd07d3419542a5ba",
-                "reference": "03f831108f7cea087be83cc6dd07d3419542a5ba",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/260a244e5bddadd61889ae5201d01a8234c4f076",
+                "reference": "260a244e5bddadd61889ae5201d01a8234c4f076",
                 "shasum": ""
             },
             "require": {
@@ -11156,7 +11157,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2020-07-22T22:00:00+00:00"
+            "time": "2020-09-14T06:11:19+00:00"
         },
         {
             "name": "theseer/tokenizer",
