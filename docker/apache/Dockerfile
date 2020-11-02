@@ -77,7 +77,8 @@ COPY crontab /tmp/crontab
 RUN crontab -u www-data /tmp/crontab
 
 # Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=1.10.17
+RUN composer self-update
 # NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && apt-get install -y nodejs
