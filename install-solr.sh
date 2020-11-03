@@ -3,15 +3,21 @@ if [ $# -gt 0 ]; then
     PORT=$1
 fi
 
-cd /var/www
+cd /var/www; # [Docker custom] Added to not put Solr in the same volume than eZ
 
-wget https://archive.apache.org/dist/tika/tika-app-1.20.jar -O bin/tika-app-1.20.jar
-wget https://archive.apache.org/dist/lucene/solr/7.7.3/solr-7.7.3.tgz -O solr-7.7.3.tgz
+if [ ! -f bin/tika-app-1.20.jar ]; then
+  wget https://archive.apache.org/dist/tika/tika-app-1.20.jar -O bin/tika-app-1.20.jar
+fi
+
+if [ ! -f solr-7.7.3.tgz ]; then
+  wget https://archive.apache.org/dist/lucene/solr/7.7.3/solr-7.7.3.tgz -O solr-7.7.3.tgz
+fi
+
 tar xfz solr-7.7.3.tgz
 mv solr-7.7.3 solr
 cd solr
 mkdir -p server/ez/template
-cp -R ../ez/migrations/solr/* server/ez/template
+cp -R ../ez/migrations/solr/* server/ez/template; # [Docker custom] Path updated
 cp example/example-DIH/solr/solr/conf/{currency.xml,solrconfig.xml,stopwords.txt,synonyms.txt,elevate.xml} server/ez/template
 cp server/solr/solr.xml server/ez
 ## Modify solrconfig.xml to remove section that doesn't agree with our schema
@@ -27,5 +33,4 @@ curl http://127.0.0.1:"${PORT}"/solr/admin/cores?action=RENAME\&core=econtent1\&
 curl http://127.0.0.1:"${PORT}"/solr/admin/cores?action=RENAME\&core=econtent2\&other=econtent_back\&wt=json
 cd ..
 
-rm solr-7.7.3.tgz
 cd /var/www/ez

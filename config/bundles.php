@@ -58,6 +58,7 @@ return [
     EzSystems\EzPlatformQueryFieldType\Symfony\EzSystemsEzPlatformQueryFieldTypeBundle::class => ['all' => true],
     EzSystems\EzPlatformVersionComparisonBundle\EzPlatformVersionComparisonBundle::class => ['all' => true],
     Ibexa\Platform\Bundle\Search\IbexaPlatformSearchBundle::class => ['all' => true],
+    Ibexa\Platform\Bundle\Assets\IbexaPlatformAssetsBundle::class => ['all' => true],
     FOS\CommentBundle\FOSCommentBundle::class => ['all' => true],
     Tedivm\StashBundle\TedivmStashBundle::class => ['all' => true],
     WhiteOctober\BreadcrumbsBundle\WhiteOctoberBreadcrumbsBundle::class => ['all' => true],
@@ -100,4 +101,9 @@ return [
     Ibexa\Platform\Bundle\Commerce\PageBuilder\IbexaPlatformCommercePageBuilderBundle::class => ['all' => true],
     Ibexa\Platform\Bundle\Permissions\PlatformPermissionsBundle::class => ['all' => true],
     Ibexa\Platform\Bundle\Commerce\FieldTypes\IbexaPlatformCommerceFieldTypesBundle::class => ['all' => true],
+    Ibexa\Platform\Bundle\Commerce\ShopUi\IbexaPlatformCommerceShopUiBundle::class => ['all' => true],
+    Ibexa\Platform\Bundle\Connector\Dam\IbexaPlatformConnectorDamBundle::class => ['all' => true],
+    Ibexa\Platform\Bundle\Segmentation\IbexaPlatformSegmentationBundle::class => ['all' => true],
+    JMS\SerializerBundle\JMSSerializerBundle::class => ['all' => true],
+    EWZ\Bundle\RecaptchaBundle\EWZRecaptchaBundle::class => ['all' => true],
 ];
