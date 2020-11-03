@@ -170,6 +170,7 @@
             "@auto-scripts"
         ],
         "ezplatform-install": [
+            "Composer\\Config::disableProcessTimeout",
             "@php bin/console --ansi ezplatform:install ezplatform-ee-clean",
             "@php bin/console --ansi ezplatform:install ezcommerce-clean",
             "@php bin/console --ansi ezplatform:graphql:generate-schema"
@@ -179,6 +180,7 @@
         ]
     },
     "config": {
+        "process-timeout": 0,
         "preferred-install": {
             "ezsystems/*": "dist"
         },
