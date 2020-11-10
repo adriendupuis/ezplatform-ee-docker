@@ -11,8 +11,14 @@
         }
     ],
     "repositories": [
-        { "type": "composer", "url": "https://updates.ez.no/ttl" },
-        { "type": "composer", "url": "https://updates.ez.no/ttl_com" }
+        {
+            "type": "composer",
+            "url": "https://updates.ez.no/ttl"
+        },
+        {
+            "type": "composer",
+            "url": "https://updates.ez.no/ttl_com"
+        }
     ],
     "require": {
         "php": "^7.3",
@@ -23,43 +29,43 @@
         "ezsystems/comment-bundle": "~3.1.0",
         "ezsystems/date-based-publisher": "~4.2.0",
         "ezsystems/doctrine-dbal-schema": "~1.0.0",
-        "ezsystems/ez-support-tools": "~2.2.0",
-        "ezsystems/ezcommerce-admin-ui": "~1.1.0",
-        "ezsystems/ezcommerce-base-design": "~3.2.0",
+        "ezsystems/ez-support-tools": "~2.2.1",
+        "ezsystems/ezcommerce-admin-ui": "~1.1.1",
+        "ezsystems/ezcommerce-base-design": "~3.2.1",
         "ezsystems/ezcommerce-erp-admin": "~3.2.0",
         "ezsystems/ezcommerce-fieldtypes": "~1.1.0",
         "ezsystems/ezcommerce-order-history": "~3.2.0",
         "ezsystems/ezcommerce-page-builder": "~1.1.0",
         "ezsystems/ezcommerce-price-engine": "~3.2.0",
-        "ezsystems/ezcommerce-shop": "~3.2.0",
+        "ezsystems/ezcommerce-shop": "~3.2.1",
         "ezsystems/ezcommerce-shop-ui": "~1.0.0",
         "ezsystems/ezmigrationbundle": "~1.0.5",
-        "ezsystems/ezplatform-admin-ui": "~2.2.0",
-        "ezsystems/ezplatform-admin-ui-assets": "~5.2.0",
+        "ezsystems/ezplatform-admin-ui": "~2.2.1",
+        "ezsystems/ezplatform-admin-ui-assets": "~5.2.1",
         "ezsystems/ezplatform-calendar": "~1.2.0",
-        "ezsystems/ezplatform-connector-dam": "~1.0.0",
+        "ezsystems/ezplatform-connector-dam": "~1.0.1",
         "ezsystems/ezplatform-content-forms": "~1.2.0",
-        "ezsystems/ezplatform-core": "~2.2.0",
-        "ezsystems/ezplatform-cron": "~3.0.2",
+        "ezsystems/ezplatform-core": "~2.2.1",
+        "ezsystems/ezplatform-cron": "~3.0.3",
         "ezsystems/ezplatform-design-engine": "~3.0.0",
         "ezsystems/ezplatform-ee-installer": "~3.2.0",
         "ezsystems/ezplatform-elastic-search-engine": "~1.1.0",
         "ezsystems/ezplatform-form-builder": "~2.2.0",
         "ezsystems/ezplatform-graphql": "~2.2.0",
-        "ezsystems/ezplatform-http-cache": "~2.2.0",
+        "ezsystems/ezplatform-http-cache": "~2.2.1",
         "ezsystems/ezplatform-http-cache-fastly": "~2.0.0",
-        "ezsystems/ezplatform-kernel": "~1.2.0",
+        "ezsystems/ezplatform-kernel": "~1.2.1",
         "ezsystems/ezplatform-matrix-fieldtype": "~2.1.0",
         "ezsystems/ezplatform-page-builder": "~2.2.0",
         "ezsystems/ezplatform-page-fieldtype": "~2.2.0",
         "ezsystems/ezplatform-permissions": "~1.0.0",
         "ezsystems/ezplatform-query-fieldtype": "~2.2.0",
-        "ezsystems/ezplatform-rest": "~1.2.0",
+        "ezsystems/ezplatform-rest": "~1.2.1",
         "ezsystems/ezplatform-richtext": "~2.2.0",
-        "ezsystems/ezplatform-search": "~1.1.0",
+        "ezsystems/ezplatform-search": "~1.1.1",
         "ezsystems/ezplatform-segmentation": "~1.0.0",
         "ezsystems/ezplatform-site-factory": "~1.2.0",
-        "ezsystems/ezplatform-solr-search-engine": "~3.2.0",
+        "ezsystems/ezplatform-solr-search-engine": "~3.2.1",
         "ezsystems/ezplatform-standard-design": "~0.3.0",
         "ezsystems/ezplatform-user": "~2.2.0",
         "ezsystems/ezplatform-version-comparison": "~1.2.0",
@@ -112,11 +118,11 @@
         "ezsystems/allure-behat": "~3.1.2",
         "ezsystems/allure-php-api": "~3.1.2",
         "ezsystems/behat-screenshot-image-driver-cloudinary": "~1.1.1",
-        "ezsystems/behatbundle": "~8.2.0",
-        "liuggio/fastest": "^1.7",
+        "ezsystems/behatbundle": "~8.2.1",
         "friends-of-behat/mink-browserkit-driver": "^1.4",
         "friends-of-behat/mink-extension": "^2.4",
         "friends-of-behat/symfony-extension": "^2.1",
+        "liuggio/fastest": "^1.7",
         "overblog/graphiql-bundle": "^0.2",
         "phpunit/phpunit": "^8.2",
         "symfony/debug-pack": "^1.0",
@@ -164,7 +170,6 @@
             "@auto-scripts"
         ],
         "ezplatform-install": [
-            "Composer\\Config::disableProcessTimeout",
             "@php bin/console --ansi ezplatform:install ezplatform-ee-clean",
             "@php bin/console --ansi ezplatform:install ezcommerce-clean",
             "@php bin/console --ansi ezplatform:graphql:generate-schema"
@@ -174,7 +179,6 @@
         ]
     },
     "config": {
-        "process-timeout": 0,
         "preferred-install": {
             "ezsystems/*": "dist"
         },
