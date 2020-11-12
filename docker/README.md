@@ -75,13 +75,13 @@ URLs and Command Lines
   - Get Git version: `docker-compose exec apache git --version;`
   - Get Composer version: `docker-compose exec apache composer --version;`
   - Get Yarn version: `docker-compose exec apache yarn --version;`
-  - Get Symfony version: `docker-compose exec apache php bin/console --version;`
+  - Get Symfony version: `docker-compose exec apache bin/console --version;`
   - See a bundle info: `docker-compose exec apache composer show vendor-name/bundle-name;`
     - See eZ Kernel bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-kernel;`
     - See eZ Symfony Tools info: `docker-compose exec apache composer show ezsystems/symfony-tools;`
     - See eZ HTTP Cache bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-http-cache;`
     - See eZ Solr SE bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-solr-search-engine;`
-  - Clear eZ caches: `docker-compose exec --user www-data apache sh -c "php bin/console cache:clear; php bin/console cache:pool:clear cache.redis;";` 
+  - Clear eZ caches: `docker-compose exec --user www-data apache sh -c "bin/console cache:clear; bin/console cache:pool:clear;";` 
   - Open a shell into container as root: `docker-compose exec apache bash;`
   - Open a shell into container as www-data: `docker-compose exec --user www-data apache bash;`
 * Varnish
@@ -89,7 +89,7 @@ URLs and Command Lines
   - Get Varnish version: `docker-compose exec varnish varnishd -V;`
   - Follow [Varnish logs](https://varnish-cache.org/docs/6.0/reference/varnishlog.html): `docker-compose exec varnish varnishlog;`
     - Follow requests for an URL: `docker-compose exec varnish varnishlog -q 'ReqURL eq "/the/url/to/follow"';`
-    - Follow PURGE requests: `docker-compose exec varnish varnishlog -q 'ReqMethod eq PURGE';`
+    - Follow PURGE and PURGEKEYS requests: `docker-compose exec varnish varnishlog -q 'ReqMethod ~ PURGE.*';`
   - Follow [Varnish cache statistics](https://varnish-cache.org/docs/6.0/reference/varnishstat.html): `docker-compose exec varnish varnishstat;`
   - Restart Varnish (remove all cache): `docker-compose restart varnish;`
   - [Bans](https://varnish-cache.org/docs/trunk/users-guide/purging.html#bans)
@@ -100,13 +100,17 @@ URLs and Command Lines
 * Apache → Varnish
   - See [`render_esi` `esi:include` tags](https://symfony.com/doc/5.0/http_cache/esi.html): `curl --silent --header "Surrogate-Capability: abc=ESI/1.0" http://localhost:8000/the/url/to/test | grep esi:include;`
   - Purge an URL: `docker-compose exec --user www-data apache curl --request PURGE --header 'Host: localhost:8080' http://varnish/the/url/to/purge;`
-  - Soft purge content object(s) by ID: `docker-compose exec --user www-data apache curl -X PURGEKEYS -H 'Host: localhost:8080' -H 'xkey-softpurge: <TYPE><ID>' http://varnish;`
+  - Soft purge content object(s) by ID:
+    - `docker-compose exec apache bin/console fos:httpcache:invalidate:tag <TYPE><ID>;`
+    - `docker-compose exec apache curl -X PURGEKEYS -H 'Host: localhost:8080' -H 'xkey-softpurge: <TYPE><ID>' http://varnish;`
     - [xkey types](https://github.com/ezsystems/ezplatform-http-cache/blob/v2.0.0/docs/using_tags.md#tags-in-use-in-this-bundle):
       - `c`: ***c***ontent id
       - `l`: ***l***ocation id
       - `p`: (***p***ath) ancestor location id
       - `pl`: ***p***arent ***l***ocation id
-      - `ct`: ***c***ontent ***t***ype id 
+      - `ct`: ***c***ontent ***t***ype id
+* Symfony → Varnish
+  - TODO: `bin/console fos:httpcache:invalidate:tag --siteaccess=admin l2;`
 * Redis
   - Get OS release: `docker-compose exec redis cat /etc/os-release;`
   - Get server info: `docker-compose exec redis redis-cli INFO Server;`
@@ -114,6 +118,7 @@ URLs and Command Lines
   - Follow stats: `docker-compose exec redis redis-cli --stat;`
   - Monitor request: `docker-compose exec redis redis-cli MONITOR;`
   - Delete all keys: `docker-compose exec redis redis-cli FLUSHALL;`
+  - Clear Redis caches: `docker-compose exec --user www-data apache bin/console cache:pool:clear cache.redis;` 
   - PHP session count: `docker-compose exec redis redis-cli KEYS PHPREDIS_SESSION:* | wc -l | tr -d ' ';`
   - Open Redis CLI: `docker-compose exec redis redis-cli;`
   - Open a shell into container: `docker-compose exec redis bash;`
@@ -121,29 +126,31 @@ URLs and Command Lines
   - Get OS release: `docker-compose exec mariadb cat /etc/os-release;`
   - Get MariaDB version: `docker-compose exec mariadb mysql --password=root --batch --skip-column-names --execute="SELECT VERSION();";`
     - Get detailed version: `docker-compose exec mariadb mysqladmin --password=root version;`
-  - Open command-line client: `docker-compose exec mariadb mysql --default-character-set=utf8mb4 -proot ezplatform;`
+  - Open command-line client: `docker-compose exec mariadb mysql --default-character-set=utf8mb4 -proot --default-character-set=utf8mb4 ezplatform;`
   - Ping MariaDB server: `docker-compose exec mariadb mysqladmin -proot ping;`
   - Get MariaDB status: `docker-compose exec mariadb mysqladmin -proot status;`
     - Get extended status: `docker-compose exec mariadb mysqladmin -proot extended-status;`
   - Show process list: `docker-compose exec mariadb mysqladmin --password=root processlist --verbose;`
   - Get last content modification date: `docker-compose exec mariadb mysql -proot ezplatform -e "SELECT FROM_UNIXTIME(GREATEST(ezcontentobject.modified, IFNULL(ezcontentobject_trash.trashed, 0))) AS modified FROM ezcontentobject LEFT JOIN ezcontentobject_trash ON ezcontentobject.id = ezcontentobject_trash.contentobject_id ORDER BY modified DESC LIMIT 1;";`
+  - Get language list: `docker-compose exec mariadb mysql -proot --default-character-set=utf8mb4 ezplatform -e "SELECT * FROM ezcontent_language;";`
 * Solr
   - Get OS release: `docker-compose exec solr cat /etc/os-release;`
   - Get Solr version: `docker-compose exec solr bin/solr version;`
   - Get Solr status: `docker-compose exec solr bin/solr status;`
   - Follow Solr logs: `docker-compose logs --follow solr;`
 * Apache/eZ → Solr
-  - (Re)Index: `docker-compose exec --user www-data apache php bin/console ezplatform:reindex;`
+  - (Re)Index: `docker-compose exec --user www-data apache bin/console ezplatform:reindex;`
 
 TODO
 ----
 
-* v3: Avoid doctrine.yaml's server_version change without commit it
+* v3: Avoid .env's `DATABASE_VERSION` change without commit it
 * Add [DFS](https://doc.ezplatform.com/en/3.1/guide/clustering/#dfs-io-handler)
 * Facilitate switch between eZ Platform EE v2.5 and eZ Platform v3.x
 * Ensure compatibility with other unixoides than Mac OS X. For example, `sed -i ''` is specific to Mac OS X and a solution could be https://formulae.brew.sh/formula/gnu-sed
 * Maybe:
   - Build Solr at the same time than other containers and uncomment that apache depends on solr
+  - Facilitate keeping Varnish's VCL up-to-date  
   - Use more docker-compose.yml `volumes` and less Dockerfile `COPY`
   - The builder could have some options like: `./docker-compose.bash --cache-pool=memcached --sessions-in-cache-pool --search-engine=legacy --en=dev --xdebug;`
   - Just use `docker-compose up --build` and remove `docker-compose.bash`

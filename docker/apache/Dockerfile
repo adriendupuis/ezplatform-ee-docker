@@ -1,6 +1,6 @@
 FROM debian:10
 
-LABEL maintainer="adrien.dupuis@ez.no"
+LABEL maintainer="adrien.dupuis@ibexa.co"
 LABEL description="Debian “Buster” 10 with Apache 2.4, Cron, PHP-FPM (PHP 7.3, Redis as session handler, Xdebug), Composer and Yarn for eZ Platform usage"
 
 ARG symfony_env=dev

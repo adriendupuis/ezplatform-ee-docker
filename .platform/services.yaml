@@ -57,7 +57,7 @@ rediscache:
 # Multi core setup is currently not supported on Platform.sh. Sharding does not work as the cores are
 # unable to reach each other
 #solrsearch:
-#    type: solr:6.6
+#    type: solr:7.7
 #    disk: 512
 #    configuration:
 #        configsets:
@@ -70,6 +70,11 @@ rediscache:
 #        endpoints:
 #            collection1:
 #                core: collection1
+
+# If you wish to use elasticsearch, uncomment this service and the corresponding relationship in .platform.app.yaml.
+#elasticsearch:
+#    type: elasticsearch:7.7
+#    disk: 512
 
 # Due to logic in app/config/env/platformsh.php, do not change the service name to something different than 'varnish'
 varnish:

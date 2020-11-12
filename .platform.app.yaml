@@ -34,6 +34,8 @@ relationships:
     #redissession: 'redissession:redis'
     # If you wish to use solr, uncomment this relationship and the corresponding service in .platform/services.yaml
     #solr: 'solrsearch:collection1'
+    # If you wish to use elasticsearch, uncomment this relationship and the corresponding service in .platform/services.yaml
+    #elasticsearch: 'elasticsearch:elasticsearch'
 
 variables:
     php:
@@ -82,7 +84,7 @@ disk: 3072
 # The mounts that will be performed when the package is deployed.
 mounts:
 # PE Cluster Note: By default will set all to shared, so if moving to PE dedicated cluster you should ask platform.sh
-# Support to make sure at least cache + logs are local, while you can let web/var be shared if you prefer that over DFS.
+#                  Support to make sure at least cache + logs are local, while you can let public/var be shared if you prefer that over DFS.
     'var/cache':
         source: local
         source_path: cache
@@ -143,6 +145,9 @@ hooks:
 
         # Mainly relevant for eZ Platform demo usage, for own setup adapt this or remove and rely on migrations.
         if [ ! -f public/var/.platform.installed ]; then
+            # Configure ElasticSearch mappings
+            ##php bin/console ezplatform:elasticsearch:put-index-template
+
             # To workaround issues with p.sh Varnish we clear container cache & temporary set Symfony Proxy
             rm -Rf var/cache/$APP_ENV/*.*
             HTTPCACHE_PURGE_TYPE="local" php -d memory_limit=-1 `which composer` ezplatform-install
@@ -161,8 +166,8 @@ hooks:
         ##php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration
         ##php bin/console kaliop:migration:migrate --no-interaction --no-debug
 
-        # When using Solr, there are two cases where you'll need to rebuild indexes:
-        # - When Solr / search configuration changes
+        # When using Solr / ElasticSearch, there are two cases where you'll need to rebuild indexes:
+        # - When Solr / ElasticSearch / search configuration changes
         # - On database import/restore
         # So in development it might be convenient to rebuild indexes, slowing down deploy time
         ##php bin/console ezplatform:reindex --processes=auto
@@ -175,11 +180,16 @@ hooks:
         ##bin/console fos:httpcache:invalidate:tag l44 c33 ct2 ...
 
     # Post deploy hook, like deploy but after being deployed and live, for deploy tasks we can do asynchronously
+    # Tip: As this is running while web is running, and it's async, avoid doing anything like cache clearing that affects web requests here.
     #post_deploy: |
     #    set -e
 
 # The configuration of scheduled execution.
 # see https://docs.platform.sh/configuration/app/cron.html#cron-jobs
+#
+# Tip: Crons work like on traditional dedicated servers, they share resources with web, so:
+# - For long runing heavy operations, consider using background "workers" with event queuing.
+# - To disable certain features during a cronjob, you can usually do it with env variable or php variable, example: "php -d newrelic.enabled=false bin/console my:import"
 crons:
     frequent:
         # NOTE: The minimum interval between cron runs is 5 minutes, even if specified as less.
