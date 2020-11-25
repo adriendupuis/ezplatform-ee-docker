@@ -13,8 +13,9 @@ docker-compose up --build --detach varnish apache redis mariadb;
 
 # eZ Platform: Cache and Logs Removal
 rm -rf var/cache/dev/ var/logs/*.log;
-touch var/logs/dev.log;
+mkdir -p var/cache/dev; touch var/logs/dev.log;
 docker-compose exec apache chown www-data -R var/cache/;
+docker-compose exec apache chmod g+w -R var/cache/;
 
 # MariaDB: Server Wait & Version Fetch
 GET_MARIADB_VERSION_CMD="docker-compose exec mariadb mysql -proot -BNe 'SELECT VERSION();' | cut -d '-' -f 1 | head -n 1;";
@@ -41,7 +42,7 @@ fi;
 docker-compose exec --user www-data apache composer config --global process-timeout 0;
 
 # Apache: Composer Install
-find bin/ -type l -exec unlink {} \; ; # Remove bin/ symlinks
+# find bin/ -type l -exec unlink {} \; ; # Remove bin/ symlinks
 docker-compose exec --user www-data apache composer install --no-interaction;
 
 # Solr: Docker Container Build (needs vendor/ezsystems/ezplatform-solr-search-engine/)
