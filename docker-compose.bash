@@ -32,8 +32,8 @@ sed -i '' -e "s/DATABASE_VERSION=mariadb-.*/DATABASE_VERSION=mariadb-$MARIADB_VE
 
 # Apache: Composer Authentication
 if [ ! -f auth.json ]; then
-  echo -n "eZ Platform Enterprise Edition Installation Key: "; read INSTALLATION_KEY;
-  echo -n "eZ Platform Enterprise Edition Token Password: "; read TOKEN_PASSWORD;
+  echo -n "eZ Commerce Installation Key: "; read INSTALLATION_KEY;
+  echo -n "eZ Commerce Token Password: "; read TOKEN_PASSWORD;
   docker-compose exec --user www-data apache composer config http-basic.updates.ez.no ${INSTALLATION_KEY} ${TOKEN_PASSWORD};
 fi;
 

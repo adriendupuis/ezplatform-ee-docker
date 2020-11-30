@@ -48,7 +48,10 @@ RUN pecl install xdebug \
 
 # PHP-FPM: Configuration
 RUN sed -i "s/max_execution_time = 30/max_execution_time = 360/" /etc/php/7.3/fpm/php.ini
-RUN sed -i "s/pm.max_children = 5/pm.max_children = 20/" /etc/php/7.3/fpm/pool.d/www.conf \
+RUN sed -i "s/pm.max_children = 5/pm.max_children = 32/" /etc/php/7.3/fpm/pool.d/www.conf \
+    && sed -i "s/pm.start_servers = 2/pm.start_servers = 8/" /etc/php/7.3/fpm/pool.d/www.conf \
+    && sed -i "s/pm.min_spare_servers = 1/pm.min_spare_servers = 7/" /etc/php/7.3/fpm/pool.d/www.conf \
+    && sed -i "s/pm.max_spare_servers = 3/pm.max_spare_servers = 16/" /etc/php/7.3/fpm/pool.d/www.conf \
     && sed -i "s/;php_admin_value[memory_limit] = .*/php_admin_value[memory_limit] = 256M/" /etc/php/7.3/fpm/pool.d/www.conf \
     && sed -i "s/;php_admin_value[error_log] = .*/php_admin_value[error_log] = \/var\/log\/php7.3-fpm.\$pool.error.log/" /etc/php/7.3/fpm/pool.d/www.conf \
     && sed -i "s/;access\.log = .*/access.log = \/var\/log\/php7.3-fpm.\$pool.access.log/" /etc/php/7.3/fpm/pool.d/www.conf \
