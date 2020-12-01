@@ -16,8 +16,8 @@ sed -i '' -e "s/EZ_HTTP_CACHE_VERSION=.*/EZ_HTTP_CACHE_VERSION=$EZ_HTTP_CACHE_VE
 docker-compose up --build --detach varnish apache redis mariadb;
 
 # eZ Platform: Cache and Logs Removal
-rm -rf var/cache/dev/ var/logs/*.log;
-mkdir -p var/cache/dev; touch var/logs/dev.log;
+rm -rf var/cache/dev/ var/log/*.log;
+mkdir -p var/cache/dev; touch var/log/dev.log;
 docker-compose exec apache chown www-data -R var/cache/;
 docker-compose exec apache chmod g+w -R var/cache/;
 
