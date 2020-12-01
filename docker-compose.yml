@@ -22,6 +22,8 @@ services:
       - 8983:8983
     volumes:
       - .:/var/www/ez:cached
+      - /var/www/ez/var/cache/
+      - /var/www/ez/var/log/
 
   redis:
     image: redis:5.0
