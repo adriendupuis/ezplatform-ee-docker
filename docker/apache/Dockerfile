@@ -20,6 +20,7 @@ RUN apt-get -qq update \
         # Solr
         default-jre \
         wget \
+        lsof \
         # PHP
         php \
         php-cli \
