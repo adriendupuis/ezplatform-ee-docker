@@ -53,6 +53,7 @@
         "ezsystems/ezplatform-standard-design": "~0.2.2",
         "ezsystems/ezplatform-user": "~1.0.7",
         "ezsystems/ezplatform-workflow": "~1.1.10",
+        "ezsystems/ezplatform-xmltext-fieldtype": "v1.*",
         "ezsystems/ezpublish-kernel": "~7.5.13",
         "ezsystems/flex-workflow": "~3.2.6",
         "ezsystems/repository-forms": "~2.5.8",
@@ -127,6 +128,9 @@
         ]
     },
     "config": {
+        "platform": {
+            "php": "7.3.19"
+        },
         "bin-dir": "bin",
         "sort-packages": true,
         "preferred-install": {

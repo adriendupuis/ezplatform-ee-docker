@@ -64,6 +64,8 @@ class AppKernel extends Kernel
             new EzSystems\FlexWorkflowBundle\EzSystemsFlexWorkflowBundle(),
             new EzSystems\EzPlatformEnterpriseEditionInstallerBundle\EzPlatformEnterpriseEditionInstallerBundle(),
             new EzSystems\EzPlatformWorkflowBundle\EzPlatformWorkflowBundle(),
+            // Addition
+            new EzSystems\EzPlatformXmlTextFieldTypeBundle\EzSystemsEzPlatformXmlTextFieldTypeBundle(),
             // Application
             new AppBundle\AppBundle(),
         ];

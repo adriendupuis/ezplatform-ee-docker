@@ -1,0 +1,29 @@
+ezpublish:
+    system:
+        default:
+            field_templates:
+                # view for `ezsrrating` from ezstarrating extension
+                - { template: '@ezdesign/fields/content_fields.html.twig', priority: 1 }
+            fieldtypes:
+                ezrichtext:
+                    custom_tags:
+                        # ezpublish_legacy/settings/content.ini / [CustomTagSettings] / AvailableCustomTags
+                        - factbox
+                        # <custom name="factbox" custom:title="[…]">[…]</custom> → <eztemplate name="factbox"><ezcontent>[…]</ezcontent><ezconfig><ezvalue key="title">[…]</ezvalue></ezconfig></eztemplate>
+                        # Already handled custom tags (which are not listed as Inline custom tags by ezxmltext:convert-to-richtext) :
+                        # - quote # <custom name="quote"> → <blockquote>
+                        # - strike #  <custom name="strike"> → <emphasis role="strikedthrough">
+                        # - sub # <custom name="sub"> → <subscript>
+                        # - sup # <custom name="sup"> → <superscript>
+
+ezrichtext:
+    custom_tags:
+        factbox:
+            #template: '@ezdesign/fields/richtext/factbox.html.twig'
+            template: 'AppBundle:themes/standard/fields/richtext:factbox.html.twig'
+            icon: '/bundles/ezplatformadminui/img/ez-icons.svg#warning'
+            attributes:
+                title:
+                    type: string
+                    required: true
+                    default_value: ''
