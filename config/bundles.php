@@ -69,4 +69,5 @@ return [
     Ibexa\Platform\Bundle\Permissions\PlatformPermissionsBundle::class => ['all' => true],
     Ibexa\Platform\Bundle\Connector\Dam\IbexaPlatformConnectorDamBundle::class => ['all' => true],
     Ibexa\Platform\Bundle\Segmentation\IbexaPlatformSegmentationBundle::class => ['all' => true],
+    Ibexa\Platform\Bundle\Connector\Unsplash\IbexaPlatformConnectorUnsplashBundle::class => ['all' => true],
 ];
