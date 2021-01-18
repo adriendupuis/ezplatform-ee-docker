@@ -165,9 +165,6 @@
     "ezsystems/ezplatform-connector-dam": {
         "version": "v1.0.1"
     },
-    "ezsystems/ezplatform-connector-unsplash": {
-        "version": "1.0.x-dev"
-    },
     "ezsystems/ezplatform-content-forms": {
         "version": "v1.2.0"
     },
@@ -315,9 +312,6 @@
     "hautelook/templated-uri-router": {
         "version": "3.3.0"
     },
-    "hughbertd/oauth2-unsplash": {
-        "version": "1.0.3"
-    },
     "imagine/imagine": {
         "version": "1.2.3"
     },
@@ -347,9 +341,6 @@
     },
     "league/mime-type-detection": {
         "version": "1.5.1"
-    },
-    "league/oauth2-client": {
-        "version": "2.6.0"
     },
     "lexik/jwt-authentication-bundle": {
         "version": "2.5",
@@ -1061,9 +1052,6 @@
     },
     "twig/twig": {
         "version": "v3.1.1"
-    },
-    "unsplash/unsplash": {
-        "version": "2.5.1"
     },
     "webmozart/assert": {
         "version": "1.9.1"
