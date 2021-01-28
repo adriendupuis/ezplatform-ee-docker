@@ -4,8 +4,29 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c835706fb57e0553c88ef8d7fdcd4861",
+    "content-hash": "a9b8cfd4bbb252ea6247ace338f3492e",
     "packages": [
+        {
+            "name": "adriendupuis/ezplatform-connector-commons",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://adriendupuis@github.com/adriendupuis/ezplatform-connector-commons.git",
+                "reference": "77576360a8bca96a4ff7f078727bd870e435f62e"
+            },
+            "require": {
+                "ezsystems/ezplatform-connector-dam": "^1.0"
+            },
+            "type": "ezplatform-bundle",
+            "autoload": {
+                "psr-4": {
+                    "AdrienDupuis\\EzPlatformConnectorCommonsBundle\\": "src/bundle/"
+                }
+            },
+            "description": "eZ Platform Wikimedia Commons Connector",
+            "homepage": "https://github.com/adriendupuis/ezplatform-connector-commons",
+            "time": "2021-01-22T14:51:10+00:00"
+        },
         {
             "name": "babdev/pagerfanta-bundle",
             "version": "v2.7.0",
@@ -90,12 +111,12 @@
             "version": "v1.5.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/clue/php-stream-filter.git",
+                "url": "https://github.com/clue/stream-filter.git",
                 "reference": "aeb7d8ea49c7963d3b581378955dbf5bc49aa320"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clue/php-stream-filter/zipball/aeb7d8ea49c7963d3b581378955dbf5bc49aa320",
+                "url": "https://api.github.com/repos/clue/stream-filter/zipball/aeb7d8ea49c7963d3b581378955dbf5bc49aa320",
                 "reference": "aeb7d8ea49c7963d3b581378955dbf5bc49aa320",
                 "shasum": ""
             },
@@ -7958,6 +7979,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
+            "abandoned": "https://github.com/fabpot/local-php-security-checker",
             "time": "2019-11-01T13:20:14+00:00"
         },
         {
@@ -13609,12 +13631,12 @@
             "version": "1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },
@@ -17385,7 +17407,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "adriendupuis/ezplatform-connector-commons": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
@@ -17394,5 +17418,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }
