@@ -6,7 +6,7 @@
 #set -x;
 
 # Git: Untracked Files Removal
-git clean -df; # Help to switch between eZ Platform v2 and v3
+#git clean -df; # Help to switch between eZ Platform v2 and v3
 
 # Varnish: Right VCL Version Fetch
 EZ_HTTP_CACHE_VERSION=`grep 'name": "ezsystems/ezplatform-http-cache"' -A 1 composer.lock | tail -n 1 | grep -oE '[0-9.]+';`;
