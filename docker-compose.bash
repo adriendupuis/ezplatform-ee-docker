@@ -8,18 +8,37 @@
 # Git: Untracked Files Removal
 #git clean -df; # Help to switch between eZ Platform v2 and v3
 
-# Varnish: Right VCL Version Fetch
-EZ_HTTP_CACHE_VERSION=`grep 'name": "ezsystems/ezplatform-http-cache"' -A 1 composer.lock | tail -n 1 | grep -oE '[0-9.]+';`;
-sed -i '' -e "s/EZ_HTTP_CACHE_VERSION=.*/EZ_HTTP_CACHE_VERSION=$EZ_HTTP_CACHE_VERSION/" docker/varnish/Dockerfile;
+# Apache: Composer Authentication
+if [ ! -f auth.json ]; then
+  echo -n "eZ Platform Enterprise Edition Installation Key: "; read INSTALLATION_KEY;
+  echo -n "eZ Platform Enterprise Edition Token Password: "; read TOKEN_PASSWORD;
+  composer config http-basic.updates.ez.no ${INSTALLATION_KEY} ${TOKEN_PASSWORD};
+  composer config http-basic.updates.ibexa.co ${INSTALLATION_KEY} ${TOKEN_PASSWORD};
+fi;
 
-# Docker: Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
-docker-compose up --build --detach varnish apache redis mariadb;
+# Symfony/eZ/Composer: Install dependencies
+composer install --no-interaction --no-scripts;
 
-# eZ Platform: Cache and Logs Removal
-rm -rf var/cache/dev/ var/log/*.log;
+# Solr: Copy config to build folder
+cp -r ./vendor/ezsystems/ezplatform-solr-search-engine/lib/Resources/config/solr ./docker/solr/conf;
+
+# Symfony: Cache and Logs Removal
+rm -rf var/cache/dev/ var/log/*.log var/encore/*config*.js;
 mkdir -p var/cache/dev; touch var/log/dev.log;
-docker-compose exec apache chown www-data -R var/cache/;
-docker-compose exec apache chmod g+w -R var/cache/;
+
+# Symfony: Remove bin/ symlinks
+find bin/ -type l -exec unlink {} \; ; #
+rm -f ; # Remove Webpack Encore generated config files
+
+# Docker: Containers Cluster Build
+docker-compose up --build --detach;
+
+# Solr: Clean-up build folder
+rm -rf ./docker/solr/conf;
+
+# Apache: Add write rights to var folders
+docker-compose exec apache chown www-data -R var/ public/var/;
+docker-compose exec apache chmod g+w -R var/ public/var/;
 
 # MariaDB: Server Wait & Version Fetch
 GET_MARIADB_VERSION_CMD="docker-compose exec mariadb mysql -proot -BNe 'SELECT VERSION();' | cut -d '-' -f 1 | head -n 1;";
@@ -34,27 +53,10 @@ echo "MariaDB version: $MARIADB_VERSION";
 # Apache: Doctrine Configuration
 sed -i '' -e "s/DATABASE_VERSION=mariadb-.*/DATABASE_VERSION=mariadb-$MARIADB_VERSION/" .env;
 
-# Apache: Composer Authentication
-if [ ! -f auth.json ]; then
-  echo -n "eZ Platform Enterprise Edition Installation Key: "; read INSTALLATION_KEY;
-  echo -n "eZ Platform Enterprise Edition Token Password: "; read TOKEN_PASSWORD;
-  docker-compose exec --user www-data apache composer config http-basic.updates.ez.no ${INSTALLATION_KEY} ${TOKEN_PASSWORD};
-fi;
-
 # Apache: Composer Scripts' Timeout
 docker-compose exec --user www-data apache composer config --global process-timeout 0;
 
-# Apache: Composer Install
-find bin/ -type l -exec unlink {} \; ; # Remove bin/ symlinks
-rm -f var/encore/*config*.js; # Remove Webpack Encore generated config files
-docker-compose exec --user www-data apache composer install --no-interaction;
-
-# Solr: Docker Container Build (needs vendor/ezsystems/ezplatform-solr-search-engine/)
-cp -r ./vendor/ezsystems/ezplatform-solr-search-engine/lib/Resources/config/solr ./docker/solr/conf;
-docker-compose up --build --detach solr;
-rm -rf ./docker/solr/conf;
-
-# Apache: eZ Platform Install (needs Solr)
+# Apache: eZ Platform Install
 docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;";
 docker-compose exec --user www-data apache rm -rf public/var/*; # Clean public/var/*/storage/ as the DB is reset.
 docker-compose exec redis redis-cli FLUSHALL;
