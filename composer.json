@@ -18,6 +18,10 @@
     {
       "type": "vcs",
       "url": "https://github.com/adriendupuis/ezplatform-admin.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/adriendupuis/ezplatform-standard.git"
     }
   ],
   "require": {

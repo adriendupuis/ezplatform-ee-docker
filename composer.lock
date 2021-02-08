@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9066a24875f6c7b5eaf289c0c6b09617",
+    "content-hash": "cc589175ef589b8d44415d0a449520a2",
     "packages": [
         {
             "name": "adriendupuis/ezplatform-admin",
@@ -36,6 +36,37 @@
                 "issues": "https://github.com/adriendupuis/ezplatform-admin/issues"
             },
             "time": "2020-07-29T07:12:07+00:00"
+        },
+        {
+            "name": "adriendupuis/ezplatform-standard",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adriendupuis/ezplatform-standard.git",
+                "reference": "82a5976d73615ec509051970e8e0510f4834718c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adriendupuis/ezplatform-standard/zipball/82a5976d73615ec509051970e8e0510f4834718c",
+                "reference": "82a5976d73615ec509051970e8e0510f4834718c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ezsystems/ezplatform-kernel": "^1.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AdrienDupuis\\EzPlatformStandardBundle\\": "src/bundle/"
+                }
+            },
+            "description": "eZ Platform Standard Features",
+            "support": {
+                "source": "https://github.com/adriendupuis/ezplatform-standard/tree/develop",
+                "issues": "https://github.com/adriendupuis/ezplatform-standard/issues"
+            },
+            "time": "2020-09-03T09:56:23+00:00"
         },
         {
             "name": "babdev/pagerfanta-bundle",
@@ -17169,7 +17200,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "adriendupuis/ezplatform-admin": 20
+        "adriendupuis/ezplatform-admin": 20,
+        "adriendupuis/ezplatform-standard": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
