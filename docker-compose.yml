@@ -19,6 +19,7 @@ services:
       #- solr
     ports:
       - 8000:80
+      - 8008:8008
     volumes:
       - .:/var/www/ez:cached
 

@@ -37,12 +37,13 @@ URLs and Command Lines
 ----------------------
 
 ### Usefull URLs
-* eZ Home page through Varnish: http://localhost:8080/
-* eZ Admin through Varnish: http://localhost:8080/admin
+* prod env through Varnish: http://localhost:8080/
+* prod env directly: http://localhost:8000/
+* dev env directly: http://localhost:8008/
+* eZ Admin in dev env: http://localhost:8000/admin
   - Username: *admin*
   - Password: *publish*
-  * [Admin / System Info](http://localhost:8080/admin/systeminfo)
-* Change port from 8080 to 8000 to access directly to Apache avoiding Varnish
+  * [Admin / System Info](http://localhost:8000/admin/systeminfo)
 * Solr Admin: http://localhost:8983/solr/#/collection1
 
 ### Usefull Commands

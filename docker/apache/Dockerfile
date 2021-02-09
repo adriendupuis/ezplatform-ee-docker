@@ -62,7 +62,7 @@ COPY logs.conf /etc/apache2/conf-available/
 RUN a2enconf logs
 
 # Apache: Virtual Host Modules
-RUN a2enmod rewrite setenvif
+RUN a2enmod rewrite setenvif macro
 # Apache: Global ServerName (avoid AH00558)
 RUN sed -i -e '1 i\ServerName apache' /etc/apache2/apache2.conf
 # Apache: Virtual Host Setting
@@ -84,7 +84,7 @@ RUN npm install -g yarn
 RUN chown www-data:www-data /var/www/
 
 WORKDIR /var/www/ez
-EXPOSE 80
+EXPOSE 80 8008
 
 # Cron, Apache, PHP-FPM & Logs
 #TODO: Should be an array
@@ -96,5 +96,6 @@ CMD service cron restart && /usr/sbin/apache2ctl restart && /etc/init.d/php7.3-f
         -F /var/log/php7.3-fpm.log \
         -F /var/log/php7.3-fpm.www.error.log \
         -F /var/log/php7.3-fpm.www.access.log \
+        -F /var/www/ez/var/log/prod.log \
         -F /var/www/ez/var/log/dev.log \
     ;
