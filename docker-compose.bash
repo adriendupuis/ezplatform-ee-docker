@@ -13,7 +13,7 @@ EZ_HTTP_CACHE_VERSION=`grep 'name": "ezsystems/ezplatform-http-cache"' -A 1 comp
 sed -i '' -e "s/EZ_HTTP_CACHE_VERSION=.*/EZ_HTTP_CACHE_VERSION=$EZ_HTTP_CACHE_VERSION/" docker/varnish/Dockerfile;
 
 # Docker: Containers Cluster Build (except Solr which needs vendor/ezsystems/ezplatform-solr-search-engine/)
-docker-compose up --build --detach varnish apache redis mariadb elasticsearch;
+docker-compose up --build --detach varnish apache redis memcached mariadb elasticsearch;
 
 # eZ Platform: Cache and Logs Removal
 rm -rf var/cache/dev/ var/logs/*.log;

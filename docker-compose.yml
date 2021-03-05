@@ -14,7 +14,7 @@ services:
   apache:
     build: ./docker/apache
     depends_on:
-      - redis
+      #- redis
       - mariadb
       #- solr
     ports:
@@ -25,6 +25,9 @@ services:
   redis:
     image: redis:5.0
     #TODO: change maxmemory_policy to volatile-lru — https://doc.ezplatform.com/en/latest/guide/persistence_cache/
+
+  memcached:
+    image: memcached
 
   mariadb:
     image: mariadb:10.4
