@@ -97,6 +97,10 @@ URLs and Command Lines
     - Ban built CSS and JS: `docker-compose exec varnish varnishadm ban req.url '~' '^/assets/.*\\.(cs|j)s$';`
     - Get the ban list: `docker-compose exec varnish varnishadm ban.list;`
   - Open a shell into container: `docker-compose exec varnish bash;`
+  - User Context Hash
+    - Get a User Context Hash as Anonymous: `uch=$(curl -sIXGET -H "Surrogate-Capability: abc=ESI/1.0" -H "accept: application/vnd.fos.user-context-hash" -H "x-fos-original-url: /" http://localhost:8000/_fos_user_context_hash | grep User-Context-Hash | sed 's/X-User-Context-Hash: //'); echo $uch;`
+    - Use this User Context Hash: `curl -IXGET -H "Surrogate-Capability: abc=ESI/1.0" -H "x-user-context-hash: ${uch//[^[:alnum:]]/}" http://localhost:8000/ez-platform;`
+
 * Apache → Varnish
   - See [`render_esi` `esi:include` tags](https://symfony.com/doc/5.0/http_cache/esi.html): `curl --silent --header "Surrogate-Capability: abc=ESI/1.0" http://localhost:8000/the/url/to/test | grep esi:include;`
   - Purge an URL: `docker-compose exec --user www-data apache curl --request PURGE --header 'Host: localhost:8080' http://varnish/the/url/to/purge;`
@@ -119,7 +123,9 @@ URLs and Command Lines
   - Monitor request: `docker-compose exec redis redis-cli MONITOR;`
   - Delete all keys: `docker-compose exec redis redis-cli FLUSHALL;`
   - Clear Redis caches: `docker-compose exec --user www-data apache bin/console cache:pool:clear cache.redis;` 
-  - PHP session count: `docker-compose exec redis redis-cli KEYS PHPREDIS_SESSION:* | wc -l | tr -d ' ';`
+  - total key count: `docker-compose exec redis redis-cli DBSIZE;`
+    - PHP session key count: `docker-compose exec redis redis-cli KEYS PHPREDIS_SESSION:* | wc -l | tr -d ' ';`
+    - `ezp` cache namespace key count: `docker-compose exec redis redis-cli KEYS ezp:* | wc -l | tr -d ' ';`
   - Open Redis CLI: `docker-compose exec redis redis-cli;`
   - Open a shell into container: `docker-compose exec redis bash;`
 * MariaDB
