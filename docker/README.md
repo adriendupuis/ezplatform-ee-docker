@@ -119,9 +119,16 @@ URLs and Command Lines
   - Monitor request: `docker-compose exec redis redis-cli MONITOR;`
   - Delete all keys: `docker-compose exec redis redis-cli FLUSHALL;`
   - Clear Redis caches: `docker-compose exec --user www-data apache bin/console cache:pool:clear cache.redis;` 
-  - PHP session count: `docker-compose exec redis redis-cli KEYS PHPREDIS_SESSION:* | wc -l | tr -d ' ';`
+  - Total key count: `docker-compose exec redis redis-cli DBSIZE;`
+    - PHP session key count: `docker-compose exec redis redis-cli KEYS PHPREDIS_SESSION:* | wc -l | tr -d ' ';`
+    - `ezp` cache namespace key count: `docker-compose exec redis redis-cli KEYS ezp:* | grep -v empty | wc -l | tr -d ' ';`
   - Open Redis CLI: `docker-compose exec redis redis-cli;`
   - Open a shell into container: `docker-compose exec redis bash;`
+* Memcached
+  - Delete all keys: `echo 'flush_all' | docker-compose exec -T apache telnet memcached 11211;`
+  - Clear Memcached caches: `docker-compose exec --user www-data apache bin/console cache:pool:clear cache.memcached;`
+  - Total key count: TODO
+    - `ezp` cache namespace key count: `docker-compose exec apache php -r '$c = new Memcached(); $c->addServer("memcached", 11211); echo implode(PHP_EOL, $c->getAllKeys());' | wc -l | tr -d ' ';`
 * MariaDB
   - Get OS release: `docker-compose exec mariadb cat /etc/os-release;`
   - Get MariaDB version: `docker-compose exec mariadb mysql --password=root --batch --skip-column-names --execute="SELECT VERSION();";`
