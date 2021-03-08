@@ -177,6 +177,7 @@ sedi "s/^COMPOSE_PROJECT_NAME=/#COMPOSE_FILE=/" .env;
 # Docker: Containers Cluster Build
 container_list="varnish apache mariadb $cache_container $search_container $session_container";
 container_list=`echo "$container_list" | awk '{for (i=1;i<=NF;i++) if (!a[$i]++) printf("%s%s",$i,FS)}{printf("\n")}'`;
+#docker-compose stop;
 docker-compose up --build --detach $container_list;
 
 # Solr: Clean-up build folder
