@@ -178,10 +178,15 @@ sedi "s/^COMPOSE_FILE=/#COMPOSE_FILE=/" .env;
 sedi "s/^COMPOSE_PROJECT_NAME=/#COMPOSE_FILE=/" .env;
 
 # Docker: Containers Cluster Build
-container_list="varnish apache mariadb $cache_container $search_container $session_container";
-container_list=`echo "$container_list" | awk '{for (i=1;i<=NF;i++) if (!a[$i]++) printf("%s%s",$i,FS)}{printf("\n")}'`;
-#docker-compose stop;
-docker-compose up --build --detach $container_list;
+available_containers='varnish apache mariadb redis memcached solr elasticsearch';
+enabled_containers="varnish apache mariadb $cache_container $search_container $session_container";
+available_containers=`echo "$available_containers" | xargs -n1 | sort -u | xargs`;
+enabled_containers=`echo "$enabled_containers" | xargs -n1 | sort -u | xargs`;
+disabled_containers=`comm -13 <(echo "$enabled_containers" | tr ' ' "\n") <(echo "$available_containers" | tr ' ' "\n") | tr "\n" ' '`;
+if [[ -n "$disabled_containers" ]]; then
+  docker-compose stop $disabled_containers;
+fi
+docker-compose up --build --detach $enabled_containers;
 
 # Solr: Clean-up build folder
 rm -rf ./docker/solr/conf;
