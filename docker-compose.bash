@@ -23,35 +23,32 @@ session='redis';
 dynamic_session=0;
 
 ## Options Parsing
-args=`getopt --options=hc:s:u:d $*`;
-set -- $args
-for i
-do
-  case "$i"
+while [[ $# -gt 0 ]]; do
+  case "$1"
   in
     -h)
       echo "Usage:";
       echo "$0 [-c <filesystem|redis|memcached>] [-s <legacy|solr|elasticsearch|fallback>] [-u <filesystem|redis|memcached>] [-d]";
-      echo "-c: Cache Pool (default: redis)";
-      echo "-s: Search Engine (default: solr)";
-      echo "-s: PHP User Sessions (default: redis); Not yet implemented";
-      echo "-d: Dynamic Session Handler (default: false); Not yet implemented";
+      echo "-c|--cache: Cache Pool (default: redis)";
+      echo "-s|--search: Search Engine (default: solr)";
+      echo "-u|--session: PHP User Sessions (default: redis); Not yet implemented";
+      echo "-d|--dynamic-session: Dynamic Session Handler (default: false); Not yet implemented";
       exit;
       ;;
-    -c)
+    -c|--cache)
       cache="$2";
       shift; shift;
       ;;
-    -s)
+    -s|--search)
       search="$2";
       shift; shift;
       ;;
-    -u)
+    -u|--session)
       echo "Session Handler: Not yet implemented";
       #session="$2";
       shift; shift;
       ;;
-    -d)
+    -d|--dynamic-session)
       echo "Dynamic Session Handler: Not yet implemented";
       #dynamic_session=1;
       shift;
@@ -208,6 +205,11 @@ echo "MariaDB version: $MARIADB_VERSION";
 # Apache: Doctrine Configuration
 sedi "s/DATABASE_VERSION=.*/DATABASE_VERSION=mariadb-$MARIADB_VERSION/" .env;
 sedi "s/DATABASE_VERSION=.*/DATABASE_VERSION=mariadb-$MARIADB_VERSION/" .env.local;
+
+# Elasticsearch: Index Template
+if [[ 'elasticsearch' == "$search" ]]; then
+  docker-compose exec apache bin/console ezplatform:elasticsearch:put-index-template --overwrite;
+fi
 
 # Apache: Composer Scripts' Timeout
 docker-compose exec --user www-data apache composer config --global process-timeout 0;
