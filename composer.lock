@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75e812374d757e5502f7df42a6a243ca",
+    "content-hash": "12415302cb97b498b0e88e36af1400c9",
     "packages": [
         {
             "name": "adriendupuis/ezplatform-admin",
@@ -35,7 +35,7 @@
                 "source": "https://github.com/adriendupuis/ezplatform-admin/tree/develop",
                 "issues": "https://github.com/adriendupuis/ezplatform-admin/issues"
             },
-            "time": "2020-07-29T07:12:07+00:00"
+            "time": "2021-03-02T17:43:15+00:00"
         },
         {
             "name": "adriendupuis/ezplatform-connector-commons",
@@ -56,7 +56,7 @@
             },
             "description": "eZ Platform Wikimedia Commons Connector",
             "homepage": "https://github.com/adriendupuis/ezplatform-connector-commons",
-            "time": "2021-01-22T14:51:10+00:00"
+            "time": "2021-03-05T16:32:18+00:00"
         },
         {
             "name": "adriendupuis/ezplatform-standard",
@@ -87,7 +87,7 @@
                 "source": "https://github.com/adriendupuis/ezplatform-standard/tree/develop",
                 "issues": "https://github.com/adriendupuis/ezplatform-standard/issues"
             },
-            "time": "2020-09-03T09:56:23+00:00"
+            "time": "2021-02-08T13:26:27+00:00"
         },
         {
             "name": "babdev/pagerfanta-bundle",
