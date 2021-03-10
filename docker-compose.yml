@@ -1,6 +1,6 @@
 version: '3'
 
-# https://doc.ezplatform.com/en/3.1/getting_started/requirements/
+# https://doc.ezplatform.com/en/3.2/getting_started/requirements/
 
 services:
 
@@ -10,13 +10,13 @@ services:
       - apache
     ports:
       - 8080:80
+    volumes:
+      - ./vendor/ezsystems/ezplatform-http-cache/docs/varnish/vcl/varnish5.vcl:/etc/varnish/default.vcl:cached
 
   apache:
     build: ./docker/apache
     depends_on:
-      #- redis
       - mariadb
-      #- solr
     ports:
       - 8000:80
     volumes:
