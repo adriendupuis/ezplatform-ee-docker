@@ -44,6 +44,7 @@ URLs and Command Lines
   * [Admin / System Info](http://localhost:8080/admin/systeminfo)
 * Change port from 8080 to 8000 to access directly to Apache avoiding Varnish
 * Solr Admin: http://localhost:8983/solr/#/collection1
+* Elasticsearch [Elasticvue](https://elasticvue.com/): http://localhost:8035
 
 ### Usefull Commands
 * Docker
@@ -100,7 +101,6 @@ URLs and Command Lines
   - User Context Hash
     - Get a User Context Hash as Anonymous: `uch=$(curl -sIXGET -H "Surrogate-Capability: abc=ESI/1.0" -H "accept: application/vnd.fos.user-context-hash" -H "x-fos-original-url: /" http://localhost:8000/_fos_user_context_hash | grep User-Context-Hash | sed 's/X-User-Context-Hash: //'); echo $uch;`
     - Use this User Context Hash: `curl -IXGET -H "Surrogate-Capability: abc=ESI/1.0" -H "x-user-context-hash: ${uch//[^[:alnum:]]/}" http://localhost:8000/ez-platform;`
-
 * Apache → Varnish
   - See [`render_esi` `esi:include` tags](https://symfony.com/doc/5.0/http_cache/esi.html): `curl --silent --header "Surrogate-Capability: abc=ESI/1.0" http://localhost:8000/the/url/to/test | grep esi:include;`
   - Purge an URL: `docker-compose exec --user www-data apache curl --request PURGE --header 'Host: localhost:8080' http://varnish/the/url/to/purge;`
