@@ -43,7 +43,7 @@
             "source": {
                 "type": "git",
                 "url": "https://adriendupuis@github.com/adriendupuis/ezplatform-connector-commons.git",
-                "reference": "77576360a8bca96a4ff7f078727bd870e435f62e"
+                "reference": "2842bceae641a9c90b53d9ff10a1daafc1b3fd6c"
             },
             "require": {
                 "ezsystems/ezplatform-connector-dam": "^1.0"
