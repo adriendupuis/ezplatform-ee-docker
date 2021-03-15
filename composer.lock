@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12415302cb97b498b0e88e36af1400c9",
+    "content-hash": "2c1af9e7f912de5e791b4c9d629b8c2a",
     "packages": [
         {
             "name": "adriendupuis/ezplatform-admin",
@@ -1974,6 +1974,40 @@
                 "source": "https://github.com/ezimuel/ringphp/tree/1.1.2"
             },
             "time": "2020-02-14T23:51:21+00:00"
+        },
+        {
+            "name": "ezplatform-i18n/ezplatform-i18n-fr_fr",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezplatform-i18n/ezplatform-i18n-fr_FR.git",
+                "reference": "9d578a647fe2c898bd43e060b40a31a622c8620c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezplatform-i18n/ezplatform-i18n-fr_FR/zipball/9d578a647fe2c898bd43e060b40a31a622c8620c",
+                "reference": "9d578a647fe2c898bd43e060b40a31a622c8620c",
+                "shasum": ""
+            },
+            "require": {
+                "ezsystems/ezpublish-kernel": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "description": "eZ Platform fr_FR translations",
+            "support": {
+                "issues": "https://github.com/ezplatform-i18n/ezplatform-i18n-fr_FR/issues",
+                "source": "https://github.com/ezplatform-i18n/ezplatform-i18n-fr_FR/tree/master"
+            },
+            "time": "2020-04-02T16:27:56+00:00"
         },
         {
             "name": "ezsystems/date-based-publisher",

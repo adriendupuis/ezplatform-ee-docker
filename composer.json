@@ -36,6 +36,7 @@
         "adriendupuis/ezplatform-connector-commons": "dev-develop",
         "adriendupuis/ezplatform-standard": "dev-develop",
         "doctrine/doctrine-migrations-bundle": "^3.0",
+        "ezplatform-i18n/ezplatform-i18n-fr_fr": "^3.0",
         "ezsystems/date-based-publisher": "~4.2.2",
         "ezsystems/doctrine-dbal-schema": "~1.0.0",
         "ezsystems/ez-support-tools": "~2.2.3",
