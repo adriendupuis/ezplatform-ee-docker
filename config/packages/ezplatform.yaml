@@ -1,3 +1,6 @@
+imports:
+    - { resource: dfs/dfs.yaml }
+
 parameters:
     locale_fallback: en
 
@@ -51,13 +54,22 @@ ezplatform:
             search:
                 engine: '%search_engine%'
                 connection: default
+        repo1:
+            storage:
+                connection: repo1
+        repo2:
+            storage:
+                connection: repo2
 
     # Siteaccess configuration, with one siteaccess per default
     siteaccess:
-        list: [site]
+        list: [site1, admin1, site2, admin2]
         groups:
-            site_group: [site]
-        default_siteaccess: site
+            site_group: [site1, site2]
+            repo1_group: [site1, admin1]
+            repo2_group: [site2, admin2]
+            admin_group: [admin1, admin2]
+        default_siteaccess: site1
         match:
             URIElement: 1
             # Uncomment if you've enabled SiteFactory
@@ -73,7 +85,6 @@ ezplatform:
             # These reflect the current installers, complete installation before you change them. For changing var_dir
             # it is recommended to install clean, then change setting before you start adding binary content, otherwise you'll
             # need to manually modify your database data to reflect this to avoid exceptions.
-            var_dir: var/site
             content:
                 # As we by default enable EzSystemsPlatformHttpCacheBundle which is designed to expire all affected cache
                 # on changes, and as error / redirects now have separate ttl, we easier allow ttl to be greatly increased
@@ -84,7 +95,20 @@ ezplatform:
                 purge_servers: ['%purge_server%']
                 varnish_invalidate_token: '%varnish_invalidate_token%'
 
-        site:
+        repo1_group:
+            cache_service_name: cache.redis.repo1
+            repository: repo1
+            var_dir: var/repo1
+            page_builder:
+                siteaccess_list: [site1]
+        repo2_group:
+            cache_service_name: cache.redis.repo2
+            repository: repo2
+            var_dir: var/repo2
+            page_builder:
+                siteaccess_list: [site2]
+
+        site_group:
             languages: [eng-GB]
 
         admin_group:
@@ -92,9 +116,7 @@ ezplatform:
             # so removing eng-GB from this list may lead to errors or content not being shown, unless you change
             # all eng-GB data to other locales first.
             # For admin this needs to contain all languages you want to translate content to on the given repository.
-            languages: [eng-GB, fre-FR]
-            page_builder:
-                siteaccess_list: [site]
+            languages: [eng-GB]
             content_tree_module:
                 contextual_tree_root_location_ids:
                     - 2 # Home (Content structure)

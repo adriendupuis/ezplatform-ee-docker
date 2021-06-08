@@ -214,11 +214,22 @@ fi
 # Apache: Composer Scripts' Timeout
 docker-compose exec --user www-data apache composer config --global process-timeout 0;
 
+# DFS
+docker-compose exec --user root apache mkdir --parents /nfs/ez;
+docker-compose exec --user root apache chown www-data:www-data /nfs/ez;
+docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform_dfs;";
+docker-compose exec mariadb mysql -proot -e "CREATE DATABASE ezplatform_dfs DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci;";
+docker-compose exec -T mariadb mysql -proot ezplatform_dfs < docker/dfs_schema.sql;
+
 # Apache: eZ Platform Install
-docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;";
+docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform_repo1;";
 docker-compose exec --user www-data apache rm -rf public/var/*; # Clean public/var/*/storage/ as the DB is reset.
 docker-compose exec redis redis-cli FLUSHALL;
 docker-compose exec --user www-data apache composer ezplatform-install;
+docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform_repo2;";
+docker-compose exec mariadb mysql -proot -e "CREATE DATABASE ezplatform_repo2 DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci;";
+docker-compose exec mariadb mysqldump -proot ezplatform_repo1 | docker-compose exec -T mariadb mysql -proot ezplatform_repo2;
+#docker-compose exec -T mariadb mysqldump -proot ezplatform_repo2 < $(docker-compose exec mariadb mysql -proot ezplatform_repo1);
 
 # Logs Follow-up
 #docker-compose logs --follow;

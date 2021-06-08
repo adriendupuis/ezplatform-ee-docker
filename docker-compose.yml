@@ -21,6 +21,8 @@ services:
       - 8000:80
     volumes:
       - .:/var/www/ez:cached
+    environment:
+      - BINARY_DATA_HANDLER=dfs
 
   redis:
     image: redis:5.0

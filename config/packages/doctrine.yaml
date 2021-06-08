@@ -21,6 +21,11 @@ doctrine:
                 url: '%env(resolve:DATABASE_URL)%'
                 server_version: '%env(resolve:DATABASE_VERSION)%'
 
+            repo1:
+                url: '%env(resolve:REPO1_DATABASE_URL)%'
+            repo2:
+                url: '%env(resolve:REPO2_DATABASE_URL)%'
+
             # This connection is dedicated for SiteFactory to avoid known issues, should be the same as default
             site_factory:
                 # configure these for your database server

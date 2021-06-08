@@ -30,3 +30,23 @@ services:
                 # If you prefer default behaviour set this to null or comment out, and consider for instance:
                 # https://symfony.com/doc/current/reference/configuration/framework.html#prefix-seed
                 namespace: '%cache_namespace%'
+
+    cache.redis.repo1:
+        public: true
+        class: Symfony\Component\Cache\Adapter\RedisTagAwareAdapter
+        parent: cache.adapter.redis
+        tags:
+            -   name: cache.pool
+                clearer: cache.app_clearer
+                provider: 'redis://%cache_dsn%'
+                namespace: 'repo1'
+
+    cache.redis.repo2:
+        public: true
+        class: Symfony\Component\Cache\Adapter\RedisTagAwareAdapter
+        parent: cache.adapter.redis
+        tags:
+            -   name: cache.pool
+                clearer: cache.app_clearer
+                provider: 'redis://%cache_dsn%'
+                namespace: 'repo2'

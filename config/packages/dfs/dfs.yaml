@@ -1,6 +1,10 @@
 parameters:
-    env(DFS_DATABASE_URL): '%env(resolve:DATABASE_URL)%'
-    dfs_database_url: '%env(resolve:DFS_DATABASE_URL)%'
+    dfs_nfs_path: '/nfs/ez'
+    dfs_database_url: 'mysql://root:root@mariadb/ezplatform_dfs'
+    dfs_database_driver: '%database_driver%'
+    dfs_database_charset: '%database_charset%'
+    dfs_database_collation: '%database_collation%'
+
     ibexa.platform.io.nfs.adapter.config:
         root: '%dfs_nfs_path%'
         path: '$var_dir$/$storage_dir$/'
