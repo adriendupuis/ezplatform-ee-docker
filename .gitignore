@@ -34,3 +34,9 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+###> adriendupuis/ezplatform-ee-docker ###
+auth.json
+/public/assets/build/*
+/public/assets/ezplatform/build/*
+###< adriendupuis/ezplatform-ee-docker ###
