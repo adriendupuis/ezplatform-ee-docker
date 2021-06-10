@@ -7,11 +7,17 @@
         "php": ">=7.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "adriendupuis/ezplatform-admin": "dev-develop",
+        "adriendupuis/ezplatform-connector-commons": "dev-develop",
+        "adriendupuis/ezplatform-standard": "dev-develop",
         "composer/package-versions-deprecated": "1.11.99.2",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "~2.3.2",
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "doctrine/orm": "^2.9",
+        "ezplatform-i18n/ezplatform-i18n-fr_fr": "^3.0",
+        "ezsystems/ezmigrationbundle": "^1.0",
+        "ezsystems/ezplatform-connector-unsplash": "^1.0",
         "ibexa/experience": "3.3.4",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^5.6.1",
@@ -105,6 +111,18 @@
         "ibexa": {
             "type": "composer",
             "url": "https://updates.ibexa.co"
+        },
+        "ad-standard": {
+            "type": "vcs",
+            "url": "https://github.com/adriendupuis/ezplatform-standard.git"
+        },
+        "ad-admin": {
+            "type": "vcs",
+            "url": "https://github.com/adriendupuis/ezplatform-admin.git"
+        },
+        "ad-commons": {
+            "type": "vcs",
+            "url": "https://adriendupuis@github.com/adriendupuis/ezplatform-connector-commons.git"
         }
     },
     "name": "ibexa/experience-skeleton"
