@@ -148,7 +148,7 @@ rm -f var/encore/*config*.js;
 # Docker/eZ: Set Environment
 
 if [[ ! -f .env.local ]]; then
-  cp -v .env.pattern .env.local;
+  cp -v .env.local.template .env.local;
 fi
 
 sedi "s/CACHE_POOL=.*/CACHE_POOL=$CACHE_POOL/" .env.local;
