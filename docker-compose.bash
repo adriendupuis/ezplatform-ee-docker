@@ -36,7 +36,7 @@ done;
 echo "MariaDB version: $MARIADB_VERSION";
 
 # Apache: Doctrine Configuration
-sed -i '' -e "s/DATABASE_VERSION=mariadb-.*/DATABASE_VERSION=mariadb-$MARIADB_VERSION/" .env;
+sed -i '' -e "s/DATABASE_VERSION=mariadb-.*/DATABASE_VERSION=mariadb-$MARIADB_VERSION/" .env.local;
 
 # Apache: Composer Authentication
 if [ ! -f auth.json ]; then
