@@ -37,6 +37,7 @@ yarn-error.log
 
 ###> adriendupuis/ezplatform-ee-docker ###
 auth.json
+/config/graphql/
 /public/assets/build/*
 /public/assets/ezplatform/build/*
 ###< adriendupuis/ezplatform-ee-docker ###
