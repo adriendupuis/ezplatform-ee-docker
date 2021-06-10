@@ -172,7 +172,7 @@ fi
 
 # Docker: docker-compose settings
 sedi "s/^COMPOSE_FILE=/#COMPOSE_FILE=/" .env;
-sedi "s/^COMPOSE_PROJECT_NAME=/#COMPOSE_FILE=/" .env;
+sedi "s/^COMPOSE_PROJECT_NAME=/#COMPOSE_PROJECT_NAME=/" .env;
 
 # Docker: Containers Cluster Build
 available_containers='varnish apache mariadb redis memcached solr elasticsearch';
