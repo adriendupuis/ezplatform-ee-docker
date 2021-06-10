@@ -8,6 +8,10 @@
 # Git: Untracked Files Removal
 #git clean -df; # Help to switch between eZ Platform v2 and v3
 
+if [ ! -e .env.local ]; then
+  cp .env.local.template .env.local;
+fi
+
 # Varnish: Right VCL Version Fetch
 EZ_HTTP_CACHE_VERSION=`grep 'name": "ezsystems/ezplatform-http-cache"' -A 1 composer.lock | tail -n 1 | grep -oE '[0-9.]+';`;
 sed -i '' -e "s/EZ_HTTP_CACHE_VERSION=.*/EZ_HTTP_CACHE_VERSION=$EZ_HTTP_CACHE_VERSION/" docker/varnish/Dockerfile;
