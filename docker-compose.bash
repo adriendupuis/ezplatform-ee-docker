@@ -173,7 +173,7 @@ fi
 
 # Docker: docker-compose settings
 sedi "s/^COMPOSE_FILE=/#COMPOSE_FILE=/" .env;
-sedi "s/^COMPOSE_PROJECT_NAME=/#COMPOSE_FILE=/" .env;
+sedi "s/^COMPOSE_PROJECT_NAME=/#COMPOSE_PROJECT_NAME=/" .env;
 
 # Docker: Containers Cluster Build
 available_containers='varnish apache mariadb redis memcached solr elasticsearch';
@@ -204,7 +204,6 @@ done;
 echo "MariaDB version: $MARIADB_VERSION";
 
 # Apache: Doctrine Configuration
-sedi "s/DATABASE_VERSION=.*/DATABASE_VERSION=mariadb-$MARIADB_VERSION/" .env;
 sedi "s/DATABASE_VERSION=.*/DATABASE_VERSION=mariadb-$MARIADB_VERSION/" .env.local;
 
 # Elasticsearch: Index Template
