@@ -203,7 +203,6 @@ done;
 echo "MariaDB version: $MARIADB_VERSION";
 
 # Apache: Doctrine Configuration
-sedi "s/DATABASE_VERSION=.*/DATABASE_VERSION=mariadb-$MARIADB_VERSION/" .env;
 sedi "s/DATABASE_VERSION=.*/DATABASE_VERSION=mariadb-$MARIADB_VERSION/" .env.local;
 
 # Elasticsearch: Index Template
