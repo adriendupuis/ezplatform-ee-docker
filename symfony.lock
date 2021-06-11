@@ -145,6 +145,9 @@
     "ezimuel/ringphp": {
         "version": "1.1.2"
     },
+    "ezplatform-i18n/ezplatform-i18n-fr_fr": {
+        "version": "v3.3.0"
+    },
     "ezsystems/allure-behat": {
         "version": "v3.1.2"
     },
@@ -168,6 +171,9 @@
     },
     "ezsystems/ez-support-tools": {
         "version": "v2.2.5"
+    },
+    "ezsystems/ezmigrationbundle": {
+        "version": "v1.0.5"
     },
     "ezsystems/ezplatform-admin-ui": {
         "version": "v2.2.7"
@@ -403,6 +409,9 @@
     },
     "monolog/monolog": {
         "version": "2.2.0"
+    },
+    "mtdowling/jmespath.php": {
+        "version": "2.6.0"
     },
     "myclabs/deep-copy": {
         "version": "1.10.2"
