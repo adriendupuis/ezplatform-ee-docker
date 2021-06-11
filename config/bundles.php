@@ -70,10 +70,9 @@ return [
     Ibexa\Platform\Bundle\Permissions\PlatformPermissionsBundle::class => ['all' => true],
     Ibexa\Platform\Bundle\Connector\Dam\IbexaPlatformConnectorDamBundle::class => ['all' => true],
     Ibexa\Platform\Bundle\Segmentation\IbexaPlatformSegmentationBundle::class => ['all' => true],
-    // Personal Bundles
-    AdrienDupuis\EzPlatformAdminBundle\AdrienDupuisEzPlatformAdminBundle::class => ['all' => true],
     Kaliop\eZMigrationBundle\eZMigrationBundle::class => ['all' => true],
     AdrienDupuis\EzPlatformStandardBundle\AdrienDupuisEzPlatformStandardBundle::class => ['all' => true],
+    AdrienDupuis\EzPlatformAdminBundle\AdrienDupuisEzPlatformAdminBundle::class => ['all' => true],
     Ibexa\Platform\Bundle\Connector\Unsplash\IbexaPlatformConnectorUnsplashBundle::class => ['all' => true],
     AdrienDupuis\EzPlatformConnectorCommonsBundle\AdrienDupuisEzPlatformConnectorCommonsBundle::class => ['all' => true],
 ];
