@@ -13,6 +13,7 @@ RUN apt-get -qq update \
     && apt-get -qq install -y \
         cron \
         curl \
+        telnet \
         git \
         zip unzip \
         # Apache
@@ -28,6 +29,7 @@ RUN apt-get -qq update \
         php-mbstring \
         php-zip \
         php-redis \
+        php-memcached \
         # GD
         libfreetype6-dev \
         libjpeg62-turbo-dev \

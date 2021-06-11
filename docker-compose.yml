@@ -1,6 +1,6 @@
 version: '3'
 
-# https://doc.ezplatform.com/en/2.5/getting_started/requirements/
+# https://doc.ezplatform.com/en/3.2/getting_started/requirements/
 
 services:
 
@@ -10,13 +10,13 @@ services:
       - apache
     ports:
       - 8080:80
+    volumes:
+      - ./vendor/ezsystems/ezplatform-http-cache/docs/varnish/vcl/varnish5.vcl:/etc/varnish/default.vcl:cached
 
   apache:
     build: ./docker/apache
     depends_on:
-      - redis
       - mariadb
-      #- solr
     ports:
       - 8000:80
     volumes:
@@ -24,6 +24,10 @@ services:
 
   redis:
     image: redis:5.0
+    #TODO: change maxmemory_policy to volatile-lru — https://doc.ezplatform.com/en/latest/guide/persistence_cache/
+
+  memcached:
+    image: memcached
 
   mariadb:
     image: mariadb:10.4
@@ -38,3 +42,21 @@ services:
       - /opt/solr/server/solr/configsets/ezplatform
     ports:
       - 8983:8983
+
+  elasticsearch:
+    image: elasticsearch:7.8.1
+    environment:
+      - discovery.type=single-node
+      - http.cors.enabled=true
+      #- http.cors.allow-origin=/.*/
+      - http.cors.allow-origin=http://localhost:8035
+    ports:
+      - 9200:9200
+      - 9300:9300
+
+  elasticvue:
+    image: cars10/elasticvue
+    depends_on:
+      - elasticsearch
+    ports:
+      - 8035:8080
