@@ -13,8 +13,7 @@ body {
 .header {
     &__container {
         height: 379px;
-        background: url("../images/background.png") no-repeat;
-        background-size: cover;
+        background: #db0032;
     }
 }
 .logo {
@@ -43,7 +42,7 @@ a {
 }
 ul {
     li:before {
-        content:"•";
+        content:"\2022";
         font-size:12pt;
     }
 }
@@ -65,8 +64,7 @@ ul {
 .background-grey {
     background-color: #f7f7f9;
 }
-.ezrichtext-field,
-.landing-page__block {
+.ezrichtext-field {
     p {
         margin-bottom: 0;
     }

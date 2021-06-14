@@ -7,13 +7,13 @@
         {% set title = ez_content_name( content ) %}
     {% endif %}
     <title>{{ title|default( 'Home' ) }}</title>
-    <meta name="generator" content="eZ Platform"/>
+    <meta name="generator" content="Ibexa DXP"/>
     {% if content is defined and content.contentInfo.mainLocationId %}
         <link rel="canonical" href="{{ ez_path(content) }}" />
     {% endif %}
 
     {% block stylesheets %}
-        {{ encore_entry_link_tags('app_styles') }}
+        {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
 <body>
@@ -21,7 +21,7 @@
 {% endblock %}
 
 {% block javascripts %}
-    {{ encore_entry_script_tags('app_js') }}
+    {{ encore_entry_script_tags('app') }}
 {% endblock %}
 </body>
 </html>

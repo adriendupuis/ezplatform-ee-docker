@@ -126,6 +126,7 @@ if [ ! -f auth.json ]; then
 fi;
 
 # Symfony/eZ/Composer: Install dependencies
+composer config platform.php 7.3;
 composer install --no-interaction --no-scripts;
 
 # Solr: Copy config to build folder
@@ -148,7 +149,7 @@ rm -f var/encore/*config*.js;
 # Docker/eZ: Set Environment
 
 if [[ ! -f .env.local ]]; then
-  cp -v .env.pattern .env.local;
+  cp -v .env.local.template .env.local;
 fi
 
 sedi "s/CACHE_POOL=.*/CACHE_POOL=$CACHE_POOL/" .env.local;
@@ -172,7 +173,7 @@ fi
 
 # Docker: docker-compose settings
 sedi "s/^COMPOSE_FILE=/#COMPOSE_FILE=/" .env;
-sedi "s/^COMPOSE_PROJECT_NAME=/#COMPOSE_FILE=/" .env;
+sedi "s/^COMPOSE_PROJECT_NAME=/#COMPOSE_PROJECT_NAME=/" .env;
 
 # Docker: Containers Cluster Build
 available_containers='varnish apache mariadb redis memcached solr elasticsearch';
@@ -203,7 +204,6 @@ done;
 echo "MariaDB version: $MARIADB_VERSION";
 
 # Apache: Doctrine Configuration
-sedi "s/DATABASE_VERSION=.*/DATABASE_VERSION=mariadb-$MARIADB_VERSION/" .env;
 sedi "s/DATABASE_VERSION=.*/DATABASE_VERSION=mariadb-$MARIADB_VERSION/" .env.local;
 
 # Elasticsearch: Index Template
@@ -225,7 +225,8 @@ docker-compose exec -T mariadb mysql -proot ezplatform_dfs < docker/dfs_schema.s
 docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform_repo1;";
 docker-compose exec --user www-data apache rm -rf public/var/*; # Clean public/var/*/storage/ as the DB is reset.
 docker-compose exec redis redis-cli FLUSHALL;
-docker-compose exec --user www-data apache composer ezplatform-install;
+docker-compose exec --user www-data apache php bin/console ibexa:install ibexa-experience;
+docker-compose exec --user www-data apache php bin/console ibexa:graphql:generate-schema
 docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform_repo2;";
 docker-compose exec mariadb mysql -proot -e "CREATE DATABASE ezplatform_repo2 DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci;";
 docker-compose exec mariadb mysqldump -proot ezplatform_repo1 | docker-compose exec -T mariadb mysql -proot ezplatform_repo2;
