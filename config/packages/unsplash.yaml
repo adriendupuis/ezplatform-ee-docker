@@ -1,0 +1,4 @@
+dam_unsplash:
+    application_id: '%env(UNSPLASH_APPLICATION_ID)%'
+    secret: '%env(UNSPLASH_SECRET)%'
+    utm_source: '%env(UNSPLASH_UTM_SOURCE)%'

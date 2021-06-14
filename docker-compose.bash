@@ -87,11 +87,11 @@ in
     ;;
   'elasticsearch')
     SEARCH_ENGINE=elasticsearch;
-    search_container='elasticsearch';
+    search_container='elasticsearch elasticvue';
     ;;
   'fallback')
     SEARCH_ENGINE=fallback;
-    search_container='solr elasticsearch';
+    search_container='solr elasticsearch elasticvue';
     ;;
 esac
 case "$session"

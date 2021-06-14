@@ -4,8 +4,91 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1273aba2cc3dea5000d365b3980a20a1",
+    "content-hash": "78158e628ed916a95458592c6289c18c",
     "packages": [
+        {
+            "name": "adriendupuis/ezplatform-admin",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adriendupuis/ezplatform-admin.git",
+                "reference": "114009baac7007f645c483e2d2768f30884e1d1c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adriendupuis/ezplatform-admin/zipball/114009baac7007f645c483e2d2768f30884e1d1c",
+                "reference": "114009baac7007f645c483e2d2768f30884e1d1c",
+                "shasum": ""
+            },
+            "require": {
+                "ezsystems/ezplatform-admin-ui": "^2.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AdrienDupuis\\EzPlatformAdminBundle\\": "src/bundle/"
+                }
+            },
+            "description": "eZ Platform Administration Tools",
+            "homepage": "https://github.com/adriendupuis/ezplatform-admin",
+            "support": {
+                "source": "https://github.com/adriendupuis/ezplatform-admin/tree/develop",
+                "issues": "https://github.com/adriendupuis/ezplatform-admin/issues"
+            },
+            "time": "2021-05-27T07:53:48+00:00"
+        },
+        {
+            "name": "adriendupuis/ezplatform-connector-commons",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://adriendupuis@github.com/adriendupuis/ezplatform-connector-commons.git",
+                "reference": "2842bceae641a9c90b53d9ff10a1daafc1b3fd6c"
+            },
+            "require": {
+                "ezsystems/ezplatform-connector-dam": "^1.0"
+            },
+            "type": "ezplatform-bundle",
+            "autoload": {
+                "psr-4": {
+                    "AdrienDupuis\\EzPlatformConnectorCommonsBundle\\": "src/bundle/"
+                }
+            },
+            "description": "eZ Platform Wikimedia Commons Connector",
+            "homepage": "https://github.com/adriendupuis/ezplatform-connector-commons",
+            "time": "2021-03-05T16:32:18+00:00"
+        },
+        {
+            "name": "adriendupuis/ezplatform-standard",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adriendupuis/ezplatform-standard.git",
+                "reference": "ae8253861af88360c7b8c539205d4e70d97d4385"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adriendupuis/ezplatform-standard/zipball/ae8253861af88360c7b8c539205d4e70d97d4385",
+                "reference": "ae8253861af88360c7b8c539205d4e70d97d4385",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ezsystems/ezplatform-kernel": "^1.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AdrienDupuis\\EzPlatformStandardBundle\\": "src/bundle/"
+                }
+            },
+            "description": "eZ Platform Standard Features",
+            "support": {
+                "source": "https://github.com/adriendupuis/ezplatform-standard/tree/develop",
+                "issues": "https://github.com/adriendupuis/ezplatform-standard/issues"
+            },
+            "time": "2021-02-08T13:26:27+00:00"
+        },
         {
             "name": "babdev/pagerfanta-bundle",
             "version": "v2.10.0",
@@ -2128,6 +2211,40 @@
             "time": "2020-02-14T23:51:21+00:00"
         },
         {
+            "name": "ezplatform-i18n/ezplatform-i18n-fr_fr",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezplatform-i18n/ezplatform-i18n-fr_FR.git",
+                "reference": "9d578a647fe2c898bd43e060b40a31a622c8620c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezplatform-i18n/ezplatform-i18n-fr_FR/zipball/9d578a647fe2c898bd43e060b40a31a622c8620c",
+                "reference": "9d578a647fe2c898bd43e060b40a31a622c8620c",
+                "shasum": ""
+            },
+            "require": {
+                "ezsystems/ezpublish-kernel": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "description": "eZ Platform fr_FR translations",
+            "support": {
+                "issues": "https://github.com/ezplatform-i18n/ezplatform-i18n-fr_FR/issues",
+                "source": "https://github.com/ezplatform-i18n/ezplatform-i18n-fr_FR/tree/master"
+            },
+            "time": "2020-04-02T16:27:56+00:00"
+        },
+        {
             "name": "ezsystems/apache-tika-bundle",
             "version": "v2.0.0",
             "source": {
@@ -3045,6 +3162,83 @@
             "time": "2021-04-27T13:22:41+00:00"
         },
         {
+            "name": "ezsystems/ezmigrationbundle",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezsystems/ezmigrationbundle.git",
+                "reference": "bcba1e9fa812a08aa152568a7c8d36efee9a9b61"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezsystems/ezmigrationbundle/zipball/bcba1e9fa812a08aa152568a7c8d36efee9a9b61",
+                "reference": "bcba1e9fa812a08aa152568a7c8d36efee9a9b61",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "ezsystems/doctrine-dbal-schema": "^1.0",
+                "ezsystems/ezplatform-kernel": "^1.0",
+                "mtdowling/jmespath.php": "2.*",
+                "nikic/php-parser": "^4.2.2",
+                "php": "^7.3",
+                "symfony/process": "*",
+                "symfony/swiftmailer-bundle": "*",
+                "symfony/validator": "*",
+                "symfony/var-dumper": "*"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "^2.0",
+                "phpunit/phpunit": "^7.5",
+                "roave/security-advisories": "dev-disablechecks as dev-master"
+            },
+            "suggest": {
+                "php-http/httplug-bundle": "Required for usage of HTTP/CALL migration steps"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kaliop\\eZMigrationBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gaetano Giunta",
+                    "email": "ggiunta@kaliop.com",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Daniel Clements",
+                    "email": "dclements@kaliop.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Peter Halasz",
+                    "email": "peter.halasz@kaliop.co.uk",
+                    "role": "Original author"
+                }
+            ],
+            "description": "Kaliop eZ-Migration Bundle",
+            "keywords": [
+                "database",
+                "ezpublish",
+                "migrations"
+            ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezmigrationbundle/tree/v1.0.5"
+            },
+            "time": "2020-10-01T09:16:01+00:00"
+        },
+        {
             "name": "ezsystems/ezplatform-admin-ui",
             "version": "v2.3.4",
             "source": {
@@ -3299,6 +3493,66 @@
                 "issues": "https://github.com/ezsystems/ezplatform-connector-dam/issues"
             },
             "time": "2021-04-22T12:54:02+00:00"
+        },
+        {
+            "name": "ezsystems/ezplatform-connector-unsplash",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezplatform-connector-unsplash.git",
+                "reference": "cb0d23d6466fbfd1ca58390aaa86b213566459bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ibexa.co/dist/ezsystems/ezplatform-connector-unsplash/ezsystems-ezplatform-connector-unsplash-cb0d23d6466fbfd1ca58390aaa86b213566459bd-zip-c8fab6.zip",
+                "reference": "cb0d23d6466fbfd1ca58390aaa86b213566459bd"
+            },
+            "require": {
+                "ezsystems/ezplatform-connector-dam": "^1.0",
+                "php": "^7.3",
+                "unsplash/unsplash": "^2.5"
+            },
+            "require-dev": {
+                "ezsystems/ezplatform-admin-ui": "^2.2",
+                "ezsystems/ezplatform-code-style": "^0.2",
+                "ezsystems/ezplatform-kernel": "^1.2",
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "mockery/mockery": "^1.4",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "ezplatform-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ibexa\\Platform\\Bundle\\Connector\\Unsplash\\": "src/bundle/",
+                    "Ibexa\\Platform\\Connector\\Unsplash\\": "src/lib/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Ibexa\\Platform\\Tests\\Bundle\\Connector\\Unsplash\\": "tests/bundle/",
+                    "Ibexa\\Platform\\Tests\\Connector\\Unsplash\\": "tests/lib/"
+                }
+            },
+            "notification-url": "https://updates.ibexa.co/notifystats",
+            "scripts": {
+                "fix-cs": [
+                    "@php ./vendor/bin/php-cs-fixer fix -v --show-progress=estimating"
+                ]
+            },
+            "license": [
+                "TTL-2.0"
+            ],
+            "description": "Platform Unsplash Connector bundle",
+            "support": {
+                "source": "https://github.com/ezsystems/ezplatform-connector-unsplash/tree/v1.0.0",
+                "issues": "https://github.com/ezsystems/ezplatform-connector-unsplash/issues"
+            },
+            "time": "2021-01-18T10:30:17+00:00"
         },
         {
             "name": "ezsystems/ezplatform-content-forms",
@@ -6490,6 +6744,62 @@
             "time": "2020-04-21T06:39:53+00:00"
         },
         {
+            "name": "hughbertd/oauth2-unsplash",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/HughbertD/oauth2-unsplash.git",
+                "reference": "f451f4a49dca4027f6edaa850d2fccdfa8721bfe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/HughbertD/oauth2-unsplash/zipball/f451f4a49dca4027f6edaa850d2fccdfa8721bfe",
+                "reference": "f451f4a49dca4027f6edaa850d2fccdfa8721bfe",
+                "shasum": ""
+            },
+            "require": {
+                "league/oauth2-client": ">=1.0",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Unsplash\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hugh Downer",
+                    "email": "hugh.downer@gmail.com"
+                }
+            ],
+            "description": "Unsplash OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "Authentication",
+                "SSO",
+                "Unsplash",
+                "authorization",
+                "identity",
+                "idp",
+                "oauth",
+                "oauth2",
+                "single sign on"
+            ],
+            "support": {
+                "issues": "https://github.com/HughbertD/oauth2-unsplash/issues",
+                "source": "https://github.com/HughbertD/oauth2-unsplash/tree/master"
+            },
+            "time": "2017-12-14T13:08:42+00:00"
+        },
+        {
             "name": "ibexa/content",
             "version": "v3.3.4",
             "source": {
@@ -8575,6 +8885,67 @@
                 }
             ],
             "time": "2020-12-14T13:15:25+00:00"
+        },
+        {
+            "name": "mtdowling/jmespath.php",
+            "version": "2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jmespath/jmespath.php.git",
+                "reference": "42dae2cbd13154083ca6d70099692fef8ca84bfb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/42dae2cbd13154083ca6d70099692fef8ca84bfb",
+                "reference": "42dae2cbd13154083ca6d70099692fef8ca84bfb",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4 || ^7.0 || ^8.0",
+                "symfony/polyfill-mbstring": "^1.17"
+            },
+            "require-dev": {
+                "composer/xdebug-handler": "^1.4",
+                "phpunit/phpunit": "^4.8.36 || ^7.5.15"
+            },
+            "bin": [
+                "bin/jp.php"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JmesPath\\": "src/"
+                },
+                "files": [
+                    "src/JmesPath.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Declaratively specify how to extract elements from a JSON document",
+            "keywords": [
+                "json",
+                "jsonpath"
+            ],
+            "support": {
+                "issues": "https://github.com/jmespath/jmespath.php/issues",
+                "source": "https://github.com/jmespath/jmespath.php/tree/2.6.0"
+            },
+            "time": "2020-07-31T21:01:56+00:00"
         },
         {
             "name": "namshi/jose",
@@ -17447,6 +17818,69 @@
             "time": "2021-05-16T12:14:13+00:00"
         },
         {
+            "name": "unsplash/unsplash",
+            "version": "2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unsplash/unsplash-php.git",
+                "reference": "998cc023b8f8c6e68f45b750e61a6e21ae15ff02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unsplash/unsplash-php/zipball/998cc023b8f8c6e68f45b750e61a6e21ae15ff02",
+                "reference": "998cc023b8f8c6e68f45b750e61a6e21ae15ff02",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3.0",
+                "hughbertd/oauth2-unsplash": ">=1.0.3",
+                "league/oauth2-client": ">=1.4.2",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.0",
+                "php-vcr/php-vcr": "dev-master",
+                "php-vcr/phpunit-testlistener-vcr": "*",
+                "phpunit/phpunit": "~5.1",
+                "satooshi/php-coveralls": "dev-master",
+                "vlucas/phpdotenv": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Crew\\Unsplash\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Klaassen",
+                    "email": "aaron@unsplash.com"
+                },
+                {
+                    "name": "Luke Chesser",
+                    "email": "luke@unsplash.com"
+                },
+                {
+                    "name": "Charles Lalonde",
+                    "email": "charles@pickcrew.com"
+                },
+                {
+                    "name": "Hugh Downer",
+                    "email": "hugh.downer@gmail.com"
+                }
+            ],
+            "description": "Wrapper to access the Unsplash API and photo library",
+            "support": {
+                "issues": "https://github.com/unsplash/unsplash-php/issues",
+                "source": "https://github.com/unsplash/unsplash-php/tree/2.5.1"
+            },
+            "time": "2020-04-07T17:44:24+00:00"
+        },
+        {
             "name": "vaites/php-apache-tika",
             "version": "v0.9.3",
             "source": {
@@ -20001,7 +20435,11 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "adriendupuis/ezplatform-admin": 20,
+        "adriendupuis/ezplatform-connector-commons": 20,
+        "adriendupuis/ezplatform-standard": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
@@ -20010,5 +20448,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
