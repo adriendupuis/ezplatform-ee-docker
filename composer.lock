@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78158e628ed916a95458592c6289c18c",
+    "content-hash": "19bf92bad3ccd5f97a78453debf835bf",
     "packages": [
         {
             "name": "adriendupuis/ezplatform-admin",
@@ -91,16 +91,16 @@
         },
         {
             "name": "babdev/pagerfanta-bundle",
-            "version": "v2.10.0",
+            "version": "v2.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BabDev/PagerfantaBundle.git",
-                "reference": "04bcc5ad005b62f657d38dc816137382685086c7"
+                "reference": "29946e1ee001a0cf4311aab61b29587e002810dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BabDev/PagerfantaBundle/zipball/04bcc5ad005b62f657d38dc816137382685086c7",
-                "reference": "04bcc5ad005b62f657d38dc816137382685086c7",
+                "url": "https://api.github.com/repos/BabDev/PagerfantaBundle/zipball/29946e1ee001a0cf4311aab61b29587e002810dc",
+                "reference": "29946e1ee001a0cf4311aab61b29587e002810dc",
                 "shasum": ""
             },
             "require": {
@@ -120,14 +120,14 @@
             },
             "require-dev": {
                 "doctrine/annotations": "^1.8",
-                "friendsofphp/php-cs-fixer": "^2.18.2",
+                "friendsofphp/php-cs-fixer": "^2.18.5",
                 "jms/serializer": "^3.0",
                 "jms/serializer-bundle": "^3.0",
                 "matthiasnoback/symfony-dependency-injection-test": "^4.1",
                 "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan": "^0.12.80",
+                "phpstan/phpstan": "^0.12.84",
                 "phpstan/phpstan-phpunit": "^0.12.18",
-                "phpstan/phpstan-symfony": "^0.12.20",
+                "phpstan/phpstan-symfony": "^0.12.27",
                 "phpunit/phpunit": "^8.5 || ^9.3",
                 "symfony/serializer": "^3.4 || ^4.4 || ^5.2",
                 "symfony/translation": "^3.4 || ^4.4 || ^5.2",
@@ -162,7 +162,7 @@
             ],
             "support": {
                 "issues": "https://github.com/BabDev/PagerfantaBundle/issues",
-                "source": "https://github.com/BabDev/PagerfantaBundle/tree/v2.10.0"
+                "source": "https://github.com/BabDev/PagerfantaBundle/tree/v2.10.1"
             },
             "funding": [
                 {
@@ -170,7 +170,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-31T21:55:51+00:00"
+            "time": "2021-06-09T23:41:34+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -394,16 +394,16 @@
         },
         {
             "name": "cron/cron",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cron/Cron.git",
-                "reference": "4e48d435f320c1f0d1bdbfce29fecfaf06e19c2a"
+                "reference": "7f2040ecee55adb1acfebf90ee123514c0aa1e56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cron/Cron/zipball/4e48d435f320c1f0d1bdbfce29fecfaf06e19c2a",
-                "reference": "4e48d435f320c1f0d1bdbfce29fecfaf06e19c2a",
+                "url": "https://api.github.com/repos/Cron/Cron/zipball/7f2040ecee55adb1acfebf90ee123514c0aa1e56",
+                "reference": "7f2040ecee55adb1acfebf90ee123514c0aa1e56",
                 "shasum": ""
             },
             "require": {
@@ -437,9 +437,9 @@
             "description": "Cronjobs",
             "support": {
                 "issues": "https://github.com/Cron/Cron/issues",
-                "source": "https://github.com/Cron/Cron/tree/1.5.0"
+                "source": "https://github.com/Cron/Cron/tree/1.5.1"
             },
-            "time": "2021-01-12T16:47:03+00:00"
+            "time": "2021-06-07T21:31:25+00:00"
         },
         {
             "name": "defuse/php-encryption",
@@ -1521,16 +1521,16 @@
         },
         {
             "name": "doctrine/migrations",
-            "version": "3.1.2",
+            "version": "3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "1c2780df6b58998f411e64973cfa464ba0a06e00"
+                "reference": "8d0c58655cf9d76462d00ec5dd099737e513e86d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/1c2780df6b58998f411e64973cfa464ba0a06e00",
-                "reference": "1c2780df6b58998f411e64973cfa464ba0a06e00",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/8d0c58655cf9d76462d00ec5dd099737e513e86d",
+                "reference": "8d0c58655cf9d76462d00ec5dd099737e513e86d",
                 "shasum": ""
             },
             "require": {
@@ -1605,7 +1605,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/migrations/issues",
-                "source": "https://github.com/doctrine/migrations/tree/3.1.2"
+                "source": "https://github.com/doctrine/migrations/tree/3.1.3"
             },
             "funding": [
                 {
@@ -1621,7 +1621,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-04-24T12:54:34+00:00"
+            "time": "2021-06-10T19:24:33+00:00"
         },
         {
             "name": "doctrine/orm",
@@ -1992,6 +1992,59 @@
                 "source": "https://github.com/elastic/elasticsearch-php/tree/v7.13.0"
             },
             "time": "2021-05-25T20:30:27+00:00"
+        },
+        {
+            "name": "enqueue/dsn",
+            "version": "0.10.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-enqueue/dsn.git",
+                "reference": "729fabaae6b24189d14598033b174bd72e825e9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-enqueue/dsn/zipball/729fabaae6b24189d14598033b174bd72e825e9a",
+                "reference": "729fabaae6b24189d14598033b174bd72e825e9a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.10.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Enqueue\\Dsn\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Parse DSN",
+            "homepage": "https://enqueue.forma-pro.com/",
+            "keywords": [
+                "dsn",
+                "parse"
+            ],
+            "support": {
+                "docs": "https://github.com/php-enqueue/enqueue-dev/blob/master/docs/index.md",
+                "email": "opensource@forma-pro.com",
+                "forum": "https://gitter.im/php-enqueue/Lobby",
+                "issues": "https://github.com/php-enqueue/enqueue-dev/issues",
+                "source": "https://github.com/php-enqueue/enqueue-dev"
+            },
+            "time": "2021-02-09T12:01:28+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -2688,6 +2741,80 @@
             "time": "2021-06-02T13:04:38+00:00"
         },
         {
+            "name": "ezsystems/ezcommerce-admin-ui",
+            "version": "v1.2.4",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezcommerce-admin-ui.git",
+                "reference": "d3145726f96a656a70d42889e706b2daa6937b9d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ibexa.co/dist/ezsystems/ezcommerce-admin-ui/ezsystems-ezcommerce-admin-ui-d3145726f96a656a70d42889e706b2daa6937b9d-zip-7e2550.zip",
+                "reference": "d3145726f96a656a70d42889e706b2daa6937b9d"
+            },
+            "require": {
+                "doctrine/orm": "^2.7",
+                "ezsystems/ezcommerce-shop": "^3.3.2",
+                "ezsystems/ezplatform-admin-ui": "^2.1",
+                "jms/translation-bundle": "^1.5",
+                "knplabs/knp-menu": "^3.1",
+                "php": "^7.3",
+                "symfony/config": "^5.0",
+                "symfony/dependency-injection": "^5.0",
+                "symfony/http-kernel": "^5.0",
+                "symfony/translation-contracts": "^2.1",
+                "symfony/yaml": "^5.0"
+            },
+            "require-dev": {
+                "ezsystems/ezplatform-code-style": "^0.1.0",
+                "phpunit/phpunit": "^8.2"
+            },
+            "type": "ezplatform-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ibexa\\Platform\\Bundle\\Commerce\\AdminUi\\": "src/bundle/",
+                    "Ibexa\\Platform\\Commerce\\AdminUi\\": "src/lib/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Ibexa\\Platform\\Tests\\Bundle\\Commerce\\AdminUi\\": "tests/bundle/",
+                    "Ibexa\\Platform\\Tests\\Commerce\\AdminUi\\": "tests/lib/"
+                }
+            },
+            "notification-url": "https://updates.ibexa.co/notifystats",
+            "scripts": {
+                "fix-cs": [
+                    "php-cs-fixer fix -v --show-progress=estimating"
+                ],
+                "check-cs": [
+                    "php-cs-fixer fix --dry-run -v --show-progress=estimating"
+                ],
+                "unit-tests": [
+                    "phpunit -c phpunit.xml.dist"
+                ]
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "Ibexa Commerce Admin UI",
+            "keywords": [
+                "commerce",
+                "ezcommerce",
+                "ezplatform"
+            ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezcommerce-admin-ui/tree/v1.2.4"
+            },
+            "time": "2021-06-02T13:07:16+00:00"
+        },
+        {
             "name": "ezsystems/ezcommerce-base-design",
             "version": "v3.3.2",
             "source": {
@@ -2820,6 +2947,79 @@
             "time": "2021-05-13T10:17:51+00:00"
         },
         {
+            "name": "ezsystems/ezcommerce-erp-admin",
+            "version": "v3.3.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezcommerce-erp-admin.git",
+                "reference": "c9eb98fbec4a272694e5d3ebc740630c83167883"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ibexa.co/dist/ezsystems/ezcommerce-erp-admin/ezsystems-ezcommerce-erp-admin-c9eb98fbec4a272694e5d3ebc740630c83167883-zip-225e56.zip",
+                "reference": "c9eb98fbec4a272694e5d3ebc740630c83167883"
+            },
+            "require": {
+                "enqueue/dsn": "^0.10",
+                "ezsystems/ezcommerce-shop": "^3.2",
+                "ezsystems/ezplatform-http-cache": "^2.1",
+                "ezsystems/ezplatform-kernel": "^1.3",
+                "ezsystems/job-queue-bundle": "^4.0",
+                "php": ">=7.3",
+                "symfony/config": "^5.1",
+                "symfony/console": "^5.1",
+                "symfony/dependency-injection": "^5.1",
+                "symfony/filesystem": "^5.1",
+                "symfony/framework-bundle": "^5.1",
+                "symfony/http-kernel": "^5.1",
+                "symfony/process": "^5.1",
+                "symfony/yaml": "^5.1"
+            },
+            "require-dev": {
+                "ezsystems/ezplatform-code-style": "^0.2.0",
+                "friendsofphp/php-cs-fixer": "^2.16.0",
+                "ibexa/ci-scripts": "^0.1",
+                "phpunit/phpunit": "^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Siso\\AdminErpPluginBundle\\": ""
+                }
+            },
+            "notification-url": "https://updates.ibexa.co/notifystats",
+            "scripts": {
+                "fix-cs": [
+                    "@php ./vendor/bin/php-cs-fixer fix -v --show-progress=estimating"
+                ]
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Ibexa AS",
+                    "homepage": "https://www.ibexa.co/"
+                }
+            ],
+            "description": "AdminErp plugin",
+            "homepage": "https://www.ibexa.co/",
+            "keywords": [
+                "admin",
+                "erp",
+                "plugin"
+            ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezcommerce-erp-admin/tree/v3.3.1"
+            },
+            "time": "2021-04-22T12:53:42+00:00"
+        },
+        {
             "name": "ezsystems/ezcommerce-fieldtypes",
             "version": "v1.2.2",
             "source": {
@@ -2897,6 +3097,134 @@
             "time": "2021-06-02T13:07:10+00:00"
         },
         {
+            "name": "ezsystems/ezcommerce-order-history",
+            "version": "v3.3.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezcommerce-order-history.git",
+                "reference": "d3c611a4655b32b27ce8f62c2b3cd14276f2638d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ibexa.co/dist/ezsystems/ezcommerce-order-history/ezsystems-ezcommerce-order-history-d3c611a4655b32b27ce8f62c2b3cd14276f2638d-zip-5dbf1d.zip",
+                "reference": "d3c611a4655b32b27ce8f62c2b3cd14276f2638d"
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "ezsystems/ezplatform-code-style": "^0.2.0",
+                "friendsofphp/php-cs-fixer": "^2.16.0",
+                "ibexa/ci-scripts": "^0.1",
+                "phpunit/phpunit": "^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Siso\\Bundle\\OrderHistoryBundle\\": "src/Siso/Bundle/OrderHistoryBundle/"
+                }
+            },
+            "notification-url": "https://updates.ibexa.co/notifystats",
+            "scripts": {
+                "fix-cs": [
+                    "@php ./vendor/bin/php-cs-fixer fix -v --show-progress=estimating"
+                ]
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Ibexa AS",
+                    "homepage": "https://www.ibexa.co/"
+                }
+            ],
+            "description": "Ibexa Commerce Order History add-on",
+            "keywords": [
+                "order history"
+            ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezcommerce-order-history/tree/v3.3.1"
+            },
+            "time": "2021-04-22T12:50:29+00:00"
+        },
+        {
+            "name": "ezsystems/ezcommerce-page-builder",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezcommerce-page-builder.git",
+                "reference": "51377113086c5f40da1e97d2d5b0b072ebdc1f09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ibexa.co/dist/ezsystems/ezcommerce-page-builder/ezsystems-ezcommerce-page-builder-51377113086c5f40da1e97d2d5b0b072ebdc1f09-zip-6ca71c.zip",
+                "reference": "51377113086c5f40da1e97d2d5b0b072ebdc1f09"
+            },
+            "require": {
+                "ezsystems/ezplatform-admin-ui": "^2.1",
+                "ezsystems/ezplatform-icons": "^1.0",
+                "ezsystems/ezplatform-page-builder": "^2.1",
+                "php": "^7.3",
+                "symfony/config": "^5.0",
+                "symfony/dependency-injection": "^5.0",
+                "symfony/http-kernel": "^5.0",
+                "symfony/yaml": "^5.0"
+            },
+            "require-dev": {
+                "ezsystems/ezplatform-code-style": "^0.1.0",
+                "phpunit/phpunit": "^8.2"
+            },
+            "type": "ezplatform-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ibexa\\Platform\\Bundle\\Commerce\\PageBuilder\\": "src/bundle/",
+                    "Ibexa\\Platform\\Commerce\\PageBuilder\\": "src/lib/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Ibexa\\Platform\\Tests\\Bundle\\Commerce\\PageBuilder\\": "tests/bundle/",
+                    "Ibexa\\Platform\\Tests\\Commerce\\PageBuilder\\": "tests/lib/"
+                }
+            },
+            "notification-url": "https://updates.ibexa.co/notifystats",
+            "scripts": {
+                "fix-cs": [
+                    "php-cs-fixer fix -v --show-progress=estimating"
+                ],
+                "check-cs": [
+                    "php-cs-fixer fix --dry-run -v --show-progress=estimating"
+                ],
+                "unit-tests": [
+                    "phpunit -c phpunit.xml.dist"
+                ]
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "Ibexa Commerce Page Builder",
+            "keywords": [
+                "commerce",
+                "dxp",
+                "ibexa"
+            ],
+            "support": {
+                "source": "https://github.com/ezsystems/ezcommerce-page-builder/tree/v1.2.0"
+            },
+            "time": "2021-01-18T22:39:29+00:00"
+        },
+        {
             "name": "ezsystems/ezcommerce-price-engine",
             "version": "v3.3.2",
             "source": {
@@ -2953,6 +3281,82 @@
                 "source": "https://github.com/ezsystems/ezcommerce-price-engine/tree/v3.3.2"
             },
             "time": "2021-05-17T16:54:21+00:00"
+        },
+        {
+            "name": "ezsystems/ezcommerce-rest",
+            "version": "v3.3.3",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezcommerce-rest.git",
+                "reference": "16132beeb3a929f02047c345eefc5648d5a22587"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ibexa.co/dist/ezsystems/ezcommerce-rest/ezsystems-ezcommerce-rest-16132beeb3a929f02047c345eefc5648d5a22587-zip-3ec8af.zip",
+                "reference": "16132beeb3a929f02047c345eefc5648d5a22587"
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "ezsystems/ezcommerce-checkout": "^1.0",
+                "ezsystems/ezcommerce-shop": "^3.3",
+                "ezsystems/ezcommerce-transaction": "^1.0",
+                "ezsystems/ezplatform-core": "^2.0",
+                "ezsystems/ezplatform-kernel": "^1.3",
+                "ezsystems/ezplatform-rest": "^1.3",
+                "php": "^7.3",
+                "phpoffice/phpspreadsheet": "^1.0",
+                "psr/log": "^1.1",
+                "symfony/config": "^5.2",
+                "symfony/dependency-injection": "^5.2",
+                "symfony/http-kernel": "^5.2",
+                "symfony/proxy-manager-bridge": "^5.2",
+                "symfony/yaml": "^5.2"
+            },
+            "require-dev": {
+                "behat/behat": "^3.8",
+                "ezsystems/ezplatform-code-style": "^0.4.0",
+                "friends-of-behat/mink-extension": "^2.5",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^0.12.76",
+                "phpstan/phpstan-phpunit": "^0.12.17",
+                "phpunit/phpunit": "^9.5",
+                "symfony/browser-kit": "^5.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Siso\\RestApiBundle\\": "src/Siso/RestBundle/"
+                }
+            },
+            "notification-url": "https://updates.ibexa.co/notifystats",
+            "scripts": {
+                "fix-cs": [
+                    "php-cs-fixer fix -v --config=.php_cs --show-progress=estimating"
+                ],
+                "phpstan": [
+                    "phpstan analyse -c phpstan.neon"
+                ],
+                "php-cs": [
+                    "php-cs-fixer fix -v --diff --config=.php_cs --dry-run --show-progress=estimating"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "silver.solutions GmbH",
+                    "homepage": "http://www.silversolutions.de/"
+                }
+            ],
+            "description": "eZ Commerce REST API",
+            "support": {
+                "source": "https://github.com/ezsystems/ezcommerce-rest/tree/v3.3.3",
+                "issues": "https://github.com/ezsystems/ezcommerce-rest/issues"
+            },
+            "time": "2021-05-17T17:52:31+00:00"
         },
         {
             "name": "ezsystems/ezcommerce-shop",
@@ -3160,6 +3564,128 @@
                 "source": "https://github.com/ezsystems/ezcommerce-shop-ui/tree/v1.1.2"
             },
             "time": "2021-04-27T13:22:41+00:00"
+        },
+        {
+            "name": "ezsystems/ezcommerce-transaction",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ezsystems/ezcommerce-transaction.git",
+                "reference": "a4c4338ca5ae76ee65f62753d97f691cf7683fc4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://updates.ibexa.co/dist/ezsystems/ezcommerce-transaction/ezsystems-ezcommerce-transaction-a4c4338ca5ae76ee65f62753d97f691cf7683fc4-zip-f9fc53.zip",
+                "reference": "a4c4338ca5ae76ee65f62753d97f691cf7683fc4"
+            },
+            "require": {
+                "babdev/pagerfanta-bundle": "^2.2",
+                "doctrine/orm": "~2.4",
+                "excelwebzone/recaptcha-bundle": "^1.5",
+                "ext-ctype": "*",
+                "ext-curl": "*",
+                "ext-dom": "*",
+                "ext-fileinfo": "*",
+                "ext-filter": "*",
+                "ext-iconv": "*",
+                "ext-intl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-pdo": "*",
+                "ext-xsl": "*",
+                "ezsystems/apache-tika-bundle": "^2.0",
+                "ezsystems/comment-bundle": "^3.1",
+                "ezsystems/ezcommerce-shop": "^3.3.2",
+                "ezsystems/ezplatform-admin-ui": "^2.0",
+                "ezsystems/ezplatform-content-forms": "^1.0",
+                "ezsystems/ezplatform-elastic-search-engine": "^1.1",
+                "ezsystems/ezplatform-icons": "^1.0",
+                "ezsystems/ezplatform-kernel": "^1.3",
+                "ezsystems/ezplatform-matrix-fieldtype": "^2.0",
+                "ezsystems/ezplatform-rest": "^1.0-dev",
+                "ezsystems/ezplatform-solr-search-engine": "^3.1",
+                "friendsofsymfony/rest-bundle": "^3.0",
+                "mhujer/breadcrumbs-bundle": "^1.5",
+                "nelmio/solarium-bundle": "^4.0",
+                "onesky/api-library-php5": "^1.0",
+                "php": "^7.3",
+                "silversolutions/xsd-to-php": "^3.6",
+                "solarium/solarium": "5.2.0",
+                "symfony/config": "^5.0",
+                "symfony/console": "^5.0",
+                "symfony/dependency-injection": "^5.0",
+                "symfony/event-dispatcher": "^5.0",
+                "symfony/event-dispatcher-contracts": "^2.0",
+                "symfony/expression-language": "^5.0",
+                "symfony/filesystem": "^5.0",
+                "symfony/finder": "^5.0",
+                "symfony/form": "^5.0",
+                "symfony/framework-bundle": "^5.0",
+                "symfony/http-foundation": "^5.0",
+                "symfony/http-kernel": "^5.0",
+                "symfony/intl": "^5.0",
+                "symfony/mime": "^5.0",
+                "symfony/options-resolver": "^5.0",
+                "symfony/process": "^5.0",
+                "symfony/routing": "^5.0",
+                "symfony/security-core": "^5.0",
+                "symfony/security-csrf": "^5.0",
+                "symfony/security-http": "^5.0",
+                "symfony/serializer": "^5.0",
+                "symfony/templating": "^5.0",
+                "symfony/validator": "^5.0",
+                "symfony/yaml": "^5.0",
+                "twig/twig": "^3.0"
+            },
+            "require-dev": {
+                "ezsystems/ezplatform-code-style": "^0.1.0",
+                "friendsofphp/php-cs-fixer": "^2.16.0",
+                "phpunit/phpunit": "^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "_ezplatform_branch_for_behat_tests": "master",
+                "branch-alias": {
+                    "dev-main": "1.0.x-dev",
+                    "dev-tmp_ci_branch": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Siso\\Bundle\\QuickOrderBundle\\": "src/Siso/Bundle/QuickOrderBundle/",
+                    "Siso\\Bundle\\ComparisonBundle\\": "src/Siso/Bundle/ComparisonBundle/",
+                    "Siso\\Bundle\\EzStudioBundle\\": "src/Siso/Bundle/EzStudioBundle/",
+                    "Siso\\Bundle\\TestToolsBundle\\": "src/Siso/Bundle/TestToolsBundle/",
+                    "Siso\\Bundle\\VoucherBundle\\": "src/Siso/Bundle/VoucherBundle/",
+                    "Siso\\Bundle\\OneSkyBundle\\": "src/Siso/Bundle/OneSkyBundle/",
+                    "Siso\\Bundle\\NewsletterBundle\\": "src/Siso/Bundle/NewsletterBundle/",
+                    "Siso\\Bundle\\LocalOrderManagementBundle\\": "src/Siso/Bundle/LocalOrderManagementBundle/",
+                    "Siso\\Bundle\\ShopFrontendBundle\\": "src/Siso/Bundle/ShopFrontendBundle/",
+                    "Siso\\Bundle\\BasketBundle\\": "src/Siso/Bundle/BasketBundle/"
+                }
+            },
+            "notification-url": "https://updates.ibexa.co/notifystats",
+            "scripts": {
+                "fix-cs": [
+                    "@php ./vendor/bin/php-cs-fixer fix -v --show-progress=estimating"
+                ]
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Ibexa AS",
+                    "homepage": "https://www.ibexa.co/"
+                }
+            ],
+            "description": "Ibexa Commerce Transaction",
+            "homepage": "https://www.ibexa.co/",
+            "support": {
+                "source": "https://github.com/ezsystems/ezcommerce-transaction/tree/v1.0.3",
+                "issues": "https://github.com/ezsystems/ezcommerce-transaction/issues"
+            },
+            "time": "2021-05-17T16:56:23+00:00"
         },
         {
             "name": "ezsystems/ezmigrationbundle",
@@ -5809,6 +6335,60 @@
             "time": "2020-06-22T13:08:39+00:00"
         },
         {
+            "name": "ezyang/htmlpurifier",
+            "version": "v4.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezyang/htmlpurifier.git",
+                "reference": "08e27c97e4c6ed02f37c5b2b20488046c8d90d75"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/08e27c97e4c6ed02f37c5b2b20488046c8d90d75",
+                "reference": "08e27c97e4c6ed02f37c5b2b20488046c8d90d75",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "simpletest/simpletest": "dev-master#72de02a7b80c6bb8864ef9bf66d41d2f58f826bd"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HTMLPurifier": "library/"
+                },
+                "files": [
+                    "library/HTMLPurifier.composer.php"
+                ],
+                "exclude-from-classmap": [
+                    "/library/HTMLPurifier/Language/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Edward Z. Yang",
+                    "email": "admin@htmlpurifier.org",
+                    "homepage": "http://ezyang.com"
+                }
+            ],
+            "description": "Standards compliant HTML filter written in PHP",
+            "homepage": "http://htmlpurifier.org/",
+            "keywords": [
+                "html"
+            ],
+            "support": {
+                "issues": "https://github.com/ezyang/htmlpurifier/issues",
+                "source": "https://github.com/ezyang/htmlpurifier/tree/master"
+            },
+            "time": "2020-06-29T00:56:53+00:00"
+        },
+        {
             "name": "friendsofphp/proxy-manager-lts",
             "version": "v1.0.5",
             "source": {
@@ -6798,6 +7378,47 @@
                 "source": "https://github.com/HughbertD/oauth2-unsplash/tree/master"
             },
             "time": "2017-12-14T13:08:42+00:00"
+        },
+        {
+            "name": "ibexa/commerce",
+            "version": "v3.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibexa/commerce.git",
+                "reference": "bb5b7c7b84817efb9c5d412a6a40ae2e350a80b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibexa/commerce/zipball/bb5b7c7b84817efb9c5d412a6a40ae2e350a80b7",
+                "reference": "bb5b7c7b84817efb9c5d412a6a40ae2e350a80b7",
+                "shasum": ""
+            },
+            "require": {
+                "ezsystems/ezcommerce-admin-ui": "~1.2.4",
+                "ezsystems/ezcommerce-erp-admin": "~3.3.1",
+                "ezsystems/ezcommerce-order-history": "~3.3.1",
+                "ezsystems/ezcommerce-page-builder": "~1.2.0",
+                "ezsystems/ezcommerce-rest": "~3.3.3",
+                "ezsystems/ezcommerce-transaction": "~1.0.3",
+                "ibexa/experience": "~3.3.4",
+                "php": "^7.3"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "notification-url": "https://updates.ibexa.co/notifystats",
+            "license": [
+                "proprietary"
+            ],
+            "description": "A meta package for installing Ibexa DXP Commerce edition",
+            "support": {
+                "source": "https://github.com/ibexa/commerce/tree/v3.3.4",
+                "issues": "https://github.com/ibexa/commerce/issues"
+            },
+            "time": "2021-06-02T13:43:49+00:00"
         },
         {
             "name": "ibexa/content",
@@ -8684,6 +9305,246 @@
             "time": "2021-05-22T08:55:29+00:00"
         },
         {
+            "name": "maennchen/zipstream-php",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maennchen/ZipStream-PHP.git",
+                "reference": "c4c5803cc1f93df3d2448478ef79394a5981cc58"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maennchen/ZipStream-PHP/zipball/c4c5803cc1f93df3d2448478ef79394a5981cc58",
+                "reference": "c4c5803cc1f93df3d2448478ef79394a5981cc58",
+                "shasum": ""
+            },
+            "require": {
+                "myclabs/php-enum": "^1.5",
+                "php": ">= 7.1",
+                "psr/http-message": "^1.0",
+                "symfony/polyfill-mbstring": "^1.0"
+            },
+            "require-dev": {
+                "ext-zip": "*",
+                "guzzlehttp/guzzle": ">= 6.3",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": ">= 7.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ZipStream\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Duncan",
+                    "email": "pabs@pablotron.org"
+                },
+                {
+                    "name": "Jonatan Männchen",
+                    "email": "jonatan@maennchen.ch"
+                },
+                {
+                    "name": "Jesse Donat",
+                    "email": "donatj@gmail.com"
+                },
+                {
+                    "name": "András Kolesár",
+                    "email": "kolesar@kolesar.hu"
+                }
+            ],
+            "description": "ZipStream is a library for dynamically streaming dynamic zip files from PHP without writing to the disk at all on the server.",
+            "keywords": [
+                "stream",
+                "zip"
+            ],
+            "support": {
+                "issues": "https://github.com/maennchen/ZipStream-PHP/issues",
+                "source": "https://github.com/maennchen/ZipStream-PHP/tree/master"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/zipstream",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2020-05-30T13:11:16+00:00"
+        },
+        {
+            "name": "markbaker/complex",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MarkBaker/PHPComplex.git",
+                "reference": "6f724d7e04606fd8adaa4e3bb381c3e9db09c946"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MarkBaker/PHPComplex/zipball/6f724d7e04606fd8adaa4e3bb381c3e9db09c946",
+                "reference": "6f724d7e04606fd8adaa4e3bb381c3e9db09c946",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+                "phpcompatibility/php-compatibility": "^9.0",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.3",
+                "squizlabs/php_codesniffer": "^3.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Complex\\": "classes/src/"
+                },
+                "files": [
+                    "classes/src/functions/abs.php",
+                    "classes/src/functions/acos.php",
+                    "classes/src/functions/acosh.php",
+                    "classes/src/functions/acot.php",
+                    "classes/src/functions/acoth.php",
+                    "classes/src/functions/acsc.php",
+                    "classes/src/functions/acsch.php",
+                    "classes/src/functions/argument.php",
+                    "classes/src/functions/asec.php",
+                    "classes/src/functions/asech.php",
+                    "classes/src/functions/asin.php",
+                    "classes/src/functions/asinh.php",
+                    "classes/src/functions/atan.php",
+                    "classes/src/functions/atanh.php",
+                    "classes/src/functions/conjugate.php",
+                    "classes/src/functions/cos.php",
+                    "classes/src/functions/cosh.php",
+                    "classes/src/functions/cot.php",
+                    "classes/src/functions/coth.php",
+                    "classes/src/functions/csc.php",
+                    "classes/src/functions/csch.php",
+                    "classes/src/functions/exp.php",
+                    "classes/src/functions/inverse.php",
+                    "classes/src/functions/ln.php",
+                    "classes/src/functions/log2.php",
+                    "classes/src/functions/log10.php",
+                    "classes/src/functions/negative.php",
+                    "classes/src/functions/pow.php",
+                    "classes/src/functions/rho.php",
+                    "classes/src/functions/sec.php",
+                    "classes/src/functions/sech.php",
+                    "classes/src/functions/sin.php",
+                    "classes/src/functions/sinh.php",
+                    "classes/src/functions/sqrt.php",
+                    "classes/src/functions/tan.php",
+                    "classes/src/functions/tanh.php",
+                    "classes/src/functions/theta.php",
+                    "classes/src/operations/add.php",
+                    "classes/src/operations/subtract.php",
+                    "classes/src/operations/multiply.php",
+                    "classes/src/operations/divideby.php",
+                    "classes/src/operations/divideinto.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Baker",
+                    "email": "mark@lange.demon.co.uk"
+                }
+            ],
+            "description": "PHP Class for working with complex numbers",
+            "homepage": "https://github.com/MarkBaker/PHPComplex",
+            "keywords": [
+                "complex",
+                "mathematics"
+            ],
+            "support": {
+                "issues": "https://github.com/MarkBaker/PHPComplex/issues",
+                "source": "https://github.com/MarkBaker/PHPComplex/tree/2.0.3"
+            },
+            "time": "2021-06-02T09:44:11+00:00"
+        },
+        {
+            "name": "markbaker/matrix",
+            "version": "2.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MarkBaker/PHPMatrix.git",
+                "reference": "174395a901b5ba0925f1d790fa91bab531074b61"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MarkBaker/PHPMatrix/zipball/174395a901b5ba0925f1d790fa91bab531074b61",
+                "reference": "174395a901b5ba0925f1d790fa91bab531074b61",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+                "phpcompatibility/php-compatibility": "^9.0",
+                "phpdocumentor/phpdocumentor": "2.*",
+                "phploc/phploc": "^4.0",
+                "phpmd/phpmd": "2.*",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.3",
+                "sebastian/phpcpd": "^4.0",
+                "squizlabs/php_codesniffer": "^3.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Matrix\\": "classes/src/"
+                },
+                "files": [
+                    "classes/src/Functions/adjoint.php",
+                    "classes/src/Functions/antidiagonal.php",
+                    "classes/src/Functions/cofactors.php",
+                    "classes/src/Functions/determinant.php",
+                    "classes/src/Functions/diagonal.php",
+                    "classes/src/Functions/identity.php",
+                    "classes/src/Functions/inverse.php",
+                    "classes/src/Functions/minors.php",
+                    "classes/src/Functions/trace.php",
+                    "classes/src/Functions/transpose.php",
+                    "classes/src/Operations/add.php",
+                    "classes/src/Operations/directsum.php",
+                    "classes/src/Operations/subtract.php",
+                    "classes/src/Operations/multiply.php",
+                    "classes/src/Operations/divideby.php",
+                    "classes/src/Operations/divideinto.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Baker",
+                    "email": "mark@demon-angel.eu"
+                }
+            ],
+            "description": "PHP Class for working with matrices",
+            "homepage": "https://github.com/MarkBaker/PHPMatrix",
+            "keywords": [
+                "mathematics",
+                "matrix",
+                "vector"
+            ],
+            "support": {
+                "issues": "https://github.com/MarkBaker/PHPMatrix/issues",
+                "source": "https://github.com/MarkBaker/PHPMatrix/tree/2.1.3"
+            },
+            "time": "2021-05-25T15:42:17+00:00"
+        },
+        {
             "name": "mck89/peast",
             "version": "v1.13.0",
             "source": {
@@ -8946,6 +9807,66 @@
                 "source": "https://github.com/jmespath/jmespath.php/tree/2.6.0"
             },
             "time": "2020-07-31T21:01:56+00:00"
+        },
+        {
+            "name": "myclabs/php-enum",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/myclabs/php-enum.git",
+                "reference": "46cf3d8498b095bd33727b13fd5707263af99421"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/myclabs/php-enum/zipball/46cf3d8498b095bd33727b13fd5707263af99421",
+                "reference": "46cf3d8498b095bd33727b13fd5707263af99421",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "1.*",
+                "vimeo/psalm": "^4.5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MyCLabs\\Enum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP Enum contributors",
+                    "homepage": "https://github.com/myclabs/php-enum/graphs/contributors"
+                }
+            ],
+            "description": "PHP Enum implementation",
+            "homepage": "http://github.com/myclabs/php-enum",
+            "keywords": [
+                "enum"
+            ],
+            "support": {
+                "issues": "https://github.com/myclabs/php-enum/issues",
+                "source": "https://github.com/myclabs/php-enum/tree/1.8.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/mnapoli",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/myclabs/php-enum",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-02-15T16:11:48+00:00"
         },
         {
             "name": "namshi/jose",
@@ -10406,6 +11327,110 @@
             "time": "2020-09-17T18:55:26+00:00"
         },
         {
+            "name": "phpoffice/phpspreadsheet",
+            "version": "1.18.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
+                "reference": "418cd304e8e6b417ea79c3b29126a25dc4b1170c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/418cd304e8e6b417ea79c3b29126a25dc4b1170c",
+                "reference": "418cd304e8e6b417ea79c3b29126a25dc4b1170c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-dom": "*",
+                "ext-fileinfo": "*",
+                "ext-gd": "*",
+                "ext-iconv": "*",
+                "ext-libxml": "*",
+                "ext-mbstring": "*",
+                "ext-simplexml": "*",
+                "ext-xml": "*",
+                "ext-xmlreader": "*",
+                "ext-xmlwriter": "*",
+                "ext-zip": "*",
+                "ext-zlib": "*",
+                "ezyang/htmlpurifier": "^4.13",
+                "maennchen/zipstream-php": "^2.1",
+                "markbaker/complex": "^2.0",
+                "markbaker/matrix": "^2.0",
+                "php": "^7.2 || ^8.0",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0",
+                "psr/simple-cache": "^1.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+                "dompdf/dompdf": "^1.0",
+                "friendsofphp/php-cs-fixer": "^2.18",
+                "jpgraph/jpgraph": "^4.0",
+                "mpdf/mpdf": "^8.0",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpstan/phpstan": "^0.12.82",
+                "phpstan/phpstan-phpunit": "^0.12.18",
+                "phpunit/phpunit": "^8.5",
+                "squizlabs/php_codesniffer": "^3.5",
+                "tecnickcom/tcpdf": "^6.3"
+            },
+            "suggest": {
+                "dompdf/dompdf": "Option for rendering PDF with PDF Writer (doesn't yet support PHP8)",
+                "jpgraph/jpgraph": "Option for rendering charts, or including charts with PDF or HTML Writers",
+                "mpdf/mpdf": "Option for rendering PDF with PDF Writer",
+                "tecnickcom/tcpdf": "Option for rendering PDF with PDF Writer (doesn't yet support PHP8)"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpOffice\\PhpSpreadsheet\\": "src/PhpSpreadsheet"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Balliauw",
+                    "homepage": "https://blog.maartenballiauw.be"
+                },
+                {
+                    "name": "Mark Baker",
+                    "homepage": "https://markbakeruk.net"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "https://rootslabs.net"
+                },
+                {
+                    "name": "Erik Tilt"
+                },
+                {
+                    "name": "Adrien Crivelli"
+                }
+            ],
+            "description": "PHPSpreadsheet - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "https://github.com/PHPOffice/PhpSpreadsheet",
+            "keywords": [
+                "OpenXML",
+                "excel",
+                "gnumeric",
+                "ods",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
+            ],
+            "support": {
+                "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
+                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/1.18.0"
+            },
+            "time": "2021-05-31T18:21:15+00:00"
+        },
+        {
             "name": "phpoption/phpoption",
             "version": "1.7.5",
             "source": {
@@ -11024,6 +12049,57 @@
                 "source": "https://github.com/php-fig/log/tree/1.1.4"
             },
             "time": "2021-05-03T11:20:27+00:00"
+        },
+        {
+            "name": "psr/simple-cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/simple-cache.git",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\SimpleCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interfaces for simple caching",
+            "keywords": [
+                "cache",
+                "caching",
+                "psr",
+                "psr-16",
+                "simple-cache"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/simple-cache/tree/master"
+            },
+            "time": "2017-10-23T01:57:42+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -20448,5 +21524,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.0.0"
 }

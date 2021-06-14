@@ -1,0 +1,6 @@
+parameters:
+    siso_core.default.product_catalog_content_type_id: 47
+    siso_core.default.user_group_location: 57
+    siso_core.default.user_group_location.business: 59
+    siso_core.default.user_group_location.private: 58
+    silver_tools.default.translationFolderId: 62

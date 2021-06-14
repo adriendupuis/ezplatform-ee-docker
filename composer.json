@@ -18,6 +18,7 @@
         "ezplatform-i18n/ezplatform-i18n-fr_fr": "^3.0",
         "ezsystems/ezmigrationbundle": "^1.0",
         "ezsystems/ezplatform-connector-unsplash": "^1.0",
+        "ibexa/commerce": "3.3.4",
         "ibexa/experience": "3.3.4",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^5.6.1",
@@ -65,7 +66,10 @@
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "platform": {
+            "php": "7.3"
+        }
     },
     "autoload": {
         "psr-4": {

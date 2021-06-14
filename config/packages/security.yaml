@@ -97,7 +97,9 @@ security:
                 csrf_token_generator: security.csrf.token_manager
             guard:
                 authenticator: 'EzSystems\EzPlatformPageBuilder\Security\EditorialMode\TokenAuthenticator'
-            logout: ~
+            logout:
+                path: logout
+                handlers: [ siso_core.logout.listener ]
 
         main:
             anonymous: ~
