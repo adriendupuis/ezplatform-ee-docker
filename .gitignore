@@ -42,4 +42,6 @@ ide-twig.json
 /public/assets/build/*
 /public/assets/ezplatform/build/*
 /public/assets/translations/*
+/public/var/
+/packages/
 ###< adriendupuis/ezplatform-ee-docker ###
