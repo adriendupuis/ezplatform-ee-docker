@@ -219,7 +219,7 @@ docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;
 docker-compose exec --user www-data apache rm -rf public/var/*; # Clean public/var/*/storage/ as the DB is reset.
 docker-compose exec redis redis-cli FLUSHALL;
 docker-compose exec --user www-data apache php bin/console ibexa:install ibexa-experience;
-docker-compose exec --user www-data apache php bin/console ibexa:graphql:generate-schema
+docker-compose exec --user www-data apache php bin/console ibexa:graphql:generate-schema;
 
 # Logs Follow-up
 #docker-compose logs --follow;
