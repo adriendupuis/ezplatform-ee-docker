@@ -13,7 +13,7 @@ Use a Docker containers cluster to have a [typical architecture for eZ Platform]
   - [eZ Platform Enterprise Edition](https://ez.no/Products/eZ-Platform-Enterprise-Edition) 2.5
 * Reverse Proxy Cache Server:
   - Varnish 6.0
-  - Varnish Modules 0.15
+  - Varnish Modules 0.16
 * [Persistence Cache](https://doc.ezplatform.com/en/2.5/guide/persistence_cache/) and [Session Handling](https://doc.ezplatform.com/en/2.5/guide/sessions/) Servers:
   - Redis 3.2
 * DataBase Server:
