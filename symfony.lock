@@ -23,6 +23,9 @@
     "cron/cron": {
         "version": "1.5.0"
     },
+    "cweagans/composer-patches": {
+        "version": "1.7.1"
+    },
     "defuse/php-encryption": {
         "version": "2.3.1"
     },
@@ -131,23 +134,41 @@
     "ezsystems/ez-support-tools": {
         "version": "2.3.3"
     },
+    "ezsystems/ezcommerce-admin-ui": {
+        "version": "1.2.4"
+    },
     "ezsystems/ezcommerce-base-design": {
         "version": "3.3.2"
     },
     "ezsystems/ezcommerce-checkout": {
         "version": "1.0.3"
     },
+    "ezsystems/ezcommerce-erp-admin": {
+        "version": "3.3.1"
+    },
     "ezsystems/ezcommerce-fieldtypes": {
         "version": "1.2.2"
     },
+    "ezsystems/ezcommerce-order-history": {
+        "version": "3.3.1"
+    },
+    "ezsystems/ezcommerce-page-builder": {
+        "version": "1.2.0"
+    },
     "ezsystems/ezcommerce-price-engine": {
         "version": "3.3.2"
+    },
+    "ezsystems/ezcommerce-rest": {
+        "version": "3.3.3"
     },
     "ezsystems/ezcommerce-shop": {
         "version": "3.3.4"
     },
     "ezsystems/ezcommerce-shop-ui": {
         "version": "1.1.2"
+    },
+    "ezsystems/ezcommerce-transaction": {
+        "version": "1.0.3"
     },
     "ezsystems/ezmigrationbundle": {
         "version": "1.0.5"
