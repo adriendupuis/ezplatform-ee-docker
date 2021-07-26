@@ -130,7 +130,11 @@ composer config platform.php 7.3;
 composer install --no-interaction --no-scripts;
 
 # Solr: Copy config to build folder
+rm -rf ./docker/solr/conf;
 cp -r ./vendor/ezsystems/ezplatform-solr-search-engine/lib/Resources/config/solr ./docker/solr/conf;
+for file in $(ls -1 vendor/ezsystems/ezcommerce-shop/src/Siso/Bundle/SearchBundle/Resources/config/solr/*.xml); do
+  cat $file >> ./docker/solr/conf/${file##*/};
+done;
 
 # Symfony: Logs Removal
 rm -rf var/log/*.log;
@@ -185,9 +189,6 @@ if [[ -n "$disabled_containers" ]]; then
   docker-compose stop $disabled_containers;
 fi
 docker-compose up --build --detach $enabled_containers;
-
-# Solr: Clean-up build folder
-rm -rf ./docker/solr/conf;
 
 # Apache: Add write rights to var folders
 docker-compose exec apache chown www-data -R var/ public/var/;

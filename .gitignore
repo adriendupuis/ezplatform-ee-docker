@@ -39,6 +39,7 @@ yarn-error.log
 auth.json
 ide-twig.json
 /config/graphql/
+/docker/solr/conf
 /public/assets/build/*
 /public/assets/ezplatform/build/*
 /public/assets/translations/*
