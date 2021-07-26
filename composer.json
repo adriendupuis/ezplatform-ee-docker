@@ -11,6 +11,7 @@
         "adriendupuis/ezplatform-connector-commons": "dev-develop",
         "adriendupuis/ezplatform-standard": "dev-develop",
         "composer/package-versions-deprecated": "1.11.99.2",
+        "cweagans/composer-patches": "^1.7",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "~2.3.2",
         "doctrine/doctrine-migrations-bundle": "^3.1",
@@ -109,6 +110,11 @@
             "allow-contrib": true,
             "require": "5.2.*",
             "endpoint": "https://flex.ibexa.co"
+        },
+        "patches": {
+            "ezsystems/ezplatform-solr-search-engine": {
+                "Fix content_always_available_b": "./docker/solr.content_always_available_b.patch"
+            }
         }
     },
     "repositories": {

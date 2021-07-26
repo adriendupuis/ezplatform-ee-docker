@@ -1,0 +1,12 @@
+diff --git a/vendor/ezsystems/ezplatform-solr-search-engine/lib/ResultExtractor/NativeResultExtractor.php b/vendor/ezsystems/ezplatform-solr-search-engine/lib/ResultExtractor/NativeResultExtractor.php
+--- a/vendor/ezsystems/ezplatform-solr-search-engine/lib/ResultExtractor/NativeResultExtractor.php	(date 1625822720804)
++++ b/vendor/ezsystems/ezplatform-solr-search-engine/lib/ResultExtractor/NativeResultExtractor.php	(date 1625822720804)
+@@ -61,7 +61,7 @@
+                 'ownerId' => (int)$hit->content_owner_user_id_id,
+                 'modificationDate' => strtotime($hit->content_modification_date_dt),
+                 'publicationDate' => strtotime($hit->content_publication_date_dt),
+-                'alwaysAvailable' => $hit->content_always_available_b,
++                'alwaysAvailable' => $hit->content_always_available_b ?? null,
+                 'remoteId' => $hit->content_remote_id_id,
+                 'mainLanguageCode' => $hit->content_main_language_code_s,
+             ]
