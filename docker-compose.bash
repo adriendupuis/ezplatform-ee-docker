@@ -127,7 +127,7 @@ fi;
 
 # Symfony/eZ/Composer: Install dependencies
 composer config platform.php 7.3;
-composer update --lock --no-scripts;
+composer update --lock --no-autoloader --no-scripts;
 composer install --no-interaction --no-scripts;
 
 # Solr: Copy config to build folder
