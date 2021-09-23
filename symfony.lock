@@ -1,4 +1,13 @@
 {
+    "adriendupuis/ezplatform-admin": {
+        "version": "dev-develop"
+    },
+    "adriendupuis/ezplatform-connector-commons": {
+        "version": "dev-develop"
+    },
+    "adriendupuis/ezplatform-standard": {
+        "version": "dev-develop"
+    },
     "babdev/pagerfanta-bundle": {
         "version": "2.10.0"
     },
@@ -101,6 +110,9 @@
     "ezimuel/ringphp": {
         "version": "1.1.2"
     },
+    "ezplatform-i18n/ezplatform-i18n-fr_fr": {
+        "version": "3.0.0"
+    },
     "ezsystems/apache-tika-bundle": {
         "version": "2.0.0"
     },
@@ -137,6 +149,9 @@
     "ezsystems/ezcommerce-shop-ui": {
         "version": "1.1.2"
     },
+    "ezsystems/ezmigrationbundle": {
+        "version": "1.0.5"
+    },
     "ezsystems/ezplatform-admin-ui": {
         "version": "2.3.4"
     },
@@ -148,6 +163,9 @@
     },
     "ezsystems/ezplatform-connector-dam": {
         "version": "1.1.1"
+    },
+    "ezsystems/ezplatform-connector-unsplash": {
+        "version": "1.0.0"
     },
     "ezsystems/ezplatform-content-forms": {
         "version": "1.3.3"
@@ -289,6 +307,9 @@
     },
     "hautelook/templated-uri-router": {
         "version": "3.3.0"
+    },
+    "hughbertd/oauth2-unsplash": {
+        "version": "1.0.3"
     },
     "ibexa/content": {
         "version": "3.3.4",
@@ -551,6 +572,9 @@
     },
     "monolog/monolog": {
         "version": "2.2.0"
+    },
+    "mtdowling/jmespath.php": {
+        "version": "2.6.0"
     },
     "myclabs/deep-copy": {
         "version": "1.10.2"
@@ -1135,6 +1159,9 @@
     },
     "twig/twig": {
         "version": "3.3.2"
+    },
+    "unsplash/unsplash": {
+        "version": "2.5.1"
     },
     "vaites/php-apache-tika": {
         "version": "0.9.3"

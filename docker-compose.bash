@@ -87,11 +87,11 @@ in
     ;;
   'elasticsearch')
     SEARCH_ENGINE=elasticsearch;
-    search_container='elasticsearch';
+    search_container='elasticsearch elasticvue';
     ;;
   'fallback')
     SEARCH_ENGINE=fallback;
-    search_container='solr elasticsearch';
+    search_container='solr elasticsearch elasticvue';
     ;;
 esac
 case "$session"
@@ -127,6 +127,7 @@ fi;
 
 # Symfony/eZ/Composer: Install dependencies
 composer config platform.php 7.3;
+composer update --lock --no-autoloader --no-scripts;
 composer install --no-interaction --no-scripts;
 
 # Solr: Copy config to build folder
@@ -194,7 +195,7 @@ docker-compose exec apache chown www-data -R var/ public/var/;
 docker-compose exec apache chmod g+w -R var/ public/var/;
 
 # MariaDB: Server Wait & Version Fetch
-GET_MARIADB_VERSION_CMD="docker-compose exec mariadb mysql -proot -BNe 'SELECT VERSION();' | cut -d '-' -f 1 | head -n 1;";
+GET_MARIADB_VERSION_CMD="docker-compose exec mariadb mysql -proot -BNe 'SELECT VERSION();' 2>&1 | cut -d '-' -f 1 | head -n 1;";
 MARIADB_VERSION=`eval $GET_MARIADB_VERSION_CMD`;
 while [ -n "`echo $MARIADB_VERSION | grep 'ERROR';`" ]; do
   echo 'Waiting for server inside mariadb container...';

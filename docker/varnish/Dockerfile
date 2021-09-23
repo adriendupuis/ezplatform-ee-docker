@@ -1,4 +1,4 @@
-FROM varnish:6.0
+FROM varnish:6.0.6
 
 LABEL maintainer="adrien.dupuis@ibexa.co"
 LABEL description="Varnish 6.0 with Varnish Modules for eZ Platform usage"

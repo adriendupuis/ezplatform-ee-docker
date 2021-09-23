@@ -44,6 +44,7 @@ URLs and Command Lines
   * [Admin / System Info](http://localhost:8080/admin/systeminfo)
 * Change port from 8080 to 8000 to access directly to Apache avoiding Varnish
 * Solr Admin: http://localhost:8983/solr/#/collection1
+* Elasticsearch [Elasticvue](https://elasticvue.com/): http://localhost:8035
 
 ### Usefull Commands
 * Docker
@@ -100,7 +101,6 @@ URLs and Command Lines
   - User Context Hash
     - Get a User Context Hash as Anonymous: `uch=$(curl -sIXGET -H "Surrogate-Capability: abc=ESI/1.0" -H "accept: application/vnd.fos.user-context-hash" -H "x-fos-original-url: /" http://localhost:8000/_fos_user_context_hash | grep User-Context-Hash | sed 's/X-User-Context-Hash: //'); echo $uch;`
     - Use this User Context Hash: `curl -IXGET -H "Surrogate-Capability: abc=ESI/1.0" -H "x-user-context-hash: ${uch//[^[:alnum:]]/}" http://localhost:8000/ez-platform;`
-
 * Apache → Varnish
   - See [`render_esi` `esi:include` tags](https://symfony.com/doc/5.0/http_cache/esi.html): `curl --silent --header "Surrogate-Capability: abc=ESI/1.0" http://localhost:8000/the/url/to/test | grep esi:include;`
   - Purge an URL: `docker-compose exec --user www-data apache curl --request PURGE --header 'Host: localhost:8080' http://varnish/the/url/to/purge;`
@@ -140,12 +140,12 @@ URLs and Command Lines
   - Get OS release: `docker-compose exec mariadb cat /etc/os-release;`
   - Get MariaDB version: `docker-compose exec mariadb mysql --password=root --batch --skip-column-names --execute="SELECT VERSION();";`
     - Get detailed version: `docker-compose exec mariadb mysqladmin --password=root version;`
-  - Open command-line client: `docker-compose exec mariadb mysql -proot --default-character-set=utf8mb4 ezplatform;`
+  - Open command-line client: `docker-compose exec mariadb mysql --default-character-set=utf8mb4 -proot --default-character-set=utf8mb4 ezplatform;`
   - Ping MariaDB server: `docker-compose exec mariadb mysqladmin -proot ping;`
   - Get MariaDB status: `docker-compose exec mariadb mysqladmin -proot status;`
     - Get extended status: `docker-compose exec mariadb mysqladmin -proot extended-status;`
   - Show process list: `docker-compose exec mariadb mysqladmin --password=root processlist --verbose;`
-  - Get last content modification date: `docker-compose exec mariadb mysql -proot ezplatform -e "SELECT FROM_UNIXTIME(modified) AS modified FROM ezcontentobject ORDER BY modified DESC LIMIT 1;";`
+  - Get last content modification date: `docker-compose exec mariadb mysql -proot ezplatform -e "SELECT FROM_UNIXTIME(GREATEST(ezcontentobject.modified, IFNULL(ezcontentobject_trash.trashed, 0))) AS modified FROM ezcontentobject LEFT JOIN ezcontentobject_trash ON ezcontentobject.id = ezcontentobject_trash.contentobject_id ORDER BY modified DESC LIMIT 1;";`
   - Get language list: `docker-compose exec mariadb mysql -proot --default-character-set=utf8mb4 ezplatform -e "SELECT * FROM ezcontent_language;";`
 * Solr
   - Get OS release: `docker-compose exec solr cat /etc/os-release;`
