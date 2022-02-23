@@ -161,6 +161,7 @@ if [[ 0 == $dynamic_session ]]; then
   echo "Session Handler set in PHP";
   sedi "s/^SESSION_HANDLER_ID=.*/#SESSION_HANDLER_ID=/" .env;
   sedi "s/^SESSION_HANDLER_ID=.*/#SESSION_HANDLER_ID=/" .env.local;
+  sedi "s/#ezplatform.session.handler_id:/ezplatform.session.handler_id:/" config/packages/ezplatform.yaml;
   sedi "s/ezplatform.session.handler_id: .*/ezplatform.session.handler_id: ~/" config/packages/ezplatform.yaml;
   # TODO: PHP-FPM
 elif [[ 1 == $dynamic_session ]]; then
