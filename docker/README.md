@@ -171,5 +171,7 @@ TODO
 
 TODO: Reset or Uninstall
 * Reset:
-  - `rm -rf public/build public/bundles public/var public/assets/ezplatform;`
-
+  - `docker-compose stop;`
+  - `docker system prune --all --force;`
+  - `rm -rf vendor/ var/ public/build/ public/bundles/ public/var/ public/assets/ezplatform/;`
+  
