@@ -36,7 +36,7 @@ About
 URLs and Command Lines
 ----------------------
 
-### Usefull URLs
+### Useful URLs
 * eZ Home page through Varnish: http://localhost:8080/
 * eZ Admin through Varnish: http://localhost:8080/admin
   - Username: *admin*
@@ -174,4 +174,3 @@ TODO: Reset or Uninstall
   - `docker-compose stop;`
   - `docker system prune --all --force;`
   - `rm -rf vendor/ var/ public/build/ public/bundles/ public/var/ public/assets/ezplatform/;`
-  
