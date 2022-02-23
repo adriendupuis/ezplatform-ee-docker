@@ -1,48 +1,21 @@
 version: '3'
 
-# https://doc.ezplatform.com/en/3.2/getting_started/requirements/
-
 services:
-
-  varnish:
-    build: ./docker/varnish
-    depends_on:
-      - apache
-    ports:
-      - 8080:80
-    volumes:
-      - ./vendor/ezsystems/ezplatform-http-cache/docs/varnish/vcl/varnish5.vcl:/etc/varnish/default.vcl:cached
-
-  apache:
-    build: ./docker/apache
-    depends_on:
-      - mariadb
-    ports:
-      - 8000:80
-    volumes:
-      - .:/var/www/ez:cached
-
-  redis:
-    image: redis:5.0
-
-  memcached:
-    image: memcached
-
-  mariadb:
-    image: mariadb:10.4
+###> doctrine/doctrine-bundle ###
+  database:
+    image: postgres:${POSTGRES_VERSION:-13}-alpine
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+      # You should definitely change the password in production
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ChangeMe}
+      POSTGRES_USER: ${POSTGRES_USER:-symfony}
+    volumes:
+      - db-data:/var/lib/postgresql/data:rw
+      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
+      # - ./docker/db/data:/var/lib/postgresql/data:rw
+###< doctrine/doctrine-bundle ###
 
-  solr:
-    build: ./docker/solr
-    command:
-      - solr-precreate
-      - collection1
-      - /opt/solr/server/solr/configsets/ezplatform
-    ports:
-      - 8983:8983
-
-  elasticsearch:
-    image: elasticsearch:7.8.1
-    environment:
-      - discovery.type=single-node
+volumes:
+###> doctrine/doctrine-bundle ###
+  db-data:
+###< doctrine/doctrine-bundle ###
