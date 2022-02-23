@@ -45,7 +45,7 @@ URLs and Command Lines
 * Change port from 8080 to 8000 to access directly to Apache avoiding Varnish
 * Solr Admin: http://localhost:8983/solr/#/collection1
 
-### Usefull Commands
+### Useful Commands
 * Docker
   - Get Docker version: `docker --version;`
   - Get Docker Compose version: `docker-compose --version;`
@@ -100,7 +100,6 @@ URLs and Command Lines
   - User Context Hash
     - Get a User Context Hash as Anonymous: `uch=$(curl -sIXGET -H "Surrogate-Capability: abc=ESI/1.0" -H "accept: application/vnd.fos.user-context-hash" -H "x-fos-original-url: /" http://localhost:8000/_fos_user_context_hash | grep User-Context-Hash | sed 's/X-User-Context-Hash: //'); echo $uch;`
     - Use this User Context Hash: `curl -IXGET -H "Surrogate-Capability: abc=ESI/1.0" -H "x-user-context-hash: ${uch//[^[:alnum:]]/}" http://localhost:8000/ez-platform;`
-
 * Apache → Varnish
   - See [`render_esi` `esi:include` tags](https://symfony.com/doc/5.0/http_cache/esi.html): `curl --silent --header "Surrogate-Capability: abc=ESI/1.0" http://localhost:8000/the/url/to/test | grep esi:include;`
   - Purge an URL: `docker-compose exec --user www-data apache curl --request PURGE --header 'Host: localhost:8080' http://varnish/the/url/to/purge;`
@@ -169,3 +168,9 @@ TODO
   - The builder could have some options like: `./docker-compose.bash --cache-pool=memcached --sessions-in-cache-pool --search-engine=legacy --en=dev --xdebug;`
   - Just use `docker-compose up --build` and remove `docker-compose.bash`
   - Use 2 Redis: [“separate instances for session & cache”](https://doc.ezplatform.com/en/3.1/getting_started/requirements/#recommended-setups)
+
+TODO: Reset or Uninstall
+* Reset:
+  - `docker-compose stop;`
+  - `docker system prune --all --force;`
+  - `rm -rf vendor/ var/ public/build/ public/bundles/ public/var/ public/assets/ezplatform/;`
