@@ -33,3 +33,12 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+###> adriendupuis/ezplatform-ee-docker ###
+auth.json
+ide-twig.json
+/config/graphql/
+/public/assets/build/*
+/public/assets/ezplatform/build/*
+/public/assets/translations/*
+###< adriendupuis/ezplatform-ee-docker ###
