@@ -168,6 +168,7 @@ TODO
   - The builder could have some options like: `./docker-compose.bash --cache-pool=memcached --sessions-in-cache-pool --search-engine=legacy --en=dev --xdebug;`
   - Just use `docker-compose up --build` and remove `docker-compose.bash`
   - Use 2 Redis: [“separate instances for session & cache”](https://doc.ezplatform.com/en/3.1/getting_started/requirements/#recommended-setups)
+* Go back to an official Varnish image by succeeding installing xkey in it
 
 TODO: Reset or Uninstall
 * Reset:
