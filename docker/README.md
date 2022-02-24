@@ -81,7 +81,7 @@ URLs and Command Lines
     - See eZ Symfony Tools info: `docker-compose exec apache composer show ezsystems/symfony-tools;`
     - See eZ HTTP Cache bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-http-cache;`
     - See eZ Solr SE bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-solr-search-engine;`
-  - Clear eZ caches: `docker-compose exec --user www-data apache sh -c "bin/console cache:clear; bin/console cache:pool:clear;";` 
+  - Clear eZ caches: `docker-compose exec --user www-data apache sh -c bin/console cache:clear;` 
   - Open a shell into container as root: `docker-compose exec apache bash;`
   - Open a shell into container as www-data: `docker-compose exec --user www-data apache bash;`
 * Varnish
