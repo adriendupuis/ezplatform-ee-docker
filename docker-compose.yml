@@ -5,13 +5,17 @@ version: '3'
 services:
 
   varnish:
-    build: ./docker/varnish
+    #build: ./docker/varnish
+    image: ghcr.io/emgag/varnish:6.0.10
     depends_on:
       - apache
     ports:
       - 8080:80
+    environment:
+      #- VARNISH_LISTEN=8080
+      - VARNISH_STORAGE=malloc,256m
     volumes:
-      - ./vendor/ezsystems/ezplatform-http-cache/docs/varnish/vcl/varnish5.vcl:/etc/varnish/default.vcl:cached
+      - ./docker/varnish:/etc/varnish
 
   apache:
     build: ./docker/apache

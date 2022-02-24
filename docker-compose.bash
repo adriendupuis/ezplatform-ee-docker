@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
 
 # Debug: Stop on Error
-#set -e;
+set -e;
 # Debug: Display Command Line
-#set -x;
+set -x;
 
 # In-Place sed Command
 function sedi() {
-  ## Regular
-  #sed -i -e $*;
-  ## MacOS
-  sed -i '' -e "$1" $2;
+  if [ 'Darwin' = `uname` ]; then
+    # Mac OS X
+    sed -i '' -e "$1" $2;
+  else
+    sed -i -e $*;
+  fi;
 }
 
 
@@ -127,10 +129,16 @@ fi;
 
 # Symfony/eZ/Composer: Install dependencies
 composer config platform.php 7.3;
+composer update --lock --no-install --no-scripts;
 composer install --no-interaction --no-scripts;
 
 # Solr: Copy config to build folder
 cp -r ./vendor/ezsystems/ezplatform-solr-search-engine/lib/Resources/config/solr ./docker/solr/conf;
+
+# Varnish: Copy config to build folder
+sed 's/X-Forwarded-Port = "80"/X-Forwarded-Port = "8080"/' ./vendor/ezsystems/ezplatform-http-cache/docs/varnish/vcl/varnish5.vcl > ./docker/varnish/default.vcl;
+## Fix "Cannot read file 'parameters.vcl' (No such file or directory)"
+sedi 's/include "parameters.vcl";/#include "parameters.vcl";/' ./docker/varnish/default.vcl && sedi '/include "parameters.vcl";/ r ./docker/varnish/parameters.vcl' ./docker/varnish/default.vcl;
 
 # Symfony: Logs Removal
 rm -rf var/log/*.log;
@@ -161,6 +169,7 @@ if [[ 0 == $dynamic_session ]]; then
   echo "Session Handler set in PHP";
   sedi "s/^SESSION_HANDLER_ID=.*/#SESSION_HANDLER_ID=/" .env;
   sedi "s/^SESSION_HANDLER_ID=.*/#SESSION_HANDLER_ID=/" .env.local;
+  sedi "s/#ezplatform.session.handler_id:/ezplatform.session.handler_id:/" config/packages/ezplatform.yaml;
   sedi "s/ezplatform.session.handler_id: .*/ezplatform.session.handler_id: ~/" config/packages/ezplatform.yaml;
   # TODO: PHP-FPM
 elif [[ 1 == $dynamic_session ]]; then
@@ -189,14 +198,17 @@ docker-compose up --build --detach $enabled_containers;
 # Solr: Clean-up build folder
 rm -rf ./docker/solr/conf;
 
+# Varnish: Clean-up build folder
+#rm -f ./docker/varnish/default.vcl;
+
 # Apache: Add write rights to var folders
 docker-compose exec apache chown www-data -R var/ public/var/;
 docker-compose exec apache chmod g+w -R var/ public/var/;
 
 # MariaDB: Server Wait & Version Fetch
-GET_MARIADB_VERSION_CMD="docker-compose exec mariadb mysql -proot -BNe 'SELECT VERSION();' | cut -d '-' -f 1 | head -n 1;";
+GET_MARIADB_VERSION_CMD="docker-compose exec -T mariadb mysql -proot -BNe 'SELECT VERSION();' | cut -d '-' -f 1 | head -n 1;";
 MARIADB_VERSION=`eval $GET_MARIADB_VERSION_CMD`;
-while [ -n "`echo $MARIADB_VERSION | grep 'ERROR';`" ]; do
+while [ -n "`echo $MARIADB_VERSION | grep 'ERROR';`" ] || [ -z "$MARIADB_VERSION" ]; do
   echo 'Waiting for server inside mariadb container...';
   sleep 3;
   MARIADB_VERSION=`eval $GET_MARIADB_VERSION_CMD`;
@@ -214,10 +226,13 @@ fi
 # Apache: Composer Scripts' Timeout
 docker-compose exec --user www-data apache composer config --global process-timeout 0;
 
-# Apache: eZ Platform Install
+# Content: eZ Platform Reset
 docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;";
 docker-compose exec --user www-data apache rm -rf public/var/*; # Clean public/var/*/storage/ as the DB is reset.
 docker-compose exec redis redis-cli FLUSHALL;
+
+# Apache: eZ Platform Install
+docker-compose exec --user www-data apache composer install;
 docker-compose exec --user www-data apache php bin/console ibexa:install ibexa-experience;
 docker-compose exec --user www-data apache php bin/console ibexa:graphql:generate-schema;
 
