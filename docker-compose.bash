@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # Debug: Stop on Error
-set -e;
+#set -e;
 # Debug: Display Command Line
-set -x;
+#set -x;
 
 # In-Place sed Command
 function sedi() {
