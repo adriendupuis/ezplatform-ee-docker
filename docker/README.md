@@ -81,7 +81,7 @@ URLs and Command Lines
     - See eZ Symfony Tools info: `docker-compose exec apache composer show ezsystems/symfony-tools;`
     - See eZ HTTP Cache bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-http-cache;`
     - See eZ Solr SE bundle info: `docker-compose exec apache composer show ezsystems/ezplatform-solr-search-engine;`
-  - Clear eZ caches: `docker-compose exec --user www-data apache sh -c bin/console cache:clear;` 
+  - Clear eZ caches: `docker-compose exec --user www-data apache bin/console cache:clear;` 
   - Open a shell into container as root: `docker-compose exec apache bash;`
   - Open a shell into container as www-data: `docker-compose exec --user www-data apache bash;`
 * Varnish
@@ -169,6 +169,7 @@ TODO
   - Just use `docker-compose up --build` and remove `docker-compose.bash`
   - Use 2 Redis: [“separate instances for session & cache”](https://doc.ezplatform.com/en/3.1/getting_started/requirements/#recommended-setups)
 * Go back to an official Varnish image by succeeding installing xkey in it
+* Give hints like passing complexe command line with `docker-compose exec --user www-data apache sh -c "bin/console cache:clear; bin/console cache:pool:clear cache.redis;";` 
 
 TODO: Reset or Uninstall
 * Reset:
