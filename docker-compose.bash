@@ -199,7 +199,7 @@ docker-compose up --build --detach $enabled_containers;
 rm -rf ./docker/solr/conf;
 
 # Varnish: Clean-up build folder
-#rm -f ./docker/varnish/default.vcl;
+rm -f ./docker/varnish/default.vcl;
 
 # Apache: Add write rights to var folders
 docker-compose exec apache chown www-data -R var/ public/var/;
