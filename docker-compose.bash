@@ -18,9 +18,9 @@ docker-compose exec apache chown www-data -R var/cache/;
 docker-compose exec apache chmod g+w -R var/cache/;
 
 # MariaDB: Server Wait & Version Fetch
-GET_MARIADB_VERSION_CMD="docker-compose exec mariadb mysql -proot -BNe 'SELECT VERSION();' | cut -d '-' -f 1 | head -n 1;";
+GET_MARIADB_VERSION_CMD="docker-compose exec -T mariadb mysql -proot -BNe 'SELECT VERSION();' | cut -d '-' -f 1 | head -n 1;";
 MARIADB_VERSION=`eval $GET_MARIADB_VERSION_CMD`;
-while [ -n "`echo $MARIADB_VERSION | grep 'ERROR';`" ]; do
+while [ -n "`echo $MARIADB_VERSION | grep 'ERROR';`" ] || [ -z "$MARIADB_VERSION" ]; do
   echo 'Waiting for server inside mariadb container...';
   sleep 3;
   MARIADB_VERSION=`eval $GET_MARIADB_VERSION_CMD`;

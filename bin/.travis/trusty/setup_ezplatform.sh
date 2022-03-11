@@ -93,6 +93,9 @@ if [[ -n "${DOCKER_PASSWORD}" ]]; then
     echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
 fi
 
+# Copy .env file to the directory where Docker Compose looks for it to avoid specyfing it directly everywhere
+cp .env doc/docker
+
 echo "> Install DB and dependencies"
 docker-compose -f doc/docker/install-dependencies.yml up --abort-on-container-exit
 
@@ -104,6 +107,6 @@ echo '> Change ownership of files inside docker container'
 docker-compose exec app sh -c 'chown -R www-data:www-data /var/www'
 
 echo '> Install data'
-docker-compose exec --user www-data app sh -c "php /scripts/wait_for_db.php; composer ezplatform-install"
+docker-compose exec --user www-data app sh -c "php /scripts/wait_for_db.php; composer --no-interaction ezplatform-install"
 
 echo '> Done, ready to run tests'
