@@ -36,7 +36,7 @@ parameters:
 
     ## Session handler, by default set to file based (instead of ~) in order to be able to use %ezplatform.session.save_path%
     # env: SESSION_HANDLER_ID
-    #ibexa.session.handler_id: session.handler.native_file
+    ibexa.session.handler_id: ~
 
     ## Purge type used by HttpCache system ("local", "varnish"/"http", and on ee also "fastly")
     #purge_type: '%env(HTTPCACHE_PURGE_TYPE)%'
