@@ -228,7 +228,8 @@ docker-compose exec --user www-data apache composer config --global process-time
 
 # Content: eZ Platform Reset
 docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;";
-docker-compose exec --user www-data apache rm -rf public/var/*; # Clean public/var/*/storage/ as the DB is reset.
+docker-compose exec --user www-data apache rm -rf public/var/*; # Clean storages (public/var/*/storage/) as the DB is reset.
+git clean -dxf config/graphql; # Clean GraphQL schema (config/graphql/types/) as the DB is reset.
 docker-compose exec redis redis-cli FLUSHALL;
 
 # Apache: eZ Platform Install
