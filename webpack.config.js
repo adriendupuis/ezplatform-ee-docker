@@ -6,17 +6,41 @@ const eZConfig = getEzConfig(Encore);
 const customConfigs = require('./ez.webpack.custom.configs.js');
 
 Encore.reset();
-Encore.setOutputPath('web/assets/build')
-    .setPublicPath('/assets/build')
+Encore
+    .setOutputPath('public/build/')
+    .setPublicPath('/build')
+    .enableStimulusBridge('./assets/controllers.json')
     .enableSassLoader()
     .enableReactPreset()
-    .enableSingleRuntimeChunk();
+    .enableSingleRuntimeChunk()
+    .copyFiles({
+        from: './assets/images',
+        to: 'images/[path][name].[ext]',
+        pattern: /\.(png|svg)$/
+    })
+    .configureBabel((config) => {
+        config.plugins.push('@babel/plugin-proposal-class-properties');
+    })
 
-// Put your config here.
+    // enables @babel/preset-env polyfills
+    .configureBabelPresetEnv((config) => {
+        config.useBuiltIns = 'usage';
+        config.corejs = 3;
+    })
+;
 
-// uncomment the two lines below, if you added a new entry (by Encore.addEntry() or Encore.addStyleEntry() method) to your own Encore configuration for your project
-// const projectConfig = Encore.getWebpackConfig();
-// module.exports = [ eZConfig, ...customConfigs, projectConfig ];
+// Welcome page stylesheets
+Encore.addEntry('welcome_page', [
+    path.resolve(__dirname, './assets/scss/welcome-page.scss'),
+]);
 
-// comment-out this line if you've uncommented the above lines
-module.exports = [ eZConfig, ...customConfigs ];
+Encore.addEntry('app', './assets/app.js');
+
+const projectConfig = Encore.getWebpackConfig();
+
+projectConfig.name = 'app';
+
+module.exports = [ eZConfig, ...customConfigs, projectConfig ];
+
+// uncomment this line if you've commented-out the above lines
+// module.exports = [ eZConfig, ...customConfigs ];
