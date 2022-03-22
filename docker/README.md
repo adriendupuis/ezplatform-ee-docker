@@ -140,6 +140,9 @@ URLs and Command Lines
   - Get MariaDB version: `docker-compose exec mariadb mysql --password=root --batch --skip-column-names --execute="SELECT VERSION();";`
     - Get detailed version: `docker-compose exec mariadb mysqladmin --password=root version;`
   - Open command-line client: `docker-compose exec mariadb mysql -proot --default-character-set=utf8mb4 ezplatform;`
+  - Dump:
+    - Create a dump: `docker-compose exec -T mariadb mysqldump -proot --default-character-set=utf8mb4 ezplatform > my_dump.sql;`
+    - Inject a dump: `docker-compose exec -T mariadb mysql -proot --default-character-set=utf8mb4 ezplatform < my_dump.sql;`
   - Ping MariaDB server: `docker-compose exec mariadb mysqladmin -proot ping;`
   - Get MariaDB status: `docker-compose exec mariadb mysqladmin -proot status;`
     - Get extended status: `docker-compose exec mariadb mysqladmin -proot extended-status;`
