@@ -43,14 +43,9 @@ RUN apt-get -qq update \
         libpng-dev \
         php7.4-gd \
         # Xdebug
-        php-xdebug
+        php7.4-xdebug
 
 RUN update-alternatives --set php /usr/bin/php7.4
-
-# PHP: Xdebug
-RUN echo "zend_extension=$(find /usr/lib/php/ -name xdebug.so)" > /etc/php/7.4/mods-available/xdebug.ini \
-    && ln -s /etc/php/7.4/mods-available/xdebug.ini /etc/php/7.4/cli/conf.d/00-xdebug.ini \
-    && ln -s /etc/php/7.4/mods-available/xdebug.ini /etc/php/7.4/fpm/conf.d/00-xdebug.ini
 
 # PHP-FPM: Configuration
 RUN sed -i "s/max_execution_time = 30/max_execution_time = 360/" /etc/php/7.4/fpm/php.ini
