@@ -1,0 +1,74 @@
+FROM debian:10
+
+LABEL maintainer="adrien.dupuis@ibexa.co"
+LABEL description="Ibexa DXP 4.0"
+
+# Usage:
+# docker build . -f docker/single/Dockerfile-v4 -t ibexa-single && docker run --name ibexa-single --detach --publish 8004:8080 ibexa-single;
+# docker build . -f docker/single/Dockerfile-v4 --build-arg flavor=commerce -t ibexa-single && docker run --name ibexa-single-v4 --detach --publish 8004:8080 ibexa-single;
+# docker exec -ti ibexa-single-v4 bash;
+# docker rm -f ibexa-single-v4;
+
+#ARG installation-key
+#ARG token-password
+ARG flavor=experience
+
+# https://doc.ibexa.co/en/4.0/getting_started/requirements/#php
+# PHP PPA Repository for PHP 7.4
+RUN apt-get -qq update \
+    && apt-get -qq install -y wget lsb-release apt-transport-https ca-certificates \
+    && wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
+    && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" >> /etc/apt/sources.list.d/php.list
+
+RUN apt-get -qq update \
+  && apt-get -qq install -y \
+    curl \
+    git \
+    zip unzip \
+    mariadb-server \
+    # https://doc.ibexa.co/en/4.0/getting_started/requirements/#php-packages
+    php7.4-cli \
+    #php7.4-fpm \
+    php7.4-mysql \
+    php7.4-xml \
+    php7.4-mbstring \
+    php7.4-json \
+    php7.4-intl \
+    php7.4-curl \
+    #php7.4-pear \
+    php7.4-gd \
+    #php7.4-imagick \
+;
+RUN if [ "commerce" = "$flavor" ]; then apt-get -qq install -y php7.4-zip; fi;
+
+RUN update-alternatives --set php /usr/bin/php7.4
+
+RUN service mysql start
+
+# Composer 2
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+# https://doc.ibexa.co/en/4.0/getting_started/requirements/#asset-manager
+# NodeJS 14
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \
+  && apt-get install -y nodejs
+# Yarn
+RUN npm install -g yarn
+
+#RUN composer config --global http-basic.updates.ibexa.co $installation-key $token-password
+COPY auth.json /root/.composer/auth.json
+
+RUN mkdir /var/www
+WORKDIR /var/www
+
+RUN composer create-project ibexa/$flavor-skeleton:^4.0 .
+
+RUN echo "DATABASE_URL=mysql://root@localhost:3306/ibexa" > .env.local
+
+RUN service mysql start \
+  #&& php bin/console ibexa:install ibexa-$flavor \
+  && php bin/console ibexa:install \
+  && php bin/console ibexa:graphql:generate-schema \
+  && composer run post-install-cmd
+
+EXPOSE 8080
+CMD service mysql start && php -S 0.0.0.0:8080 -t public
