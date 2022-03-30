@@ -226,16 +226,22 @@ fi
 # Apache: Composer Scripts' Timeout
 docker-compose exec --user www-data apache composer config --global process-timeout 0;
 
-# Content: eZ Platform Reset
+# Ibexa DXP: Content Reset
 docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;";
-docker-compose exec --user www-data apache rm -rf public/var/*; # Clean public/var/*/storage/ as the DB is reset.
+docker-compose exec --user www-data apache rm -rf public/var/*; # Clean storages (public/var/*/storage/) as the DB is reset.
+git clean -dxf config/graphql; # Clean GraphQL schema (config/graphql/types/) as the DB is reset.
 docker-compose exec redis redis-cli FLUSHALL;
+
+# Ibexa DXP: Assets Reset
+docker-compose exec --user www-data apache rm -rf public/assets/* public/build/*;
 
 # Apache: eZ Platform Install
 docker-compose exec --user www-data apache composer install;
 ## Fix https://issues.ibexa.co/projects/IBX/issues/IBX-2428
 if [ ! -e vendor/ibexa/installer/src/bundle/Resources/install/sql/mysql/taxonomy.sql ]; then
+  docker-compose exec --user www-data apache php bin/console ibexa:install ibexa-experience;
   docker-compose exec -T --user www-data apache php bin/console doctrine:schema:update --dump-sql | grep taxonomy > vendor/ibexa/installer/src/bundle/Resources/install/sql/mysql/taxonomy.sql;
+  docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;";
 fi
 if [ ! -e vendor/ibexa/installer/src/lib/Provisioner/ContentProvisioner.php.old ]; then
   mv vendor/ibexa/installer/src/lib/Provisioner/ContentProvisioner.php vendor/ibexa/installer/src/lib/Provisioner/ContentProvisioner.php.old;
