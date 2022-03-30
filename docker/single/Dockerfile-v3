@@ -12,6 +12,7 @@ LABEL description="Ibexa DXP 3.3"
 #ARG installation-key
 #ARG token-password
 ARG flavor=experience
+ARG version=^3.3
 
 RUN apt-get -qq update \
   && apt-get -qq install -y \
@@ -51,7 +52,7 @@ COPY auth.json /root/.composer/auth.json
 RUN mkdir /var/www
 WORKDIR /var/www
 
-RUN composer create-project ibexa/$flavor-skeleton:^3.3 .
+RUN composer create-project ibexa/$flavor-skeleton:$version .
 
 RUN echo "DATABASE_URL=mysql://root@localhost:3306/ibexa" > .env.local
 

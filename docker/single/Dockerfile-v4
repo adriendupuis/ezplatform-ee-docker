@@ -12,6 +12,7 @@ LABEL description="Ibexa DXP 4.0"
 #ARG installation-key
 #ARG token-password
 ARG flavor=experience
+ARG version=^4.0
 
 # https://doc.ibexa.co/en/4.0/getting_started/requirements/#php
 # PHP PPA Repository for PHP 7.4
@@ -60,7 +61,7 @@ COPY auth.json /root/.composer/auth.json
 RUN mkdir /var/www
 WORKDIR /var/www
 
-RUN composer create-project ibexa/$flavor-skeleton:^4.0 .
+RUN composer create-project ibexa/$flavor-skeleton:$version .
 
 RUN echo "DATABASE_URL=mysql://root@localhost:3306/ibexa" > .env.local
 
