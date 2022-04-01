@@ -4,10 +4,10 @@ LABEL maintainer="adrien.dupuis@ibexa.co"
 LABEL description="Ibexa DXP 3.3"
 
 # Usage:
-# docker build . -f docker/single/Dockerfile-v3 -t ibexa-single && docker run --name ibexa-single --detach --publish 8003:8080 ibexa-single;
-# docker build . -f docker/single/Dockerfile-v3 --build-arg flavor=commerce -t ibexa-single && docker run --name ibexa-single-v3 --detach --publish 8003:8080 ibexa-single;
-# docker exec -ti ibexa-single-v3 bash;
-# docker rm -f ibexa-single-v3;
+# docker build . -f docker/single/Dockerfile-v3 -t ibexa-dxp:v3 && docker run --name ibexa-dxp-v3 --detach --publish 8003:8080 ibexa-dxp:v3;
+# docker build . -f docker/single/Dockerfile-v3 --build-arg flavor=commerce -t ibexa-dxp:v3-commerce && docker run --name ibexa-dxp-v3-commerce --detach --publish 8003:8080 ibexa-dxp:v3-commerce;
+# docker exec -ti ibexa-dxp-v3 bash;
+# docker rm -f ibexa-dxp-v3;
 
 #ARG installation-key
 #ARG token-password
