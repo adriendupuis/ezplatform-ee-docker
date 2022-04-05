@@ -7,6 +7,7 @@ LABEL description="Ibexa DXP 4.0"
 # docker build . -f docker/single/Dockerfile-v4 -t ibexa-dxp:v4 && docker run --name ibexa-dxp-v4 --detach --publish 8004:8080 ibexa-dxp:v4;
 # docker build . -f docker/single/Dockerfile-v4 --build-arg flavor=commerce -t ibexa-dxp:v4-commerce && docker run --name ibexa-dxp-v4-commerce --detach --publish 8004:8080 ibexa-dxp:v4-commerce;
 # docker exec -ti ibexa-dxp-v4 bash;
+# docker exec -ti ibexa-dxp-v4 mysql ibexa;
 # docker rm -f ibexa-dxp-v4;
 
 #ARG installation-key

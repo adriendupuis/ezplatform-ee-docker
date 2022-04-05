@@ -1,19 +1,21 @@
 FROM debian:10
 
 LABEL maintainer="adrien.dupuis@ibexa.co"
-LABEL description="Ibexa DXP 3.3"
+LABEL description="eZ Platform 2.5"
 
 # Usage:
-# docker build . -f docker/single/Dockerfile-v3 -t ibexa-dxp:v3 && docker run --name ibexa-dxp-v3 --detach --publish 8003:8080 ibexa-dxp:v3;
-# docker build . -f docker/single/Dockerfile-v3 --build-arg flavor=commerce -t ibexa-dxp:v3-commerce && docker run --name ibexa-dxp-v3-commerce --detach --publish 8003:8080 ibexa-dxp:v3-commerce;
-# docker exec -ti ibexa-dxp-v3 bash;
-# docker exec -ti ibexa-dxp-v3 mysql ibexa;
-# docker rm -f ibexa-dxp-v3;
+# docker build . -f docker/single/Dockerfile-v2 -t ibexa-dxp:v2 && docker run --name ibexa-dxp-v2 --detach --publish 8002:8080 ibexa-dxp:v2;
+# docker build . -f docker/single/Dockerfile-v2 --build-arg flavor=commerce -t ibexa-dxp:v2-commerce && docker run --name ibexa-dxp-v2-commerce --detach --publish 8002:8080 ibexa-dxp:v2-commerce;
+# docker exec -ti ibexa-dxp-v2 bash;
+# docker exec -ti ibexa-dxp-v2 mysql ibexa;
+# docker rm -f ibexa-dxp-v2;
 
 #ARG installation-key
 #ARG token-password
-ARG flavor=experience
-ARG version=^3.3
+ARG flavor=ezplatform-ee
+ARG version=2.5.28
+#ARG flavor=ezcommerce
+#ARG version=2.5.17
 
 RUN apt-get -qq update \
   && apt-get -qq install -y \
@@ -21,7 +23,7 @@ RUN apt-get -qq update \
     git \
     zip unzip \
     mariadb-server \
-    # https://doc.ibexa.co/en/3.3/getting_started/requirements/#php-packages
+    # https://doc.ibexa.co/en/2.5/getting_started/requirements/#php-packages
     php-cli \
     #php-fpm \
     php-mysql \
@@ -34,15 +36,14 @@ RUN apt-get -qq update \
     php-gd \
     #php-imagick \
 ;
-RUN if [ "commerce" = "$flavor" ]; then apt-get -qq install -y php-zip; fi;
 
 RUN service mysql start
 
 # Composer 2
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 # https://doc.ibexa.co/en/3.3/getting_started/requirements/#asset-manager
-# NodeJS 12
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+# NodeJS 10
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
   && apt-get install -y nodejs
 # Yarn
 RUN npm install -g yarn
@@ -53,15 +54,14 @@ COPY auth.json /root/.composer/auth.json
 RUN mkdir /var/www
 WORKDIR /var/www
 
-RUN composer create-project ibexa/$flavor-skeleton:$version .
+RUN git clone https://github.com/ezsystems/$flavor.git -b v$version .
+#RUN composer create-project --keep-vcs ezsystems/ezplatform . $version
 
 RUN echo "DATABASE_URL=mysql://root@localhost:3306/ibexa" > .env.local
 
 RUN service mysql start \
-  #&& php bin/console ibexa:install ibexa-$flavor \
-  && php bin/console ibexa:install \
-  && php bin/console ibexa:graphql:generate-schema \
-  && composer run post-install-cmd
+  && composer install \
+  && composer ezplatform-install
 
 EXPOSE 8080
 CMD service mysql start && php -S 0.0.0.0:8080 -t public
