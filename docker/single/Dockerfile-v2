@@ -42,7 +42,7 @@ RUN apt-get -qq update \
 
 RUN service mysql start
 
-# https://doc.ibexa.co/en/3.3/getting_started/requirements/#asset-manager
+# https://doc.ibexa.co/en/2.5/getting_started/requirements/#asset-manager
 # NodeJS 10
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
   && apt-get install -y nodejs
@@ -65,5 +65,5 @@ RUN service mysql start \
   && composer ezplatform-install
 
 EXPOSE 8080
-RUN cp web/app_dev.php web/index.php
+RUN ln -s app_dev.php web/index.php
 CMD service mysql start && php -S 0.0.0.0:8080 -t web
