@@ -104,7 +104,7 @@ in
     session_container='';
     ;;
   'redis')
-    SESSION_HANDLER_ID=ezplatform.core.session.handler.native_redis
+    SESSION_HANDLER_ID=ibexa.core.session.handler.native_redis
     SESSION_SAVE_PATH=tcp://redis:6379
     session_container='redis';
     ;;
