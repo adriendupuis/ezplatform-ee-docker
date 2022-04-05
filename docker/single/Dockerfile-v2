@@ -35,12 +35,13 @@ RUN apt-get -qq update \
     #php-pear \
     php-gd \
     #php-imagick \
+    # Composer 1
+    composer \
+    build-essential \
 ;
 
 RUN service mysql start
 
-# Composer 2
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 # https://doc.ibexa.co/en/3.3/getting_started/requirements/#asset-manager
 # NodeJS 10
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
@@ -64,4 +65,5 @@ RUN service mysql start \
   && composer ezplatform-install
 
 EXPOSE 8080
-CMD service mysql start && php -S 0.0.0.0:8080 -t public
+RUN cp web/app_dev.php web/index.php
+CMD service mysql start && php -S 0.0.0.0:8080 -t web
