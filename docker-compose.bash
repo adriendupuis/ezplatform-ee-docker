@@ -237,16 +237,9 @@ docker-compose exec --user www-data apache rm -rf public/assets/* public/build/*
 
 # Apache: eZ Platform Install
 docker-compose exec --user www-data apache composer install;
-## Fix https://issues.ibexa.co/projects/IBX/issues/IBX-2428
-if [ ! -e vendor/ibexa/installer/src/bundle/Resources/install/sql/mysql/taxonomy.sql ]; then
-  docker-compose exec --user www-data apache php bin/console ibexa:install ibexa-experience;
-  docker-compose exec -T --user www-data apache php bin/console doctrine:schema:update --dump-sql | grep taxonomy > vendor/ibexa/installer/src/bundle/Resources/install/sql/mysql/taxonomy.sql;
-  docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;";
-fi
-if [ ! -e vendor/ibexa/installer/src/lib/Provisioner/ContentProvisioner.php.old ]; then
-  mv vendor/ibexa/installer/src/lib/Provisioner/ContentProvisioner.php vendor/ibexa/installer/src/lib/Provisioner/ContentProvisioner.php.old;
-  awk "{ print } /user_settings.sql/ { print \"                'taxonomy.sql',\" }" vendor/ibexa/installer/src/lib/Provisioner/ContentProvisioner.php.old > vendor/ibexa/installer/src/lib/Provisioner/ContentProvisioner.php;
-fi
+## Fix taxonomy https://issues.ibexa.co/projects/IBX/issues/IBX-2428
+docker-compose exec --user www-data apache php bin/console doctrine:database:create; # Fix IBX-2428
+docker-compose exec --user www-data apache php bin/console doctrine:schema:create; # Fix IBX-2428
 docker-compose exec --user www-data apache php bin/console ibexa:install ibexa-experience;
 docker-compose exec --user www-data apache php bin/console ibexa:graphql:generate-schema;
 
