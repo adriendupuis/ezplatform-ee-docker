@@ -39,6 +39,8 @@ auth.json
 ide-twig.json
 /config/graphql/
 /public/assets/build/*
-/public/assets/ezplatform/build/*
+/public/assets/ibexa/build/*
+/public/assets/richtext/build/*
 /public/assets/translations/*
+/src/Migrations/Ibexa/*
 ###< adriendupuis/ezplatform-ee-docker ###
