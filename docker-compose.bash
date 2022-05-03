@@ -87,7 +87,7 @@ in
     SEARCH_ENGINE=solr;
     search_container='solr';
     ;;
-  'elasticsearch')
+  'elasticsearch'|'elastic')
     SEARCH_ENGINE=elasticsearch;
     search_container='elasticsearch';
     ;;
