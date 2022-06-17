@@ -5,7 +5,7 @@ LABEL description="eZ Platform 2.5"
 
 # Usage:
 # docker build . -f docker/single/Dockerfile-v2 -t ibexa-dxp:v2 && docker run --name ibexa-dxp-v2 --detach --publish 8002:8080 ibexa-dxp:v2;
-# docker build . -f docker/single/Dockerfile-v2 --build-arg flavor=commerce -t ibexa-dxp:v2-commerce && docker run --name ibexa-dxp-v2-commerce --detach --publish 8002:8080 ibexa-dxp:v2-commerce;
+# docker build . -f docker/single/Dockerfile-v2 --build-arg flavor=commerce --build-arg version=2.5.19 -t ibexa-dxp:v2 && docker run --name ibexa-dxp-v2 --detach --publish 8002:8080 ibexa-dxp:v2;
 # docker exec -ti ibexa-dxp-v2 bash;
 # docker exec -ti ibexa-dxp-v2 mysql ibexa;
 # docker rm -f ibexa-dxp-v2;
@@ -13,9 +13,9 @@ LABEL description="eZ Platform 2.5"
 #ARG installation-key
 #ARG token-password
 ARG flavor=ezplatform-ee
-ARG version=2.5.28
+ARG version=2.5.30
 #ARG flavor=ezcommerce
-#ARG version=2.5.17
+#ARG version=2.5.19
 
 RUN apt-get -qq update \
   && apt-get -qq install -y \
