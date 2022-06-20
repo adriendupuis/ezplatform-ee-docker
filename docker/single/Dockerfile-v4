@@ -1,7 +1,7 @@
 FROM debian:10
 
 LABEL maintainer="adrien.dupuis@ibexa.co"
-LABEL description="Ibexa DXP 4.0"
+LABEL description="Ibexa DXP 4.x"
 
 # Usage:
 # docker build . -f docker/single/Dockerfile-v4 -t ibexa-dxp:v4 && docker run --name ibexa-dxp-v4 --detach --publish 8004:8080 ibexa-dxp:v4;
