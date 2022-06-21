@@ -40,8 +40,6 @@ RUN apt-get -qq update \
     build-essential \
 ;
 
-RUN service mysql start
-
 # https://doc.ibexa.co/en/2.5/getting_started/requirements/#asset-manager
 # NodeJS 10
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
@@ -66,4 +64,4 @@ RUN service mysql start \
 
 EXPOSE 8080
 RUN ln -s app_dev.php web/index.php
-CMD service mysql start && php -S 0.0.0.0:8080 -t web
+CMD service mysql restart && php -S 0.0.0.0:8080 -t web

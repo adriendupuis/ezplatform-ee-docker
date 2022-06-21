@@ -46,8 +46,6 @@ RUN if [ "commerce" = "$flavor" ]; then apt-get -qq install -y php7.4-zip; fi;
 
 RUN update-alternatives --set php /usr/bin/php7.4
 
-RUN service mysql start
-
 # Composer 2
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 # https://doc.ibexa.co/en/4.0/getting_started/requirements/#asset-manager
@@ -74,4 +72,4 @@ RUN service mysql start \
   && composer run post-install-cmd
 
 EXPOSE 8080
-CMD service mysql start && php -S 0.0.0.0:8080 -t public
+CMD service mysql restart && php -S 0.0.0.0:8080 -t public

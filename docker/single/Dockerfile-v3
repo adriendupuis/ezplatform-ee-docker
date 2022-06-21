@@ -41,8 +41,6 @@ RUN apt-get -qq update \
 ;
 RUN if [ "commerce" = "$flavor" ]; then apt-get -qq install -y php-zip; fi;
 
-RUN service mysql start
-
 # Composer 2
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 # https://doc.ibexa.co/en/3.3/getting_started/requirements/#asset-manager
@@ -69,4 +67,4 @@ RUN service mysql start \
   && composer run post-install-cmd
 
 EXPOSE 8080
-CMD service mysql start && php -S 0.0.0.0:8080 -t public
+CMD service mysql restart && php -S 0.0.0.0:8080 -t public
