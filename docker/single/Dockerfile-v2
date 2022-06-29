@@ -38,7 +38,7 @@ RUN apt-get -qq update \
     # Composer 1
     composer \
     build-essential \
-;
+  ;
 
 # https://doc.ibexa.co/en/2.5/getting_started/requirements/#asset-manager
 # NodeJS 10
