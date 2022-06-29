@@ -38,7 +38,7 @@ RUN apt-get -qq update \
     python \
     make \
     g++ \
-;
+  ;
 RUN if [ "commerce" = "$flavor" ]; then apt-get -qq install -y php-zip; fi;
 
 # Composer 2
@@ -56,7 +56,14 @@ COPY auth.json /root/.composer/auth.json
 RUN mkdir /var/www
 WORKDIR /var/www
 
-RUN composer create-project ibexa/$flavor-skeleton:$version .
+RUN if [ 3.3.7 = $version ] || [ 3.3.6 = $version ] || [ 3.3.5 = $version ] || [ 3.3.4 = $version ] || [ 3.3.3 = $version ] || [ 3.3.2 = $version ] || [ 3.3.1 = $version ] || [ 3.3.0 = $version ]; then \
+      composer create-project ibexa/$flavor-skeleton:$version . --no-install \
+      && sed -i -E  's/(github.com\/.*)hautelook/\1goetas/' composer.lock \
+      && composer install; \
+    else \
+      composer create-project ibexa/$flavor-skeleton:$version .; \
+    fi;
+
 
 RUN echo "DATABASE_URL=mysql://root@localhost:3306/ibexa" > .env.local
 
