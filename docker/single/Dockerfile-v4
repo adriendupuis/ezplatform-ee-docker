@@ -16,6 +16,8 @@ LABEL description="Ibexa DXP 4.x"
 ARG flavor=experience
 ARG version=^4.1
 
+ENV DEBIAN_FRONTEND noninteractive
+
 # https://doc.ibexa.co/en/4.0/getting_started/requirements/#php
 # PHP PPA Repository for PHP 7.4
 RUN apt-get -qq update \

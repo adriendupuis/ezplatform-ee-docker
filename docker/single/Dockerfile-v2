@@ -17,6 +17,8 @@ ARG version=2.5.30
 #ARG flavor=ezcommerce
 #ARG version=2.5.19
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt-get -qq update \
   && apt-get -qq install -y \
     curl \
