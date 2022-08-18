@@ -1,21 +1,48 @@
 version: '3'
 
-services:
-###> doctrine/doctrine-bundle ###
-  database:
-    image: postgres:${POSTGRES_VERSION:-14}-alpine
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB:-app}
-      # You should definitely change the password in production
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
-      POSTGRES_USER: ${POSTGRES_USER:-app}
-    volumes:
-      - db-data:/var/lib/postgresql/data:rw
-      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
-      # - ./docker/db/data:/var/lib/postgresql/data:rw
-###< doctrine/doctrine-bundle ###
+# https://doc.ibexa.co/en/4.0/getting_started/requirements/
 
-volumes:
-###> doctrine/doctrine-bundle ###
-  db-data:
-###< doctrine/doctrine-bundle ###
+services:
+
+  varnish:
+    build: ./docker/varnish
+    depends_on:
+      - apache
+    ports:
+      - 8080:80
+    environment:
+      - VARNISH_STORAGE=malloc,256m
+
+  apache:
+    build: ./docker/apache
+    depends_on:
+      - mariadb
+    ports:
+      - 8000:80
+    volumes:
+      - .:/var/www/ez:cached
+
+  redis:
+    image: redis:5.0
+
+  memcached:
+    image: memcached
+
+  mariadb:
+    image: mariadb:10.4
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  solr:
+    build: ./docker/solr
+    command:
+      - solr-precreate
+      - collection1
+      - /opt/solr/server/solr/configsets/ezplatform
+    ports:
+      - 8983:8983
+
+  elasticsearch:
+    image: elasticsearch:7.8.1
+    environment:
+      - discovery.type=single-node
