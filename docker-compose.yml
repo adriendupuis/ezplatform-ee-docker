@@ -1,6 +1,6 @@
 version: '3'
 
-# https://doc.ezplatform.com/en/3.2/getting_started/requirements/
+# https://doc.ibexa.co/en/4.0/getting_started/requirements/
 
 services:
 

@@ -3,7 +3,7 @@
 # Debug: Stop on Error
 #set -e;
 # Debug: Display Command Line
-#set -x;
+set -x;
 
 # In-Place sed Command
 function sedi() {
@@ -87,7 +87,7 @@ in
     SEARCH_ENGINE=solr;
     search_container='solr';
     ;;
-  'elasticsearch')
+  'elasticsearch'|'elastic')
     SEARCH_ENGINE=elasticsearch;
     search_container='elasticsearch';
     ;;
@@ -104,7 +104,7 @@ in
     session_container='';
     ;;
   'redis')
-    SESSION_HANDLER_ID=ezplatform.core.session.handler.native_redis
+    SESSION_HANDLER_ID=ibexa.core.session.handler.native_redis
     SESSION_SAVE_PATH=tcp://redis:6379
     session_container='redis';
     ;;
@@ -128,15 +128,15 @@ if [ ! -f auth.json ]; then
 fi;
 
 # Symfony/eZ/Composer: Install dependencies
-composer config platform.php 7.3;
+composer config platform.php 7.4;
 composer update --lock --no-install --no-scripts;
 composer install --no-interaction --no-scripts;
 
 # Solr: Copy config to build folder
-cp -r ./vendor/ezsystems/ezplatform-solr-search-engine/lib/Resources/config/solr ./docker/solr/conf;
+cp -r ./vendor/ibexa/solr/src/lib/Resources/config/solr ./docker/solr/conf;
 
 # Varnish: Copy config to build folder
-sed 's/X-Forwarded-Port = "80"/X-Forwarded-Port = "8080"/' ./vendor/ezsystems/ezplatform-http-cache/docs/varnish/vcl/varnish5.vcl > ./docker/varnish/default.vcl;
+sed 's/X-Forwarded-Port = "80"/X-Forwarded-Port = "8080"/' ./vendor/ibexa/http-cache/docs/varnish/vcl/varnish5.vcl > ./docker/varnish/default.vcl;
 ## Fix "Cannot read file 'parameters.vcl' (No such file or directory)"
 sedi 's/include "parameters.vcl";/#include "parameters.vcl";/' ./docker/varnish/default.vcl && sedi '/include "parameters.vcl";/ r ./docker/varnish/parameters.vcl' ./docker/varnish/default.vcl;
 
@@ -169,8 +169,8 @@ if [[ 0 == $dynamic_session ]]; then
   echo "Session Handler set in PHP";
   sedi "s/^SESSION_HANDLER_ID=.*/#SESSION_HANDLER_ID=/" .env;
   sedi "s/^SESSION_HANDLER_ID=.*/#SESSION_HANDLER_ID=/" .env.local;
-  sedi "s/#ezplatform.session.handler_id:/ezplatform.session.handler_id:/" config/packages/ezplatform.yaml;
-  sedi "s/ezplatform.session.handler_id: .*/ezplatform.session.handler_id: ~/" config/packages/ezplatform.yaml;
+  sedi "s/#ibexa.session.handler_id:/ibexa.session.handler_id:/" config/packages/ibexa.yaml;
+  sedi "s/ibexa.session.handler_id: .*/ibexa.session.handler_id: ~/" config/packages/ibexa.yaml;
   # TODO: PHP-FPM
 elif [[ 1 == $dynamic_session ]]; then
   echo "Session Handler set dynamically";
@@ -226,14 +226,20 @@ fi
 # Apache: Composer Scripts' Timeout
 docker-compose exec --user www-data apache composer config --global process-timeout 0;
 
-# Content: eZ Platform Reset
+# Ibexa DXP: Content Reset
 docker-compose exec mariadb mysql -proot -e "DROP DATABASE IF EXISTS ezplatform;";
 docker-compose exec --user www-data apache rm -rf public/var/*; # Clean storages (public/var/*/storage/) as the DB is reset.
 git clean -dxf config/graphql; # Clean GraphQL schema (config/graphql/types/) as the DB is reset.
 docker-compose exec redis redis-cli FLUSHALL;
 
+# Ibexa DXP: Assets Reset
+docker-compose exec --user www-data apache rm -rf public/assets/* public/build/*;
+
 # Apache: eZ Platform Install
 docker-compose exec --user www-data apache composer install;
+## Fix taxonomy https://issues.ibexa.co/projects/IBX/issues/IBX-2428
+docker-compose exec --user www-data apache php bin/console doctrine:database:create; # Fix IBX-2428
+docker-compose exec --user www-data apache php bin/console doctrine:schema:create; # Fix IBX-2428
 docker-compose exec --user www-data apache php bin/console ibexa:install ibexa-experience;
 docker-compose exec --user www-data apache php bin/console ibexa:graphql:generate-schema;
 
