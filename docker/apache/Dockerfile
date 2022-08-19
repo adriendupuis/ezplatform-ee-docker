@@ -46,6 +46,7 @@ RUN apt-get -qq update \
         php7.4-xdebug
 
 RUN update-alternatives --set php /usr/bin/php7.4
+RUN phpdismod xdebug
 
 # PHP-FPM: Configuration
 RUN sed -i "s/max_execution_time = 30/max_execution_time = 360/" /etc/php/7.4/fpm/php.ini
