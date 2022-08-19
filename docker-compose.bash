@@ -237,9 +237,6 @@ docker-compose exec --user www-data apache rm -rf public/assets/* public/build/*
 
 # Apache: eZ Platform Install
 docker-compose exec --user www-data apache composer install;
-## Fix taxonomy https://issues.ibexa.co/projects/IBX/issues/IBX-2428
-docker-compose exec --user www-data apache php bin/console doctrine:database:create; # Fix IBX-2428
-docker-compose exec --user www-data apache php bin/console doctrine:schema:create; # Fix IBX-2428
 docker-compose exec --user www-data apache php bin/console ibexa:install ibexa-experience;
 docker-compose exec --user www-data apache php bin/console ibexa:graphql:generate-schema;
 
