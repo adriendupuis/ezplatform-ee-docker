@@ -1,0 +1,79 @@
+FROM debian:10
+
+LABEL maintainer="adrien.dupuis@ibexa.co"
+LABEL description="Ibexa DXP 3.3"
+
+# Usage:
+# docker build . -f docker/single/Dockerfile-v3 -t ibexa-dxp:v3 && docker run --name ibexa-dxp-v3 --detach --publish 8003:8080 ibexa-dxp:v3;
+# docker build . -f docker/single/Dockerfile-v3 --build-arg flavor=commerce -t ibexa-dxp:v3 && docker run --name ibexa-dxp-v3 --detach --publish 8003:8080 ibexa-dxp:v3;
+# docker build . -f docker/single/Dockerfile-v3 --build-arg version=3.3.14 -t ibexa-dxp:v3 && docker run --name ibexa-dxp-v3 --detach --publish 8003:8080 ibexa-dxp:v3;
+# docker exec -ti ibexa-dxp-v3 bash;
+# docker exec -ti ibexa-dxp-v3 mysql ibexa;
+# docker rm -f ibexa-dxp-v3;
+
+#ARG installation-key
+#ARG token-password
+ARG flavor=experience
+ARG version=^3.3
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get -qq update \
+  && apt-get -qq install -y \
+    curl \
+    git \
+    zip unzip \
+    mariadb-server \
+    # https://doc.ibexa.co/en/3.3/getting_started/requirements/#php-packages
+    php-cli \
+    #php-fpm \
+    php-mysql \
+    php-xml \
+    php-mbstring \
+    php-json \
+    php-intl \
+    php-curl \
+    #php-pear \
+    php-gd \
+    #php-imagick \
+    # Required by Yarn with Ibexa DXP 3.3.14 and below:
+    python \
+    make \
+    g++ \
+  ;
+RUN if [ "commerce" = "$flavor" ]; then apt-get -qq install -y php-zip; fi;
+
+# Composer 2
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+# https://doc.ibexa.co/en/3.3/getting_started/requirements/#asset-manager
+# NodeJS 12
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+  && apt-get install -y nodejs
+# Yarn
+RUN npm install -g yarn
+
+#RUN composer config --global http-basic.updates.ibexa.co $installation-key $token-password
+COPY auth.json /root/.composer/auth.json
+
+RUN mkdir /var/www
+WORKDIR /var/www
+
+RUN if [ 3.3.7 = $version ] || [ 3.3.6 = $version ] || [ 3.3.5 = $version ] || [ 3.3.4 = $version ] || [ 3.3.3 = $version ] || [ 3.3.2 = $version ] || [ 3.3.1 = $version ] || [ 3.3.0 = $version ]; then \
+      composer create-project ibexa/$flavor-skeleton:$version . --no-install \
+      && sed -i -E  's/(github.com\/.*)hautelook/\1goetas/' composer.lock \
+      && composer install; \
+    else \
+      composer create-project ibexa/$flavor-skeleton:$version .; \
+    fi;
+
+
+RUN echo "DATABASE_URL=mysql://root@localhost:3306/ibexa" > .env.local
+
+RUN service mysql start \
+  #&& php bin/console ibexa:install ibexa-$flavor \
+  && php bin/console ibexa:install \
+  && php bin/console ibexa:graphql:generate-schema \
+  && composer run post-install-cmd
+
+EXPOSE 8080
+CMD service mysql restart && php -S 0.0.0.0:8080 -t public

@@ -1,0 +1,69 @@
+FROM debian:10
+
+LABEL maintainer="adrien.dupuis@ibexa.co"
+LABEL description="eZ Platform 2.5"
+
+# Usage:
+# docker build . -f docker/single/Dockerfile-v2 -t ibexa-dxp:v2 && docker run --name ibexa-dxp-v2 --detach --publish 8002:8080 ibexa-dxp:v2;
+# docker build . -f docker/single/Dockerfile-v2 --build-arg flavor=ezcommerce --build-arg version=2.5.20 -t ibexa-dxp:v2 && docker run --name ibexa-dxp-v2 --detach --publish 8002:8080 ibexa-dxp:v2;
+# docker exec -ti ibexa-dxp-v2 bash;
+# docker exec -ti ibexa-dxp-v2 mysql ibexa;
+# docker rm -f ibexa-dxp-v2;
+
+#ARG installation-key
+#ARG token-password
+ARG flavor=ezplatform-ee
+ARG version=2.5.31
+#ARG flavor=ezcommerce
+#ARG version=2.5.20
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get -qq update \
+  && apt-get -qq install -y \
+    curl \
+    git \
+    zip unzip \
+    mariadb-server \
+    # https://doc.ibexa.co/en/2.5/getting_started/requirements/#php-packages
+    php-cli \
+    #php-fpm \
+    php-mysql \
+    php-xml \
+    php-mbstring \
+    php-json \
+    php-intl \
+    php-curl \
+    #php-pear \
+    php-gd \
+    #php-imagick \
+    # Composer 1
+    composer \
+    build-essential \
+  ;
+
+# https://doc.ibexa.co/en/2.5/getting_started/requirements/#asset-manager
+# NodeJS 10
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+  && apt-get install -y nodejs
+# Yarn
+RUN npm install -g yarn
+
+#RUN composer config --global http-basic.updates.ibexa.co $installation-key $token-password
+COPY auth.json /root/.composer/auth.json
+
+RUN mkdir /var/www
+WORKDIR /var/www
+
+RUN git clone https://github.com/ezsystems/$flavor.git -b v$version .
+#RUN composer create-project --keep-vcs ezsystems/ezplatform . $version
+
+RUN echo "DATABASE_URL=mysql://root@localhost:3306/ibexa" > .env.local
+
+RUN service mysql start \
+  && composer install \
+  && composer ezplatform-install
+
+EXPOSE 8080
+RUN ln -s app_dev.php web/index.php
+CMD service mysql restart && php -S 0.0.0.0:8080 -t web

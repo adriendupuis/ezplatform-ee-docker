@@ -1,0 +1,92 @@
+FROM debian:10
+
+LABEL maintainer="adrien.dupuis@ibexa.co"
+LABEL description="Ibexa DXP 4.x"
+
+# Usage:
+# docker build . -f docker/single/Dockerfile-v4 -t ibexa-dxp:v4 && docker run --name ibexa-dxp-v4 --detach --publish 8004:8080 ibexa-dxp:v4;
+# docker build . -f docker/single/Dockerfile-v4 --build-arg flavor=commerce -t ibexa-dxp:v4 && docker run --name ibexa-dxp-v4 --detach --publish 8004:8080 ibexa-dxp:v4;
+# docker build . -f docker/single/Dockerfile-v4 --build-arg version="4.0.*" -t ibexa-dxp:v4 && docker run --name ibexa-dxp-v4 --detach --publish 8004:8080 ibexa-dxp:v4;
+# docker exec -ti ibexa-dxp-v4 bash;
+# docker exec -ti ibexa-dxp-v4 mysql ibexa;
+# docker rm -f ibexa-dxp-v4; docker rmi ibexa-dxp:v4;
+
+#ARG installation-key
+#ARG token-password
+ARG flavor=experience
+ARG version=^4.4
+
+ENV DEBIAN_FRONTEND noninteractive
+
+# https://doc.ibexa.co/en/4.0/getting_started/requirements/#php
+# PHP PPA Repository for PHP 7.4 or 8.1
+RUN apt-get -qq update \
+    && apt-get -qq install -y wget lsb-release apt-transport-https ca-certificates \
+    && wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
+    && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" >> /etc/apt/sources.list.d/php.list
+
+SHELL ["/bin/bash", "-c"]
+
+RUN if [[ "$version" =~ ^4\.[0-2] ]]; then \
+    php_version=7.4; \
+  else \
+    php_version=8.1; \
+  fi; \
+  apt-get -qq update \
+  && apt-get -qq install -y \
+    curl \
+    git \
+    zip unzip \
+    mariadb-server \
+    # https://doc.ibexa.co/en/4.0/getting_started/requirements/#php-packages
+    php${php_version}-cli \
+    #php${php_version}-fpm \
+    php${php_version}-mysql \
+    php${php_version}-xml \
+    php${php_version}-mbstring \
+    #php${php_version}-json \
+    php${php_version}-intl \
+    php${php_version}-curl \
+    #php${php_version}-pear \
+    php${php_version}-gd \
+    #php${php_version}-imagick \
+  ; \
+  if [ 7.4 = $php_version ]; then apt-get -qq install -y php${php_version}-json; fi; \
+  if [ "commerce" = "$flavor" ]; then apt-get -qq install -y php${php_version}-zip; fi; \
+  update-alternatives --set php /usr/bin/php${php_version}
+
+# Composer 2
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+# https://doc.ibexa.co/en/4.0/getting_started/requirements/#asset-manager
+# NodeJS 14
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \
+  && apt-get install -y nodejs
+# Yarn
+RUN npm install -g yarn
+RUN if [[ "$version" =~ ^4\.0 ]]; then \
+      # Required by Yarn with Ibexa DXP 4.0:
+      apt-get -qq install -y make g++ python2.7 \
+      && echo "export PYTHON=python2.7" >> /root/.bashrc; \
+    else \
+      touch /root/.bashrc; \
+    fi;
+
+#RUN composer config --global http-basic.updates.ibexa.co $installation-key $token-password
+COPY auth.json /root/.composer/auth.json
+
+RUN mkdir /var/www
+WORKDIR /var/www
+
+RUN source /root/.bashrc && composer create-project ibexa/$flavor-skeleton:$version .
+
+RUN echo "DATABASE_URL=mysql://root@localhost:3306/ibexa" > .env.local
+
+RUN service mysql start \
+  #&& php bin/console ibexa:install ibexa-$flavor \
+  && php bin/console ibexa:install \
+  && php bin/console ibexa:graphql:generate-schema \
+  && source /root/.bashrc \
+  && composer run post-install-cmd
+
+EXPOSE 8080
+CMD service mysql restart && php -S 0.0.0.0:8080 -t public
