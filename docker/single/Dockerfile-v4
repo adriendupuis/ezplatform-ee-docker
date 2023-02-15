@@ -9,7 +9,7 @@ LABEL description="Ibexa DXP 4.x"
 # docker build . -f docker/single/Dockerfile-v4 --build-arg version=4.0 -t ibexa-dxp:v4 && docker run --name ibexa-dxp-v4 --detach --publish 8004:8080 ibexa-dxp:v4;
 # docker exec -ti ibexa-dxp-v4 bash;
 # docker exec -ti ibexa-dxp-v4 mysql ibexa;
-# docker rm -f ibexa-dxp-v4;
+# docker rm -f ibexa-dxp-v4; docker rmi ibexa-dxp:v4;
 
 #ARG installation-key
 #ARG token-password
@@ -25,7 +25,9 @@ RUN apt-get -qq update \
     && wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
     && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" >> /etc/apt/sources.list.d/php.list
 
-RUN if [[ $version =~ ^4\.[0-2]\. ]]; then \
+SHELL ["/bin/bash", "-c"]
+
+RUN if [[ "$version" =~ ^4\.[0-2] ]]; then \
     php_version=7.4; \
   else \
     php_version=8.1; \
@@ -61,6 +63,13 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \
   && apt-get install -y nodejs
 # Yarn
 RUN npm install -g yarn
+RUN if [[ "$version" =~ ^4\.0 ]]; then \
+      # Required by Yarn with Ibexa DXP 4.0:
+      apt-get -qq install -y make g++ python2.7 \
+      && echo "export PYTHON=python2.7" >> /root/.bashrc; \
+    else \
+      touch /root/.bashrc; \
+    fi;
 
 #RUN composer config --global http-basic.updates.ibexa.co $installation-key $token-password
 COPY auth.json /root/.composer/auth.json
@@ -68,7 +77,7 @@ COPY auth.json /root/.composer/auth.json
 RUN mkdir /var/www
 WORKDIR /var/www
 
-RUN composer create-project ibexa/$flavor-skeleton:$version .
+RUN composer create-project ibexa/$flavor-skeleton:$version . --no-scripts
 
 RUN echo "DATABASE_URL=mysql://root@localhost:3306/ibexa" > .env.local
 
@@ -76,6 +85,7 @@ RUN service mysql start \
   #&& php bin/console ibexa:install ibexa-$flavor \
   && php bin/console ibexa:install \
   && php bin/console ibexa:graphql:generate-schema \
+  && source /root/.bashrc \
   && composer run post-install-cmd
 
 EXPOSE 8080
